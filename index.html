@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClinixOS Pro — Logiciel Cabinet Médical Hors-Ligne | Clé USB 9 900 DA</title>
+<meta name="description" content="ClinixOS Pro : logiciel de gestion de cabinet médical hors-ligne en Algérie. Dossiers patients, ordonnances A5, synchronisation secrétaire. Clé USB livrée sur les 58 wilayas — 9 900 DA au lieu de 35 000 DA. Paiement à la livraison.">
+<meta name="keywords" content="logiciel médical Algérie, logiciel cabinet médecin, gestion cabinet libéral, ordonnance Algérie, logiciel hors-ligne médecin, ClinixOS Pro">
+<meta name="theme-color" content="#00AFBC">
+<meta property="og:title" content="ClinixOS Pro — Cabinet médical sans internet ni abonnement">
+<meta property="og:description" content="Logiciel médical indépendant pour praticiens algériens. Clé USB — 9 900 DA, paiement à la livraison, 58 wilayas.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_DZ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','PIXEL_ID');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+<style>
+:root{
+  --teal:#00AFBC;--teal-d:#0d9488;--teal-dd:#0f766e;
+  --blue:#3B82F6;--blue-d:#2563EB;--blue-deep:#1E3A5F;
+  --green:#10B981;--green-d:#059669;
+  --ink:#0F172A;--body:#475569;--muted:#94A3B8;
+  --bg:#FFFFFF;--soft:#F8FAFC;--line:#E2E8F0;
+  --red:#DC2626;--red-bg:#FEF2F2;--red-tx:#991B1B;
+  --amber:#B45309;--amber-bg:#FFFBEB;
+  --radius:20px;--shadow:0 20px 50px -20px rgba(15,23,42,.18);
+  --font:'Poppins',system-ui,sans-serif;
+  --hfont:'Montserrat',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--hfont);line-height:1.2;letter-spacing:-.02em;color:var(--ink)}
+.container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* Top bar */
+.topbar{background:var(--red-bg);color:var(--red-tx);font-size:13px;font-weight:700;text-align:center;padding:11px 16px;position:relative;z-index:50}
+.topbar span{display:inline-block}
+
+/* Ambient background */
+.aura{position:relative}
+.aura::before,.aura::after{content:"";position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0}
+.aura::before{width:420px;height:420px;top:-120px;left:-140px;background:rgba(0,175,188,.18)}
+.aura::after{width:380px;height:380px;top:-80px;right:-120px;background:rgba(16,185,129,.16)}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,232,240,.8)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--hfont);font-weight:800;font-size:1.15rem;color:var(--ink)}
+.logo-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#00AFBC,#0d9488);display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px rgba(0,175,188,.35)}
+.logo-mark svg{width:22px;height:22px}
+.logo small{display:block;font-family:var(--font);font-size:.62rem;font-weight:500;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:1px}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--body);transition:.2s}
+.nav-links a:hover{color:var(--teal-d)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;font-weight:600;font-size:.9rem;padding:12px 22px;border:none;cursor:pointer;transition:.25s;white-space:nowrap}
+.pill-blue{background:linear-gradient(135deg,#3B82F6,#2563EB);color:#fff;box-shadow:0 10px 24px -8px rgba(37,99,235,.5)}
+.pill-green{background:linear-gradient(135deg,#10B981,#059669);color:#fff;box-shadow:0 10px 24px -8px rgba(5,150,105,.5)}
+.pill-teal{background:linear-gradient(135deg,#00AFBC,#0d9488);color:#fff;box-shadow:0 10px 24px -8px rgba(0,175,188,.45)}
+.pill-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.pill:hover{transform:translateY(-2px)}
+.pill-lg{padding:16px 28px;font-size:1rem;border-radius:999px}
+.burger{display:none;width:42px;height:42px;border-radius:12px;border:1.5px solid var(--line);background:#fff;align-items:center;justify-content:center;cursor:pointer}
+.burger span{display:block;width:18px;height:2px;background:var(--ink);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+/* Hero */
+.hero{padding:56px 0 72px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.85rem;font-weight:600;color:var(--teal-d);box-shadow:0 8px 24px rgba(15,23,42,.06);margin-bottom:22px}
+.badge .flag{width:8px;height:8px;border-radius:50%;background:#10B981;box-shadow:0 0 0 4px rgba(16,185,129,.2)}
+.h1{font-size:clamp(2rem,4.8vw,3.35rem);font-weight:800;line-height:1.08;margin-bottom:18px}
+.h1 .teal{color:var(--teal);background:linear-gradient(135deg,#00AFBC,#0d9488);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:clamp(1rem,1.6vw,1.12rem);color:var(--body);max-width:36ch;margin-bottom:28px}
+.lead strong{color:var(--teal-dd);font-weight:600}
+.cta-stack{display:flex;flex-direction:column;gap:12px;max-width:360px}
+.cta-main{display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(135deg,#10B981,#059669);color:#fff;border-radius:999px;padding:16px 22px;font-weight:700;box-shadow:0 16px 36px -12px rgba(5,150,105,.55);transition:.25s;border:none;cursor:pointer;font-family:var(--font);font-size:.98rem;text-align:left;width:100%}
+.cta-main:hover{transform:translateY(-3px);box-shadow:0 20px 40px -12px rgba(5,150,105,.65)}
+.cta-main .ico{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;flex-shrink:0}
+.cta-main .txt{flex:1}
+.cta-main .txt small{display:block;font-size:.75rem;font-weight:500;opacity:.9;margin-bottom:2px}
+.cta-main .txt b{font-size:1.05rem;letter-spacing:.01em}
+.cta-second{display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(135deg,#00AFBC,#0d9488);color:#fff;border-radius:999px;padding:16px 22px;font-weight:700;box-shadow:0 16px 36px -12px rgba(0,175,188,.5);transition:.25s;border:none;cursor:pointer;font-family:var(--font);font-size:.98rem;width:100%}
+.cta-second:hover{transform:translateY(-3px)}
+.micro{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin-top:16px;max-width:360px}
+.micro svg{flex-shrink:0;color:var(--green-d)}
+
+/* Visual card */
+.visual{position:relative}
+.dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(148,163,184,.45) 1px,transparent 1px);background-size:18px 18px;opacity:.5;border-radius:28px}
+.video-shell{position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:var(--shadow);overflow:hidden}
+.video-frame{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(145deg,#0F172A,#1E293B);aspect-ratio:16/10}
+.video-frame video{width:100%;height:100%;object-fit:cover}
+.play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(15,23,42,.28);cursor:pointer;border:none;width:100%}
+.play-btn{width:74px;height:74px;border-radius:50%;background:linear-gradient(135deg,#10B981,#059669);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(16,185,129,.25);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 10px rgba(16,185,129,.25)}50%{box-shadow:0 0 0 18px rgba(16,185,129,.08)}}
+.float-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 16px 40px -16px rgba(15,23,42,.2);font-size:.78rem;font-weight:600;display:flex;gap:10px;align-items:center;z-index:2}
+.float-card.a{left:-12px;bottom:18%}
+.float-card.b{right:-8px;top:14%}
+.float-card .dot{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;font-size:.9rem}
+
+/* Sections */
+section{padding:72px 0;position:relative}
+.sec-soft{background:var(--soft)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d);background:rgba(0,175,188,.1);padding:8px 14px;border-radius:999px;margin-bottom:14px}
+.h2{font-size:clamp(1.5rem,3vw,2.15rem);font-weight:800;margin-bottom:12px}
+.sub{color:var(--body);max-width:58ch;margin-bottom:36px;font-size:1rem}
+.center{text-align:center}
+.center .sub{margin-left:auto;margin-right:auto}
+
+/* Trust */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.t-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 22px;transition:.25s;position:relative;overflow:hidden}
+.t-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(0,175,188,.35)}
+.t-card .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.25rem;margin-bottom:14px}
+.t-card h3{font-size:1.02rem;margin-bottom:8px}
+.t-card p{font-size:.9rem;color:var(--body)}
+.ic-1{background:rgba(0,175,188,.12)}
+.ic-2{background:rgba(59,130,246,.12)}
+.ic-3{background:rgba(16,185,129,.12)}
+
+/* Compare */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cmp-col{border-radius:24px;padding:28px 24px;border:1.5px solid}
+.cmp-col h3{font-size:1.05rem;display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.cmp-bad{background:#fff5f5;border-color:#fecaca}
+.cmp-bad h3{color:#b91c1c}
+.cmp-good{background:linear-gradient(180deg,#f0fdfa,#fff);border-color:#99f6e4}
+.cmp-good h3{color:var(--teal-dd)}
+.cmp-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.cmp-col li{display:flex;gap:10px;font-size:.92rem;color:var(--body);line-height:1.5;padding-bottom:12px;border-bottom:1px solid rgba(148,163,184,.18)}
+.cmp-col li:last-child{border:none;padding-bottom:0}
+.cmp-col li strong{color:var(--ink);font-weight:600}
+.mk{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.7rem;font-weight:800;margin-top:2px}
+.mk-x{background:#fee2e2;color:#dc2626}
+.mk-v{background:#d1fae5;color:#059669}
+
+/* Features */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.f-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 22px}
+.f-card .n{font-family:var(--hfont);font-weight:800;font-size:.8rem;color:var(--teal);letter-spacing:.08em;margin-bottom:10px}
+.f-card h3{font-size:1rem;margin-bottom:8px}
+.f-card p{font-size:.9rem;color:var(--body)}
+
+/* Pricing */
+.price-wrap{max-width:720px;margin:0 auto;position:relative}
+.price-card{background:linear-gradient(180deg,#f0fdfa,#fff);border:2px solid #5eead4;border-radius:28px;padding:40px 32px 32px;box-shadow:var(--shadow);position:relative}
+.price-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#0d9488,#0f766e);color:#fff;font-size:.75rem;font-weight:800;letter-spacing:.04em;padding:8px 16px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 24px -8px rgba(13,148,136,.5)}
+.price-card h2{font-size:1.45rem;text-align:center;margin:8px 0 16px}
+.price-card .why{font-size:.95rem;color:var(--body);text-align:center;margin-bottom:26px;line-height:1.7}
+.price-card .why strong{color:var(--ink)}
+.anchors{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.anch{background:#fff;border-radius:18px;padding:18px;text-align:center;border:1.5px solid var(--line)}
+.anch .lab{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.anch .val{font-family:var(--hfont);font-size:1.7rem;font-weight:800;margin-top:6px}
+.anch.old .val{color:#dc2626;text-decoration:line-through;font-size:1.35rem}
+.anch.new{border-color:#5eead4;background:#f0fdfa}
+.anch.new .val{color:var(--teal-dd)}
+.anch .note{font-size:.78rem;color:var(--muted);margin-top:4px}
+.scarce{background:var(--amber-bg);border:1.5px solid #fde68a;color:var(--amber);border-radius:16px;padding:14px 16px;text-align:center;font-size:.9rem;font-weight:700;line-height:1.5}
+.price-card .cta-main{margin-top:22px;max-width:420px;margin-left:auto;margin-right:auto;justify-content:center;gap:12px}
+
+/* Social */
+.sp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sp-c{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px}
+.stars{color:#F59E0B;letter-spacing:2px;font-size:.9rem;margin-bottom:12px}
+.sp-c p{font-size:.9rem;color:var(--body);font-style:italic;margin-bottom:14px;line-height:1.6}
+.sp-c .who{font-size:.82rem;font-weight:700;color:var(--ink)}
+.sp-c .who span{display:block;font-weight:500;color:var(--muted);font-size:.75rem;margin-top:2px}
+
+/* Order */
+.order{max-width:640px;margin:0 auto;background:#fff;border-radius:28px;border:1px solid var(--line);box-shadow:0 30px 60px -20px rgba(15,23,42,.2);overflow:hidden}
+.order-head{background:linear-gradient(135deg,#0F172A,#1E293B 55%,#0F3D4A);color:#fff;padding:32px 28px}
+.order-head h2{color:#fff;font-size:1.35rem;margin-bottom:10px}
+.order-head p{color:#cbd5e1;font-size:.92rem;line-height:1.6}
+.order-body{padding:28px}
+.err{display:none;background:#fef2f2;color:#991b1b;border:1px solid #fecaca;border-radius:12px;padding:12px 14px;font-size:.88rem;font-weight:600;margin-bottom:16px}
+.fld{margin-bottom:16px}
+.fld label{display:flex;justify-content:space-between;gap:8px;font-size:.86rem;font-weight:600;color:#334155;margin-bottom:7px}
+.req{color:#dc2626}
+.opt{color:var(--muted);font-weight:500}
+.fld input,.fld select,.fld textarea{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;font-family:var(--font);font-size:16px;color:var(--ink);background:#fff;transition:.15s;appearance:none;-webkit-appearance:none}
+.fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748B' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 5.646a.5.5 0 0 1 .708 0L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 4px rgba(0,175,188,.15)}
+.fld input.bad,.fld select.bad,.fld textarea.bad{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220,38,38,.12)}
+.fld textarea{min-height:92px;resize:vertical}
+.hint{font-size:12px;color:var(--muted);margin-top:5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.submit{width:100%;border:none;cursor:pointer;background:linear-gradient(135deg,#10B981,#059669);color:#fff;font-family:var(--font);font-weight:800;font-size:.98rem;padding:18px;border-radius:999px;box-shadow:0 16px 36px -12px rgba(5,150,105,.55);transition:.2s;line-height:1.35}
+.submit:hover{transform:translateY(-2px)}
+.submit:disabled{opacity:.75;cursor:not-allowed;transform:none}
+.guar{margin-top:16px;background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:.82rem;color:var(--body);text-align:center;line-height:1.6}
+.guar strong{color:var(--ink)}
+.ok{display:none;text-align:center;padding:42px 28px}
+.ok .ck{width:76px;height:76px;border-radius:50%;background:#d1fae5;color:#059669;font-size:2rem;display:grid;place-items:center;margin:0 auto 18px;font-weight:800}
+.ok h3{font-size:1.35rem;margin-bottom:10px}
+.ok p{color:var(--body);font-size:.95rem;margin-bottom:8px}
+.ok .bx{margin-top:16px;background:#f0fdfa;border:1.5px solid #5eead4;color:var(--teal-dd);border-radius:14px;padding:14px;font-weight:700;font-size:.9rem}
+
+/* FAQ */
+.faq{max-width:740px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.q{background:#fff;border:1.5px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+.q.open{border-color:#5eead4;box-shadow:0 12px 30px -16px rgba(0,175,188,.35)}
+.qb{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 20px;background:none;border:none;font-family:var(--font);font-size:.95rem;font-weight:600;color:var(--ink);text-align:left;cursor:pointer;line-height:1.4}
+.qb .cv{width:28px;height:28px;border-radius:50%;background:rgba(0,175,188,.1);color:var(--teal-d);display:grid;place-items:center;flex-shrink:0;transition:.25s;font-size:.9rem}
+.q.open .cv{transform:rotate(180deg);background:var(--teal);color:#fff}
+.qa{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.qa p{padding:0 20px 18px;font-size:.9rem;color:var(--body);line-height:1.7}
+
+/* Sticky */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px;transform:translateY(110%);transition:.3s;box-shadow:0 -10px 30px rgba(15,23,42,.08)}
+.sticky.show{transform:translateY(0)}
+.sticky a{display:flex;align-items:center;justify-content:center;gap:8px;max-width:520px;margin:0 auto;background:linear-gradient(135deg,#10B981,#059669);color:#fff;font-weight:800;font-size:.95rem;padding:14px 18px;border-radius:999px;box-shadow:0 12px 28px -10px rgba(5,150,105,.5)}
+
+/* Footer */
+footer{background:#0F172A;color:#94A3B8;padding:40px 0 48px;text-align:center;font-size:.88rem;line-height:1.7}
+footer .brand{font-family:var(--hfont);color:#fff;font-weight:800;font-size:1.1rem;margin-bottom:8px}
+footer .fine{font-size:.75rem;opacity:.75;margin-top:14px;max-width:640px;margin-left:auto;margin-right:auto}
+
+/* Dotted hero bg */
+.hero-bg{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(148,163,184,.35) 1px,transparent 1px);background-size:22px 22px;opacity:.45;pointer-events:none;mask-image:linear-gradient(180deg,#000 40%,transparent)}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none}
+.blob.b1{width:360px;height:360px;background:rgba(0,175,188,.22);top:-80px;left:-100px}
+.blob.b2{width:320px;height:320px;background:rgba(16,185,129,.2);top:-40px;right:-80px}
+.blob.b3{width:280px;height:280px;background:rgba(59,130,246,.12);bottom:10%;left:30%}
+
+@media(max-width:960px){
+  .nav-links{display:none}
+  .nav-cta .pill-blue{display:none}
+  .burger{display:flex}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .lead{max-width:none}
+  .cta-stack{max-width:none}
+  .trust,.feat,.sp,.cmp{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .float-card.a{left:8px}
+  .float-card.b{right:8px}
+  .anchors{grid-template-columns:1fr}
+  section{padding:56px 0}
+}
+@media(max-width:520px){
+  .topbar{font-size:11.5px;padding:9px 12px}
+  .price-card{padding:36px 18px 24px}
+  .order-head,.order-body{padding:22px 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🚨 TARIF DIRECT-ÉDITEUR : Économisez les frais d'installation d'agence • Clé USB livrée sur les 58 Wilayas</div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <div class="container nav-in">
+    <a href="#top" class="logo" aria-label="ClinixOS Pro">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </span>
+      <span>ClinixOS<small>Cabinet · Algérie</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#avantages">Avantages</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#tarif">Tarif</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#order-form" class="pill pill-blue">Commander · 9 900 DA</a>
+      <button class="burger" id="burger" aria-label="Menu" type="button"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero aura" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="badge"><span class="flag"></span> 🇩🇿 Logiciel médical indépendant · Cabinets libéraux</div>
+      <h1 class="h1">Gérez votre cabinet <span class="teal">sans internet.</span></h1>
+      <p class="lead">ClinixOS Pro centralise dossiers patients, sync médecin-secrétaire et impression d'ordonnances A5 en 5 secondes. <strong>Livré prêt à l'emploi sur clé USB bootable.</strong></p>
+      <div class="cta-stack">
+        <a href="#order-form" class="cta-main">
+          <span class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </span>
+          <span class="txt"><small>Commander la clé USB</small><b>9 900 DA · Paiement à la livraison</b></span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="#order-form" class="cta-second">
+          <span>Réserver mon lot (20 clés)</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="micro">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Paiement en espèces après vérification du colis · Yalidine / Maystro
+      </p>
+    </div>
+    <div class="visual">
+      <div class="video-shell">
+        <div class="video-frame">
+          <video id="ad-video" playsinline preload="metadata">
+            <source src="video-ad.mp4" type="video/mp4">
+          </video>
+          <button class="play" id="play-overlay" type="button" aria-label="Lire la publicité">
+            <span class="play-btn" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="float-card a">
+        <span class="dot" style="background:#ecfdf5">⚡</span>
+        Ordonnance A5 · 5 sec
+      </div>
+      <div class="float-card b">
+        <span class="dot" style="background:#eff6ff">🔌</span>
+        100% hors-ligne
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec-soft" id="avantages" style="padding-top:48px;padding-bottom:48px">
+  <div class="container trust">
+    <article class="t-card">
+      <div class="ic ic-1">🔌</div>
+      <h3>100% Hors-Ligne</h3>
+      <p>Données médicales strictement sur votre PC. Aucune fuite cloud — secret médical respecté.</p>
+    </article>
+    <article class="t-card">
+      <div class="ic ic-2">⚡</div>
+      <h3>Zéro Abonnement</h3>
+      <p>Licence définitive à vie. Pas de renouvellement mensuel, pas de frais cachés.</p>
+    </article>
+    <article class="t-card">
+      <div class="ic ic-3">📦</div>
+      <h3>Livraison 58 Wilayas</h3>
+      <p>Expédition sécurisée Yalidine / Maystro Delivery à votre cabinet ou domicile.</p>
+    </article>
+  </div>
+</section>
+
+<section id="probleme">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Avant / Après</span>
+      <h2 class="h2">Le quotidien d'un cabinet ne devrait pas être ralenti par l'informatique.</h2>
+      <p class="sub">Papier, Excel instable, cloud qui coupe : chaque minute perdue est une salle d'attente qui se remplit.</p>
+    </div>
+    <div class="cmp">
+      <div class="cmp-col cmp-bad">
+        <h3><span aria-hidden="true">❌</span> Méthodes traditionnelles</h3>
+        <ul>
+          <li><span class="mk mk-x">✕</span><span>Recherche interminable de dossiers papier pendant que la salle d'attente se remplit.</span></li>
+          <li><span class="mk mk-x">✕</span><span>Excel corrompus, effacés par erreur, impossibles à partager en direct avec la secrétaire.</span></li>
+          <li><span class="mk mk-x">✕</span><span>Ordonnances manuscrites longues et sources d'erreurs en pharmacie.</span></li>
+          <li><span class="mk mk-x">✕</span><span>Logiciels cloud qui s'arrêtent dès que la 4G / ADSL coupe.</span></li>
+        </ul>
+      </div>
+      <div class="cmp-col cmp-good">
+        <h3><span aria-hidden="true">✅</span> ClinixOS Pro</h3>
+        <ul>
+          <li><span class="mk mk-v">✓</span><span><strong>Recherche patient en 1 clic :</strong> historique, antécédents, bilans instantanés.</span></li>
+          <li><span class="mk mk-v">✓</span><span><strong>Ordonnance A5 en 5 secondes :</strong> base médicamenteuse intégrée, impression laser.</span></li>
+          <li><span class="mk mk-v">✓</span><span><strong>Sync réseau local :</strong> la secrétaire enregistre, la file s'actualise sur votre écran — sans internet.</span></li>
+          <li><span class="mk mk-v">✓</span><span><strong>Pérennité :</strong> sauvegarde clé USB. Cabinet opérationnel 365 jours/an.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-soft" id="fonctionnalites">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Conçu pour l'Algérie</span>
+      <h2 class="h2">Simple, robuste, multi-spécialités.</h2>
+      <p class="sub">Pensé pour la réalité des praticiens libéraux — pas pour les data centers.</p>
+    </div>
+    <div class="feat">
+      <article class="f-card">
+        <div class="n">01 — INSTALLATION</div>
+        <h3>2 clics, c'est tout</h3>
+        <p>Branchez la clé USB, lancez l'exécutable, commencez vos consultations. Aucune compétence technique requise.</p>
+      </article>
+      <article class="f-card">
+        <div class="n">02 — COMPATIBILITÉ</div>
+        <h3>Tout matériel Windows</h3>
+        <p>Windows 10 &amp; 11. Compatible toutes les imprimantes laser de bureau (A4 et A5).</p>
+      </article>
+      <article class="f-card">
+        <div class="n">03 — SPÉCIALITÉS</div>
+        <h3>Multi-disciplines</h3>
+        <p>Médecine Générale, Pédiatrie, Gyneco, Cardiologie, Dermato, Ophtalmo et Cabinets Dentaires.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="tarif">
+  <div class="container">
+    <div class="price-wrap">
+      <div class="price-card">
+        <div class="price-tag">⚠️ TARIFF DIRECT-ÉDITEUR · LOT EN COURS</div>
+        <h2>Pourquoi ce tarif de 9 900 DA ?</h2>
+        <p class="why">Les agences informatiques facturent généralement <strong>35 000 à 50 000 DA</strong> pour installer un logiciel basique — frais de déplacement de technicien et abonnements en sus.<br><br>Avec <strong>ClinixOS Pro Direct-Éditeur</strong>, zéro intermédiaire : le système complet arrive sur <strong>clé USB physique</strong>, configuré et prêt à l'emploi.</p>
+        <div class="anchors">
+          <div class="anch old">
+            <div class="lab">Tarif standard agence</div>
+            <div class="val">35 000 DA</div>
+            <div class="note">Installation + technicien</div>
+          </div>
+          <div class="anch new">
+            <div class="lab">Tarif Direct-Éditeur</div>
+            <div class="val">9 900 DA</div>
+            <div class="note">Paiement unique · Licence à vie</div>
+          </div>
+        </div>
+        <div class="scare">⚠️ Tarif direct garanti pour le lot d'expédition en cours — limité aux 20 prochaines clés USB.</div>
+        <a href="#order-form" class="cta-main">
+          <span class="txt"><small>Réserver maintenant</small><b>Commander ma clé USB · 9 900 DA</b></span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-soft">
+  <div class="container">
+    <div class="center">
+      <span class="eyebrow">Témoignages</span>
+      <h2 class="h2">Ils gèrent déjà leur cabinet avec ClinixOS.</h2>
+    </div>
+    <div class="sp">
+      <article class="sp-c">
+        <div class="stars">★★★★★</div>
+        <p>« Plus de dossiers égarés. Ma secrétaire voit la file d'attente en temps réel, même sans internet. »</p>
+        <div class="who">Dr. Benali M.<span>Médecine Générale · Alger</span></div>
+      </article>
+      <article class="sp-c">
+        <div class="stars">★★★★★</div>
+        <p>« L'ordonnance A5 sort en quelques secondes. Les pharmacies reconnaissent immédiatement la mise en page. »</p>
+        <div class="who">Dr. Hamidi S.<span>Pédiatrie · Oran</span></div>
+      </article>
+      <article class="sp-c">
+        <div class="stars">★★★★★</div>
+        <p>« Installation sur clé USB en moins de 10 minutes. Zéro abonnement, zéro technicien à recevoir. »</p>
+        <div class="who">Dr. Kaci A.<span>Cardiologie · Constantine</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="order-form" style="scroll-margin-top:80px">
+  <div class="container">
+    <div class="center" style="margin-bottom:28px">
+      <span class="eyebrow">Commande COD</span>
+      <h2 class="h2">Formulaire officiel — Clé USB ClinixOS Pro</h2>
+      <p class="sub">Notre service expédition vous appelle sous 30 minutes pour valider l'adresse avant départ Yalidine / Maystro.</p>
+    </div>
+    <div class="order">
+      <div class="order-head">
+        <h2>Réservation Direct-Éditeur</h2>
+        <p>Remplissez vos coordonnées. Prix garanti <strong style="color:#5eead4">9 900 DA</strong> — vous ne payez rien en ligne.</p>
+      </div>
+      <div class="order-body">
+        <div id="form-wrapper">
+          <div class="err" id="form-error" role="alert"></div>
+          <form id="clinixos-form" action="https://script.google.com/macros/s/AKfycbzvjQ9Yjm-oIrKqz1Ii1-XiCvNATamySYDrSEk1Pc0XEcdCBSXVmcVzgD-YoykESeS35w/exec" method="POST" novalidate>
+            <input type="hidden" name="product" value="ClinixOS Pro - Cle USB">
+            <input type="hidden" name="price" value="9900">
+            <input type="hidden" name="original_price" value="35000">
+            <input type="hidden" name="payment" value="COD">
+            <input type="hidden" name="carrier" value="Yalidine / Maystro Delivery">
+
+            <div class="fld">
+              <label for="name">Nom et Prénom (Docteur) <span class="req">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ex : Dr. Benali Mohamed">
+            </div>
+
+            <div class="fld">
+              <label for="specialty">Spécialité Médicale <span class="req">*</span></label>
+              <input type="text" id="specialty" name="specialty" required list="specialties" placeholder="Ex : Médecine Générale, Pédiatrie…">
+              <datalist id="specialties">
+                <option value="Médecine Générale"><option value="Pédiatrie"><option value="Gynécologie-Obstétrique">
+                <option value="Cardiologie"><option value="Dermatologie"><option value="Ophtalmologie">
+                <option value="ORL"><option value="Chirurgie Générale"><option value="Médecine Interne">
+                <option value="Neurologie"><option value="Psychiatrie"><option value="Radiologie">
+                <option value="Anesthésie-Réanimation"><option value="Médecine du Travail">
+                <option value="Dentaire / Chirurgie Dentaire"><option value="Kinésithérapie">
+                <option value="Laboratoire d'Analyses">
+              </datalist>
+            </div>
+
+            <div class="row2">
+              <div class="fld">
+                <label for="phone">Téléphone actif <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="06 / 07 / 05…">
+                <div class="hint">10 chiffres — ex : 0550123456</div>
+              </div>
+              <div class="fld">
+                <label for="phone2">Second téléphone <span class="opt">optionnel</span></label>
+                <input type="tel" id="phone2" name="phone2" inputmode="tel" placeholder="Cabinet / secrétaire">
+              </div>
+            </div>
+
+            <div class="row2">
+              <div class="fld">
+                <label for="wilaya">Wilaya <span class="req">*</span></label>
+                <select id="wilaya" name="wilaya" required>
+                  <option value="" disabled selected>Sélectionner…</option>
+                </select>
+              </div>
+              <div class="fld">
+                <label for="city">Commune / Ville <span class="req">*</span></label>
+                <select id="city" name="city" required disabled>
+                  <option value="" disabled selected>D'abord la wilaya</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="fld">
+              <label for="address">Adresse de livraison <span class="req">*</span></label>
+              <textarea id="address" name="address" required placeholder="Ex : Rue 1er Novembre, en face de l'hôpital…"></textarea>
+              <div class="hint">Repère facile pour le livreur Yalidine / Maystro.</div>
+            </div>
+
+            <button type="submit" class="submit" id="submit-btn">👉 VALIDER MA COMMANDE (9 900 DA — PAIEMENT À LA LIVRAISON)</button>
+
+            <div class="guar">
+              📦 Livraison express <strong>Yalidine / Maystro Delivery</strong> — 58 wilayas.<br>
+              Vous ne payez rien en ligne : espèces à la remise de la clé USB.<br>
+              Installation du logiciel via la clé USB fournie (2 clics).
+            </div>
+          </form>
+        </div>
+
+        <div class="ok" id="success-message">
+          <div class="ck">✓</div>
+          <h3>Commande enregistrée !</h3>
+          <p>Merci Docteur. Votre clé ClinixOS Pro est réservée au tarif <strong>9 900 DA</strong>.</p>
+          <p>Un appel de confirmation sous <strong>30 minutes</strong>.</p>
+          <div class="bx">📦 Paiement espèces à la livraison · Yalidine / Maystro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-soft" id="faq">
+  <div class="container">
+    <div class="center" style="margin-bottom:28px">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2">Dernières questions avant commande</h2>
+    </div>
+    <div class="faq">
+      <div class="q">
+        <button type="button" class="qb" aria-expanded="false">Ai-je besoin d'une connexion internet ?<span class="cv">▾</span></button>
+        <div class="qa"><p>Non. ClinixOS Pro fonctionne à 100% hors-ligne. Votre cabinet tourne même en coupure réseau complète. Données 100% locales.</p></div>
+      </div>
+      <div class="q">
+        <button type="button" class="qb" aria-expanded="false">Comment synchroniser médecin et secrétaire ?<span class="cv">▾</span></button>
+        <div class="qa"><p>Via le réseau local du cabinet (Ethernet ou Wi-Fi), même sans internet. La secrétaire enregistre, le fichier patient apparaît instantanément sur votre écran.</p></div>
+      </div>
+      <div class="q">
+        <button type="button" class="qb" aria-expanded="false">Et si je change d'ordinateur ?<span class="cv">▾</span></button>
+        <div class="qa"><p>Licence à vie. La clé USB contient l'installateur d'origine ; vos sauvegardes se transfèrent sur un nouveau PC en quelques secondes.</p></div>
+      </div>
+      <div class="q">
+        <button type="button" class="qb" aria-expanded="false">Comment se passe la livraison et le paiement ?<span class="cv">▾</span></button>
+        <div class="qa"><p>Expédition Yalidine / Maystro Delivery. Appel du livreur à l'arrivée dans votre commune. Règlement en espèces après vérification du colis. Logiciel installé depuis la clé USB.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand">ClinixOS Pro Algérie</div>
+    <div>Solutions logicielles médicales libérales · Support téléphone &amp; WhatsApp praticiens</div>
+    <p class="fine">© 2026 ClinixOS Pro. Produit distribué directement par l'éditeur. Données stockées localement sous l'entière responsabilité du praticien conformément au secret médical.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky-cta">
+  <a href="#order-form">COMMANDER — 9 900 DA · PAIEMENT À LA LIVRAISON</a>
+</div>
+
+<script>
+const LOCATIONS_DATA = [
+    { "w": "Adrar", "c": ["Adrar", "Tamest", "Reggane", "In Zghmir", "Tit", "Tsabit", "Zaouiet Kounta", "Aoulef", "Tamekten", "Tamantit", "Fenoughil", "Sali", "Akabli", "Ouled Ahmed Tammi", "Bouda", "Sebaa"] },
+    { "w": "Chlef", "c": ["Abou El Hassan", "Aïn Merane", "Bénairia", "Beni Bouateb", "Beni Haoua", "Beni Rached", "Boukadir", "Bouzeghaia", "Breira", "Chettia", "Chlef", "Dahra", "El Hadjadj", "El Karimia", "El Marsa", "Harchoun", "Harenfa", "Labiod Medjadja", "Moussadek", "Oued Fodda", "Oued Goussine", "Oued Sly", "Ouled Abbes", "Ouled Ben Abdelkader", "Ouled Fares", "Oum Drou", "Sendjas", "Sidi Abderrahmane", "Sidi Akkacha", "Sobha", "Tadjena", "Talassa", "Taougrite", "Ténès", "Zeboudja"] },
+    { "w": "Laghouat", "c": ["Laghouat", "Ksar El Hirane", "Bennasser Benchohra", "Sidi Makhlouf", "Hassi Delaa", "Hassi R'Mel", "Aïn Madhi", "Tadjemout", "Kheneg", "Gueltat Sidi Saad", "Aïn Sidi Ali", "Beidha", "Brida", "El Ghicha", "Hadj Mechri", "Sebgag", "Taouiala", "Tadjrouna", "Aflou", "El Assafia", "Oued Morra", "Oued M'Zi", "El Houaita", "Sidi Bouzid"] },
+    { "w": "Oum El Bouaghi", "c": ["Oum el Bouaghi", "Aïn Beïda", "Aïn M'lila", "Behir Chergui", "El Amiria", "Sigus", "El Belala", "Aïn Babouche", "Berriche", "Ouled Hamla", "Dhalaa", "Aïn Kercha", "Hanchir Toumghani", "El Djazia", "Aïn Diss", "Fkirina", "Souk Naamane", "Zorg", "El Fedjoudj Boughrara Saoudi", "Ouled Zouaï", "Bir Chouhada", "Ksar Sbahi", "Oued Nini", "Meskiana", "Aïn Fakroun", "Rahia", "Aïn Zitoun", "Ouled Gacem", "El Harmilia"] },
+    { "w": "Batna", "c": ["Batna", "Ghassira", "Maafa", "Merouana", "Seriana", "Menaa", "El Madher", "Tazoult", "N'Gaous", "Guigba", "Inoughissen", "Ouyoun El Assafir", "Djerma", "Bitam", "Abdelkader Azil", "Arris", "Kimmel", "Tilatou", "Aïn Djasser", "Ouled Sellam", "Tigherghar", "Aïn Yagout", "Fesdis", "Sefiane", "Rahbat", "Tighanimine", "Lemsane", "Ksar Bellezma", "Seggana", "Ichmoul", "Foum Toub", "Ben Foudhala El Hakania", "Oued El Ma", "Talkhamt", "Bouzina", "Chemora", "Oued Chaaba", "Taxlent", "Gosbat", "Ouled Aouf", "Boumagueur", "Barika", "Djezar", "T'Kout", "Aïn Touta", "Hidoussa", "Teniet El Abed", "Oued Taga", "Ouled Fadel", "Timgad", "Ras El Aioun", "Chir", "Ouled Si Slimane", "Zanat El Beida", "M'doukel", "Ouled Ammar", "El Hassi", "Lazrou", "Boumia", "Boulhilat", "Larbaâ"] },
+    { "w": "Béjaïa", "c": ["Béjaïa", "Amizour", "Ferraoun", "Taourirt Ighil", "Chellata", "Tamokra", "Timezrit", "Souk El Ténine", "M'cisna", "Tinabdher", "Tichy", "Semaoun", "Kendira", "Tifra", "Ighram", "Amalou", "Ighil Ali", "Fenaïa Ilmaten", "Toudja", "Darguina", "Sidi Ayad", "Aokas", "Ait Djellil", "Adekar", "Akbou", "Seddouk", "Tazmalt", "Aït R'zine", "Chemini", "Souk Oufella", "Tibane", "Tala Hamza", "Barbacha", "Aït Ksila", "Ouzellaguen", "Bouhamza", "Taskriout", "Aït Mellikeche", "Sidi Aïch", "El Kseur", "Melbou", "Akfadou", "Leflaye", "Kherrata", "Draâ El Kaïd", "Tamridjet", "Aït Smail", "Boukhelifa", "Tizi N'Berber", "Aït Maouche", "Oued Ghir", "Boudjellil"] },
+    { "w": "Biskra", "c": ["Aïn Naga", "Aïn Zaatout", "Biskra", "Bordj Ben Azzouz", "Bouchagroune", "Branis", "Chetma", "Djemorah", "El Feidh", "El Ghrous", "El Hadjeb", "El Haouch", "El Kantara", "El Mizaraa", "El Outaya", "Foughala", "Khenguet Sidi Nadji", "Lichana", "Lioua", "M'Chouneche", "Mekhadma", "M'Lili", "Oumache", "Ourlal", "Sidi Okba", "Tolga", "Zeribet El Oued"] },
+    { "w": "Béchar", "c": ["Béchar", "Erg Ferradj", "Meridja", "Lahmar", "Mechraa Houari Boumedienne", "Kenadsa", "Taghit", "Boukais", "Mougheul", "Abadla", "Beni Ounif"] },
+    { "w": "Blida", "c": ["Blida", "Chebli", "Bouinan", "Oued Alleug", "Ouled Yaïch", "Chréa", "El Affroun", "Chiffa", "Hammam Melouane", "Benkhelil", "Soumaa", "Mouzaia", "Souhane", "Meftah", "Ouled Slama", "Boufarik", "Larbaa", "Oued Djer", "Beni Tamou", "Bouarfa", "Beni Mered", "Bougara", "Guerouaou", "Aïn Romana", "Djebabra"] },
+    { "w": "Bouira", "c": ["Aïn Bessem", "Hanif", "Aghbalou", "Aïn El Hadjar", "Ahl El Ksar", "Aïn Laloui", "Ath Mansour", "Aomar", "Aïn El Turc", "Aït Laziz", "Bouderbala", "Bechloul", "Bir Ghbalou", "Boukram", "Bordj Okhriss", "Bouira", "Chorfa", "Dechmia", "Dirrah", "Djebahia", "El Hakimia", "El Hachimia", "El Adjiba", "El Khabouzia", "El Mokrani", "El Asnam", "Guerrouma", "Haizer", "Hadjera Zerga", "Kadiria", "Lakhdaria", "M'Chedallah", "Mezdour", "Maala", "Maamora", "Oued El Berdi", "Ouled Rached", "Raouraoua", "Ridane", "Saharidj", "Sour El Ghouzlane", "Souk El Khemis", "Taguedit", "Taghzout", "Zbarbar"] },
+    { "w": "Tamanrasset", "c": ["Tamanrasset", "Abalessa", "Idles", "Tazrouk", "In Amguel"] },
+    { "w": "Tébessa", "c": ["Tébessa", "Bir el Ater", "Cheria", "Stah Guentis", "El Aouinet", "El Houidjbet", "Safsaf El Ouesra", "Hammamet", "Negrine", "Bir Mokkadem", "El Kouif", "Morsott", "El Ogla", "Bir Dheb", "Ogla Melha", "Guorriguer", "Bekkaria", "Boukhadra", "Ouenza", "El Ma Labiodh", "Oum Ali", "Tlidjene", "Aïn Zerga", "El Meridj", "Boulhaf Dir", "Bedjene", "El Mezeraa", "Ferkane"] },
+    { "w": "Tlemcen", "c": ["Tlemcen", "Beni Mester", "Aïn Tallout", "Remchi", "El Fehoul", "Sabra", "Ghazaouet", "Souani", "Djebala", "El Gor", "Oued Lakhdar", "Aïn Fezza", "Ouled Mimoun", "Amieur", "Aïn Youcef", "Zenata", "Beni Snous", "Bab El Assa", "Dar Yaghmouracene", "Fellaoucene", "Azails", "Sebaa Chioukh", "Terny Beni Hdiel", "Bensekrane", "Aïn Nehala", "Hennaya", "Maghnia", "Hammam Boughrara", "Souahlia", "MSirda Fouaga", "Aïn Fetah", "El Aricha", "Souk Tlata", "Sidi Abdelli", "Sebdou", "Beni Ouarsous", "Sidi Medjahed", "Beni Boussaid", "Marsa Ben M'Hidi", "Nedroma", "Sidi Djillali", "Beni Bahdel", "El Bouihi", "Honaïne", "Tienet", "Ouled Riyah", "Bouhlou", "Beni Khellad", "Aïn Ghoraba", "Chetouane", "Mansourah", "Beni Semiel", "Aïn Kebira"] },
+    { "w": "Tiaret", "c": ["Aïn Bouchekif", "Aïn Deheb", "Aïn El Hadid", "Aïn Kermes", "Aïn Dzarit", "Bougara", "Chehaima", "Dahmouni", "Djebilet Rosfa", "Djillali Ben Amar", "Faidja", "Frenda", "Guertoufa", "Hamadia", "Ksar Chellala", "Madna", "Mahdia", "Mechraa Safa", "Medrissa", "Medroussa", "Meghila", "Mellakou", "Nadorah", "Naima", "Oued Lilli", "Rahouia", "Rechaiga", "Sebaine", "Sebt", "Serghine", "Si Abdelghani", "Sidi Abderahmane", "Sidi Ali Mellal", "Sidi Bakhti", "Sidi Hosni", "Sougueur", "Tagdemt", "Takhemaret", "Tiaret", "Tidda", "Tousnina", "Zmalet El Emir Abdelkader"] },
+    { "w": "Tizi Ouzou", "c": ["Tizi Ouzou", "Ain El Hammam", "Akbil", "Freha", "Souamaâ", "Mechtras", "Irdjen", "Timizart", "Makouda", "Draâ El Mizan", "Tizi Gheniff", "Bounouh", "Aït Chafâa", "Frikat", "Beni Aïssi", "Beni Zmenzer", "Iferhounène", "Azazga", "Illoula Oumalou", "Yakouren", "Larbaâ Nath Irathen", "Tizi Rached", "Zekri", "Ouaguenoun", "Aïn Zaouia", "M'Kira", "Aït Yahia", "Aït Mahmoud", "Mâatkas", "Aït Boumahdi", "Abi Youcef", "Beni Douala", "Illilten", "Bouzguen", "Aït Aggouacha", "Ouadhia", "Azeffoun", "Tigzirt", "Aït Aïssa Mimoun", "Boghni", "Ifigha", "Aït Oumalou", "Tirmitine", "Akerrou", "Yatafen", "Ath Zikki", "Draâ Ben Khedda", "Ouacif", "Idjeur", "Mekla", "Tizi N'Tleta", "Aït Yenni", "Aghribs", "Iflissen", "Boudjima", "Aït Yahia Moussa", "Souk El Thenine", "Aït Khellili", "Sidi Namane", "Iboudraren", "Agouni Gueghrane", "Mizrana", "Imsouhel", "Tadmaït", "Aït Bouadou", "Assi Youcef", "Aït Toudert"] },
+    { "w": "Alger", "c": ["Alger Centre", "Sidi M'Hamed", "El Madania", "Belouizdad", "Bab El Oued", "Bologhine", "Casbah", "Oued Koriche", "Bir Mourad Raïs", "El Biar", "Bouzareah", "Birkhadem", "El Harrach", "Baraki", "Oued Smar", "Bachdjerrah", "Hussein Dey", "Kouba", "Bourouba", "Dar El Beïda", "Bab Ezzouar", "Ben Aknoun", "Dely Ibrahim", "El Hammamet", "Raïs Hamidou", "Djasr Kasentina", "El Mouradia", "Hydra", "Mohammadia", "Bordj El Kiffan", "El Magharia", "Beni Messous", "Les Eucalyptus", "Birtouta", "Tessala El Merdja", "Ouled Chebel", "Sidi Moussa", "Aïn Taya", "Bordj El Bahri", "El Marsa", "H'raoua", "Rouïba", "Reghaïa", "Aïn Benian", "Staoueli", "Zeralda", "Mahelma", "Rahmania", "Souidania", "Cheraga", "Ouled Fayet", "El Achour", "Draria", "Douera", "Baba Hassen", "Khraicia", "Saoula"] },
+    { "w": "Djelfa", "c": ["Aïn Chouhada", "Aïn El Ibel", "Aïn Feka", "Aïn Maabed", "Aïn Oussara", "Amourah", "Benhar", "Beni Yagoub", "Birine", "Bouira Lahdab", "Charef", "Dar Chioukh", "Deldoul", "Djelfa", "Douis", "El Guedid", "El Idrissia", "El Khemis", "Faidh El Botma", "Guernini", "Guettara", "Had Sahary", "Hassi Bahbah", "Hassi El Euch", "Hassi Fedoul", "Messaad", "M'Liliha", "Moudjebara", "Oum Laadham", "Sed Rahal", "Selmana", "Sidi Baizid", "Sidi Ladjel", "Tadmit", "Zaafrane", "Zaccar"] },
+    { "w": "Jijel", "c": ["Jijel", "Eraguene", "El Aouana", "Ziama Mansouriah", "Taher", "Emir Abdelkader", "Chekfa", "Chahna", "El Milia", "Sidi Maarouf", "Settara", "El Ancer", "Sidi Abdelaziz", "Kaous", "Ghebala", "Bouraoui Belhadef", "Djimla", "Selma Benziada", "Boucif Ouled Askeur", "El Kennar Nouchfi", "Ouled Yahia Khedrouche", "Boudriaa Ben Yadjis", "Kheïri Oued Adjoul", "Texenna", "Djemaa Beni Habibi", "Bordj Tahar", "Ouled Rabah", "Ouadjana"] },
+    { "w": "Sétif", "c": ["Aïn Abessa", "Aïn Arnat", "Aïn Azel", "Aïn El Kebira", "Aïn Lahdjar", "Aïn Legradj", "Aïn Oulmene", "Aïn Roua", "Aïn Sebt", "Aït Naoual Mezada", "Aït Tizi", "Aït Wertilan", "Amoucha", "Babor", "Bazer Sakhra", "Beidha Bordj", "Belaa", "Beni Aziz", "Beni Chebana", "Beni Fouda", "Beni Hocine", "Beni Mouhli", "Bir El Arch", "Bir Haddada", "Bouandas", "Bougaa", "Bousselam", "Boutaleb", "Dehamcha", "Djemila", "Draa Kebila", "El Eulma", "El Ouldja", "El Ouricia", "Guellal", "Guelta Zerka", "Guenzet", "Guidjel", "Hamma", "Hammam Guergour", "Hammam Soukhna", "Harbil", "Ksar El Abtal", "Maaouia", "Maoklane", "Mezloug", "Oued El Barad", "Ouled Addouane", "Ouled Sabor", "Ouled Si Ahmed", "Ouled Tebben", "Rasfa", "Salah Bey", "Serdj El Ghoul", "Sétif", "Tachouda", "Talaifacene", "Taya", "Tella", "Tizi N'Bechar"] },
+    { "w": "Saïda", "c": ["Aïn El Hadjar", "Aïn Sekhouna", "Aïn Soltane", "Doui Thabet", "El Hassasna", "Hounet", "Maamora", "Moulay Larbi", "Ouled Brahim", "Ouled Khaled", "Saïda", "Sidi Ahmed", "Sidi Amar", "Sidi Boubekeur", "Tircine", "Youb"] },
+    { "w": "Skikda", "c": ["Aïn Bouziane", "Aïn Charchar", "Aïn Kechra", "Aïn Zouit", "Azzaba", "Bekkouche Lakhdar", "Bin El Ouiden", "Ben Azzouz", "Beni Bechir", "Beni Oulbane", "Beni Zid", "Bouchtata", "Cheraia", "Collo", "Djendel Saadi Mohamed", "El Ghedir", "El Hadaiek", "El Harrouch", "El Marsa", "Emdjez Edchich", "Es Sebt", "Filfila", "Hamadi Krouma", "Kanoua", "Kerkera", "Kheneg Mayoum", "Oued Zehour", "Ouldja Boulballout", "Ouled Attia", "Ouled Hbaba", "Oum Toub", "Ramdane Djamel", "Salah Bouchaour", "Sidi Mezghiche", "Skikda", "Tamalous", "Zerdaza", "Zitouna"] },
+    { "w": "Sidi Bel Abbès", "c": ["Aïn Adden", "Aïn El Berd", "Aïn Kada", "Aïn Thrid", "Aïn Tindamine", "Amarnas", "Badredine El Mokrani", "Belarbi", "Ben Badis", "Benachiba Chelia", "Bir El Hammam", "Boudjebaa El Bordj", "Boukhanafis", "Chettouane Belaila", "Dhaya", "El Haçaiba", "Hassi Dahou", "Hassi Zehana", "Lamtar", "Makedra", "Marhoum", "M'Cid", "Merine", "Mezaourou", "Mostefa Ben Brahim", "Moulay Slissen", "Oued Sebaa", "Oued Sefioun", "Oued Taourira", "Ras El Ma", "Redjem Demouche", "Sehala Thaoura", "Sfisef", "Sidi Ali Benyoub", "Sidi Ali Boussidi", "Sidi Bel Abbes", "Sidi Brahim", "Sidi Chaib", "Sidi Daho des Zairs", "Sidi Hamadouche", "Sidi Khaled", "Sidi Lahcene", "Sidi Yacoub", "Tabia", "Tafissour", "Taoudmout", "Teghalimet", "Telagh", "Tenira", "Tessala", "Tilmouni", "Zerouala"] },
+    { "w": "Annaba", "c": ["Annaba", "Berrahal", "El Hadjar", "Eulma", "El Bouni", "Oued El Aneb", "Cheurfa", "Seraïdi", "Aïn Berda", "Chetaïbi", "Sidi Amar", "Treat"] },
+    { "w": "Guelma", "c": ["Aïn Ben Beida", "Aïn Larbi", "Aïn Makhlouf", "Aïn Reggada", "Aïn Sandel", "Belkheir", "Ben Djerrah", "Beni Mezline", "Bordj Sabath", "Bouhachana", "Bouhamdane", "Bouati Mahmoud", "Bouchegouf", "Boumahra Ahmed", "Dahouara", "Djeballah Khemissi", "El Fedjoudj", "Guellat Bou Sbaa", "Guelma", "Hammam Debagh", "Hammam N'Bail", "Héliopolis", "Houari Boumédiène", "Khezarra", "Medjez Amar", "Medjez Sfa", "Nechmaya", "Oued Cheham", "Oued Fragha", "Oued Zenati", "Ras El Agba", "Roknia", "Sellaoua Announa", "Tamlouka"] },
+    { "w": "Constantine", "c": ["Aïn Abid", "Aïn Smara", "Beni Hamiden", "Constantine", "Didouche Mourad", "El Khroub", "Hamma Bouziane", "Ibn Badis", "Ibn Ziad", "Messaoud Boudjriou", "Ouled Rahmoune", "Zighoud Youcef"] },
+    { "w": "Médéa", "c": ["Aïn Boucif", "Aïn Ouksir", "Aissaouia", "Aziz", "Baata", "Benchicao", "Beni Slimane", "Berrouaghia", "Bir Ben Laabed", "Boghar", "Bou Aiche", "Bouaichoune", "Bouchrahil", "Boughezoul", "Bouskene", "Chahbounia", "Chellalet El Adhaoura", "Cheniguel", "Derrag", "Deux Bassins", "Djouab", "Draa Essamar", "El Azizia", "El Guelb El Kebir", "El Hamdania", "El Omaria", "El Ouinet", "Hannacha", "Kef Lakhdar", "Khams Djouamaa", "Ksar Boukhari", "Meghraoua", "Médéa", "Moudjbar", "Meftaha", "Mezerana", "Mihoub", "Ouamri", "Oued Harbil", "Ouled Antar", "Ouled Bouachra", "Ouled Brahim", "Ouled Deide", "Ouled Hellal", "Ouled Maaref", "Oum El Djalil", "Ouzera", "Rebaia", "Saneg", "Sedraia", "Seghouane", "Si Mahdjoub", "Sidi Damed", "Sidi Errabia", "Sidi Naamanez", "Sidi Zahar", "Sidi Ziane", "Souagui", "Tablat", "Tafraout", "Tamesguida", "Tizi Mahdi", "Tlatet Eddouar", "Zoubiria"] },
+    { "w": "Mostaganem", "c": ["Abdelmalek Ramdane", "Achaacha", "Aïn Boudinar", "Aïn Nouissy", "Aïn Sidi Cherif", "Aïn Tedles", "Blad Touahria", "Bouguirat", "El Hassaine", "Fornaka", "Hadjadj", "Hassi Mameche", "Khadra", "Kheireddine", "Mansourah", "Mesra", "Mazagran", "Mostaganem", "Nekmaria", "Oued El Kheir", "Ouled Boughalem", "Ouled Maallah", "Safsaf", "Sayada", "Sidi Ali", "Sidi Belattar", "Sidi Lakhdar", "Sirat", "Souaflia", "Sour", "Stidia", "Tazgait"] },
+    { "w": "M'Sila", "c": ["Aïn El Hadjel", "Aïn El Melh", "Aïn Errich", "Aïn Fares", "Aïn Khadra", "Belaiba", "Ben Srour", "Beni Ilmane", "Benzouh", "Berhoum", "Bir Foda", "Bou Saâda", "Bouti Sayah", "Chellal", "Dehahna", "Djebel Messaad", "El Hamel", "El Houamed", "Hammam Dhalaa", "Khettouti Sed El Djir", "Khoubana", "Maadid", "Maarif", "Magra", "M'Cif", "Medjedel", "Mohammed Boudiaf", "M'Sila", "M'Tarfa", "Ouanougha", "Ouled Addi Guebala", "Ouled Atia", "Ouled Derradj", "Ouled Madhi", "Ouled Mansour", "Ouled Sidi Brahim", "Ouled Slimane", "Oultem", "Sidi Aïssa", "Sidi Ameur", "Sidi Hadjeres", "Sidi M'Hamed", "Slim", "Souamaa", "Tamsa", "Tarmount", "Zarzour"] },
+    { "w": "Mascara", "c": ["Aïn Fares", "Aïn Fekan", "Aïn Ferah", "Aïn Fras", "Alaïmia", "Aouf", "Beniane", "Bou Hanifia", "Bou Henni", "Chorfa", "El Bordj", "El Gaada", "El Ghomri", "El Guettana", "El Keurt", "El Menaouer", "Ferraguig", "Froha", "Gharrous", "Guerdjoum", "Ghriss", "Hachem", "Hacine", "Khalouia", "Makdha", "Mamounia", "Maoussa", "Mascara", "Matemore", "Mocta Douz", "Mohammadia", "Nesmoth", "Oggaz", "Oued El Abtal", "Oued Taria", "Ras El Aïn Amirouche", "Sedjerara", "Sehailia", "Sidi Abdeldjebar", "Sidi Abdelmoumen", "Sidi Kada", "Sidi Boussaid", "Sig", "Tighennif", "Tizi", "Zahana", "Zelmata"] },
+    { "w": "Ouargla", "c": ["Aïn Beida", "Hassi Ben Abdellah", "Hassi Messaoud", "N'Goussa", "Ouargla", "Rouissat", "Sidi Khouiled"] },
+    { "w": "Oran", "c": ["Oran", "Gdyel", "Bir El Djir", "Hassi Bounif", "Es Senia", "Arzew", "Bethioua", "Marsat El Hadjadj", "Aïn El Turk", "El Ançor", "Oued Tlelat", "Tafraoui", "Sidi Chami", "Boufatis", "Mers El Kébir", "Bou Sfer", "El Kerma", "El Braya", "Hassi Ben Okba", "Ben Freha", "Hassi Mefsoukh", "Sidi Benyebka", "Misserghin", "Boutlelis", "Aïn El Kerma", "Aïn El Bia"] },
+    { "w": "El Bayadh", "c": ["El Bayadh", "Rogassa", "Stitten", "Brezina", "Ghassoul", "Boualem", "El Abiodh Sidi Cheikh", "Aïn El Orak", "Arbaouat", "Bougtoub", "El Kheiter", "Kef El Ahmar", "Boussemghoun", "Chellala", "Kraakda", "El Bnoud", "Cheguig", "Sidi Ameur", "El Mehara", "Tousmouline", "Sidi Slimane", "Sidi Tifour"] },
+    { "w": "Illizi", "c": ["Illizi", "Debdeb", "Bordj Omar Driss", "In Amenas"] },
+    { "w": "Bordj Bou Arreridj", "c": ["Aïn Taghrout", "Aïn Tesra", "Belimour", "Ben Daoud", "Bir Kasdali", "Bordj Bou Arreridj", "Bordj Ghédir", "Bordj Zemoura", "Colla", "Djaafra", "El Ach", "El Achir", "El Anseur", "El Hamadia", "El Main", "El M'hir", "Ghilassa", "Haraza", "Hasnaoua", "Khelil", "Ksour", "Mansoura", "Medjana", "Ouled Brahem", "Ouled Dahmane", "Ouled Sidi Brahim", "Rabta", "Ras El Oued", "Sidi Embarek", "Tefreg", "Taglait", "Teniet En Nasr", "Tassameurt", "Tixter"] },
+    { "w": "Boumerdès", "c": ["Boumerdes", "Boudouaou", "Afir", "Bordj Menaiel", "Baghlia", "Sidi Daoud", "Naciria", "Djinet", "Issers", "Zemmouri", "Si Mustapha", "Tidjelabine", "Chabet el Ameur", "Thenia", "Timezrit", "Corso", "Ouled Moussa", "Larbatache", "Bouzegza Keddara", "Taourga", "Ouled Aissa", "Ben Choud", "Dellys", "Ammal", "Beni Amrane", "Souk El Had", "Boudouaou El Bahri", "Ouled Hedadj", "Leghata", "Hammedi", "Khemis El Khechna", "El Kharrouba"] },
+    { "w": "El Tarf", "c": ["Aïn El Assel", "Aïn Kerma", "Asfour", "Ben Mehidi", "Berrihane", "Besbes", "Bougous", "Bouhadjar", "Bouteldja", "Chebaita Mokhtar", "Chefia", "Chihani", "Dréan", "Echatt", "El Aioun", "El Kala", "El Tarf", "Hammam Beni Salah", "Lac des Oiseaux", "Oued Zitoun", "Raml Souk", "Souarekh", "Zerizer", "Zitouna"] },
+    { "w": "Tindouf", "c": ["Oum el Assel", "Tindouf"] },
+    { "w": "Tissemsilt", "c": ["Ammari", "Beni Chaib", "Beni Lahcene", "Boucaid", "Bordj Bou Naama", "Bordj El Emir Abdelkader", "Khemisti", "Larbaa", "Lardjem", "Layoune", "Lazharia", "Maacem", "Melaab", "Ouled Bessem", "Sidi Abed", "Sidi Boutouchent", "Sidi Lantri", "Sidi Slimane", "Tamalaht", "Theniet El Had", "Tissemsilt", "Youssoufia"] },
+    { "w": "El Oued", "c": ["El Oued", "Robbah", "Oued El Alenda", "Bayadha", "Nakhla", "Guemar", "Kouinine", "Reguiba", "Hamraia", "Taghzout", "Debila", "Hassani Abdelkrim", "Hassi Khalifa", "Taleb Larbi", "Douar El Ma", "Sidi Aoun", "Trifaoui", "Magrane", "Beni Guecha", "Ourmas", "El Ogla", "Mih Ouansa"] },
+    { "w": "Khenchela", "c": ["Aïn Touila", "Babar", "Baghai", "Bouhmama", "Chechar", "Chelia", "Djellal", "El Hamma", "El Mahmal", "El Oueldja", "Ensigha", "Kais", "Khenchela", "Khirane", "M'Sara", "M'Toussa", "Ouled Rechache", "Remila", "Tamza", "Taouzient", "Yabous"] },
+    { "w": "Souk Ahras", "c": ["Souk Ahras", "Sedrata", "Hanancha", "Mechroha", "Ouled Driss", "Tiffech", "Zaarouria", "Taoura", "Drea", "Heddada", "Khedara", "Merahna", "Ouled Moumene", "Bir Bou Haouch", "M'daourouch", "Oum El Adhaim", "Aïn Zana", "Aïn Soltane", "Ouillen", "Sidi Fredj", "Safel El Ouiden", "Ragouba", "Khemissa", "Oued Keberit", "Terraguelt", "Zouabi"] },
+    { "w": "Tipaza", "c": ["Tipaza", "Menaceur", "Larhat", "Douaouda", "Bourkika", "Khemisti", "Aghbal", "Hadjout", "Sidi Amar", "Gouraya", "Nador", "Chaiba", "Aïn Tagourait", "Cherchell", "Damous", "Merad", "Fouka", "Bou Ismaïl", "Ahmar El Aïn", "Bouharoun", "Sidi Ghiles", "Messelmoun", "Sidi Rached", "Koléa", "Attatba", "Sidi Semiane", "Beni Milleuk", "Hadjeret Ennous"] },
+    { "w": "Mila", "c": ["Ahmed Rachedi", "Aïn Beida Harriche", "Aïn Mellouk", "Aïn Tine", "Amira Arrès", "Benyahia Abderrahmane", "Bouhatem", "Chelghoum Laid", "Chigara", "Derradji Bousselah", "El Mechira", "Elayadi Barbes", "Ferdjioua", "Grarem Gouga", "Hamala", "Mila", "Minar Zarza", "Oued Athmania", "Oued Endja", "Oued Seguen", "Ouled Khalouf", "Rouached", "Sidi Khelifa", "Sidi Merouane", "Tadjenanet", "Tassadane Haddada", "Teleghma", "Terrai Bainen", "Tessala Lemtaï", "Tiberguent", "Yahia Beni Guecha", "Zeghaia"] },
+    { "w": "Aïn Defla", "c": ["Aïn Defla", "Aïn Bouyahia", "Aïn Benian", "Aïn Lechiekh", "Aïn Soltane", "Aïn Torki", "Arib", "Bathia", "Belaas", "Ben Allal", "Birbouche", "Bir Ould Khelifa", "Bordj Emir Khaled", "Boumedfaa", "Bourached", "Djelida", "Djemaa Ouled Cheikh", "Djendel", "El Abadia", "El Amra", "El Attaf", "El Hassania", "El Maine", "Hammam Righa", "Hoceinia", "Khemis Miliana", "Mekhatria", "Miliana", "Oued Chorfa", "Oued Djemaa", "Rouina", "Sidi Lakhdar", "Tacheta Zougagha", "Tarik Ibn Ziad", "Tiberkanine", "Zeddine"] },
+    { "w": "Naâma", "c": ["Naâma", "Mecheria", "Aïn Sefra", "Tiout", "Sfissifa", "Moghrar", "Assela", "Djeniene Bourezg", "Aïn Ben Khelil", "Makman Ben Amer", "Kasdir", "El Biod"] },
+    { "w": "Aïn Témouchent", "c": ["Aghlal", "Aïn El Arbaa", "Aïn Kihal", "Aïn Témouchent", "Aïn Tolba", "Aoubellil", "Beni Saf", "Bouzedjar", "Chaabat El Leham", "Chentouf", "El Amria", "El Emir Abdelkader", "El Malah", "El Messaid", "Hammam Bouhadjar", "Hassasna", "Hassi El Ghella", "Oued Berkeche", "Oued Sabah", "Ouled Boudjemaa", "Ouled Kihal", "Oulhaça El Gheraba", "Sidi Ben Adda", "Sidi Boumedienne", "Sidi Ouriache", "Sidi Safi", "Tamzoura", "Terga"] },
+    { "w": "Ghardaïa", "c": ["Berriane", "Bounoura", "Dhayet Bendhahoua", "El Atteuf", "El Guerrara", "Ghardaïa", "Mansoura", "Metlili", "Sebseb", "Zelfana"] },
+    { "w": "Relizane", "c": ["Aïn Rahma", "Aïn Tarek", "Ammi Moussa", "Belassel Bouzegza", "Bendaoud", "Beni Dergoun", "Beni Zentis", "Dar Ben Abdellah", "Djidioua", "El Guettar", "El Hamadna", "El Hassi", "El Matmar", "El Ouldja", "Had Echkalla", "Hamri", "Kalaa", "Lahlef", "Mazouna", "Mediouna", "Mendes", "Merdja Sidi Abed", "Ouarizane", "Oued Essalem", "Oued Rhiou", "Ouled Aiche", "Oued El Djemaa", "Ouled Sidi Mihoub", "Ramka", "Relizane", "Sidi Khettab", "Sidi Lazreg", "Sidi M'Hamed Ben Ali", "Sidi M'Hamed Benaouda", "Sidi Saada", "Souk El Had", "Yellel", "Zemmora"] },
+    { "w": "Timimoun", "c": ["Charouine", "Ksar Kaddour", "Timimoun", "Ouled Saïd", "Tinerkouk", "Deldoul", "Metarfa", "Aougrout", "Talmine", "Ouled Aïssa"] },
+    { "w": "Bordj Badji Mokhtar", "c": ["Bordj Badji Mokhtar", "Timiaouine"] },
+    { "w": "Ouled Djellal", "c": ["Besbes", "Doucen", "Ech Chaïba", "Ouled Djellal", "Ras El Miaad", "Sidi Khaled"] },
+    { "w": "Béni Abbès", "c": ["Ouled Khoudir", "Béni Abbès"] },
+    { "w": "In Salah", "c": ["In Salah"] },
+    { "w": "In Guezzam", "c": ["In Guezzam"] },
+    { "w": "Touggourt", "c": ["Touggourt", "Temacine"] },
+    { "w": "Djanet", "c": ["Djanet"] },
+    { "w": "El M'Ghair", "c": ["El M'Ghair"] },
+    { "w": "El Meniaa", "c": ["El Meniaa"] }
+];
+
+(function(){
+  'use strict';
+
+  var video = document.getElementById('ad-video');
+  var overlay = document.getElementById('play-overlay');
+  if (video && overlay) {
+    overlay.addEventListener('click', function(){
+      video.controls = true;
+      video.play();
+      overlay.style.display = 'none';
+    });
+    video.addEventListener('pause', function(){ if(!video.ended) overlay.style.display='grid'; });
+    video.addEventListener('play', function(){ overlay.style.display='none'; });
+  }
+
+  var sticky = document.getElementById('sticky-cta');
+  var order = document.getElementById('order-form');
+  window.addEventListener('scroll', function(){
+    if (!sticky || !order) return;
+    var show = window.scrollY > 560;
+    var r = order.getBoundingClientRect();
+    var visible = r.top < window.innerHeight && r.bottom > 80;
+    sticky.classList.toggle('show', show && !visible);
+  }, {passive:true});
+
+  document.querySelectorAll('.qb').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var a = item.querySelector('.qa');
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.q.open').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.qa').style.maxHeight = null;
+        i.querySelector('.qb').setAttribute('aria-expanded','false');
+      });
+      if (!open) {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  var wilayaSelect = document.getElementById('wilaya');
+  var citySelect = document.getElementById('city');
+  if (wilayaSelect && typeof LOCATIONS_DATA !== 'undefined') {
+    var wOpts = '<option value="" disabled selected>Sélectionner…</option>';
+    LOCATIONS_DATA.forEach(function(loc, i){
+      var code = String(i + 1).padStart(2, '0');
+      wOpts += '<option value="' + code + ' - ' + loc.w + '" data-idx="' + i + '">' + code + ' - ' + loc.w + '</option>';
+    });
+    wilayaSelect.innerHTML = wOpts;
+    wilayaSelect.addEventListener('change', function(){
+      var idx = wilayaSelect.options[wilayaSelect.selectedIndex].getAttribute('data-idx');
+      var cOpts = '<option value="" disabled selected>Sélectionner…</option>';
+      citySelect.disabled = true;
+      if (idx !== null && LOCATIONS_DATA[idx]) {
+        LOCATIONS_DATA[idx].c.forEach(function(c){
+          cOpts += '<option value="' + c.replace(/"/g,'&quot;') + '">' + c + '</option>';
+        });
+        citySelect.innerHTML = cOpts;
+        citySelect.disabled = false;
+      } else {
+        citySelect.innerHTML = cOpts;
+      }
+    });
+  }
+
+  function validDzPhone(v){
+    if (!v) return false;
+    var d = v.replace(/\D/g,'');
+    if (d.indexOf('00213')===0) d = d.slice(5);
+    else if (d.indexOf('213')===0) d = d.slice(3);
+    return /^0?[5-7]\d{8}$/.test(d);
+  }
+  function mark(el, bad){ el.classList.toggle('bad', !!bad); }
+
+  var form = document.getElementById('clinixos-form');
+  var wrapper = document.getElementById('form-wrapper');
+  var success = document.getElementById('success-message');
+  var err = document.getElementById('form-error');
+  var btn = document.getElementById('submit-btn');
+
+  if (form) {
+    var iframe = document.createElement('iframe');
+    iframe.name = 'hidden_iframe';
+    iframe.id = 'hidden_iframe';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    form.target = 'hidden_iframe';
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      err.style.display = 'none';
+
+      var name = document.getElementById('name');
+      var specialty = document.getElementById('specialty');
+      var phone = document.getElementById('phone');
+      var phone2 = document.getElementById('phone2');
+      var wilaya = document.getElementById('wilaya');
+      var city = document.getElementById('city');
+      var address = document.getElementById('address');
+      var errors = [];
+
+      mark(name, !name.value.trim()); if(!name.value.trim()) errors.push('nom');
+      mark(specialty, !specialty.value.trim()); if(!specialty.value.trim()) errors.push('spécialité');
+      var pOk = validDzPhone(phone.value); mark(phone, !pOk); if(!pOk) errors.push('téléphone valide');
+      var p2Ok = !phone2.value.trim() || validDzPhone(phone2.value); mark(phone2, !p2Ok); if(!p2Ok) errors.push('second téléphone');
+      mark(wilaya, !wilaya.value); if(!wilaya.value) errors.push('wilaya');
+      mark(city, !city.value || city.disabled); if(!city.value || city.disabled) errors.push('commune');
+      mark(address, !address.value.trim()); if(!address.value.trim()) errors.push('adresse');
+
+      if (errors.length) {
+        err.textContent = 'Veuillez compléter : ' + errors.join(', ') + '.';
+        err.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'ENVOI DE VOTRE COMMANDE…';
+
+      try {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+          fbq('track', 'Purchase', {
+            currency: 'DZD',
+            value: 9900,
+            content_name: 'ClinixOS Pro - Cle USB',
+            content_type: 'product'
+          });
+        }
+      } catch(e){}
+
+      try { form.submit(); } catch(e){}
+
+      setTimeout(function(){
+        wrapper.style.display = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+      }, 1400);
+    });
+  }
+})();
+</script>
+</body>
+</html>
