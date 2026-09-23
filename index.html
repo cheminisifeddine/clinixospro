@@ -106,12 +106,23 @@ h1,h2,h3,h4{font-family:var(--hfont);line-height:1.2;letter-spacing:-.02em;color
 .video-shell{position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:var(--shadow);overflow:hidden}
 .video-frame{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(145deg,#081722,#003A94);aspect-ratio:16/10}
 .video-frame video{width:100%;height:100%;object-fit:cover}
-.video-fallback{position:absolute;inset:0;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px;background:radial-gradient(600px 300px at 50% 0%,rgba(17,153,254,.45),transparent),linear-gradient(145deg,#081722,#003A94)}
-.video-fallback h3{color:#fff;font-size:1.15rem}
-.video-fallback p{color:#BFDBFE;font-size:.88rem;max-width:34ch}
+.mock{position:absolute;inset:0;display:flex;flex-direction:column;background:linear-gradient(150deg,#0B2440 0%,#003A94 70%,#0B7FE0 130%);color:#fff;padding:0}
+.mock-bar{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.mock-bar span{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.35)}
+.mock-bar span:first-child{background:#FF5F57}.mock-bar span:nth-child(2){background:#FEBC2E}.mock-bar span:nth-child(3){background:#28C840}
+.mock-bar b{margin-left:8px;font-size:.78rem;font-weight:600;color:#DBEAFE;font-family:var(--font)}
+.mock-body{flex:1;display:grid;grid-template-columns:86px 1fr;gap:14px;padding:16px}
+.mock-side{background:rgba(255,255,255,.08);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:9px}
+.mock-side i{display:block;height:9px;border-radius:6px;background:rgba(255,255,255,.3)}
+.mock-side i:first-child{background:#7CC4FF;height:11px}
+.mock-main{background:#fff;border-radius:14px;padding:16px;color:var(--ink);display:flex;flex-direction:column;gap:9px;box-shadow:0 14px 30px -12px rgba(0,0,0,.45)}
+.mock-title{font-family:var(--hfont);font-weight:800;font-size:.86rem;color:var(--deep)}
+.mock-line{height:10px;border-radius:6px;background:#E2E8F0}
+.mock-line.w90{width:90%}.mock-line.w70{width:70%}.mock-line.w80{width:80%}
+.mock-pill{align-self:flex-start;background:linear-gradient(135deg,#2FA9FF,#004EB8);color:#fff;font-size:.76rem;font-weight:700;padding:8px 16px;border-radius:999px;margin-top:4px}
 .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(8,23,34,.3);cursor:pointer;border:none;width:100%;z-index:2}
-.play-btn{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,#2FA9FF,#004EB8);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(17,153,254,.28);animation:pulse 2.2s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 12px rgba(17,153,254,.28)}50%{box-shadow:0 0 0 20px rgba(17,153,254,.1)}}
+.play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(8,23,34,.3);cursor:pointer;border:none;width:100%;z-index:2}
+.play-btn{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,#2FA9FF,#004EB8);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(17,153,254,.28)}
 .float-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 16px 40px -16px rgba(0,78,184,.3);font-size:.78rem;font-weight:700;display:flex;gap:10px;align-items:center;z-index:3;color:var(--ink)}
 .float-card.a{left:-14px;bottom:20%}
 .float-card.b{right:-8px;top:12%}
@@ -391,19 +402,20 @@ footer .fine{font-size:.75rem;opacity:.75;margin-top:14px;max-width:660px;margin
     </div>
     <div class="visual">
       <div class="video-shell">
-        <div class="video-frame">
-          <video id="ad-video" playsinline preload="metadata" poster="">
-            <source src="video-ad.mp4" type="video/mp4">
-          </video>
-          <div class="video-fallback" id="video-fallback">
-            <h3>Votre cabinet, enfin organisé.</h3>
-            <p>Dossiers patients · Ordonnances A5 en 5 secondes · Zéro internet requis</p>
+        <div class="video-frame" id="product-preview" aria-label="Aperçu ClinixOS Pro">
+          <div class="mock">
+            <div class="mock-bar"><span></span><span></span><span></span><b>ClinixOS Pro — Dossier Patient</b></div>
+            <div class="mock-body">
+              <div class="mock-side"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="mock-main">
+                <div class="mock-title">Ordonnance A5 — prête en 5 secondes</div>
+                <div class="mock-line w90"></div>
+                <div class="mock-line w70"></div>
+                <div class="mock-line w80"></div>
+                <div class="mock-pill">🖨 Imprimer</div>
+              </div>
+            </div>
           </div>
-          <button class="play" id="play-overlay" type="button" aria-label="Voir la démonstration">
-            <span class="play-btn" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
         </div>
       </div>
       <div class="float-card a">
@@ -692,7 +704,7 @@ footer .fine{font-size:.75rem;opacity:.75;margin-top:14px;max-width:660px;margin
     <div class="center" style="margin-bottom:30px">
       <span class="eyebrow">Commande en 60 secondes</span>
       <h2 class="h2">Recevez votre clé USB <span class="blue">sans payer en ligne</span></h2>
-      <p class="sub">Remplissez ce formulaire. Notre équipe vous appelle sous 30 minutes pour confirmer, puis la clé part par Yalidine / Maystro. Vous payez 9 900 DA en espèces, à la réception.</p>
+      <p class="sub">Remplissez ce formulaire. Notre équipe vous appelle dans les plus brefs délais pour confirmer, puis la clé part par Yalidine / Maystro. Vous payez 9 900 DA en espèces, à la réception.</p>
     </div>
     <div class="order-layout">
       <div class="order">
@@ -718,16 +730,27 @@ footer .fine{font-size:.75rem;opacity:.75;margin-top:14px;max-width:660px;margin
 
               <div class="fld">
                 <label for="specialty">Spécialité médicale <span class="req">*</span></label>
-                <input type="text" id="specialty" name="specialty" required list="specialties" placeholder="Ex : Médecine Générale, Pédiatrie…">
-                <datalist id="specialties">
-                  <option value="Médecine Générale"><option value="Pédiatrie"><option value="Gynécologie-Obstétrique">
-                  <option value="Cardiologie"><option value="Dermatologie"><option value="Ophtalmologie">
-                  <option value="ORL"><option value="Chirurgie Générale"><option value="Médecine Interne">
-                  <option value="Neurologie"><option value="Psychiatrie"><option value="Radiologie">
-                  <option value="Anesthésie-Réanimation"><option value="Médecine du Travail">
-                  <option value="Dentaire / Chirurgie Dentaire"><option value="Kinésithérapie">
-                  <option value="Laboratoire d'Analyses">
-                </datalist>
+                <select id="specialty" name="specialty" required>
+                  <option value="" disabled selected>Choisir votre spécialité…</option>
+                  <option value="Médecine Générale">Médecine Générale</option>
+                  <option value="Pédiatrie">Pédiatrie</option>
+                  <option value="Gynécologie-Obstétrique">Gynécologie-Obstétrique</option>
+                  <option value="Cardiologie">Cardiologie</option>
+                  <option value="Dermatologie">Dermatologie</option>
+                  <option value="Ophtalmologie">Ophtalmologie</option>
+                  <option value="ORL">ORL</option>
+                  <option value="Chirurgie Générale">Chirurgie Générale</option>
+                  <option value="Médecine Interne">Médecine Interne</option>
+                  <option value="Neurologie">Neurologie</option>
+                  <option value="Psychiatrie">Psychiatrie</option>
+                  <option value="Radiologie">Radiologie</option>
+                  <option value="Anesthésie-Réanimation">Anesthésie-Réanimation</option>
+                  <option value="Médecine du Travail">Médecine du Travail</option>
+                  <option value="Dentaire / Chirurgie Dentaire">Dentaire / Chirurgie Dentaire</option>
+                  <option value="Kinésithérapie">Kinésithérapie</option>
+                  <option value="Laboratoire d'Analyses">Laboratoire d'Analyses</option>
+                  <option value="Autre">Autre spécialité</option>
+                </select>
               </div>
 
               <div class="row2">
@@ -772,7 +795,7 @@ footer .fine{font-size:.75rem;opacity:.75;margin-top:14px;max-width:660px;margin
             <div class="ck">✓</div>
             <h3>Commande enregistrée, Docteur !</h3>
             <p>Votre clé ClinixOS Pro est réservée au tarif de lancement de <strong>9 900 DA</strong>.</p>
-            <p>Notre équipe vous appelle sous <strong>30 minutes</strong> pour confirmer l'adresse.</p>
+            <p>Notre équipe vous appellera <strong>dans les plus brefs délais</strong> pour confirmer l'adresse.</p>
             <div class="bx">📦 Paiement en espèces à la livraison · Yalidine / Maystro</div>
           </div>
         </div>
@@ -787,7 +810,7 @@ footer .fine{font-size:.75rem;opacity:.75;margin-top:14px;max-width:660px;margin
         <div class="sum-save">🔥 Vous économisez 25 100 DA</div>
         <div class="sum-row total"><span class="tl">Total à payer</span><span class="tv">9 900 DA</span></div>
         <ul class="sum-list">
-          <li><span class="ck">✓</span> Appel de confirmation sous 30 minutes</li>
+          <li><span class="ck">✓</span> Appel de confirmation dans les plus brefs délais</li>
           <li><span class="ck">✓</span> Vérifiez le colis avant de payer</li>
           <li><span class="ck">✓</span> Installation en 2 clics + assistance</li>
           <li><span class="ck">✓</span> 100% hors-ligne, zéro abonnement</li>
@@ -937,25 +960,8 @@ const LOCATIONS_DATA = [
     });
   }
 
-  var video = document.getElementById('ad-video');
-  var overlay = document.getElementById('play-overlay');
-  var fallback = document.getElementById('video-fallback');
-  function hideOverlay(){ if (overlay) overlay.style.display = 'none'; }
-  if (video && overlay) {
-    video.addEventListener('error', function(){ if (fallback) fallback.style.display = 'flex'; hideOverlay(); }, true);
-    var src = video.querySelector('source');
-    if (src) src.addEventListener('error', function(){ if (fallback) fallback.style.display = 'flex'; hideOverlay(); });
-    overlay.addEventListener('click', function(){
-      if (!video.querySelector('source').getAttribute('src')) { hideOverlay(); return; }
-      video.setAttribute('controls','');
-      var p = video.play();
-      if (p && p.catch) p.catch(function(){});
-      hideOverlay();
-    });
-    video.addEventListener('pause', function(){ if(!video.ended && video.currentTime > 0 && overlay) overlay.style.display='grid'; });
-    video.addEventListener('play', function(){ hideOverlay(); });
-    video.addEventListener('loadeddata', function(){ if (fallback) fallback.style.display = 'none'; });
-  }
+  /* Démo vidéo masquée pour le moment — aperçu produit statique affiché à la place.
+     Pour réactiver : remettre <video id="ad-video"> + #play-overlay dans .video-frame. */
 
   var sticky = document.getElementById('sticky-cta');
   var order = document.getElementById('order-form');
@@ -1047,13 +1053,19 @@ const LOCATIONS_DATA = [
     document.body.appendChild(iframe);
     form.target = 'hidden_iframe';
 
-    ['name','specialty','phone','phone2','address'].forEach(function(id){
+    ['name','phone','phone2','address'].forEach(function(id){
       var el = document.getElementById(id);
       if (el) el.addEventListener('input', function(){ el.classList.remove('bad'); });
     });
-    ['wilaya','city'].forEach(function(id){
+    ['specialty','wilaya','city'].forEach(function(id){
       var el = document.getElementById(id);
       if (el) el.addEventListener('change', function(){ el.classList.remove('bad'); });
+    });
+
+    var checkoutFired = false;
+    form.addEventListener('focusin', function(){
+      if (checkoutFired) return; checkoutFired = true;
+      try { if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', {currency:'DZD', value:9900, content_name:'ClinixOS Pro - Cle USB'}); } catch(e){}
     });
 
     form.addEventListener('submit', function(e){
