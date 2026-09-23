@@ -5,7 +5,7 @@ High-converting French landing page for ClinixOS Pro (medical clinic software, A
 - Single-file HTML + CSS (no framework) — fast for Meta Andromeda post-click
 - COD order form: name, specialty, phone, secondary phone, wilaya (58), city, address
 - Meta Pixel `3184145215124032` — Lead + Purchase events
-- Live: **https://clinixospro.com** (Cloudflare Pages + zone `nina`/`ram.ns.cloudflare.com`)
+- Live: **https://clinixospro.com** (+ `www`, Cloudflare zone active, Pages custom domains active)
 
 ## Local
 
