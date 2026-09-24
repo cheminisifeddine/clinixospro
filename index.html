@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="fr"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ClinixOS Pro — Le logiciel qui fait gagner votre cabinet | 9 900 DA au lieu de 35 000 DA</title>
 <meta name="description" content="Docteur, arrêtez de perdre du temps et des patients. ClinixOS Pro : dossiers patients, ordonnances A5 en 5 secondes, 100% hors-ligne. Offre de lancement : 9 900 DA au lieu de 35 000 DA — 20 premiers cabinets. Paiement à la livraison, 58 wilayas."/>
 <meta name="keywords" content="logiciel médical Algérie, logiciel cabinet médecin, gestion cabinet libéral, ordonnance Algérie, logiciel hors-ligne médecin, ClinixOS Pro"/>
-<meta name="theme-color" content="#004EB8"/>
+<meta name="theme-color" content="#1D4ED8"/>
 <meta property="og:title" content="ClinixOS Pro — Chaque jour sans système, votre cabinet perd de l'argent"/>
 <meta property="og:description" content="Offre de lancement : 9 900 DA au lieu de 35 000 DA — licence complète à vie. 20 premiers cabinets. Paiement à la livraison, 58 wilayas."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="fr_DZ"/>
-<link href="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev" rel="preconnect"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -21,1317 +25,830 @@ document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','3184145215124032');fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3184145215124032&ev=PageView&noscript=1"/></noscript>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: "#f0f7ff",
-              100: "#e0efff",
-              200: "#bae0ff",
-              300: "#7cc5ff",
-              400: "#36a3ff",
-              500: "#0284c7",
-              600: "#0062d2",
-              700: "#004eb8",
-              800: "#003b8e",
-              900: "#062b66",
-              navy: "#0a192f"
-            },
-            clinical: {
-              surface: "#ffffff",
-              card: "#f8faff",
-              border: "#dbeafe",
-              borderStrong: "#bfdbfe",
-              subtle: "#f0f6ff",
-              textPrimary: "#0c1e3a",
-              textSecondary: "#334155",
-              textMuted: "#64748b"
-            },
-            accent: {
-              emerald: "#10b981",
-              emeraldLight: "#ecfdf5",
-              coral: "#ef4444",
-              coralLight: "#fef2f2",
-              amber: "#f59e0b",
-              amberLight: "#fffbeb",
-              cyan: "#0ea5e9",
-              cyanLight: "#f0f9ff"
-            }
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
-          },
-          boxShadow: {
-            'clinical-sm': '0 1px 3px 0 rgba(2, 132, 199, 0.05), 0 1px 2px -1px rgba(2, 132, 199, 0.05)',
-            'clinical': '0 4px 20px -2px rgba(0, 78, 184, 0.07), 0 2px 6px -1px rgba(0, 78, 184, 0.04)',
-            'clinical-lg': '0 12px 36px -4px rgba(0, 78, 184, 0.12), 0 4px 12px -2px rgba(0, 78, 184, 0.06)',
-            'clinical-glow': '0 0 25px -3px rgba(0, 78, 184, 0.25)',
-          }
-        }
-      }
-    }
-  </script>
 <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      overscroll-behavior: none;
-      background-color: #ffffff;
-      color: #0c1e3a;
-    }
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .material-symbols-outlined.fill {
-      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
-    }
-  </style>
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
+  section{scroll-margin-top:88px}
+  select.fld-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;appearance:none;-webkit-appearance:none}
+  #sticky-cta{transform:translateY(110%);transition:transform .3s ease}
+  #sticky-cta.show{transform:translateY(0)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq-icon{transition:transform .25s ease}
+  .q-open .faq-icon{transform:rotate(180deg)}
+  svg.lucide{flex-shrink:0}
+</style>
 </head>
-<body class="bg-white text-clinical-textPrimary antialiased selection:bg-brand-100 selection:text-brand-800">
-<!-- TOP ANNOUNCEMENT BANNER -->
-<aside aria-label="Offre promotionnelle" class="relative md:fixed md:top-0 md:left-0 md:right-0 z-50 bg-gradient-to-r from-brand-700 via-brand-600 to-brand-700 text-white text-xs font-semibold py-2 px-4 shadow-sm">
-<div class="max-w-6xl mx-auto flex items-center justify-between">
-<div class="flex items-center gap-2 mx-auto">
-<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent-amber text-slate-900 text-[10px] font-black">🔥</span>
-<span>Offre de lancement : <strong>-72% pour les 20 premiers cabinets</strong> (9 900 DA au lieu de 35 000 DA) • Paiement à la livraison 58 Wilayas</span>
+<body class="bg-white text-slate-900 antialiased">
+
+<!-- Announcement -->
+<div class="bg-white border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 py-2.5 flex justify-center">
+    <span class="inline-flex items-center border border-slate-200 bg-white text-slate-700 text-xs font-medium px-3 py-1 rounded-full">Offre de lancement officielle · 20 premières licences cabinet</span>
+  </div>
 </div>
-<span class="hidden md:inline-flex items-center gap-1 text-[11px] bg-white/15 px-2.5 py-0.5 rounded-full font-medium">
-<span class="w-1.5 h-1.5 rounded-full bg-accent-emerald animate-pulse"></span>
-        Stock USB Prêt
-      </span>
-</div>
-</aside>
-<!-- NAVIGATION HEADER -->
-<header class="sticky top-0 md:fixed md:top-[32px] md:left-0 md:right-0 z-40 bg-white/95 backdrop-blur-md border-b border-clinical-border shadow-clinical-sm transition-all duration-200">
-<div class="max-w-6xl mx-auto h-20 px-4 md:px-6 flex items-center justify-between">
-<!-- ClinixOS Logo from DataStore -->
-<a class="flex items-center gap-3 group focus:outline-none" href="#">
-<img alt="ClinixOS Pro — Solution Médicale" class="h-9 md:h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]" fetchpriority="high" decoding="async" src="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
-<span class="hidden sm:inline-block text-[11px] font-bold tracking-wide uppercase px-2 py-0.5 rounded-md bg-brand-50 border border-brand-200 text-brand-700">
-          DZ Édition Libérale
-        </span>
-</a>
-<!-- Primary Anchor Navigation -->
-<nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-7 text-[13.5px] font-semibold text-clinical-textSecondary">
-<a class="hover:text-brand-700 transition-colors" href="#probleme">Le Problème</a>
-<a class="hover:text-brand-700 transition-colors" href="#solution">Solution</a>
-<a class="hover:text-brand-700 transition-colors" href="#fonctionnalites">Fonctionnalités</a>
-<a class="hover:text-brand-700 transition-colors" href="#comparatif">Comparatif</a>
-<a class="hover:text-brand-700 transition-colors" href="#tarifs">Tarifs</a>
-<a class="hover:text-brand-700 transition-colors" href="#faq">FAQ</a>
-</nav>
-<!-- Action Button -->
-<div class="flex items-center gap-3">
-<a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-brand-700 hover:bg-brand-800 active:scale-[0.98] text-white font-bold text-sm shadow-clinical transition-all" href="#commander">
-<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
-<span>Commander — 9 900 DA</span>
-</a>
-</div>
-</div>
+
+<!-- Navigation -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
+    <a href="#top" class="flex items-center gap-3" aria-label="ClinixOS Pro — Accueil">
+      <img src="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png" alt="ClinixOS" width="168" height="42" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="this.style.display='none';document.getElementById('brand-fb').style.display='block'"/>
+      <span id="brand-fb" style="display:none" class="text-lg font-bold tracking-tight">ClinixOS</span>
+    </a>
+    <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
+      <a class="hover:text-blue-700 transition-colors" href="#probleme">Le Problème</a>
+      <a class="hover:text-blue-700 transition-colors" href="#solution">Solution</a>
+      <a class="hover:text-blue-700 transition-colors" href="#fonctionnalites">Fonctionnalités</a>
+      <a class="hover:text-blue-700 transition-colors" href="#comparatif">Comparatif</a>
+      <a class="hover:text-blue-700 transition-colors" href="#tarifs">Tarifs</a>
+      <a class="hover:text-blue-700 transition-colors" href="#faq">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#commander" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-semibold text-sm transition-colors">
+        <svg class="lucide" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span>Commander — 9 900 DA</span>
+      </a>
+      <button id="burger" type="button" aria-label="Menu" aria-expanded="false" class="lg:hidden w-11 h-11 rounded-lg border border-slate-200 bg-white inline-flex items-center justify-center text-slate-700">
+        <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-2">
+    <a href="#probleme" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Le Problème</a>
+    <a href="#solution" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Solution</a>
+    <a href="#fonctionnalites" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Fonctionnalités</a>
+    <a href="#comparatif" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Comparatif</a>
+    <a href="#tarifs" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Tarifs</a>
+    <a href="#faq" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">FAQ</a>
+    <a href="#commander" class="block py-3 text-sm font-semibold text-blue-700">Commander — 9 900 DA</a>
+  </div>
 </header>
-<main class="pt-0 md:pt-[116px] overflow-hidden">
-<!-- 1. HERO SECTION -->
-<section class="relative pt-8 pb-16 md:pt-14 md:pb-24 bg-gradient-to-b from-brand-50/70 via-clinical-subtle/40 to-white">
-<!-- Decorative medical background subtle grid -->
-<div class="absolute inset-0 bg-[radial-gradient(#004eb8_0.75px,transparent_0.75px)] [background-size:24px_24px] opacity-[0.035] pointer-events-none"></div>
-<div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
-<!-- Algerian Medical Pill Tag -->
-<div class="flex items-center mb-6">
-<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-200 shadow-clinical-sm text-xs font-semibold text-clinical-textPrimary">
-<span class="text-sm leading-none">🇩🇿</span>
-<span class="text-brand-700 font-bold">Conçu pour les cabinets médicaux en Algérie</span>
-<span class="w-1.5 h-1.5 rounded-full bg-accent-emerald"></span>
-<span class="text-clinical-textMuted font-medium">Édition 2026</span>
-</div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-<!-- Hero Left Column -->
-<div class="lg:col-span-7 flex flex-col items-start text-left">
-<h1 class="text-3xl sm:text-4xl lg:text-[44px] lg:leading-[1.18] font-extrabold text-clinical-textPrimary tracking-tight mb-5">
-              Docteur, chaque jour sans système, votre cabinet <span class="text-brand-700 underline decoration-brand-300 decoration-wavy underline-offset-4">perd du temps,</span> des patients... <span class="text-accent-coral">et des revenus.</span>
-</h1>
-<p class="text-base sm:text-lg text-clinical-textSecondary leading-relaxed mb-6 max-w-xl">
-              Dossiers papier égarés, ordonnances manuscrites interminables, salle d'attente qui déborde, secrétaire débordée : <strong class="text-clinical-textPrimary font-bold">ClinixOS Pro</strong> remet de l'ordre dans votre cabinet — <span class="text-brand-700 font-semibold bg-brand-50 px-1.5 py-0.5 rounded border border-brand-200">sans Internet, sans abonnement, sans technicien.</span>
-</p>
-<!-- Diagnostic Alert Box: Clinical Reality -->
-<div class="w-full max-w-xl p-4 sm:p-5 rounded-2xl bg-accent-amberLight border border-amber-200 text-clinical-textPrimary mb-7 shadow-clinical-sm">
-<div class="flex items-start gap-3">
-<div class="p-1 rounded-lg bg-amber-100 text-accent-amber shrink-0 mt-0.5">
-<span class="material-symbols-outlined fill text-[22px]">warning</span>
-</div>
-<div class="text-sm leading-relaxed text-slate-800">
-<strong class="font-bold text-amber-900 block mb-0.5">⚠️ La réalité clinique :</strong>
-                  10 minutes perdues par patient × 30 patients = <strong class="font-extrabold text-accent-coral underline decoration-accent-coral/30">5 heures envolées chaque jour.</strong> Pendant ce temps, vos patients s'impatientent... et certains ne reviennent jamais.
-                </div>
-</div>
-</div>
-<!-- Direct CTA Button & Trust Badges -->
-<div class="w-full max-w-xl flex flex-col gap-3.5">
-<a class="group relative flex items-center justify-between px-6 py-4 rounded-2xl bg-brand-700 hover:bg-brand-800 active:scale-[0.99] text-white shadow-clinical-lg hover:shadow-clinical-glow transition-all" href="#commander">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-accent-amber">
-<span class="material-symbols-outlined text-[24px]">usb</span>
-</div>
-<div class="text-left">
-<div class="text-base sm:text-lg font-extrabold tracking-tight">Commander la clé USB — Offre 9 900 DA</div>
-<div class="text-xs text-brand-100 font-medium">Paiement à la livraison après inspection du colis</div>
-</div>
-</div>
-<span class="material-symbols-outlined text-white text-[24px] transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</a>
-<!-- 4 Micro Trust Badges -->
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 text-xs font-semibold text-clinical-textSecondary">
-<div class="flex items-center gap-1.5 p-2 rounded-lg bg-clinical-card border border-clinical-border">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px]">verified_user</span>
-<span>Paiement à la livraison</span>
-</div>
-<div class="flex items-center gap-1.5 p-2 rounded-lg bg-clinical-card border border-clinical-border">
-<span class="material-symbols-outlined fill text-brand-600 text-[18px]">local_shipping</span>
-<span>58 wilayas (Yalidine)</span>
-</div>
-<div class="flex items-center gap-1.5 p-2 rounded-lg bg-clinical-card border border-clinical-border">
-<span class="material-symbols-outlined fill text-accent-cyan text-[18px]">wifi_off</span>
-<span>100% hors-ligne</span>
-</div>
-<div class="flex items-center gap-1.5 p-2 rounded-lg bg-clinical-card border border-clinical-border">
-<span class="material-symbols-outlined fill text-brand-700 text-[18px]">all_inclusive</span>
-<span>Licence à vie (0 DA/mois)</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Hero Right Column: Medical Software Dashboard Preview -->
-<div class="lg:col-span-5 relative flex justify-center">
-<div class="relative w-full max-w-[490px]">
-<!-- Clinical Ambient Glow -->
-<div class="absolute -inset-3 bg-gradient-to-tr from-brand-200/50 via-accent-cyanLight/40 to-brand-100/60 rounded-3xl blur-xl pointer-events-none"></div>
-<!-- Terminal Window Frame -->
-<div class="relative bg-white rounded-2xl shadow-clinical-lg border border-clinical-borderStrong overflow-hidden">
-<!-- Mac/Windows OS Header Bar -->
-<div class="bg-gradient-to-r from-brand-800 to-brand-900 px-4 py-3 flex items-center justify-between text-white">
-<div class="flex items-center gap-2">
-<div class="flex gap-1.5">
-<span class="w-3 h-3 rounded-full bg-accent-coral/90"></span>
-<span class="w-3 h-3 rounded-full bg-accent-amber/90"></span>
-<span class="w-3 h-3 rounded-full bg-accent-emerald/90"></span>
-</div>
-<span class="text-xs font-semibold text-brand-100 ml-2 tracking-wide">ClinixOS Pro v4.2 — Cabinet Médical</span>
-</div>
-<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-emerald/20 text-accent-emerald text-[11px] font-bold border border-accent-emerald/30">
-<span class="w-1.5 h-1.5 rounded-full bg-accent-emerald animate-pulse"></span>
-<span>100% hors-ligne</span>
-</div>
-</div>
-<!-- Internal Patient Management Mockup Content -->
-<div class="p-5 bg-clinical-subtle space-y-3.5">
-<!-- Smart Search Field -->
-<div class="bg-white p-3 rounded-xl border border-clinical-border shadow-clinical-sm flex items-center gap-2 text-clinical-textMuted">
-<span class="material-symbols-outlined text-[20px] text-brand-700">search</span>
-<span class="text-xs text-clinical-textSecondary">Recherche patient : <strong class="text-brand-900 font-bold">BOUZID Amine (34 ans)</strong>...</span>
-</div>
-<!-- Patient Clinical File Card -->
-<div class="bg-white p-4 rounded-xl border border-clinical-border shadow-clinical-sm space-y-3">
-<div class="flex items-start justify-between">
-<div>
-<div class="text-sm font-extrabold text-clinical-textPrimary">Dossier N° 2025-0842</div>
-<div class="text-[11px] text-clinical-textMuted">Dernière visite : 18 Janvier 2025 • HTA Traitée</div>
-</div>
-<span class="px-2.5 py-0.5 rounded-md bg-accent-emeraldLight text-accent-emerald border border-emerald-200 text-[11px] font-extrabold uppercase">
-                        À jour
-                      </span>
-</div>
-<!-- Clinical Metric Grid -->
-<div class="grid grid-cols-3 gap-2 pt-1 text-center">
-<div class="bg-brand-50/70 border border-brand-100 p-2 rounded-lg">
-<div class="text-[11px] text-clinical-textMuted font-medium">Tension</div>
-<div class="text-base font-extrabold text-brand-700">13 / 8</div>
-</div>
-<div class="bg-brand-50/70 border border-brand-100 p-2 rounded-lg">
-<div class="text-[11px] text-clinical-textMuted font-medium">Glycémie</div>
-<div class="text-base font-extrabold text-slate-800">1.02 g/L</div>
-</div>
-<div class="bg-brand-50/70 border border-brand-100 p-2 rounded-lg">
-<div class="text-[11px] text-clinical-textMuted font-medium">Attente</div>
-<div class="text-base font-extrabold text-accent-emerald">04 min</div>
-</div>
-</div>
-</div>
-<!-- Quick Prescription Output Strip -->
-<div class="bg-white p-3 rounded-xl border border-clinical-border shadow-clinical-sm flex items-center justify-between">
-<div class="flex items-center gap-2.5">
-<div class="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center text-brand-700">
-<span class="material-symbols-outlined text-[20px]">print</span>
-</div>
-<div>
-<div class="text-xs font-bold text-clinical-textPrimary">Ordonnance A5 imprimée</div>
-<div class="text-[11px] text-clinical-textMuted">Format conforme • Signature prête</div>
-</div>
-</div>
-<span class="text-xs font-extrabold text-accent-emerald bg-accent-emeraldLight border border-emerald-200 px-2 py-1 rounded-md">
-                      5 secondes
-                    </span>
-</div>
-<!-- Quick Price Bar inside UI preview -->
-<div class="bg-gradient-to-r from-brand-800 to-brand-700 text-white p-3.5 rounded-xl flex items-center justify-between shadow-clinical-sm">
-<div>
-<span class="text-[11px] text-brand-200 line-through block">Tarif standard : 35 000 DA</span>
-<span class="text-xs text-accent-amber font-extrabold">Pack Clé USB Tout Inclus</span>
-</div>
-<div class="text-right">
-<span class="text-2xl font-black text-white leading-none">9 900</span>
-<span class="text-xs font-bold text-brand-100 ml-0.5">DA</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Floating Trust Badge -->
-<div class="absolute -bottom-3 -left-3 bg-white border border-brand-200 shadow-clinical px-3.5 py-2 rounded-xl flex items-center gap-2 z-20">
-<span class="material-symbols-outlined fill text-accent-emerald text-[20px]">security</span>
-<span class="text-xs font-bold text-clinical-textPrimary">Données 100% locales au cabinet</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 2. STAT COUNTERS BAR (KPI STRIP) -->
-<section class="w-full bg-white border-y border-clinical-border py-8 shadow-clinical-sm">
-<div class="max-w-6xl mx-auto px-4 md:px-6">
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-<div class="p-4 rounded-2xl bg-clinical-card border border-clinical-border text-center flex flex-col justify-center items-center hover:border-brand-300 transition-colors">
-<span class="text-3xl md:text-4xl font-extrabold text-brand-700 tracking-tight mb-1">5 sec</span>
-<span class="text-xs md:text-sm font-bold text-clinical-textPrimary">Pour imprimer une ordonnance A5</span>
-<span class="text-[11px] text-clinical-textMuted mt-0.5">Base médicamenteuse intégrée</span>
-</div>
-<div class="p-4 rounded-2xl bg-clinical-card border border-clinical-border text-center flex flex-col justify-center items-center hover:border-brand-300 transition-colors">
-<span class="text-3xl md:text-4xl font-extrabold text-accent-emerald tracking-tight mb-1">100%</span>
-<span class="text-xs md:text-sm font-bold text-clinical-textPrimary">Hors-ligne — Zéro Internet</span>
-<span class="text-[11px] text-clinical-textMuted mt-0.5">Insensible aux coupures ADSL / 4G</span>
-</div>
-<div class="p-4 rounded-2xl bg-clinical-card border border-clinical-border text-center flex flex-col justify-center items-center hover:border-brand-300 transition-colors">
-<span class="text-3xl md:text-4xl font-extrabold text-brand-600 tracking-tight mb-1">0 DA</span>
-<span class="text-xs md:text-sm font-bold text-clinical-textPrimary">D'abonnement mensuel</span>
-<span class="text-[11px] text-clinical-textMuted mt-0.5">Licence définitive à vie</span>
-</div>
-<div class="p-4 rounded-2xl bg-clinical-card border border-clinical-border text-center flex flex-col justify-center items-center hover:border-brand-300 transition-colors">
-<span class="text-3xl md:text-4xl font-extrabold text-accent-cyan tracking-tight mb-1">58</span>
-<span class="text-xs md:text-sm font-bold text-clinical-textPrimary">Wilayas couvertes</span>
-<span class="text-[11px] text-clinical-textMuted mt-0.5">Yalidine / Maystro à domicile ou cabinet</span>
-</div>
-</div>
-</div>
-</section>
-<!-- 3. PAIN POINTS SECTION ("ÇA VOUS PARLE, DOCTEUR ?") -->
-<section class="w-full py-16 md:py-24 bg-clinical-subtle/50" id="probleme">
-<div class="max-w-6xl mx-auto px-4 md:px-6">
-<div class="text-center max-w-2xl mx-auto mb-14">
-<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-coralLight border border-red-200 text-accent-coral text-xs font-extrabold uppercase tracking-wider mb-3">
-<span class="material-symbols-outlined text-[16px]">help</span>
-<span>Ça vous parle, Docteur ?</span>
-</div>
-<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-clinical-textPrimary tracking-tight mb-3">
-            Le vrai coût du <span class="text-accent-coral">« on a toujours fait comme ça »</span>
-</h2>
-<p class="text-sm sm:text-base text-clinical-textSecondary leading-relaxed">
-            Ce ne sont pas que des papiers qui s'envolent, c'est votre temps, votre énergie et vos revenus qui partent — chaque jour, un peu plus.
-          </p>
-</div>
-<!-- 6 Bento Cards -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-<!-- Card 1 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-200 transition-all">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-amberLight border border-amber-200 flex items-center justify-center text-accent-amber mb-4">
-<span class="material-symbols-outlined text-[26px]">folder_off</span>
-</div>
-<h3 class="text-lg font-bold text-clinical-textPrimary mb-2">
-                Le dossier introuvable devant le patient
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Vous fouillez les armoires pendant que la salle d'attente se remplit et que le patient vous regarde, gêné. L'autorité du médecin en prend un coup.
-              </p>
-</div>
-<div class="bg-accent-coralLight border border-red-200 p-3 rounded-xl text-xs text-clinical-textPrimary">
-<span class="font-bold text-accent-coral">Ce que ça coûte :</span> un patient qui attend trop = un patient qui change de praticien.
-            </div>
-</div>
-<!-- Card 2 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-200 transition-all">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-coralLight border border-red-200 flex items-center justify-center text-accent-coral mb-4">
-<span class="material-symbols-outlined text-[26px]">edit_document</span>
-</div>
-<h3 class="text-lg font-bold text-clinical-textPrimary mb-2">
-                L'ordonnance manuscrite interminable
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Écrire à la main pour chaque patient, raturer, recommencer. Puis le pharmacien vous appelle en pleine consultation parce qu'il n'arrive pas à lire votre écriture.
-              </p>
-</div>
-<div class="bg-accent-coralLight border border-red-200 p-3 rounded-xl text-xs text-clinical-textPrimary">
-<span class="font-bold text-accent-coral">Ce que ça coûte :</span> 5 à 10 minutes par patient = soit des heures perdues chaque semaine.
-            </div>
-</div>
-<!-- Card 3 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-200 transition-all">
-<div>
-<div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-700 mb-4">
-<span class="material-symbols-outlined text-[26px]">table_rows</span>
-</div>
-<h3 class="text-lg font-bold text-clinical-textPrimary mb-2">
-                Le fichier Excel qui a « disparu »
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Un mauvais clic, un virus, un vieux PC qui lâche — et des mois de suivi patients effacés d'un coup. Sans sauvegarde automatique, sans aucun recours.
-              </p>
-</div>
-<div class="bg-accent-coralLight border border-red-200 p-3 rounded-xl text-xs text-clinical-textPrimary">
-<span class="font-bold text-accent-coral">Ce que ça coûte :</span> des années d'historique médical parties en fumée. Irrécupérable.
-            </div>
-</div>
-<!-- Card 4 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-200 transition-all">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-cyanLight border border-sky-200 flex items-center justify-center text-accent-cyan mb-4">
-<span class="material-symbols-outlined text-[26px]">support_agent</span>
-</div>
-<h3 class="text-lg font-bold text-clinical-textPrimary mb-2">
-                La secrétaire débordée, vous aussi
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Elle note sur un cahier, vous criez les noms dans le couloir, personne ne sait qui est le suivant. Le chaos total de 11h à 14h dans le cabinet.
-              </p>
-</div>
-<div class="bg-accent-coralLight border border-red-200 p-3 rounded-xl text-xs text-clinical-textPrimary">
-<span class="font-bold text-accent-coral">Ce que ça coûte :</span> des erreurs de file, des patients énervés, une secrétaire épuisée.
-            </div>
-</div>
-<!-- Card 5 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-200 transition-all">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-coralLight border border-red-200 flex items-center justify-center text-accent-coral mb-4">
-<span class="material-symbols-outlined text-[26px]">cloud_off</span>
-</div>
-<h3 class="text-lg font-bold text-clinical-textPrimary mb-2">
-                Le logiciel « cloud » coupé par la 4G
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                La connexion ADSL ou 4G rame, le serveur distant bloque et votre logiciel médical payé cher devient totalement inutilisable en pleine consultation.
-              </p>
-</div>
-<div class="bg-accent-coralLight border border-red-200 p-3 rounded-xl text-xs text-clinical-textPrimary">
-<span class="font-bold text-accent-coral">Ce que ça coûte :</span> un abonnement payé pour un outil qui vous abandonne quand vous en avez besoin.
-            </div>
-</div>
-<!-- Card 6 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-200 transition-all">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-amberLight border border-amber-200 flex items-center justify-center text-accent-amber mb-4">
-<span class="material-symbols-outlined text-[26px]">query_stats</span>
-</div>
-<h3 class="text-lg font-bold text-clinical-textPrimary mb-2">
-                Les fins de mois floues
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Combien de consultations aujourd'hui ? Cette semaine ? Impossible à dire avec précision. Vous pilotez votre investissement de cabinet médical à l'aveugle.
-              </p>
-</div>
-<div class="bg-accent-coralLight border border-red-200 p-3 rounded-xl text-xs text-clinical-textPrimary">
-<span class="font-bold text-accent-coral">Ce que ça coûte :</span> sans chiffres clairs, impossible d'optimiser — l'argent s'évapore sans contrôle.
-            </div>
-</div>
-</div>
-<!-- Warning Callout Banner (Clinical Light Aesthetic) -->
-<div class="p-6 md:p-8 rounded-2xl bg-white border border-brand-200 shadow-clinical flex flex-col md:flex-row items-center gap-6">
-<div class="w-14 h-14 rounded-2xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-700 shrink-0">
-<span class="material-symbols-outlined fill text-[32px]">hourglass_top</span>
-</div>
-<div class="text-left space-y-1">
-<h4 class="text-base sm:text-lg font-bold text-brand-800">
-              Et pendant ce temps, vos confrères équipés avancent.
-            </h4>
-<p class="text-sm sm:text-base text-clinical-textSecondary leading-relaxed">
-              Chaque semaine sans système, l'écart se creuse : eux terminent à l'heure avec des dossiers impeccables, pendant que vous rattrapez le retard le soir. <strong class="text-clinical-textPrimary font-bold">Le cabinet qui s'organise aujourd'hui garde ses patients demain.</strong>
-</p>
-</div>
-</div>
-</div>
-</section>
-<!-- 4. SOLUTION SECTION ("ClinixOS Pro : votre cabinet, en ordre en 10 minutes") -->
-<section class="w-full py-16 md:py-24 bg-white" id="solution">
-<div class="max-w-6xl mx-auto px-4 md:px-6">
-<div class="text-center max-w-2xl mx-auto mb-14">
-<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-extrabold uppercase tracking-wider mb-3">
-<span class="material-symbols-outlined text-[16px]">verified</span>
-<span>La Solution Autonome</span>
-</div>
-<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-clinical-textPrimary tracking-tight mb-3">
-            ClinixOS Pro : votre cabinet, <span class="text-brand-700">en ordre en 10 minutes</span>
-</h2>
-<p class="text-sm sm:text-base text-clinical-textSecondary leading-relaxed">
-            Pas de formation compliquée, pas de technicien à recevoir, pas d'Internet requis. Trois gestes, et c'est réglé.
-          </p>
-</div>
-<!-- 3 Steps Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-<!-- Step 1 -->
-<div class="relative bg-clinical-card p-6 md:p-8 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-300 transition-all">
-<div>
-<div class="flex items-center justify-between mb-6">
-<span class="text-4xl font-black text-brand-200">01</span>
-<div class="w-12 h-12 rounded-xl bg-white border border-brand-200 flex items-center justify-center text-brand-700 shadow-clinical-sm">
-<span class="material-symbols-outlined text-[28px]">usb</span>
-</div>
-</div>
-<h3 class="text-xl font-bold text-clinical-textPrimary mb-2">
-                Branchez la clé USB
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-6">
-                La clé arrive chez vous par Yalidine / Maystro. Branchez-la sur n'importe quel PC Windows, lancez l'installateur en 2 clics. Tout est déjà configuré.
-              </p>
-</div>
-<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-brand-200 text-brand-700 text-xs font-bold w-fit shadow-clinical-sm">
-<span class="material-symbols-outlined text-[16px]">timer</span>
-<span>Moins de 10 minutes</span>
-</div>
-</div>
-<!-- Step 2 -->
-<div class="relative bg-clinical-card p-6 md:p-8 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-300 transition-all">
-<div>
-<div class="flex items-center justify-between mb-6">
-<span class="text-4xl font-black text-brand-200">02</span>
-<div class="w-12 h-12 rounded-xl bg-white border border-brand-200 flex items-center justify-center text-brand-700 shadow-clinical-sm">
-<span class="material-symbols-outlined text-[28px]">person_search</span>
-</div>
-</div>
-<h3 class="text-xl font-bold text-clinical-textPrimary mb-2">
-                Retrouvez chaque patient en 1 clic
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-6">
-                Dossiers, antécédents, bilans, historique complet des visites : tapez le nom ou le numéro de téléphone, tout s'affiche. La secrétaire voit la file en temps réel.
-              </p>
-</div>
-<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent-emeraldLight border border-emerald-200 text-accent-emerald text-xs font-bold w-fit shadow-clinical-sm">
-<span class="material-symbols-outlined text-[16px]">bolt</span>
-<span>Recherche instantanée</span>
-</div>
-</div>
-<!-- Step 3 -->
-<div class="relative bg-clinical-card p-6 md:p-8 rounded-2xl border border-clinical-border shadow-clinical-sm flex flex-col justify-between hover:shadow-clinical hover:border-brand-300 transition-all">
-<div>
-<div class="flex items-center justify-between mb-6">
-<span class="text-4xl font-black text-brand-200">03</span>
-<div class="w-12 h-12 rounded-xl bg-white border border-brand-200 flex items-center justify-center text-brand-700 shadow-clinical-sm">
-<span class="material-symbols-outlined text-[28px]">print</span>
-</div>
-</div>
-<h3 class="text-xl font-bold text-clinical-textPrimary mb-2">
-                Imprimez l'ordonnance A5
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-6">
-                Base médicamenteuse intégrée, posologies types en mémoire, mise en page laser claire que les pharmaciens lisent sans vous appeler. Le patient repart serein.
-              </p>
-</div>
-<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent-cyanLight border border-sky-200 text-accent-cyan text-xs font-bold w-fit shadow-clinical-sm">
-<span class="material-symbols-outlined text-[16px]">speed</span>
-<span>5 secondes chrono</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 5. FEATURES SECTION ("Un seul outil. Neuf problèmes réglés.") -->
-<section class="w-full py-16 md:py-24 bg-clinical-subtle/50" id="fonctionnalites">
-<div class="max-w-6xl mx-auto px-4 md:px-6">
-<div class="text-center max-w-2xl mx-auto mb-14">
-<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-emeraldLight border border-emerald-200 text-accent-emerald text-xs font-extrabold uppercase tracking-wider mb-3">
-<span class="material-symbols-outlined fill text-[16px]">stars</span>
-<span>Tout ce que votre cabinet y gagne</span>
-</div>
-<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-clinical-textPrimary tracking-tight mb-3">
-            Un seul outil. <span class="text-brand-700">Neuf problèmes réglés.</span>
-</h2>
-<p class="text-sm sm:text-base text-clinical-textSecondary leading-relaxed">
-            Chaque fonction existe pour une raison précise : vous faire gagner du temps, protéger vos données et garder vos patients.
-          </p>
-</div>
-<!-- 9 Features Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Feature 1 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-700 mb-4">
-<span class="material-symbols-outlined text-[26px]">folder_shared</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                Dossier patient complet
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Historique des visites, antécédents, bilans biologiques, notes cliniques : tout le passé médical de chaque patient retrouvé en un clic. Finis les classeurs encombrants.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-brand-700 uppercase tracking-wide bg-brand-50 border border-brand-200 px-2.5 py-1 rounded-md w-fit">
-              ZÉRO DOSSIER PERDU
-            </span>
-</div>
-<!-- Feature 2 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-amberLight border border-amber-200 flex items-center justify-center text-accent-amber mb-4">
-<span class="material-symbols-outlined text-[26px]">receipt_long</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                Ordonnance A5 en 5 secondes
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Base de médicaments couramment prescrits en Algérie intégrée. Posologies rapides, impression nette A5/A4. Les pharmaciens lisent sans vous déranger.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-accent-amber uppercase tracking-wide bg-accent-amberLight border border-amber-200 px-2.5 py-1 rounded-md w-fit">
-              5 SEC PAR PATIENT
-            </span>
-</div>
-<!-- Feature 3 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-700 mb-4">
-<span class="material-symbols-outlined text-[26px]">groups</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                File d'attente &amp; rendez-vous
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                La secrétaire enregistre les arrivées en un instant. Vous voyez qui est le suivant directement sur votre écran de consultation. Fini les cris dans le couloir.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-brand-700 uppercase tracking-wide bg-brand-50 border border-brand-200 px-2.5 py-1 rounded-md w-fit">
-              SALLE D'ATTENTE APAISÉE
-            </span>
-</div>
-<!-- Feature 4 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-emeraldLight border border-emerald-200 flex items-center justify-center text-accent-emerald mb-4">
-<span class="material-symbols-outlined text-[26px]">hub</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                Sync médecin — secrétaire
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Vos deux PC communiquent via le réseau local du cabinet — même sans Internet. Chacun voit le travail de l'autre en direct avec une synchronisation instantanée.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-accent-emerald uppercase tracking-wide bg-accent-emeraldLight border border-emerald-200 px-2.5 py-1 rounded-md w-fit">
-              SANS INTERNET (LAN)
-            </span>
-</div>
-<!-- Feature 5 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-700 mb-4">
-<span class="material-symbols-outlined text-[26px]">monitoring</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                Recettes &amp; statistiques du jour
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Consultations du jour, de la semaine, du mois : vos chiffres sont enfin nets et transparents. Pilotez l'activité de votre cabinet médical sans approximations.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-brand-700 uppercase tracking-wide bg-brand-50 border border-brand-200 px-2.5 py-1 rounded-md w-fit">
-              FIN AU PILOTAGE À L'AVEUGLE
-            </span>
-</div>
-<!-- Feature 6 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-amberLight border border-amber-200 flex items-center justify-center text-accent-amber mb-4">
-<span class="material-symbols-outlined text-[26px]">manage_search</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                Recherche instantanée
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Nom, téléphone, date : retrouvez n'importe quel patient en une seconde, même au milieu d'une base de plus de 10 000 dossiers médicaux enregistrés.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-accent-amber uppercase tracking-wide bg-accent-amberLight border border-amber-200 px-2.5 py-1 rounded-md w-fit">
-              1 CLIC SUFFIT
-            </span>
-</div>
-<!-- Feature 7 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-emeraldLight border border-emerald-200 flex items-center justify-center text-accent-emerald mb-4">
-<span class="material-symbols-outlined text-[26px]">enhanced_encryption</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                100% hors-ligne, secret garanti
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Données stockées uniquement sur votre machine. Aucun cloud étranger, aucune fuite possible. Votre cabinet tourne même en coupure réseau complète.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-accent-emerald uppercase tracking-wide bg-accent-emeraldLight border border-emerald-200 px-2.5 py-1 rounded-md w-fit">
-              365 JOURS / AN SANS PANNE
-            </span>
-</div>
-<!-- Feature 8 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-brand-50 border border-brand-200 flex items-center justify-center text-brand-700 mb-4">
-<span class="material-symbols-outlined text-[26px]">save</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                Sauvegarde &amp; transfert simples
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Sauvegardez sur la clé USB ou sur disque externe en un clic. Nouveau PC ? Vos données vous suivent en quelques secondes. Rien n'est jamais perdu.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-brand-700 uppercase tracking-wide bg-brand-50 border border-brand-200 px-2.5 py-1 rounded-md w-fit">
-              ZÉRO RISQUE DE PERTE
-            </span>
-</div>
-<!-- Feature 9 -->
-<div class="bg-white p-6 rounded-2xl border border-clinical-border shadow-clinical-sm hover:border-brand-300 hover:shadow-clinical transition-all flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-xl bg-accent-cyanLight border border-sky-200 flex items-center justify-center text-accent-cyan mb-4">
-<span class="material-symbols-outlined text-[26px]">laptop_windows</span>
-</div>
-<h3 class="text-base font-bold text-clinical-textPrimary mb-2">
-                Multi-spécialités, tout Windows
-              </h3>
-<p class="text-sm text-clinical-textSecondary leading-relaxed mb-4">
-                Générale, pédiatrie, gynéco, cardio, dermato, ophtalmo, dentaire... Compatible Windows 7/8/10/11 et avec toutes les imprimantes standard du marché.
-              </p>
-</div>
-<span class="text-[11px] font-extrabold text-accent-cyan uppercase tracking-wide bg-accent-cyanLight border border-sky-200 px-2.5 py-1 rounded-md w-fit">
-              PRÊT À L'EMPLOI IMMÉDIAT
-            </span>
-</div>
-</div>
-</div>
-</section>
-<!-- 6. COMPARISON MATRIX ("AVANT / APRÈS") -->
-<section class="w-full py-16 md:py-24 bg-white" id="comparatif">
-<div class="max-w-6xl mx-auto px-4 md:px-6">
-<div class="text-center max-w-2xl mx-auto mb-14">
-<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-extrabold uppercase tracking-wider mb-3">
-<span class="material-symbols-outlined text-[16px]">compare_arrows</span>
-<span>Avant / Après</span>
-</div>
-<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-clinical-textPrimary tracking-tight mb-3">
-            Regardez la différence, <span class="text-brand-700">puis choisissez</span>
-</h2>
-<p class="text-sm sm:text-base text-clinical-textSecondary leading-relaxed">
-            Deux façons d'exercer la médecine libérale aujourd'hui en Algérie. Laquelle reflète votre cabinet ?
-          </p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-<!-- Sans ClinixOS Pro (Pain Card) -->
-<div class="bg-accent-coralLight/40 p-6 md:p-8 rounded-2xl border border-red-200 shadow-clinical-sm space-y-4">
-<div class="flex items-center gap-3 pb-3 border-b border-red-200">
-<div class="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center text-accent-coral">
-<span class="material-symbols-outlined text-[24px]">cancel</span>
-</div>
-<h3 class="text-xl font-bold text-accent-coral">
-                Sans ClinixOS Pro
-              </h3>
-</div>
-<ul class="space-y-3.5 text-sm text-clinical-textSecondary">
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined text-accent-coral text-[20px] shrink-0 mt-0.5">close</span>
-<span>Dossiers papier introuvables pendant que la salle d'attente s'agite et se plaint du retard.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined text-accent-coral text-[20px] shrink-0 mt-0.5">close</span>
-<span>Ordonnances manuscrites : longues à rédiger, raturées, illisibles en pharmacie.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined text-accent-coral text-[20px] shrink-0 mt-0.5">close</span>
-<span>Excel effacé par erreur = des mois de suivi médical perdus à tout jamais.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined text-accent-coral text-[20px] shrink-0 mt-0.5">close</span>
-<span>Logiciels cloud inutilisables dès que la connexion 4G ou ADSL faiblit.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined text-accent-coral text-[20px] shrink-0 mt-0.5">close</span>
-<span>Abonnements mensuels coûteux + frais de technicien à régler chaque année.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined text-accent-coral text-[20px] shrink-0 mt-0.5">close</span>
-<span>Stress permanent en fin de journée et consultations terminées tard le soir.</span>
-</li>
-</ul>
-</div>
-<!-- Avec ClinixOS Pro (Medical Harmony Card) -->
-<div class="bg-accent-emeraldLight/30 p-6 md:p-8 rounded-2xl border-2 border-emerald-300 shadow-clinical space-y-4">
-<div class="flex items-center gap-3 pb-3 border-b border-emerald-200">
-<div class="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center text-accent-emerald">
-<span class="material-symbols-outlined fill text-[24px]">check_circle</span>
-</div>
-<h3 class="text-xl font-bold text-accent-emerald">
-                Avec ClinixOS Pro
-              </h3>
-</div>
-<ul class="space-y-3.5 text-sm text-clinical-textPrimary">
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[20px] shrink-0 mt-0.5">verified</span>
-<span><strong class="font-bold">Patient retrouvé en 1 clic :</strong> historique complet devant vous, consultation sereine et fluide.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[20px] shrink-0 mt-0.5">verified</span>
-<span><strong class="font-bold">Ordonnance A5 en 5 secondes,</strong> nette, lisible par tous les pharmaciens d'Algérie.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[20px] shrink-0 mt-0.5">verified</span>
-<span><strong class="font-bold">Sauvegarde sur clé USB :</strong> vos données vous suivent partout en totale sécurité.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[20px] shrink-0 mt-0.5">verified</span>
-<span><strong class="font-bold">100% hors-ligne :</strong> coupure Internet = journée de consultation tout à fait normale.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[20px] shrink-0 mt-0.5">verified</span>
-<span><strong class="font-bold">9 900 DA une seule fois :</strong> licence définitive à vie, zéro abonnement, zéro surprise.</span>
-</li>
-<li class="flex items-start gap-2.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[20px] shrink-0 mt-0.5">verified</span>
-<span><strong class="font-bold">Cabinet ordonné :</strong> vous terminez à l'heure et consacrez votre énergie à soigner.</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- 7. PRICING & LAUNCH OFFER SECTION -->
-<section class="w-full py-16 md:py-24 bg-gradient-to-b from-clinical-subtle/50 via-brand-50/40 to-white" id="tarifs">
-<div class="max-w-4xl mx-auto px-4 md:px-6">
-<div class="bg-white rounded-3xl border-2 border-brand-300 shadow-clinical-lg overflow-hidden">
-<!-- Header Banner -->
-<div class="bg-gradient-to-r from-brand-800 via-brand-700 to-brand-800 text-white p-6 sm:p-8 text-center space-y-2">
-<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-accent-amber text-slate-900 text-xs font-black uppercase tracking-wide">
-<span>🔥</span> OFFRE DE LANCEMENT — 20 PREMIERS CABINETS
-            </div>
-<h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
-              Le système complet, pour le prix d'une journée de consultations
-            </h2>
-<p class="text-sm sm:text-base text-brand-100 max-w-xl mx-auto">
-              Clé USB + licence complète à vie + livraison 58 wilayas. Sans intermédiaire, sans abonnement mensuel.
-            </p>
-</div>
-<!-- Pricing Content -->
-<div class="p-6 sm:p-10 space-y-8">
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<!-- Regular Price -->
-<div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center flex flex-col justify-center">
-<span class="text-xs font-bold text-clinical-textMuted uppercase mb-1">Tarif Officiel Normal</span>
-<span class="text-3xl font-black text-slate-400 line-through">35 000 DA</span>
-<span class="text-xs text-clinical-textMuted mt-1">Prix agence + technicien de déploiement</span>
-</div>
-<!-- Offer Price -->
-<div class="p-6 rounded-2xl bg-accent-emeraldLight border-2 border-emerald-300 text-center flex flex-col justify-center relative shadow-clinical-sm">
-<span class="text-xs font-black text-emerald-800 uppercase mb-1 flex items-center justify-center gap-1">
-<span>⚡</span> Tarif de Lancement Spécial
-                </span>
-<div class="flex items-baseline justify-center gap-1">
-<span class="text-4xl sm:text-5xl font-black text-brand-700 leading-tight">9 900</span>
-<span class="text-lg font-extrabold text-brand-700">DA</span>
-</div>
-<span class="text-xs font-bold text-accent-emerald mt-1">Licence complète définitive à vie</span>
-</div>
-</div>
-<!-- Inclusions Checklist -->
-<div class="space-y-3 pt-2">
-<div class="flex items-start gap-3 text-sm text-clinical-textPrimary">
-<span class="material-symbols-outlined fill text-accent-emerald text-[22px] shrink-0 mt-0.5">check_circle</span>
-<span><strong class="font-bold">Clé USB ClinixOS Pro</strong> — système complet, pré-configuré, prêt à l'emploi immédiat</span>
-</div>
-<div class="flex items-start gap-3 text-sm text-clinical-textPrimary">
-<span class="material-symbols-outlined fill text-accent-emerald text-[22px] shrink-0 mt-0.5">check_circle</span>
-<span><strong class="font-bold">Licence complète à vie</strong> — payez une fois, utilisez pour toujours, 0 DA d'abonnement</span>
-</div>
-<div class="flex items-start gap-3 text-sm text-clinical-textPrimary">
-<span class="material-symbols-outlined fill text-accent-emerald text-[22px] shrink-0 mt-0.5">check_circle</span>
-<span><strong class="font-bold">Dossiers patients + ordonnances A5 + file d'attente + statistiques</strong> inclus</span>
-</div>
-<div class="flex items-start gap-3 text-sm text-clinical-textPrimary">
-<span class="material-symbols-outlined fill text-accent-emerald text-[22px] shrink-0 mt-0.5">check_circle</span>
-<span><strong class="font-bold">Livraison Yalidine / Maystro</strong> sur les 58 wilayas, paiement en espèces à la réception</span>
-</div>
-<div class="flex items-start gap-3 text-sm text-clinical-textPrimary">
-<span class="material-symbols-outlined fill text-accent-emerald text-[22px] shrink-0 mt-0.5">check_circle</span>
-<span><strong class="font-bold">Guide d'installation en 2 clics</strong> + assistance prioritaire Téléphone &amp; WhatsApp 7j/7</span>
-</div>
-</div>
-<!-- Countdown Timer Widget -->
-<div class="p-4 rounded-2xl bg-brand-50 border border-brand-200 text-center space-y-2">
-<div class="text-xs font-extrabold text-brand-800 flex items-center justify-center gap-1.5 uppercase">
-<span class="material-symbols-outlined text-[18px] text-accent-amber">timer</span>
-<span>L'offre de lancement se termine dans :</span>
-</div>
-<div class="flex items-center justify-center gap-3 font-mono font-black text-2xl sm:text-3xl text-brand-900 tracking-wider">
-<div class="bg-white border border-brand-200 px-3 py-1.5 rounded-xl shadow-clinical-sm">
-<span id="hours">08</span>
-<span class="text-[9px] font-sans font-semibold text-clinical-textMuted block">HEURES</span>
-</div>
-<span class="text-brand-400 pb-3">:</span>
-<div class="bg-white border border-brand-200 px-3 py-1.5 rounded-xl shadow-clinical-sm">
-<span id="minutes">24</span>
-<span class="text-[9px] font-sans font-semibold text-clinical-textMuted block">MIN</span>
-</div>
-<span class="text-brand-400 pb-3">:</span>
-<div class="bg-white border border-brand-200 px-3 py-1.5 rounded-xl shadow-clinical-sm">
-<span id="seconds">57</span>
-<span class="text-[9px] font-sans font-semibold text-clinical-textMuted block">SEC</span>
-</div>
-</div>
-</div>
-<!-- CTA -->
-<div class="space-y-2 text-center">
-<a class="w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-brand-700 hover:bg-brand-800 active:scale-[0.99] text-white font-extrabold text-base sm:text-lg shadow-clinical-lg hover:shadow-clinical-glow transition-all" href="#commander">
-<span>Je réserve ma place parmi les 20 premiers — 9 900 DA</span>
-<span class="material-symbols-outlined text-[22px]">arrow_forward</span>
-</a>
-<div class="text-xs text-clinical-textMuted">
-                Après les 20 premiers cabinets : <strong class="text-clinical-textPrimary">retour automatique au tarif officiel de 35 000 DA.</strong>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 9. ORDER FORM (58 WILAYAS COD) -->
-<section class="w-full py-16 md:py-24 bg-clinical-subtle/60" id="commander">
-<div class="max-w-6xl mx-auto px-4 md:px-6">
-<div class="text-center max-w-2xl mx-auto mb-14">
-<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-700 text-white text-xs font-extrabold uppercase tracking-wider mb-3 shadow-clinical-sm">
-<span class="material-symbols-outlined text-[16px]">flash_on</span>
-<span>Commande en 60 secondes</span>
-</div>
-<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-clinical-textPrimary tracking-tight mb-3">
-            Recevez votre clé USB <span class="text-brand-700">sans payer en ligne</span>
-</h2>
-<p class="text-sm sm:text-base text-clinical-textSecondary leading-relaxed">
-            Remplissez ce formulaire. Notre équipe vous appelle dans les plus brefs délais pour confirmer, puis la clé part par Yalidine / Maystro. Vous payez 9 900 DA en espèces, à la réception.
-          </p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-<!-- Form Left Card -->
-<div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-clinical-borderStrong shadow-clinical">
-<form class="space-y-4" id="order-form" action="https://script.google.com/macros/s/AKfycbzvjQ9Yjm-oIrKqz1Ii1-XiCvNATamySYDrSEk1Pc0XEcdCBSXVmcVzgD-YoykESeS35w/exec" method="POST" novalidate>
-<input type="hidden" name="product" value="ClinixOS Pro - Cle USB"/>
-<input type="hidden" name="price" value="9900"/>
-<input type="hidden" name="original_price" value="35000"/>
-<input type="hidden" name="payment" value="COD"/>
-<input type="hidden" name="carrier" value="Yalidine / Maystro Delivery"/>
-<div id="form-error" role="alert" class="hidden p-3 rounded-xl bg-accent-coralLight border border-red-300 text-red-900 text-sm font-semibold"></div>
-<div class="pb-2 border-b border-clinical-border flex items-center justify-between">
-<span class="text-xs font-bold text-brand-700 flex items-center gap-1.5 uppercase">
-<span class="w-5 h-5 rounded-full bg-brand-700 text-white flex items-center justify-center text-[10px]">1</span>
-                  Coordonnées du Médecin &amp; Cabinet
-                </span>
-<span class="text-[11px] text-clinical-textMuted">* Champs obligatoires</span>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="space-y-1">
-<label class="block text-xs font-bold text-clinical-textPrimary">Nom et Prénom *</label>
-<input id="name" name="name" autocomplete="name" class="w-full h-11 px-3 rounded-xl bg-clinical-subtle border border-clinical-border focus:bg-white focus:outline-none focus:border-brand-700 text-sm text-clinical-textPrimary transition-all" placeholder="Ex : Dr. Benali Mohamed" required="" type="text"/>
-</div>
-<div class="space-y-1">
-<label class="block text-xs font-bold text-clinical-textPrimary">Spécialité médicale *</label>
-<select id="specialty" name="specialty" class="w-full h-11 px-3 rounded-xl bg-clinical-subtle border border-clinical-border focus:bg-white focus:outline-none focus:border-brand-700 text-sm text-clinical-textPrimary transition-all cursor-pointer" required="">
-<option disabled="" selected="" value="">Choisir votre spécialité…</option>
-<option value="Médecine Générale">Médecine Générale</option>
-<option value="Pédiatrie">Pédiatrie</option>
-<option value="Gynécologie-Obstétrique">Gynécologie-Obstétrique</option>
-<option value="Cardiologie">Cardiologie</option>
-<option value="Dermatologie">Dermatologie</option>
-<option value="Ophtalmologie">Ophtalmologie</option>
-<option value="ORL">ORL</option>
-<option value="Chirurgie Générale">Chirurgie Générale</option>
-<option value="Médecine Interne">Médecine Interne</option>
-<option value="Neurologie">Neurologie</option>
-<option value="Psychiatrie">Psychiatrie</option>
-<option value="Radiologie">Radiologie</option>
-<option value="Anesthésie-Réanimation">Anesthésie-Réanimation</option>
-<option value="Médecine du Travail">Médecine du Travail</option>
-<option value="Dentaire / Chirurgie Dentaire">Dentaire / Chirurgie Dentaire</option>
-<option value="Kinésithérapie">Kinésithérapie</option>
-<option value="Laboratoire d'Analyses">Laboratoire d'Analyses</option>
-<option value="Autre">Autre spécialité</option>
-</select>
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="space-y-1">
-<label class="block text-xs font-bold text-clinical-textPrimary">Numéro de téléphone mobile *</label>
-<input id="phone" name="phone" inputmode="tel" autocomplete="tel" class="w-full h-11 px-3 rounded-xl bg-clinical-subtle border border-clinical-border focus:bg-white focus:outline-none focus:border-brand-700 text-sm text-clinical-textPrimary transition-all" placeholder="05 / 06 / 07 XX XX XX XX" required="" type="tel"/>
-<span class="text-[10px] text-clinical-textMuted block">Nous vous appelons sur ce numéro pour valider l'envoi.</span>
-</div>
-<div class="space-y-1">
-<label class="block text-xs font-bold text-clinical-textPrimary">2ème Téléphone (Optionnel)</label>
-<input id="phone2" name="phone2" inputmode="tel" class="w-full h-11 px-3 rounded-xl bg-clinical-subtle border border-clinical-border focus:bg-white focus:outline-none focus:border-brand-700 text-sm text-clinical-textPrimary transition-all" placeholder="Fixe cabinet ou mobile secrétaire" type="tel"/>
-</div>
-</div>
-<div class="pt-2 pb-2 border-b border-clinical-border">
-<span class="text-xs font-bold text-brand-700 flex items-center gap-1.5 uppercase">
-<span class="w-5 h-5 rounded-full bg-brand-700 text-white flex items-center justify-center text-[10px]">2</span>
-                  Adresse de livraison (Cabinet ou Domicile)
-                </span>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="space-y-1">
-<label class="block text-xs font-bold text-clinical-textPrimary">Wilaya de destination *</label>
-<select id="wilaya" name="wilaya" class="w-full h-11 px-3 rounded-xl bg-clinical-subtle border border-clinical-border focus:bg-white focus:outline-none focus:border-brand-700 text-sm text-clinical-textPrimary transition-all cursor-pointer" required="">
-<option disabled="" selected="" value="">Sélectionnez votre wilaya (1 à 58)</option>
-</select>
-</div>
-<div class="space-y-1">
-<label class="block text-xs font-bold text-clinical-textPrimary">Commune / Ville *</label>
-<select id="city" name="city" disabled="" class="w-full h-11 px-3 rounded-xl bg-clinical-subtle border border-clinical-border focus:bg-white focus:outline-none focus:border-brand-700 text-sm text-clinical-textPrimary transition-all cursor-pointer" required="">
-<option disabled="" selected="" value="">D'abord la wilaya ↑</option>
-</select>
-</div>
-</div>
-<div class="space-y-1">
-<label class="block text-xs font-bold text-clinical-textPrimary">Adresse exacte du cabinet ou repère *</label>
-<input id="address" name="address" autocomplete="street-address" class="w-full h-11 px-3 rounded-xl bg-clinical-subtle border border-clinical-border focus:bg-white focus:outline-none focus:border-brand-700 text-sm text-clinical-textPrimary transition-all" placeholder="Ex : Cité 500 logts, Bâtiment B, en face de la clinique..." required="" type="text"/>
-</div>
-<!-- Submit CTA -->
-<button id="submit-btn" class="w-full mt-4 py-4 px-6 rounded-2xl bg-brand-700 hover:bg-brand-800 active:scale-[0.99] text-white font-extrabold text-sm sm:text-base shadow-clinical-lg hover:shadow-clinical-glow transition-all flex items-center justify-center gap-2 cursor-pointer" type="submit">
-<span class="material-symbols-outlined fill text-[22px]">verified</span>
-<span>VALIDER MA COMMANDE — 9 900 DA À LA LIVRAISON</span>
-</button>
-<!-- Success Alert Placeholder -->
-<div class="hidden p-4 rounded-xl bg-accent-emeraldLight border border-emerald-300 text-emerald-900 text-center space-y-1" id="confirmation-message">
-<div class="text-sm font-bold flex items-center justify-center gap-1.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[20px]">check_circle</span>
-<span>Commande enregistrée avec succès !</span>
-</div>
-<p class="text-xs text-emerald-800">Notre service praticiens vous contacte dans les plus brefs délais au numéro indiqué pour confirmer l'expédition par Yalidine Express.</p>
-</div>
-<div class="flex items-center justify-center gap-1.5 text-xs text-clinical-textMuted pt-1">
-<span class="material-symbols-outlined text-[16px] text-accent-emerald">lock</span>
-<span>Vos informations restent strictement confidentielles. Zéro démarchage intempestif.</span>
-</div>
-</form>
-</div>
-<!-- Order Summary Right Card (Clinical Tinted) -->
-<div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border-2 border-brand-200 shadow-clinical space-y-6">
-<div>
-<span class="text-xs font-black text-brand-700 uppercase tracking-wide block mb-1">Récapitulatif de Commande</span>
-<h3 class="text-xl font-extrabold text-clinical-textPrimary">Pack ClinixOS Pro USB</h3>
-</div>
-<div class="space-y-3 border-y border-clinical-border py-4 text-xs font-medium">
-<div class="flex items-center justify-between text-clinical-textSecondary">
-<span>Clé USB ClinixOS Pro (Licence à vie)</span>
-<span class="line-through text-clinical-textMuted">35 000 DA</span>
-</div>
-<div class="flex items-center justify-between text-brand-700 font-semibold">
-<span>Remise promotionnelle de lancement</span>
-<span>- 25 100 DA</span>
-</div>
-<div class="flex items-center justify-between text-clinical-textSecondary">
-<span>Livraison 58 wilayas (Yalidine)</span>
-<span class="text-accent-emerald font-bold uppercase">Incluse</span>
-</div>
-<div class="flex items-center justify-between text-clinical-textSecondary">
-<span>Mode de règlement</span>
-<span class="font-bold text-clinical-textPrimary">Espèces à la réception</span>
-</div>
-</div>
-<!-- Total Block -->
-<div class="flex items-end justify-between">
-<div>
-<span class="text-xs font-bold text-clinical-textMuted uppercase block">Total net à régler</span>
-<span class="text-[11px] text-clinical-textSecondary">Après vérification du colis</span>
-</div>
-<div class="text-right">
-<span class="text-3xl sm:text-4xl font-black text-brand-700 leading-none">9 900</span>
-<span class="text-base font-extrabold text-brand-700 ml-0.5">DA</span>
-</div>
-</div>
-<!-- Trust Points -->
-<div class="space-y-2 pt-1 text-xs text-clinical-textSecondary">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px] shrink-0">phone_callback</span>
-<span>Appel de confirmation par notre équipe dans les plus brefs délais</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px] shrink-0">inventory</span>
-<span>Vous ouvrez et vérifiez le colis avant de payer au livreur</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px] shrink-0">desktop_windows</span>
-<span>Installation en 2 clics sur PC + assistance WhatsApp offerte</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px] shrink-0">wifi_off</span>
-<span>100% hors-ligne, zéro abonnement, zéro dépendance</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 10. FAQ SECTION -->
-<section class="w-full py-16 md:py-24 bg-white" id="faq">
-<div class="max-w-3xl mx-auto px-4 md:px-6">
-<div class="text-center max-w-xl mx-auto mb-14">
-<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-extrabold uppercase tracking-wider mb-3">
-<span class="material-symbols-outlined text-[16px]">help_center</span>
-<span>Questions Fréquentes</span>
-</div>
-<h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-clinical-textPrimary tracking-tight mb-3">
-            Dernières questions <span class="text-brand-700">avant de commander</span>
-</h2>
-<p class="text-sm sm:text-base text-clinical-textSecondary leading-relaxed">
-            Toutes les réponses pour équiper votre cabinet médical en toute sérénité.
-          </p>
-</div>
-<div class="space-y-3">
-<!-- FAQ Item 1 -->
-<div class="bg-clinical-card border border-clinical-border rounded-2xl p-4 md:p-5 shadow-clinical-sm">
-<button class="w-full flex items-center justify-between text-left text-sm md:text-base font-bold text-clinical-textPrimary focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
-<span>1. Ai-je besoin d'une connexion Internet ?</span>
-<span class="material-symbols-outlined faq-icon text-[22px] text-brand-700 transition-transform">expand_more</span>
-</button>
-<div class="hidden pt-3 text-xs md:text-sm text-clinical-textSecondary leading-relaxed border-t border-clinical-border mt-3">
-<strong>Absolument pas.</strong> ClinixOS Pro est pensé et conçu pour l'environnement médical algérien. Il fonctionne à 100% en local sur votre ordinateur. Aucune panne d'ADSL, aucune chute de réseau 4G ne peut bloquer vos consultations. Vos dossiers et ordonnances sont disponibles 365 jours par an.
-            </div>
-</div>
-<!-- FAQ Item 2 -->
-<div class="bg-clinical-card border border-clinical-border rounded-2xl p-4 md:p-5 shadow-clinical-sm">
-<button class="w-full flex items-center justify-between text-left text-sm md:text-base font-bold text-clinical-textPrimary focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
-<span>2. Comment la secrétaire et moi travaillons-nous ensemble ?</span>
-<span class="material-symbols-outlined faq-icon text-[22px] text-brand-700 transition-transform">expand_more</span>
-</button>
-<div class="hidden pt-3 text-xs md:text-sm text-clinical-textSecondary leading-relaxed border-t border-clinical-border mt-3">
-              ClinixOS Pro dispose d'un module de <strong>réseau local (LAN)</strong>. Il suffit de brancher les deux ordinateurs (médecin et secrétariat) sur le même modem ou routeur wifi du cabinet — sans avoir besoin d'Internet actif. La secrétaire inscrit les patients dans la salle d'attente et vous les voyez s'afficher en temps réel sur votre écran de consultation.
-            </div>
-</div>
-<!-- FAQ Item 3 -->
-<div class="bg-clinical-card border border-clinical-border rounded-2xl p-4 md:p-5 shadow-clinical-sm">
-<button class="w-full flex items-center justify-between text-left text-sm md:text-base font-bold text-clinical-textPrimary focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
-<span>3. La licence est-elle vraiment à vie ?</span>
-<span class="material-symbols-outlined faq-icon text-[22px] text-brand-700 transition-transform">expand_more</span>
-</button>
-<div class="hidden pt-3 text-xs md:text-sm text-clinical-textSecondary leading-relaxed border-t border-clinical-border mt-3">
-<strong>Oui, définitivement.</strong> Vous payez les 9 900 DA une seule fois à la réception de votre clé USB. Il n'y a aucun abonnement mensuel, aucun frais de renouvellement annuel, aucun piège contractuel. Le logiciel vous appartient.
-            </div>
-</div>
-<!-- FAQ Item 4 -->
-<div class="bg-clinical-card border border-clinical-border rounded-2xl p-4 md:p-5 shadow-clinical-sm">
-<button class="w-full flex items-center justify-between text-left text-sm md:text-base font-bold text-clinical-textPrimary focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
-<span>4. Et si je change d'ordinateur dans 2 ans ?</span>
-<span class="material-symbols-outlined faq-icon text-[22px] text-brand-700 transition-transform">expand_more</span>
-</button>
-<div class="hidden pt-3 text-xs md:text-sm text-clinical-textSecondary leading-relaxed border-t border-clinical-border mt-3">
-              Un module de <strong>sauvegarde / restauration en 1 clic</strong> est directement inclus. Vous insérez votre clé USB ou disque externe, cliquez sur « Sauvegarder », puis vous réinstallez sur le nouveau PC et restaurez votre base en quelques secondes. Tout votre historique patient est restauré à l'identique.
-            </div>
-</div>
-<!-- FAQ Item 5 -->
-<div class="bg-clinical-card border border-clinical-border rounded-2xl p-4 md:p-5 shadow-clinical-sm">
-<button class="w-full flex items-center justify-between text-left text-sm md:text-base font-bold text-clinical-textPrimary focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
-<span>5. Comment se passent la livraison et le paiement ?</span>
-<span class="material-symbols-outlined faq-icon text-[22px] text-brand-700 transition-transform">expand_more</span>
-</button>
-<div class="hidden pt-3 text-xs md:text-sm text-clinical-textSecondary leading-relaxed border-t border-clinical-border mt-3">
-              La livraison s'effectue via nos partenaires agréés <strong>Yalidine Express ou Maystro Delivery</strong> sur l'ensemble des 58 Wilayas d'Algérie, directement à l'adresse de votre cabinet ou de votre domicile. Vous ne réglez rien à l'avance : vous ouvrez votre colis, inspectez la clé USB et le guide, puis remettez le montant de 9 900 DA en espèces au livreur.
-            </div>
-</div>
-<!-- FAQ Item 6 -->
-<div class="bg-clinical-card border border-clinical-border rounded-2xl p-4 md:p-5 shadow-clinical-sm">
-<button class="w-full flex items-center justify-between text-left text-sm md:text-base font-bold text-clinical-textPrimary focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
-<span>6. Que se passe-t-il après les 20 premiers cabinets ?</span>
-<span class="material-symbols-outlined faq-icon text-[22px] text-brand-700 transition-transform">expand_more</span>
-</button>
-<div class="hidden pt-3 text-xs md:text-sm text-clinical-textSecondary leading-relaxed border-t border-clinical-border mt-3">
-              Ce tarif promotionnel à 9 900 DA est strictement réservé au quota initial de lancement de 20 cabinets pour amorcer les retours d'expérience par wilaya. Une fois ce quota atteint, le tarif bascule automatiquement à 35 000 DA (tarif officiel avec déplacement technicien).
-            </div>
-</div>
-</div>
-</div>
-</section>
-<!-- 11. FINAL URGENCY CALLOUT BANNER -->
-<section class="w-full py-16 md:py-20 bg-gradient-to-r from-brand-800 via-brand-700 to-brand-800 text-white text-center relative overflow-hidden">
-<!-- Decorative radial ambient lights -->
-<div class="absolute -top-24 -left-24 w-80 h-80 bg-brand-500 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
-<div class="absolute -bottom-24 -right-24 w-80 h-80 bg-accent-cyan rounded-full blur-3xl opacity-30 pointer-events-none"></div>
-<div class="max-w-4xl mx-auto px-4 md:px-6 relative z-10 space-y-6">
-<div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/10 text-accent-amber text-xs font-bold uppercase tracking-wider border border-white/20">
-<span>⏰</span> Agissez pour votre cabinet aujourd'hui
-        </div>
-<h2 class="text-2xl sm:text-3xl lg:text-5xl font-black tracking-tight leading-tight">
-          Dans 6 mois, votre cabinet sera organisé... <span class="text-accent-amber underline decoration-amber-400/50">ou toujours débordé.</span>
-</h2>
-<p class="text-sm sm:text-base lg:text-lg text-brand-100 max-w-2xl mx-auto leading-relaxed">
-          La différence se joue aujourd'hui : <strong>9 900 DA une seule fois</strong>, au lieu des heures perdues chaque semaine pendant des années. Les 20 places promotionnelles partent vite.
+
+<main id="top">
+<!-- 1. HERO -->
+<section class="bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-14 md:pt-16 md:pb-20">
+    <div class="mb-6">
+      <span class="inline-flex items-center gap-2 border border-slate-200 bg-white text-slate-700 text-xs font-medium px-3 py-1 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-700"></span>
+        Conçu pour les cabinets médicaux en Algérie
+        <span class="text-slate-400">·</span>
+        <span class="text-slate-500">Édition 2026</span>
+      </span>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-[1.12] mb-5">
+          Docteur, chaque jour sans système, votre cabinet <span class="text-blue-700">perd du temps,</span> des patients... <span class="text-blue-700">et des revenus.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 max-w-xl">
+          Dossiers papier égarés, ordonnances manuscrites interminables, salle d'attente qui déborde, secrétaire débordée : <strong class="text-slate-900 font-semibold">ClinixOS Pro</strong> remet de l'ordre dans votre cabinet — sans Internet, sans abonnement, sans technicien.
         </p>
-<div class="pt-2 flex flex-col items-center gap-3">
-<a class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-white hover:bg-brand-50 text-brand-700 font-black text-sm sm:text-base shadow-clinical-lg active:scale-[0.98] transition-all" href="#commander">
-<span class="material-symbols-outlined fill text-accent-amber text-[22px]">bolt</span>
-<span>COMMANDER • 9 900 DA À LA LIVRAISON</span>
-<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
-</a>
-<div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-brand-100 pt-1">
-<span class="flex items-center gap-1">
-<span class="material-symbols-outlined fill text-accent-emerald text-[16px]">check_circle</span>
-              Paiement en espèces à la réception
+        <div class="w-full max-w-xl p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200 mb-7">
+          <div class="flex items-start gap-3">
+            <svg class="lucide text-slate-500 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <p class="text-sm leading-relaxed text-slate-700">
+              <strong class="font-semibold text-slate-900 block mb-0.5">La réalité clinique :</strong>
+              10 minutes perdues par patient × 30 patients = <strong class="font-semibold text-slate-900">5 heures envolées chaque jour.</strong> Pendant ce temps, vos patients s'impatientent... et certains ne reviennent jamais.
+            </p>
+          </div>
+        </div>
+        <div class="w-full max-w-xl flex flex-col gap-3">
+          <a href="#commander" class="flex items-center justify-between px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white transition-colors">
+            <span class="flex items-center gap-3">
+              <svg class="lucide" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="2"/><circle cx="4" cy="20" r="2"/><path d="M4.6 18.4 10 8M10 8V4.5M10 8h5.5"/></svg>
+              <span class="text-left">
+                <span class="block text-base sm:text-lg font-bold tracking-tight">Commander la clé USB — Offre 9 900 DA</span>
+                <span class="block text-xs font-normal text-blue-100">Paiement à la livraison après inspection du colis</span>
+              </span>
             </span>
-<span>•</span>
-<span class="flex items-center gap-1">
-<span class="material-symbols-outlined fill text-accent-emerald text-[16px]">visibility</span>
-              Vérifiez le colis avant de payer
+            <svg class="lucide" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-xs font-medium text-slate-600">
+            <div class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white border border-slate-200">
+              <svg class="lucide text-blue-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+              <span>Paiement à la livraison</span>
+            </div>
+            <div class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white border border-slate-200">
+              <svg class="lucide text-blue-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+              <span>58 wilayas (Yalidine)</span>
+            </div>
+            <div class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white border border-slate-200">
+              <svg class="lucide text-blue-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="M2 2l20 20"/></svg>
+              <span>100% hors-ligne</span>
+            </div>
+            <div class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white border border-slate-200">
+              <svg class="lucide text-blue-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
+              <span>Licence à vie (0 DA/mois)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Enterprise application frame -->
+      <div class="lg:col-span-5">
+        <div class="bg-white rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] overflow-hidden">
+          <div class="bg-slate-900 px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+              </span>
+              <span class="text-xs font-medium text-slate-300 ml-2">ClinixOS Pro v4.2 — Cabinet Médical</span>
+            </div>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold">
+              <svg class="lucide" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+              <span>100% hors-ligne</span>
             </span>
-<span>•</span>
-<span class="flex items-center gap-1">
-<span class="material-symbols-outlined fill text-accent-emerald text-[16px]">local_shipping</span>
-              58 wilayas livrées
+          </div>
+          <div class="p-5 bg-slate-50 space-y-3.5">
+            <div class="bg-white px-3.5 py-3 rounded-lg border border-slate-200 flex items-center gap-2.5">
+              <svg class="lucide text-slate-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <span class="text-xs text-slate-500">Recherche patient : <strong class="text-slate-900 font-semibold">BOUZID Amine (34 ans)</strong>...</span>
+            </div>
+            <div class="bg-white p-4 rounded-lg border border-slate-200 space-y-3">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Dossier N° 2025-0842</div>
+                  <div class="text-[11px] text-slate-500">Dernière visite : 18 Janvier 2025 • HTA Traitée</div>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold uppercase">À jour</span>
+              </div>
+              <div class="grid grid-cols-3 gap-2 pt-1 text-center">
+                <div class="bg-slate-50 border border-slate-200 p-2 rounded-lg">
+                  <div class="text-[11px] text-slate-500 font-medium">Tension</div>
+                  <div class="text-base font-bold text-slate-900">13 / 8</div>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-2 rounded-lg">
+                  <div class="text-[11px] text-slate-500 font-medium">Glycémie</div>
+                  <div class="text-base font-bold text-slate-900">1.02 g/L</div>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-2 rounded-lg">
+                  <div class="text-[11px] text-slate-500 font-medium">Attente</div>
+                  <div class="text-base font-bold text-emerald-700">04 min</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-slate-200 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
+                  <svg class="lucide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-slate-900">Ordonnance A5 imprimée</div>
+                  <div class="text-[11px] text-slate-500">Format conforme • Signature prête</div>
+                </div>
+              </div>
+              <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-md">5 secondes</span>
+            </div>
+            <div class="bg-blue-700 text-white px-4 py-3.5 rounded-lg flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-blue-200 line-through block">Tarif standard : 35 000 DA</span>
+                <span class="text-xs font-semibold">Pack Clé USB Tout Inclus</span>
+              </div>
+              <div class="text-right">
+                <span class="text-2xl font-bold leading-none">9 900</span>
+                <span class="text-xs font-semibold text-blue-100 ml-0.5">DA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200">
+          <svg class="lucide text-emerald-700" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+          <span class="text-xs font-medium text-slate-700">Données 100% locales au cabinet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. METRICS -->
+<section class="bg-slate-50 border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div class="p-4 rounded-xl bg-white border border-slate-200 text-center">
+        <div class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-1">5 sec</div>
+        <div class="text-xs md:text-sm font-semibold text-slate-900">Pour imprimer une ordonnance A5</div>
+        <div class="text-[11px] text-slate-500 mt-0.5">Base médicamenteuse intégrée</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white border border-slate-200 text-center">
+        <div class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-1">100%</div>
+        <div class="text-xs md:text-sm font-semibold text-slate-900">Hors-ligne — Zéro Internet</div>
+        <div class="text-[11px] text-slate-500 mt-0.5">Insensible aux coupures ADSL / 4G</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white border border-slate-200 text-center">
+        <div class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-1">0 DA</div>
+        <div class="text-xs md:text-sm font-semibold text-slate-900">D'abonnement mensuel</div>
+        <div class="text-[11px] text-slate-500 mt-0.5">Licence définitive à vie</div>
+      </div>
+      <div class="p-4 rounded-xl bg-white border border-slate-200 text-center">
+        <div class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-1">58</div>
+        <div class="text-xs md:text-sm font-semibold text-slate-900">Wilayas couvertes</div>
+        <div class="text-[11px] text-slate-500 mt-0.5">Yalidine / Maystro à domicile ou cabinet</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PAIN POINTS -->
+<section id="probleme" class="bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-3.5 py-1 rounded-full border border-slate-200 bg-white text-slate-700 text-xs font-medium uppercase tracking-wider mb-3">Ça vous parle, Docteur ?</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">Le vrai coût du « on a toujours fait comme ça »</h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Ce ne sont pas que des papiers qui s'envolent, c'est votre temps, votre énergie et vos revenus qui partent — chaque jour, un peu plus.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="M9.5 12.5l5 5M14.5 12.5l-5 5"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Le dossier introuvable devant le patient</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Vous fouillez les armoires pendant que la salle d'attente se remplit et que le patient vous regarde, gêné. L'autorité du médecin en prend un coup.</p>
+        <span class="mt-auto w-fit text-slate-700 font-medium text-xs bg-slate-100 rounded px-2 py-1">Coût : un patient qui attend trop change de praticien.</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">L'ordonnance manuscrite interminable</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Écrire à la main pour chaque patient, raturer, recommencer. Puis le pharmacien vous appelle en pleine consultation parce qu'il n'arrive pas à lire votre écriture.</p>
+        <span class="mt-auto w-fit text-slate-700 font-medium text-xs bg-slate-100 rounded px-2 py-1">Coût : 5 à 10 minutes par patient, chaque semaine.</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Le fichier Excel qui a « disparu »</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Un mauvais clic, un virus, un vieux PC qui lâche — et des mois de suivi patients effacés d'un coup. Sans sauvegarde automatique, sans aucun recours.</p>
+        <span class="mt-auto w-fit text-slate-700 font-medium text-xs bg-slate-100 rounded px-2 py-1">Coût : des années d'historique médical, irrécupérables.</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">La secrétaire débordée, vous aussi</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Elle note sur un cahier, vous criez les noms dans le couloir, personne ne sait qui est le suivant. Le chaos total de 11h à 14h dans le cabinet.</p>
+        <span class="mt-auto w-fit text-slate-700 font-medium text-xs bg-slate-100 rounded px-2 py-1">Coût : erreurs de file, patients énervés, équipe épuisée.</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.61 16.95A5 5 0 0 0 18 10h-1.26a8 8 0 0 0-7.05-6M5 5a8 8 0 0 0 4 15h9a5 5 0 0 0 1.7-.3"/><path d="M2 2l20 20"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Le logiciel « cloud » coupé par la 4G</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">La connexion ADSL ou 4G rame, le serveur distant bloque et votre logiciel médical payé cher devient totalement inutilisable en pleine consultation.</p>
+        <span class="mt-auto w-fit text-slate-700 font-medium text-xs bg-slate-100 rounded px-2 py-1">Coût : un abonnement payé pour un outil indisponible.</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 4 5-8"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Les fins de mois floues</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Combien de consultations aujourd'hui ? Cette semaine ? Impossible à dire avec précision. Vous pilotez votre investissement de cabinet médical à l'aveugle.</p>
+        <span class="mt-auto w-fit text-slate-700 font-medium text-xs bg-slate-100 rounded px-2 py-1">Coût : sans chiffres, impossible d'optimiser.</span>
+      </div>
+    </div>
+    <div class="p-6 md:p-7 rounded-xl bg-white border border-slate-200 flex flex-col md:flex-row items-center gap-5">
+      <div class="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 shrink-0">
+        <svg class="lucide" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      </div>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-center md:text-left"><strong class="text-slate-900 font-semibold">Et pendant ce temps, vos confrères équipés avancent.</strong> Chaque semaine sans système, l'écart se creuse : eux terminent à l'heure avec des dossiers impeccables, pendant que vous rattrapez le retard le soir. <strong class="text-slate-900 font-semibold">Le cabinet qui s'organise aujourd'hui garde ses patients demain.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SOLUTION -->
+<section id="solution" class="bg-slate-50 border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-3.5 py-1 rounded-full border border-slate-200 bg-white text-slate-700 text-xs font-medium uppercase tracking-wider mb-3">La Solution Autonome</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">ClinixOS Pro : votre cabinet, <span class="text-blue-700">en ordre en 10 minutes</span></h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Pas de formation compliquée, pas de technicien à recevoir, pas d'Internet requis. Trois gestes, et c'est réglé.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="bg-white p-6 md:p-7 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-4xl font-bold text-slate-200">01</span>
+          <div class="w-11 h-11 rounded-lg bg-blue-700 flex items-center justify-center text-white">
+            <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="2"/><circle cx="4" cy="20" r="2"/><path d="M4.6 18.4 10 8M10 8V4.5M10 8h5.5"/></svg>
+          </div>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Branchez la clé USB</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-5">La clé arrive chez vous par Yalidine / Maystro. Branchez-la sur n'importe quel PC Windows, lancez l'installateur en 2 clics. Tout est déjà configuré.</p>
+        <span class="mt-auto w-fit text-xs font-medium text-slate-700 bg-slate-100 rounded px-2.5 py-1">Moins de 10 minutes</span>
+      </div>
+      <div class="bg-white p-6 md:p-7 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-4xl font-bold text-slate-200">02</span>
+          <div class="w-11 h-11 rounded-lg bg-blue-700 flex items-center justify-center text-white">
+            <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </div>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Retrouvez chaque patient en 1 clic</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-5">Dossiers, antécédents, bilans, historique complet des visites : tapez le nom ou le numéro de téléphone, tout s'affiche. La secrétaire voit la file en temps réel.</p>
+        <span class="mt-auto w-fit text-xs font-medium text-slate-700 bg-slate-100 rounded px-2.5 py-1">Recherche instantanée</span>
+      </div>
+      <div class="bg-white p-6 md:p-7 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-4xl font-bold text-slate-200">03</span>
+          <div class="w-11 h-11 rounded-lg bg-blue-700 flex items-center justify-center text-white">
+            <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg>
+          </div>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Imprimez l'ordonnance A5</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-5">Base médicamenteuse intégrée, posologies types en mémoire, mise en page laser claire que les pharmaciens lisent sans vous appeler. Le patient repart serein.</p>
+        <span class="mt-auto w-fit text-xs font-medium text-slate-700 bg-slate-100 rounded px-2.5 py-1">5 secondes chrono</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. FEATURES -->
+<section id="fonctionnalites" class="bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-3.5 py-1 rounded-full border border-slate-200 bg-white text-slate-700 text-xs font-medium uppercase tracking-wider mb-3">Tout ce que votre cabinet y gagne</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">Un seul outil. <span class="text-blue-700">Neuf problèmes réglés.</span></h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Chaque fonction existe pour une raison précise : vous faire gagner du temps, protéger vos données et garder vos patients.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Dossier patient complet</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Historique des visites, antécédents, bilans biologiques, notes cliniques : tout le passé médical de chaque patient retrouvé en un clic. Finis les classeurs encombrants.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Zéro dossier perdu</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Ordonnance A5 en 5 secondes</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Base de médicaments couramment prescrits en Algérie intégrée. Posologies rapides, impression nette A5/A4. Les pharmaciens lisent sans vous déranger.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">5 sec par patient</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">File d'attente &amp; rendez-vous</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">La secrétaire enregistre les arrivées en un instant. Vous voyez qui est le suivant directement sur votre écran de consultation. Fini les cris dans le couloir.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Salle d'attente apaisée</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="M16 21l4-4-4-4"/><path d="M20 17H4"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Sync médecin — secrétaire</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Vos deux PC communiquent via le réseau local du cabinet — même sans Internet. Chacun voit le travail de l'autre en direct avec une synchronisation instantanée.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Sans Internet (LAN)</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 4 5-8"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Recettes &amp; statistiques du jour</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Consultations du jour, de la semaine, du mois : vos chiffres sont enfin nets et transparents. Pilotez l'activité de votre cabinet médical sans approximations.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Fini le pilotage à l'aveugle</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Recherche instantanée</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Nom, téléphone, date : retrouvez n'importe quel patient en une seconde, même au milieu d'une base de plus de 10 000 dossiers médicaux enregistrés.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">1 clic suffit</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">100% hors-ligne, secret garanti</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Données stockées localement sur votre ordinateur sous votre contrôle total. Aucun cloud étranger. Votre cabinet tourne même en coupure réseau complète.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Sans connexion requise</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Sauvegarde &amp; transfert simples</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Sauvegardez sur la clé USB ou sur disque externe en un clic. Nouveau PC ? Vos données vous suivent en quelques secondes. Vos données restent sous votre contrôle.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Sauvegarde locale</span>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
+        <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
+          <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Multi-spécialités, tout Windows</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Générale, pédiatrie, gynéco, cardio, dermato, ophtalmo, dentaire... Compatible Windows 7/8/10/11 et avec toutes les imprimantes standard du marché.</p>
+        <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Prêt à l'emploi immédiat</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. COMPARISON -->
+<section id="comparatif" class="bg-slate-50 border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-3.5 py-1 rounded-full border border-slate-200 bg-white text-slate-700 text-xs font-medium uppercase tracking-wider mb-3">Avant / Après</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">Regardez la différence, <span class="text-blue-700">puis choisissez</span></h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Deux façons d'exercer la médecine libérale aujourd'hui en Algérie. Laquelle reflète votre cabinet ?</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <div class="bg-white p-6 md:p-8 rounded-xl border border-slate-200">
+        <div class="flex items-center gap-3 pb-4 border-b border-slate-200 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500">
+            <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-slate-900">Sans ClinixOS Pro</h3>
+        </div>
+        <ul class="space-y-3.5 text-sm text-slate-600">
+          <li class="flex items-start gap-2.5"><svg class="lucide text-slate-400 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Dossiers papier introuvables pendant que la salle d'attente s'agite et se plaint du retard.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-slate-400 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Ordonnances manuscrites : longues à rédiger, raturées, illisibles en pharmacie.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-slate-400 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Excel effacé par erreur = des mois de suivi médical perdus à tout jamais.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-slate-400 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Logiciels cloud inutilisables dès que la connexion 4G ou ADSL faiblit.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-slate-400 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Abonnements mensuels coûteux + frais de technicien à régler chaque année.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-slate-400 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Stress permanent en fin de journée et consultations terminées tard le soir.</span></li>
+        </ul>
+      </div>
+      <div class="bg-white p-6 md:p-8 rounded-xl border border-slate-200">
+        <div class="flex items-center gap-3 pb-4 border-b border-slate-200 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700">
+            <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-slate-900">Avec ClinixOS Pro</h3>
+        </div>
+        <ul class="space-y-3.5 text-sm text-slate-700">
+          <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Patient retrouvé en 1 clic :</strong> historique complet devant vous, consultation sereine et fluide.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Ordonnance A5 en 5 secondes,</strong> nette, lisible par tous les pharmaciens d'Algérie.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Sauvegarde sur clé USB :</strong> vos données vous suivent partout en totale sécurité.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">100% hors-ligne :</strong> coupure Internet = journée de consultation tout à fait normale.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">9 900 DA une seule fois :</strong> licence définitive à vie, zéro abonnement, zéro surprise.</span></li>
+          <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Cabinet ordonné :</strong> vous terminez à l'heure et consacrez votre énergie à soigner.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PRICING -->
+<section id="tarifs" class="bg-white">
+  <div class="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-24">
+    <div class="bg-white rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] overflow-hidden">
+      <div class="px-6 sm:px-10 pt-8 sm:pt-10 pb-6 text-center border-b border-slate-200">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-slate-900 text-white text-xs font-semibold uppercase tracking-wider mb-4">Offre de lancement — 20 premiers cabinets</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2">Le système complet, pour le prix d'une journée de consultations</h2>
+        <p class="text-sm sm:text-base text-slate-600">Clé USB + licence complète à vie + livraison 58 wilayas. Sans intermédiaire, sans abonnement mensuel.</p>
+      </div>
+      <div class="p-6 sm:p-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 text-center">
+            <div class="text-xs font-semibold text-slate-500 uppercase mb-1">Tarif Officiel Normal</div>
+            <div class="text-3xl font-bold text-slate-400 line-through">35 000 DA</div>
+            <div class="text-xs text-slate-500 mt-1">Prix agence + technicien de déploiement</div>
+          </div>
+          <div class="p-6 rounded-xl bg-white border border-slate-200 text-center">
+            <div class="text-xs font-semibold text-slate-500 uppercase mb-1">Tarif de Lancement Spécial</div>
+            <div class="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight">9 900 <span class="text-lg font-semibold text-slate-500">DA</span></div>
+            <div class="text-xs font-semibold text-emerald-700 mt-1">Licence complète définitive à vie</div>
+          </div>
+        </div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start gap-3 text-sm text-slate-700"><svg class="lucide text-emerald-700 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Clé USB ClinixOS Pro</strong> — système complet, pré-configuré, prêt à l'emploi immédiat</span></li>
+          <li class="flex items-start gap-3 text-sm text-slate-700"><svg class="lucide text-emerald-700 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Licence complète à vie</strong> — payez une fois, utilisez pour toujours, 0 DA d'abonnement</span></li>
+          <li class="flex items-start gap-3 text-sm text-slate-700"><svg class="lucide text-emerald-700 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Dossiers patients + ordonnances A5 + file d'attente + statistiques</strong> inclus</span></li>
+          <li class="flex items-start gap-3 text-sm text-slate-700"><svg class="lucide text-emerald-700 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Livraison Yalidine / Maystro</strong> sur les 58 wilayas, paiement en espèces à la réception</span></li>
+          <li class="flex items-start gap-3 text-sm text-slate-700"><svg class="lucide text-emerald-700 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Guide d'installation en 2 clics</strong> + assistance prioritaire Téléphone &amp; WhatsApp 7j/7</span></li>
+        </ul>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200 text-center text-sm text-slate-700 mb-6">Tarif de lancement réservé aux 20 premiers cabinets libéraux — <strong class="font-semibold text-slate-900">9 900 DA au lieu de 35 000 DA.</strong></div>
+        <a href="#commander" class="w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-base transition-colors">
+          <span>Je réserve ma place parmi les 20 premiers — 9 900 DA</span>
+          <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="text-xs text-slate-500 text-center mt-3">Après les 20 premiers cabinets : <strong class="text-slate-700">retour automatique au tarif officiel de 35 000 DA.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. ORDER FORM -->
+<section id="commander" class="bg-slate-50 border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-3.5 py-1 rounded-full bg-blue-700 text-white text-xs font-semibold uppercase tracking-wider mb-3">Commande en 60 secondes</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">Recevez votre clé USB <span class="text-blue-700">sans payer en ligne</span></h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Remplissez ce formulaire. Notre équipe vous appelle dans les plus brefs délais pour confirmer, puis la clé part par Yalidine / Maystro. Vous payez 9 900 DA en espèces, à la réception.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+        <form id="order-form" action="https://script.google.com/macros/s/AKfycbzvjQ9Yjm-oIrKqz1Ii1-XiCvNATamySYDrSEk1Pc0XEcdCBSXVmcVzgD-YoykESeS35w/exec" method="POST" novalidate class="space-y-4">
+          <input type="hidden" name="product" value="ClinixOS Pro - Cle USB"/>
+          <input type="hidden" name="price" value="9900"/>
+          <input type="hidden" name="original_price" value="35000"/>
+          <input type="hidden" name="payment" value="COD"/>
+          <input type="hidden" name="carrier" value="Yalidine / Maystro Delivery"/>
+          <div id="form-error" role="alert" class="hidden p-3 rounded-lg bg-red-50 border border-red-200 text-red-800 text-sm font-medium"></div>
+          <div class="pb-2 border-b border-slate-200 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-900 flex items-center gap-2 uppercase">
+              <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">1</span>
+              Coordonnées du Médecin &amp; Cabinet
             </span>
-</div>
-</div>
-</div>
+            <span class="text-[11px] text-slate-500">* Champs obligatoires</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-xs font-semibold text-slate-900 mb-1.5">Nom et Prénom *</label>
+              <input id="name" name="name" autocomplete="name" type="text" required="" placeholder="Ex : Dr. Benali Mohamed" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+            </div>
+            <div>
+              <label for="specialty" class="block text-xs font-semibold text-slate-900 mb-1.5">Spécialité médicale *</label>
+              <select id="specialty" name="specialty" required="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer">
+                <option disabled="" selected="" value="">Choisir votre spécialité…</option>
+                <option value="Médecine Générale">Médecine Générale</option>
+                <option value="Pédiatrie">Pédiatrie</option>
+                <option value="Gynécologie-Obstétrique">Gynécologie-Obstétrique</option>
+                <option value="Cardiologie">Cardiologie</option>
+                <option value="Dermatologie">Dermatologie</option>
+                <option value="Ophtalmologie">Ophtalmologie</option>
+                <option value="ORL">ORL</option>
+                <option value="Chirurgie Générale">Chirurgie Générale</option>
+                <option value="Médecine Interne">Médecine Interne</option>
+                <option value="Neurologie">Neurologie</option>
+                <option value="Psychiatrie">Psychiatrie</option>
+                <option value="Radiologie">Radiologie</option>
+                <option value="Anesthésie-Réanimation">Anesthésie-Réanimation</option>
+                <option value="Médecine du Travail">Médecine du Travail</option>
+                <option value="Dentaire / Chirurgie Dentaire">Dentaire / Chirurgie Dentaire</option>
+                <option value="Kinésithérapie">Kinésithérapie</option>
+                <option value="Laboratoire d'Analyses">Laboratoire d'Analyses</option>
+                <option value="Autre">Autre spécialité</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="phone" class="block text-xs font-semibold text-slate-900 mb-1.5">Numéro de téléphone mobile *</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required="" placeholder="05 / 06 / 07 XX XX XX XX" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+              <span class="text-[11px] text-slate-500 block mt-1">Nous vous appelons sur ce numéro pour valider l'envoi.</span>
+            </div>
+            <div>
+              <label for="phone2" class="block text-xs font-semibold text-slate-900 mb-1.5">2ème Téléphone (Optionnel)</label>
+              <input id="phone2" name="phone2" type="tel" inputmode="tel" placeholder="Fixe cabinet ou mobile secrétaire" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+            </div>
+          </div>
+          <div class="pt-1 pb-2 border-b border-slate-200">
+            <span class="text-xs font-semibold text-slate-900 flex items-center gap-2 uppercase">
+              <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">2</span>
+              Adresse de livraison (Cabinet ou Domicile)
+            </span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="wilaya" class="block text-xs font-semibold text-slate-900 mb-1.5">Wilaya de destination *</label>
+              <select id="wilaya" name="wilaya" required="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer">
+                <option disabled="" selected="" value="">Sélectionnez votre wilaya (1 à 58)</option>
+              </select>
+            </div>
+            <div>
+              <label for="city" class="block text-xs font-semibold text-slate-900 mb-1.5">Commune / Ville *</label>
+              <select id="city" name="city" required="" disabled="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer disabled:bg-slate-50 disabled:text-slate-400">
+                <option disabled="" selected="" value="">D'abord la wilaya ↑</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="address" class="block text-xs font-semibold text-slate-900 mb-1.5">Adresse exacte du cabinet ou repère *</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" required="" placeholder="Ex : Cité 500 logts, Bâtiment B, en face de la clinique..." class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+          </div>
+          <button id="submit-btn" type="submit" class="w-full mt-2 py-4 px-6 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm sm:text-base transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
+            <span>VALIDER MA COMMANDE — 9 900 DA À LA LIVRAISON</span>
+          </button>
+          <div id="confirmation-message" class="hidden p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900 text-center">
+            <div class="text-sm font-semibold flex items-center justify-center gap-1.5 mb-1">
+              <svg class="lucide text-emerald-700" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
+              <span>Commande enregistrée avec succès !</span>
+            </div>
+            <p class="text-xs">Notre service praticiens vous contacte dans les plus brefs délais au numéro indiqué pour confirmer l'expédition par Yalidine Express.</p>
+          </div>
+          <div class="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-1">
+            <svg class="lucide text-slate-500" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <span>Vos informations restent strictement confidentielles. Zéro démarchage intempestif.</span>
+          </div>
+        </form>
+      </div>
+      <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide block mb-1">Récapitulatif de Commande</span>
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Pack ClinixOS Pro USB</h3>
+        <div class="border-y border-slate-200 py-4 text-sm mb-4">
+          <div class="flex items-center justify-between py-1.5 text-slate-600">
+            <span>Clé USB ClinixOS Pro (Licence à vie)</span>
+            <span class="line-through text-slate-400">35 000 DA</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 text-slate-900 font-medium">
+            <span>Remise promotionnelle de lancement</span>
+            <span>- 25 100 DA</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 text-slate-600">
+            <span>Livraison 58 wilayas (Yalidine)</span>
+            <span class="text-emerald-700 font-semibold uppercase text-xs">Incluse</span>
+          </div>
+          <div class="flex items-center justify-between py-1.5 text-slate-600">
+            <span>Mode de règlement</span>
+            <span class="font-semibold text-slate-900">Espèces à la réception</span>
+          </div>
+        </div>
+        <div class="flex items-end justify-between mb-5">
+          <div>
+            <span class="text-xs font-semibold text-slate-500 uppercase block">Total net à régler</span>
+            <span class="text-[11px] text-slate-500">Après vérification du colis</span>
+          </div>
+          <div class="text-right">
+            <span class="text-3xl sm:text-4xl font-bold text-slate-900 leading-none">9 900</span>
+            <span class="text-base font-semibold text-slate-500 ml-0.5">DA</span>
+          </div>
+        </div>
+        <ul class="space-y-2.5 text-xs text-slate-600">
+          <li class="flex items-center gap-2">
+            <svg class="lucide text-emerald-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Appel de confirmation par notre équipe dans les plus brefs délais</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="lucide text-emerald-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg>
+            <span>Vous ouvrez et vérifiez le colis avant de payer au livreur</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="lucide text-emerald-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <span>Installation en 2 clics sur PC + assistance WhatsApp offerte</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="lucide text-emerald-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="M2 2l20 20"/></svg>
+            <span>100% hors-ligne, zéro abonnement, zéro dépendance</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section id="faq" class="bg-white">
+  <div class="max-w-3xl mx-auto px-4 md:px-6 py-16 md:py-24">
+    <div class="text-center max-w-xl mx-auto mb-10">
+      <span class="inline-block px-3.5 py-1 rounded-full border border-slate-200 bg-white text-slate-700 text-xs font-medium uppercase tracking-wider mb-3">Questions Fréquentes</span>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">Dernières questions <span class="text-blue-700">avant de commander</span></h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Toutes les réponses pour équiper votre cabinet médical en toute sérénité.</p>
+    </div>
+    <div class="space-y-3" id="faq-list">
+      <div class="faq-item bg-white border border-slate-200 rounded-xl">
+        <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
+          <span>1. Ai-je besoin d'une connexion Internet ?</span>
+          <svg class="lucide faq-icon text-slate-500" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed"><strong class="text-slate-900">Absolument pas.</strong> ClinixOS Pro est pensé et conçu pour l'environnement médical algérien. Il fonctionne à 100% en local sur votre ordinateur. Aucune panne d'ADSL, aucune chute de réseau 4G ne peut bloquer vos consultations. Vos dossiers et ordonnances sont disponibles 365 jours par an.</p></div>
+      </div>
+      <div class="faq-item bg-white border border-slate-200 rounded-xl">
+        <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
+          <span>2. Comment la secrétaire et moi travaillons-nous ensemble ?</span>
+          <svg class="lucide faq-icon text-slate-500" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed">ClinixOS Pro dispose d'un module de <strong class="text-slate-900">réseau local (LAN)</strong>. Il suffit de brancher les deux ordinateurs (médecin et secrétariat) sur le même modem ou routeur wifi du cabinet — sans avoir besoin d'Internet actif. La secrétaire inscrit les patients dans la salle d'attente et vous les voyez s'afficher en temps réel sur votre écran de consultation.</p></div>
+      </div>
+      <div class="faq-item bg-white border border-slate-200 rounded-xl">
+        <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
+          <span>3. La licence est-elle vraiment à vie ?</span>
+          <svg class="lucide faq-icon text-slate-500" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed"><strong class="text-slate-900">Oui, définitivement.</strong> Vous payez les 9 900 DA une seule fois à la réception de votre clé USB. Il n'y a aucun abonnement mensuel, aucun frais de renouvellement annuel, aucun piège contractuel. Le logiciel vous appartient.</p></div>
+      </div>
+      <div class="faq-item bg-white border border-slate-200 rounded-xl">
+        <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
+          <span>4. Et si je change d'ordinateur dans 2 ans ?</span>
+          <svg class="lucide faq-icon text-slate-500" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed">Un module de <strong class="text-slate-900">sauvegarde / restauration en 1 clic</strong> est directement inclus. Vous insérez votre clé USB ou disque externe, cliquez sur « Sauvegarder », puis vous réinstallez sur le nouveau PC et restaurez votre base en quelques secondes. Tout votre historique patient est restauré à l'identique.</p></div>
+      </div>
+      <div class="faq-item bg-white border border-slate-200 rounded-xl">
+        <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
+          <span>5. Comment se passent la livraison et le paiement ?</span>
+          <svg class="lucide faq-icon text-slate-500" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed">La livraison s'effectue via nos partenaires agréés <strong class="text-slate-900">Yalidine Express ou Maystro Delivery</strong> sur l'ensemble des 58 Wilayas d'Algérie, directement à l'adresse de votre cabinet ou de votre domicile. Vous ne réglez rien à l'avance : vous ouvrez votre colis, inspectez la clé USB et le guide, puis remettez le montant de 9 900 DA en espèces au livreur.</p></div>
+      </div>
+      <div class="faq-item bg-white border border-slate-200 rounded-xl">
+        <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
+          <span>6. Que se passe-t-il après les 20 premiers cabinets ?</span>
+          <svg class="lucide faq-icon text-slate-500" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed">Ce tarif promotionnel à 9 900 DA est strictement réservé au quota initial de lancement de 20 cabinets pour amorcer les retours d'expérience par wilaya. Une fois ce quota atteint, le tarif bascule automatiquement à 35 000 DA (tarif officiel avec déplacement technicien).</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FINAL -->
+<section class="bg-slate-900">
+  <div class="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-20 text-center">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4">Dans 6 mois, votre cabinet sera organisé... <span class="text-blue-300">ou toujours débordé.</span></h2>
+    <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">La différence se joue aujourd'hui : <strong class="text-white">9 900 DA une seule fois</strong>, au lieu des heures perdues chaque semaine pendant des années. Les 20 places promotionnelles partent vite.</p>
+    <a href="#commander" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-white text-slate-900 font-bold text-sm sm:text-base transition-colors hover:bg-slate-100">
+      <span>COMMANDER • 9 900 DA À LA LIVRAISON</span>
+      <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs text-slate-300 pt-5">
+      <span class="inline-flex items-center gap-1.5"><svg class="lucide text-emerald-400" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>Paiement en espèces à la réception</span>
+      <span class="inline-flex items-center gap-1.5"><svg class="lucide text-emerald-400" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>Vérifiez le colis avant de payer</span>
+      <span class="inline-flex items-center gap-1.5"><svg class="lucide text-emerald-400" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>58 wilayas livrées</span>
+    </div>
+  </div>
 </section>
 </main>
-<!-- 12. MEDICAL FOOTER -->
-<footer class="w-full bg-white border-t border-clinical-border pt-12 pb-8">
-<div class="max-w-6xl mx-auto px-4 md:px-6">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-clinical-border">
-<!-- Logo & Description -->
-<div class="space-y-3">
-<img alt="ClinixOS Pro" class="h-8 w-auto object-contain" loading="lazy" decoding="async" src="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
-<p class="text-xs text-clinical-textSecondary leading-relaxed">
-            Le système de gestion médicale autonome 100% hors-ligne pour praticiens et spécialistes en Algérie. Zéro abonnement, zéro dépendance cloud.
-          </p>
-<div class="flex items-center gap-1.5 text-xs text-clinical-textMuted pt-1">
-<span class="material-symbols-outlined text-accent-emerald text-[18px]">verified_user</span>
-<span>Conforme déontologie médicale &amp; secret médical</span>
-</div>
-</div>
-<!-- Practitioner Support -->
-<div class="space-y-2.5">
-<h4 class="text-xs font-bold uppercase tracking-wider text-clinical-textPrimary">Support Praticiens Algérie</h4>
-<ul class="space-y-2 text-xs text-clinical-textSecondary">
-<li>
-<a class="flex items-center gap-2 hover:text-brand-700 transition-colors" href="tel:+213550000000">
-<span class="material-symbols-outlined text-brand-700 text-[18px]">call</span>
-<span>+213 (0) 550 12 34 56</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-2 hover:text-accent-emerald transition-colors font-medium" href="https://wa.me/213550000000" target="_blank">
-<span class="material-symbols-outlined text-accent-emerald text-[18px]">chat</span>
-<span>WhatsApp Assistance Cabinet</span>
-</a>
-</li>
-<li class="flex items-center gap-2 text-clinical-textMuted">
-<span class="material-symbols-outlined text-[18px]">schedule</span>
-<span>Dimanche au Jeudi : 08h30 - 18h00</span>
-</li>
-<li class="flex items-center gap-2 text-clinical-textMuted">
-<span class="material-symbols-outlined text-[18px]">mail</span>
-<span>support@clinixos-dz.com</span>
-</li>
-</ul>
-</div>
-<!-- Logistics & Shipping -->
-<div class="space-y-2.5">
-<h4 class="text-xs font-bold uppercase tracking-wider text-clinical-textPrimary">Livraison &amp; Rapprochement</h4>
-<div class="p-3 rounded-xl bg-clinical-subtle border border-clinical-border space-y-1.5">
-<div class="flex items-center gap-1.5 text-xs font-bold text-clinical-textPrimary">
-<span class="material-symbols-outlined text-brand-700 text-[18px]">local_shipping</span>
-<span>Partenaires Logistiques Agréés</span>
-</div>
-<p class="text-[11px] text-clinical-textSecondary leading-relaxed">
-              Distribution sécurisée sur les <strong>58 Wilayas</strong> via Yalidine Express &amp; Maystro Delivery. Paiement en espèces à la livraison avec vérification du colis.
-            </p>
-</div>
-<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent-emeraldLight text-accent-emerald text-[11px] font-bold">
-<span class="material-symbols-outlined text-[16px]">verified</span>
-<span>Clé USB 3.0 Haute Endurance Incluse</span>
-</div>
-</div>
-<!-- Guarantees -->
-<div class="space-y-2.5">
-<h4 class="text-xs font-bold uppercase tracking-wider text-clinical-textPrimary">Garantie &amp; Sécurité</h4>
-<ul class="space-y-2 text-xs text-clinical-textSecondary">
-<li class="flex items-start gap-1.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px] shrink-0">check_circle</span>
-<span>Paiement à la réception après contrôle</span>
-</li>
-<li class="flex items-start gap-1.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px] shrink-0">check_circle</span>
-<span>Licence permanente à vie sans frais mensuels</span>
-</li>
-<li class="flex items-start gap-1.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px] shrink-0">check_circle</span>
-<span>Données hébergées à 100% dans votre cabinet</span>
-</li>
-<li class="flex items-start gap-1.5">
-<span class="material-symbols-outlined fill text-accent-emerald text-[18px] shrink-0">check_circle</span>
-<span>Assistance à l'installation à distance offerte</span>
-</li>
-</ul>
-</div>
-</div>
-<!-- Legal bottom -->
-<div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-clinical-textMuted">
-<div>
-          © 2026 ClinixOS Pro Algérie. Tous droits réservés. Conçu pour le corps médical algérien.
-        </div>
-<div class="flex items-center gap-4">
-<a class="hover:text-brand-700 transition-colors" href="#mentions">Mentions Légales</a>
-<a class="hover:text-brand-700 transition-colors" href="#confidentialite">Confidentialité Médicale</a>
-<a class="hover:text-brand-700 transition-colors" href="#conditions">Conditions de Vente (58 Wilayas)</a>
-</div>
-</div>
-</div>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-slate-200">
+      <div>
+        <img src="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png" alt="ClinixOS Pro" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="this.style.display='none'"/>
+        <p class="text-xs text-slate-600 leading-relaxed">Le système de gestion médicale autonome 100% hors-ligne pour praticiens et spécialistes en Algérie. Zéro abonnement, zéro dépendance cloud.</p>
+        <p class="flex items-center gap-1.5 text-xs text-slate-500 pt-2">
+          <svg class="lucide text-emerald-700" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+          <span>Conforme déontologie médicale &amp; secret médical</span>
+        </p>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Support Praticiens Algérie</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li class="flex items-center gap-2">
+            <svg class="lucide text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span>Dimanche au Jeudi : 08h30 - 18h00</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="lucide text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <span>Livraison Yalidine / Maystro — 58 wilayas</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Commande</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li class="flex items-start gap-1.5">
+            <svg class="lucide text-emerald-700 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
+            <span>Paiement à la réception après contrôle</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <svg class="lucide text-emerald-700 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
+            <span>Licence permanente à vie sans frais mensuels</span>
+          </li>
+          <li class="flex items-start gap-1.5">
+            <svg class="lucide text-emerald-700 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
+            <span>Données hébergées à 100% dans votre cabinet</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Navigation</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-blue-700 transition-colors" href="#probleme">Le Problème</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="#tarifs">Tarifs — 9 900 DA</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="#commander">Commander (paiement à la livraison)</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="#faq">Questions fréquentes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <div>© 2026 ClinixOS Pro Algérie. Tous droits réservés. Conçu pour le corps médical algérien.</div>
+      <div>Offre de lancement limitée aux 20 premiers cabinets, puis retour au tarif officiel de 35 000 DA.</div>
+    </div>
+  </div>
 </footer>
+
 <!-- Sticky order bar -->
-<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-clinical-border px-4 py-3 transition-transform duration-300 translate-y-full" style="box-shadow:0 -4px 20px -2px rgba(8,23,34,.08)">
-<a href="#commander" class="max-w-xl mx-auto flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-brand-700 text-white font-extrabold text-sm shadow-clinical">
-<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-<span>COMMANDER — 9 900 DA · PAIEMENT À LA LIVRAISON</span>
-</a>
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 px-4 py-3">
+  <a href="#commander" class="max-w-xl mx-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
+    <svg class="lucide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+    <span>COMMANDER — 9 900 DA · PAIEMENT À LA LIVRAISON</span>
+  </a>
 </div>
-<style>#sticky-cta.show{transform:translateY(0)!important}</style>
-<!-- Countdown Timer (ends at midnight, local time) -->
-<script>
-    (function initLandingTimer() {
-      var hoursEl = document.getElementById('hours');
-      var minutesEl = document.getElementById('minutes');
-      var secondsEl = document.getElementById('seconds');
-      if (!hoursEl || !minutesEl || !secondsEl) return;
-      function tick() {
-        var now = new Date();
-        var end = new Date(now); end.setHours(23,59,59,999);
-        var d = Math.max(0, end - now);
-        hoursEl.textContent = String(Math.floor(d/3600000)).padStart(2,'0');
-        minutesEl.textContent = String(Math.floor(d%3600000/60000)).padStart(2,'0');
-        secondsEl.textContent = String(Math.floor(d%60000/1000)).padStart(2,'0');
-      }
-      tick(); setInterval(tick, 1000);
-    })();
-  </script>
+
 <script src="locations.js"></script>
 <script>
 (function(){
   'use strict';
 
-  /* Sticky order bar (Stitch-styled, shows after hero, hides at form) */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobile-menu');
+  if (burger && menu) {
+    burger.addEventListener('click', function(){
+      var open = menu.classList.toggle('hidden');
+      burger.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+    menu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ menu.classList.add('hidden'); burger.setAttribute('aria-expanded','false'); });
+    });
+  }
+
   var sticky = document.getElementById('sticky-cta');
   var order = document.getElementById('commander');
   window.addEventListener('scroll', function(){
@@ -1342,7 +859,23 @@ fbq('init','3184145215124032');fbq('track','PageView');
     sticky.classList.toggle('show', show && !visible);
   }, {passive:true});
 
-  /* Wilaya (58) -> Commune cascade */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    var ans = item.querySelector('.faq-a');
+    if (!btn || !ans) return;
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('q-open');
+      document.querySelectorAll('.faq-item.q-open').forEach(function(o){
+        o.classList.remove('q-open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('q-open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+
   var wilayaSelect = document.getElementById('wilaya');
   var citySelect = document.getElementById('city');
   if (wilayaSelect && citySelect && typeof LOCATIONS_DATA !== 'undefined') {
@@ -1430,7 +963,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
       mark(address, !address.value.trim()); if(!address.value.trim()) errors.push('votre adresse');
 
       if (errors.length) {
-        err.textContent = 'Il manque : ' + errors.join(', ') + '. Vérifiez les champs en rouge 👆';
+        err.textContent = 'Il manque : ' + errors.join(', ') + '. Vérifiez les champs signalés.';
         err.classList.remove('hidden');
         err.scrollIntoView({behavior:'smooth', block:'center'});
         return;
@@ -1457,4 +990,5 @@ fbq('init','3184145215124032');fbq('track','PageView');
   }
 })();
 </script>
-</body></html>
+</body>
+</html>
