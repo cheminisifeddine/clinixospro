@@ -133,7 +133,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
       "name": "La licence est-elle vraiment à vie ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui, définitivement. Vous payez les 9 900 DA une seule fois à la réception de votre clé USB. Il n'y a aucun abonnement mensuel, aucun frais de renouvellement annuel, aucun piège contractuel. Le logiciel vous appartient."
+        "text": "Oui, définitivement. Vous payez les 9 900 DA une seule fois à la réception de votre clé USB. Il n'y a aucun abonnement mensuel, aucun frais de renouvellement annuel, aucun piège contractuel. Le logiciel vous appartient."
       }
     },
     {
@@ -149,7 +149,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
       "name": "Comment se passent la livraison et le paiement ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La livraison s'effectue via nos partenaires agréés Yalidine Express ou Maystro Delivery sur l'ensemble des 58 Wilayas d'Algérie, directement à l'adresse de votre cabinet ou de votre domicile. Vous ne réglez rien à l'avance : vous ouvrez votre colis, inspectez la clé USB et le guide, puis remettez le montant de 9 900 DA en espèces au livreur."
+        "text": "La livraison s'effectue via nos partenaires agréés Yalidine Express ou Maystro Delivery sur l'ensemble des 58 Wilayas d'Algérie, directement à l'adresse de votre cabinet ou de votre domicile. Vous ne réglez rien à l'avance : vous ouvrez votre colis, inspectez la clé USB et le guide, puis remettez le montant de 9 900 DA en espèces au livreur."
       }
     },
     {
@@ -157,7 +157,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
       "name": "Que se passe-t-il après les 20 premiers cabinets ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ce tarif promotionnel à 9 900 DA est strictement réservé au quota initial de lancement de 20 cabinets pour amorcer les retours d'expérience par wilaya. Une fois ce quota atteint, le tarif bascule automatiquement à 35 000 DA (tarif officiel avec déplacement technicien)."
+        "text": "Ce tarif promotionnel à 9 900 DA est strictement réservé au quota initial de lancement de 20 cabinets pour amorcer les retours d'expérience par wilaya. Une fois ce quota atteint, le tarif bascule automatiquement à 35 000 DA (tarif officiel avec déplacement technicien)."
       }
     }
   ]
@@ -1143,11 +1143,10 @@ fbq('init','3184145215124032');fbq('track','PageView');
     if (!el) return;
     // styles.css is a compiled Tailwind bundle: .border-red-500 is emitted BEFORE
     // .border-slate-300, and the form fields already carry border-slate-300. At
-    // equal specificity the later rule wins, so toggling the utility classes
-    // alone leaves the border grey. These two rules live in index.html's own
-    // <style> block, which is parsed after the <link>, and carry a higher
-    // specificity, so they win. The ring utility (rgb(254 202 202) 2px) already
-    // rendered correctly and is left to the class toggle.
+    // equal specificity the later rule wins, so toggling those utility classes
+    // alone left the border grey. .field-invalid is declared in this file's own
+    // <style> block (parsed after the <link>) and carries a 0-1-0 specificity, so
+    // it wins and sets both the red border and the 2px red ring.
     el.classList.toggle('field-invalid', !!bad);
   }
 
