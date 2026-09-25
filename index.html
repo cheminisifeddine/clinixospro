@@ -11,11 +11,16 @@
 <meta property="og:description" content="Offre de lancement : 9 900 DA au lieu de 35 000 DA — licence complète à vie. 20 premiers cabinets. Paiement à la livraison, 58 wilayas."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="fr_DZ"/>
+<meta property="og:url" content="https://clinixospro.com/"/>
+<meta property="og:image" content="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ClinixOS Pro — Chaque jour sans système, votre cabinet perd de l'argent"/>
+<meta name="twitter:description" content="Offre de lancement : 9 900 DA au lieu de 35 000 DA — licence complète à vie. Paiement à la livraison, 58 wilayas."/>
+<link rel="canonical" href="https://clinixospro.com/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preconnect" href="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="styles.css"/>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -51,7 +56,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
     <a href="#top" class="flex items-center gap-3" aria-label="ClinixOS Pro — Accueil">
-      <img src="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png" alt="ClinixOS" width="168" height="42" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="this.style.display='none';document.getElementById('brand-fb').style.display='block'"/>
+      <img src="img/logo.png" alt="ClinixOS" width="400" height="100" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none';document.getElementById('brand-fb').style.display='block'}"/>
       <span id="brand-fb" style="display:none" class="text-lg font-bold tracking-tight">ClinixOS</span>
     </a>
     <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
@@ -163,7 +168,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
             </span>
           </div>
           <div class="bg-slate-900">
-            <img src="img/dashboard-1600.jpg" alt="Tableau de bord ClinixOS Pro — rendez-vous du jour, chiffre d'affaires et dernières consultations" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-auto block"/>
+            <img src="img/dashboard-1600.jpg" srcset="img/dashboard-480.jpg 480w, img/dashboard-800.jpg 800w, img/dashboard-1600.jpg 1600w" sizes="(max-width:1023px) 100vw, 470px" alt="Tableau de bord ClinixOS Pro — rendez-vous du jour, chiffre d'affaires et dernières consultations" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-auto block"/>
           </div>
         </div>
         <div class="mt-3 flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200">
@@ -337,7 +342,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
         <span id="gal-count" class="text-[11px] font-semibold text-slate-400">1 / 6</span>
       </div>
       <div class="bg-slate-900">
-        <img id="gal-view" src="img/dashboard-1600.jpg" alt="Tableau de bord ClinixOS Pro — rendez-vous du jour, chiffre d'affaires et dernières consultations" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-auto block transition-opacity duration-200"/>
+        <img id="gal-view" src="img/dashboard-1600.jpg" srcset="img/dashboard-480.jpg 480w, img/dashboard-800.jpg 800w, img/dashboard-1600.jpg 1600w" sizes="(max-width:767px) 100vw, 1120px" alt="Tableau de bord ClinixOS Pro — rendez-vous du jour, chiffre d'affaires et dernières consultations" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-auto block transition-opacity duration-200 cursor-zoom-in"/>
       </div>
       <div class="px-4 md:px-5 py-4 border-t border-slate-200">
         <p id="gal-caption" class="text-sm text-slate-600 leading-relaxed text-center">RDV du jour, chiffre d'affaires en dinars et dernières consultations : toute votre journée en un coup d'œil.</p>
@@ -515,7 +520,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 text-center">
             <div class="text-xs font-semibold text-slate-500 uppercase mb-1">Tarif Officiel Normal</div>
-            <div class="text-3xl font-bold text-slate-400 line-through">35 000 DA</div>
+            <div class="text-3xl font-bold text-slate-500 line-through">35 000 DA</div>
             <div class="text-xs text-slate-500 mt-1">Prix agence + technicien de déploiement</div>
           </div>
           <div class="p-6 rounded-xl bg-white border border-slate-200 text-center">
@@ -569,11 +574,11 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="name" class="block text-xs font-semibold text-slate-900 mb-1.5">Nom et Prénom *</label>
-              <input id="name" name="name" autocomplete="name" type="text" required="" placeholder="Ex : Dr. Benali Mohamed" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+              <input id="name" name="name" autocomplete="name" type="text" required="" placeholder="Ex : Dr. Benali Mohamed" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
             </div>
             <div>
               <label for="specialty" class="block text-xs font-semibold text-slate-900 mb-1.5">Spécialité médicale *</label>
-              <select id="specialty" name="specialty" required="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer">
+              <select id="specialty" name="specialty" required="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer">
                 <option disabled="" selected="" value="">Choisir votre spécialité…</option>
                 <option value="Médecine Générale">Médecine Générale</option>
                 <option value="Pédiatrie">Pédiatrie</option>
@@ -599,12 +604,12 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="phone" class="block text-xs font-semibold text-slate-900 mb-1.5">Numéro de téléphone mobile *</label>
-              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required="" placeholder="05 / 06 / 07 XX XX XX XX" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required="" placeholder="05 / 06 / 07 XX XX XX XX" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
               <span class="text-[11px] text-slate-500 block mt-1">Nous vous appelons sur ce numéro pour valider l'envoi.</span>
             </div>
             <div>
               <label for="phone2" class="block text-xs font-semibold text-slate-900 mb-1.5">2ème Téléphone (Optionnel)</label>
-              <input id="phone2" name="phone2" type="tel" inputmode="tel" placeholder="Fixe cabinet ou mobile secrétaire" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+              <input id="phone2" name="phone2" type="tel" inputmode="tel" placeholder="Fixe cabinet ou mobile secrétaire" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
             </div>
           </div>
           <div class="pt-1 pb-2 border-b border-slate-200">
@@ -616,20 +621,20 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label for="wilaya" class="block text-xs font-semibold text-slate-900 mb-1.5">Wilaya de destination *</label>
-              <select id="wilaya" name="wilaya" required="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer">
+              <select id="wilaya" name="wilaya" required="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer">
                 <option disabled="" selected="" value="">Sélectionnez votre wilaya (1 à 58)</option>
               </select>
             </div>
             <div>
               <label for="city" class="block text-xs font-semibold text-slate-900 mb-1.5">Commune / Ville *</label>
-              <select id="city" name="city" required="" disabled="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer disabled:bg-slate-50 disabled:text-slate-400">
+              <select id="city" name="city" required="" disabled="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer disabled:bg-slate-50 disabled:text-slate-400 disabled:border-slate-200">
                 <option disabled="" selected="" value="">D'abord la wilaya ↑</option>
               </select>
             </div>
           </div>
           <div>
             <label for="address" class="block text-xs font-semibold text-slate-900 mb-1.5">Adresse exacte du cabinet ou repère *</label>
-            <input id="address" name="address" type="text" autocomplete="street-address" required="" placeholder="Ex : Cité 500 logts, Bâtiment B, en face de la clinique..." class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-200 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+            <input id="address" name="address" type="text" autocomplete="street-address" required="" placeholder="Ex : Cité 500 logts, Bâtiment B, en face de la clinique..." class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
           </div>
           <button id="submit-btn" type="submit" class="w-full mt-2 py-4 px-6 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm sm:text-base transition-colors flex items-center justify-center gap-2 cursor-pointer">
             <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
@@ -654,7 +659,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
         <div class="border-y border-slate-200 py-4 text-sm mb-4">
           <div class="flex items-center justify-between py-1.5 text-slate-600">
             <span>Clé USB ClinixOS Pro (Licence à vie)</span>
-            <span class="line-through text-slate-400">35 000 DA</span>
+            <span class="line-through text-slate-500">35 000 DA</span>
           </div>
           <div class="flex items-center justify-between py-1.5 text-slate-900 font-medium">
             <span>Remise promotionnelle de lancement</span>
@@ -780,7 +785,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
   <div class="max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-slate-200">
       <div>
-        <img src="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png" alt="ClinixOS Pro" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="this.style.display='none'"/>
+        <img src="img/logo.png" alt="ClinixOS Pro" width="400" height="100" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none'}"/>
         <p class="text-xs text-slate-600 leading-relaxed">Le système de gestion médicale autonome 100% hors-ligne pour praticiens et spécialistes en Algérie. Zéro abonnement, zéro dépendance cloud.</p>
         <p class="flex items-center gap-1.5 text-xs text-slate-500 pt-2">
           <svg class="lucide text-emerald-700" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
@@ -835,6 +840,32 @@ fbq('init','3184145215124032');fbq('track','PageView');
   </div>
 </footer>
 
+<!-- Lightbox -->
+<div id="lightbox" class="hidden fixed inset-0 z-[60] bg-slate-900/95 flex-col" role="dialog" aria-modal="true" aria-label="Capture agrandie — appuyez sur Échap pour fermer">
+  <div class="flex items-center justify-between gap-3 px-4 py-3">
+    <span id="lb-title" class="text-sm font-medium text-slate-200 truncate">Tableau de bord</span>
+    <button id="lb-close" type="button" aria-label="Fermer" class="w-10 h-10 shrink-0 rounded-lg bg-white/10 hover:bg-white/20 text-white inline-flex items-center justify-center transition-colors">
+      <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div id="lb-stage" class="flex-1 min-h-0 overflow-hidden flex items-center justify-center px-4 pb-1">
+    <img id="lb-img" src="" alt="" class="max-w-full max-h-full w-auto h-auto rounded-lg border border-white/20 object-contain transition-transform duration-150"/>
+  </div>
+  <div class="flex items-center justify-center gap-2.5 px-4 pt-2 pb-5">
+    <button id="lb-out" type="button" aria-label="Zoom arrière" class="w-11 h-11 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xl font-bold inline-flex items-center justify-center transition-colors">
+      <svg class="lucide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14"/></svg>
+    </button>
+    <span id="lb-level" class="text-sm font-semibold text-slate-200 w-14 text-center">100%</span>
+    <button id="lb-in" type="button" aria-label="Zoom avant" class="w-11 h-11 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xl font-bold inline-flex items-center justify-center transition-colors">
+      <svg class="lucide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    </button>
+    <button id="lb-reset" type="button" aria-label="Réinitialiser le zoom" class="h-11 px-4 rounded-lg bg-white text-slate-900 text-sm font-semibold inline-flex items-center gap-1.5 transition-colors hover:bg-slate-100">
+      <svg class="lucide" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>
+      <span>Recentrer</span>
+    </button>
+  </div>
+</div>
+
 <!-- Sticky order bar -->
 <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 px-4 py-3">
   <a href="#commander" class="max-w-xl mx-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
@@ -848,36 +879,68 @@ fbq('init','3184145215124032');fbq('track','PageView');
 (function(){
   'use strict';
 
-  /* Screenshot gallery viewer */
+  /* Screenshot gallery viewer + lightbox (zoom in/out, exit) */
   var galView = document.getElementById('gal-view');
   var galTitle = document.getElementById('gal-title');
   var galCaption = document.getElementById('gal-caption');
   var galCount = document.getElementById('gal-count');
   var thumbs = Array.prototype.slice.call(document.querySelectorAll('.gal-thumb'));
+  var lbSel = {src:'img/dashboard-1600.jpg', alt:'Tableau de bord ClinixOS Pro', title:'Tableau de bord'};
   if (galView && thumbs.length) {
     thumbs.forEach(function(btn, i){
       btn.addEventListener('click', function(){
+        lbSel = {src: btn.getAttribute('data-full'), alt: btn.getAttribute('data-alt'), title: btn.getAttribute('data-title')};
         galView.style.opacity = '0';
-        var swap = function(){
-          galView.src = btn.getAttribute('data-full');
-          galView.alt = btn.getAttribute('data-alt');
-          if (galTitle) galTitle.textContent = btn.getAttribute('data-title');
+        setTimeout(function(){
+          galView.src = lbSel.src;
+          galView.alt = lbSel.alt;
+          galView.srcset = lbSel.src.replace('-1600.jpg','-480.jpg') + ' 480w, ' + lbSel.src.replace('-1600.jpg','-800.jpg') + ' 800w, ' + lbSel.src + ' 1600w';
+          if (galTitle) galTitle.textContent = lbSel.title;
           if (galCaption) galCaption.textContent = btn.getAttribute('data-caption');
           if (galCount) galCount.textContent = (i + 1) + ' / ' + thumbs.length;
           galView.style.opacity = '1';
-        };
-        if (galView.complete) { setTimeout(swap, 120); } else { swap(); }
+        }, 120);
         thumbs.forEach(function(b){
           b.classList.remove('border-blue-700');
           b.classList.add('border-slate-200');
         });
         btn.classList.remove('border-slate-200');
         btn.classList.add('border-blue-700');
-        var card = galView.closest('section');
-        if (card) galView.scrollIntoView({behavior:'smooth', block:'nearest'});
       });
     });
+    galView.addEventListener('click', function(){ openLb(lbSel.src, lbSel.alt, lbSel.title); });
   }
+
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbTitle = document.getElementById('lb-title');
+  var lbLevel = document.getElementById('lb-level');
+  var lbStage = document.getElementById('lb-stage');
+  var lbScale = 1;
+  function lbApply(){
+    lbImg.style.transform = 'scale(' + lbScale + ')';
+    lbLevel.textContent = Math.round(lbScale * 100) + '%';
+    lbStage.style.cursor = lbScale > 1 ? 'zoom-out' : 'zoom-in';
+  }
+  function openLb(src, alt, title){
+    lbImg.src = src; lbImg.alt = alt || '';
+    lbTitle.textContent = title || '';
+    lbScale = 1; lbApply();
+    lb.classList.remove('hidden'); lb.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb(){
+    lb.classList.add('hidden'); lb.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  document.getElementById('lb-out').addEventListener('click', function(){ lbScale = Math.max(1, +(lbScale - 0.5).toFixed(2)); lbApply(); });
+  document.getElementById('lb-in').addEventListener('click', function(){ lbScale = Math.min(3, +(lbScale + 0.5).toFixed(2)); lbApply(); });
+  document.getElementById('lb-reset').addEventListener('click', function(){ lbScale = 1; lbApply(); });
+  lbStage.addEventListener('click', function(e){ if (e.target === lbStage) closeLb(); });
+  lbImg.addEventListener('click', function(){ lbScale = lbScale > 1 ? 1 : 2; lbApply(); });
+  lbStage.addEventListener('wheel', function(e){ e.preventDefault(); lbScale = Math.min(3, Math.max(1, +(lbScale + (e.deltaY < 0 ? 0.25 : -0.25)).toFixed(2))); lbApply(); }, {passive:false});
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !lb.classList.contains('hidden')) closeLb(); });
 
   var burger = document.getElementById('burger');  var menu = document.getElementById('mobile-menu');
   if (burger && menu) {
@@ -904,15 +967,18 @@ fbq('init','3184145215124032');fbq('track','PageView');
     var btn = item.querySelector('.faq-q');
     var ans = item.querySelector('.faq-a');
     if (!btn || !ans) return;
+    btn.setAttribute('aria-expanded', 'false');
     btn.addEventListener('click', function(){
       var isOpen = item.classList.contains('q-open');
       document.querySelectorAll('.faq-item.q-open').forEach(function(o){
         o.classList.remove('q-open');
         o.querySelector('.faq-a').style.maxHeight = null;
+        o.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
       });
       if (!isOpen) {
         item.classList.add('q-open');
         ans.style.maxHeight = ans.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
       }
     });
   });
