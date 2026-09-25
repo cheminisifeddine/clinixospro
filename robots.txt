@@ -1,0 +1,12 @@
+# clinixospro.com — ClinixOS Pro, logiciel de gestion de cabinet médical (Algérie)
+# Les robots sont invités à indexer le site : aucune page de contenu n'est
+# protégée par authentification.
+
+User-agent: *
+Allow: /
+
+# Documentation et fichiers de développement : aucune valeur pour l'indexation
+Disallow: /README.md
+Disallow: /scripts/
+
+Sitemap: https://clinixospro.com/sitemap.xml
