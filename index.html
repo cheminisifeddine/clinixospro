@@ -25,16 +25,23 @@
 <meta name="twitter:image" content="https://clinixospro.com/img/og-1200x630.jpg"/>
 <meta name="twitter:image:alt" content="ClinixOS Pro — logiciel de gestion de cabinet médical pour médecins en Algérie"/>
 <link rel="canonical" href="https://clinixospro.com/"/>
-<link rel="icon" type="image/png" href="img/logo.png"/>
+<link rel="icon" type="image/png" href="img/favicon.png"/>
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png"/>
 <link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/"/>
 <link rel="alternate" hreflang="x-default" href="https://clinixospro.com/"/>
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="styles.css"/>
 <script>
+/* Meta Pixel, deferred: the fbq stub and queued events (init, PageView, …)
+   are defined immediately so no tracking call is ever lost, but the ~200KB
+   fbevents.js download only starts after window 'load' — it no longer
+   competes with LCP for bandwidth or blocks the main thread during first
+   paint. Queued events flush automatically once the library arrives. */
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+t.src=v;var inject=function(){s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)};
+if(b.readyState==='complete'){inject()}else{f.addEventListener('load',inject)}}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','3184145215124032');fbq('track','PageView');
 </script>
@@ -1033,7 +1040,6 @@ fbq('init','3184145215124032');fbq('track','PageView');
   </a>
 </div>
 
-<script src="locations.js"></script>
 <script>
 (function(){
   'use strict';
@@ -1142,9 +1148,38 @@ fbq('init','3184145215124032');fbq('track','PageView');
     });
   });
 
+  /* locations.js (22KB of wilaya/commune data) is only needed by the order
+     form. It loads on demand — when the form scrolls near the viewport or on
+     first interaction with it — instead of on every page view.
+     populateWilayas() runs immediately (no-op while the data is missing) and
+     again as soon as the data arrives. */
+  function loadLocations(){
+    if (typeof LOCATIONS_DATA !== 'undefined' || loadLocations.done) return;
+    loadLocations.done = true;
+    var s = document.createElement('script');
+    s.src = 'locations.js';
+    s.onload = function(){ populateWilayas(); };
+    document.body.appendChild(s);
+  }
+  (function(){
+    var f = document.getElementById('order-form');
+    if (!f) return;
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        if (entries[0].isIntersecting) { loadLocations(); io.disconnect(); }
+      }, {rootMargin: '800px'});
+      io.observe(f);
+    }
+    ['pointerdown','focusin'].forEach(function(ev){
+      f.addEventListener(ev, loadLocations, {once:true, capture:true, passive:true});
+    });
+  })();
+
+  function populateWilayas(){
   var wilayaSelect = document.getElementById('wilaya');
   var citySelect = document.getElementById('city');
-  if (wilayaSelect && citySelect && typeof LOCATIONS_DATA !== 'undefined') {
+  if (wilayaSelect && citySelect && typeof LOCATIONS_DATA !== 'undefined' && !wilayaSelect.dataset.populated) {
+    wilayaSelect.dataset.populated = '1';
     var wOpts = '<option disabled="" selected="" value="">Sélectionnez votre wilaya (1 à 58)</option>';
     LOCATIONS_DATA.forEach(function(loc, i){
       var code = String(i + 1).padStart(2, '0');
@@ -1165,6 +1200,8 @@ fbq('init','3184145215124032');fbq('track','PageView');
       }
     });
   }
+  }
+  populateWilayas();
 
   function validDzPhone(v){
     if (!v) return false;

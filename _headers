@@ -1,0 +1,24 @@
+# clinixospro.com — Cloudflare Pages custom headers
+# Goal: edge-cache everything aggressively for Algerian visitors.
+# Cloudflare Pages purges the edge cache on every production deploy, so long
+# s-maxage values are safe: a new deploy always serves fresh files.
+# Browser max-age stays short on files that change often (HTML/CSS/JS) to
+# avoid stale repeat-visitor caches; the edge (s-maxage) does the heavy
+# lifting for first-time and cross-visitor speed.
+
+/
+  Cache-Control: public, max-age=120, s-maxage=7200, must-revalidate
+/*.html
+  Cache-Control: public, max-age=120, s-maxage=7200, must-revalidate
+/blog/*
+  Cache-Control: public, max-age=120, s-maxage=7200, must-revalidate
+/logiciel-cabinet-medical-hors-ligne/*
+  Cache-Control: public, max-age=120, s-maxage=7200, must-revalidate
+/img/*
+  Cache-Control: public, max-age=14400, s-maxage=31536000, must-revalidate
+/fonts/*
+  Cache-Control: public, max-age=14400, s-maxage=31536000, must-revalidate
+/styles.css
+  Cache-Control: public, max-age=3600, s-maxage=31536000, must-revalidate
+/locations.js
+  Cache-Control: public, max-age=3600, s-maxage=31536000, must-revalidate
