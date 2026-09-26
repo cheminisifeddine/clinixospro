@@ -24,19 +24,11 @@
 <link rel="canonical" href="https://clinixospro.com/blog/optimiser-temps-attente-cabinet/"/>
 <link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/blog/optimiser-temps-attente-cabinet/"/>
 <link rel="alternate" hreflang="x-default" href="https://clinixospro.com/blog/optimiser-temps-attente-cabinet/"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/styles.css"/>
+<link rel="stylesheet" href="/blog/blog.css"/>
 <style>
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
-  .post-body p{margin-bottom:1rem;line-height:1.8}
-  .post-body h2{font-size:1.5rem;font-weight:700;margin:2.25rem 0 1rem;letter-spacing:-0.025em;line-height:1.25}
-  .post-body ul{margin:0 0 1rem 0;padding-left:1.25rem}
-  .post-body li{list-style:disc;margin-bottom:0.5rem;line-height:1.75}
-  .post-body ol{margin:0 0 1rem 0;padding-left:1.25rem}
-  .post-body ol li{list-style:decimal;margin-bottom:0.5rem;line-height:1.75}
+  body{font-family:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
   .callout{background:#eff6ff;border-left:4px solid #1D4ED8;border-radius:0.5rem;padding:1rem 1.25rem;margin:1.5rem 0}
   .callout p:last-child{margin-bottom:0}
   table{width:100%;border-collapse:collapse;margin:0 0 1rem 0;font-size:0.9rem}
@@ -44,7 +36,7 @@
   th{background:#f8fafc;font-weight:600}
 </style>
 </head>
-<body class="bg-white text-slate-900 antialiased">
+<body class="bg-white text-slate-900 antialiased" style="font-family:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif">
 
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
@@ -62,7 +54,7 @@
 </header>
 
 <main>
-  <article class="max-w-3xl mx-auto px-4 md:px-6 py-12 md:py-16">
+  <article class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y">
 
     <nav aria-label="Fil d'Ariane" class="mb-8">
       <ol class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
@@ -78,10 +70,18 @@
       <p class="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-3">Organisation</p>
       <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.15] mb-4">Réduire le temps d'attente au cabinet : la méthode salle d'attente</h1>
       <p class="text-slate-600 leading-relaxed mb-4">Le temps d'attente n'est pas une simple question d'organisation. C'est le moment où un patient juge votre cabinet, et où une partie d'entre eux décide de ne plus venir.</p>
-      <p class="text-xs text-slate-500">Publié le 26 septembre 2026 · 6 min de lecture</p>
+      <div class="byline">
+        <span>ClinixOS Pro</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <time datetime="2026-09-26">26 septembre 2026</time>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>6 min de lecture</span>
+        <span class="dot" aria-hidden="true">·</span>
+        <span>Algérie</span>
+      </div>
     </header>
 
-    <div class="post-body text-slate-700">
+    <div class="post-body blog-prose blog-wrap text-slate-700">
 
       <p>Un patient qui attend vingt minutes ne se dit pas « ce cabinet est mal organisé ». Il se dit « je vais consulter ailleurs la prochaine fois ». C'est le premier vrai coût d'une mauvaise file d'attente, et il est invisible dans un tableau de bord.</p>
 
@@ -160,26 +160,37 @@
 
       <p>Les questions 2 et 4 sont les plus discriminantes. Un cabinet qui répond oui aux deux a une file d'attente fonctionnelle, quel que soit le logiciel.</p>
 
-      <p class="mt-8 p-5 bg-slate-50 border border-slate-200 rounded-xl">
-        <strong>ClinixOS Pro</strong> inclut une salle d'attente partagée : la secrétaire enregistre les arrivées, le médecin voit la file en temps réel sur son écran de consultation, et la synchronisation fonctionne en réseau local sans dépendre d'internet. <a href="/#fonctionnalites" class="text-blue-700 font-semibold hover:underline">Voir les fonctionnalités</a>.
+      <p class="blog-mt-8 blog-pad-5 bg-slate-50 border border-slate-200 rounded-xl">
+        <strong>ClinixOS Pro</strong> inclut une salle d'attente partagée : la secrétaire enregistre les arrivées, le médecin voit la file en temps réel sur son écran de consultation, et la synchronisation fonctionne en réseau local sans dépendre d'internet. <a href="/#fonctionnalites" class="text-blue-700 font-semibold blog-link">Voir les fonctionnalités</a>.
       </p>
 
     </div>
   </article>
 
   <section class="bg-slate-50 border-t border-slate-200">
-    <div class="max-w-3xl mx-auto px-4 md:px-6 py-12">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y">
+      <div class="post-nav">
+        <a href="/blog/" class="prev">
+          <span class="k">← Blog</span>
+          <span class="t">Tous les articles</span>
+        </a>
+        <a href="/blog/organiser-son-dossier-patient/" class="next">
+          <span class="k">Article suivant →</span>
+          <span class="t">Comment organiser son dossier patient sans perdre une consultation</span>
+        </a>
+      </div>
+
       <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-5">À lire ensuite</h2>
       <ul class="space-y-3 text-sm">
-        <li><a href="/blog/organiser-son-dossier-patient/" class="text-blue-700 font-semibold hover:underline">Comment organiser son dossier patient sans perdre une consultation</a></li>
-        <li><a href="/logiciel-cabinet-medical-hors-ligne/" class="text-blue-700 font-semibold hover:underline">Pourquoi un logiciel de cabinet médical hors-ligne ?</a></li>
-        <li><a href="/blog/" class="text-blue-700 font-semibold hover:underline">Tous les articles du blog</a></li>
+        <li><a href="/blog/organiser-son-dossier-patient/" class="text-blue-700 font-semibold blog-link">Comment organiser son dossier patient sans perdre une consultation</a></li>
+        <li><a href="/logiciel-cabinet-medical-hors-ligne/" class="text-blue-700 font-semibold blog-link">Pourquoi un logiciel de cabinet médical hors-ligne ?</a></li>
+        <li><a href="/blog/" class="text-blue-700 font-semibold blog-link">Tous les articles du blog</a></li>
       </ul>
     </div>
   </section>
 
   <section class="bg-slate-900 text-white">
-    <div class="max-w-3xl mx-auto px-4 md:px-6 py-14 text-center">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y text-center">
       <h2 class="text-2xl font-bold tracking-tight mb-4">Une file d'attente partagée, sans dépendre de la 4G</h2>
       <p class="text-slate-300 mb-6 leading-relaxed">ClinixOS Pro tourne entièrement sur votre ordinateur. Licence à vie, 9 900 DA, paiement à la livraison dans les 58 wilayas.</p>
       <a href="/#commander" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors">Commander — 9 900 DA</a>

@@ -23,23 +23,10 @@
 <link rel="canonical" href="https://clinixospro.com/blog/"/>
 <link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/blog/"/>
 <link rel="alternate" hreflang="x-default" href="https://clinixospro.com/blog/"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/styles.css"/>
-<style>
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
-  .post-body p{margin-bottom:1rem;line-height:1.8}
-  .post-body h2{font-size:1.5rem;font-weight:700;margin:2.25rem 0 1rem;letter-spacing:-0.025em;line-height:1.25}
-  .post-body h3{font-size:1.125rem;font-weight:600;margin:1.75rem 0 0.75rem}
-  .post-body ul{margin:0 0 1rem 0;padding-left:1.25rem}
-  .post-body li{list-style:disc;margin-bottom:0.5rem;line-height:1.75}
-  .post-body ol{margin:0 0 1rem 0;padding-left:1.25rem}
-  .post-body ol li{list-style:decimal}
-</style>
+<link rel="stylesheet" href="/blog/blog.css"/>
 </head>
-<body class="bg-white text-slate-900 antialiased">
+<body class="bg-white text-slate-900 antialiased" style="font-family:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif">
 
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
@@ -58,36 +45,71 @@
 </header>
 
 <main>
-  <section class="bg-slate-900 text-white">
-    <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-20">
+  <section class="blog-hero text-white">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24">
       <p class="text-xs font-semibold uppercase tracking-wider text-blue-300 mb-4">Blog ClinixOS Pro</p>
-      <h1 class="text-3xl md:text-5xl font-bold tracking-tight leading-[1.12] max-w-3xl mb-6">Bien gérer son cabinet médical : des méthodes concrètes, pas de la théorie</h1>
+      <h1 class="text-3xl blog-h1-lg font-bold tracking-tight blog-lead max-w-3xl mb-6">Bien gérer son cabinet médical : des méthodes concrètes, pas de la théorie</h1>
       <p class="text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed">Des guides écrits pour les médecins libéraux et leur secrétariat en Algérie : ce qui fait gagner du temps en consultation, ce qui protège les dossiers, et comment éviter les pannes qui vous coûtent des patients.</p>
+      <dl class="blog-mt-10 pt-8 border-t blog-rule grid grid-cols-2 blog-cols-4 blog-gap-x blog-gap-y max-w-3xl">
+        <div>
+          <dt class="text-xs uppercase tracking-wider text-slate-400">Articles</dt>
+          <dd class="mt-1 text-2xl font-bold blog-tnum">2</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-wider text-slate-400">Lecture cumulée</dt>
+          <dd class="mt-1 text-2xl font-bold blog-tnum">13 min</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-wider text-slate-400">Thèmes</dt>
+          <dd class="mt-1 text-2xl font-bold">Dossier &amp; salle</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-wider text-slate-400">Public</dt>
+          <dd class="mt-1 text-2xl font-bold">Algeria</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-4 md:px-6 py-14 md:py-16">
-      <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-8">Derniers articles</h2>
+    <div class="max-w-6xl mx-auto px-4 md:px-6 blog-pad-y">
+      <div class="flex blog-baseline justify-between gap-4 mb-8">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500">Derniers articles</h2>
+        <p class="text-xs text-slate-500">Tout est en français, pour le cabinet.</p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="posts">
 
-        <article class="border border-slate-200 rounded-xl p-6 flex flex-col">
-          <p class="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-3">Dossier patient</p>
-          <h3 class="text-xl font-bold tracking-tight mb-3">
-            <a href="/blog/organiser-son-dossier-patient/" class="hover:text-blue-700">Comment organiser son dossier patient sans perdre une consultation</a>
+        <article class="post">
+          <span class="post-eyebrow">Dossier patient</span>
+          <h3 class="post-title">
+            <a href="/blog/organiser-son-dossier-patient/">Comment organiser son dossier patient sans perdre une consultation</a>
           </h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-5">Que contient réellement un dossier patient exploitable, pourquoi la recherche par nom ou téléphone change tout, et comment structurer un antécédent pour le relire en dix secondes.</p>
-          <p class="mt-auto text-xs text-slate-500">7 min de lecture</p>
+          <p class="post-excerpt">Que contient réellement un dossier patient exploitable, pourquoi la recherche par nom ou téléphone change tout, et comment structurer un antécédent pour le relire en dix secondes.</p>
+          <p class="post-meta">
+            <time datetime="2026-09-26">26 sept. 2026</time>
+            <span class="dot" aria-hidden="true">·</span>
+            <span class="post-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              7 min de lecture
+            </span>
+          </p>
         </article>
 
-        <article class="border border-slate-200 rounded-xl p-6 flex flex-col">
-          <p class="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-3">Organisation</p>
-          <h3 class="text-xl font-bold tracking-tight mb-3">
-            <a href="/blog/optimiser-temps-attente-cabinet/" class="hover:text-blue-700">Réduire le temps d'attente au cabinet : la méthode salle d'attente</a>
+        <article class="post">
+          <span class="post-eyebrow">Organisation</span>
+          <h3 class="post-title">
+            <a href="/blog/optimiser-temps-attente-cabinet/">Réduire le temps d'attente au cabinet : la méthode salle d'attente</a>
           </h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-5">Le parcours du patient, les trois points de blocage les plus fréquents, et ce que gagne réellement un cabinet quand la file est visible en temps réel.</p>
-          <p class="mt-auto text-xs text-slate-500">6 min de lecture</p>
+          <p class="post-excerpt">Le parcours du patient, les trois points de blocage les plus fréquents, et ce que gagne réellement un cabinet quand la file est visible en temps réel.</p>
+          <p class="post-meta">
+            <time datetime="2026-09-26">26 sept. 2026</time>
+            <span class="dot" aria-hidden="true">·</span>
+            <span class="post-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              6 min de lecture
+            </span>
+          </p>
         </article>
 
       </div>
@@ -95,18 +117,18 @@
   </section>
 
   <section class="bg-slate-50 border-t border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 md:px-6 py-14 md:py-16">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 blog-pad-y">
       <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-4">À lire aussi sur ce site</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="/logiciel-cabinet-medical-hors-ligne/" class="text-blue-700 font-semibold hover:underline">Pourquoi un logiciel de cabinet médical hors-ligne ?</a> <span class="text-slate-600">— ce qui se passe quand la connexion 4G tombe en pleine consultation.</span></li>
-        <li><a href="/#faq" class="text-blue-700 font-semibold hover:underline">Questions fréquentes</a> <span class="text-slate-600">— licence à vie, sauvegarde, livraison dans les 58 wilayas.</span></li>
-        <li><a href="/#fonctionnalites" class="text-blue-700 font-semibold hover:underline">Fonctionnalités du logiciel</a> <span class="text-slate-600">— dossier, ordonnances A5, salle d'attente, caisse, statistiques.</span></li>
+        <li><a href="/logiciel-cabinet-medical-hors-ligne/" class="text-blue-700 font-semibold blog-link">Pourquoi un logiciel de cabinet médical hors-ligne ?</a> <span class="text-slate-600">— ce qui se passe quand la connexion 4G tombe en pleine consultation.</span></li>
+        <li><a href="/#faq" class="text-blue-700 font-semibold blog-link">Questions fréquentes</a> <span class="text-slate-600">— licence à vie, sauvegarde, livraison dans les 58 wilayas.</span></li>
+        <li><a href="/#fonctionnalites" class="text-blue-700 font-semibold blog-link">Fonctionnalités du logiciel</a> <span class="text-slate-600">— dossier, ordonnances A5, salle d'attente, caisse, statistiques.</span></li>
       </ul>
     </div>
   </section>
 
-  <section class="bg-slate-900 text-white">
-    <div class="max-w-3xl mx-auto px-4 md:px-6 py-16 md:py-20 text-center">
+  <section class="blog-hero text-white">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y-lg text-center">
       <h2 class="text-2xl md:text-4xl font-bold tracking-tight mb-4">Passer de la théorie à la pratique</h2>
       <p class="text-slate-300 mb-8 leading-relaxed">ClinixOS Pro met en œuvre exactement ces méthodes : dossiers consultables instantanément, ordonnances A5 en quelques secondes, salle d'attente partagée avec votre secrétariat — 100% hors-ligne.</p>
       <a href="/#commander" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors">Commander — 9 900 DA à la livraison</a>

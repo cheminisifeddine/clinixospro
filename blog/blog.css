@@ -1,0 +1,202 @@
+/* ==========================================================================
+   ClinixOS Pro — blog
+   Scoped additions to the site design system. Nothing here redefines the
+   palette or the type scale; it fixes what the index got wrong.
+
+   Measured problems this addresses:
+   - article cards were 250px of near-empty box, title-only, no date, no
+     reading-progress affordance
+   - the whole card was not clickable and the title link had no affordance
+   - Inter was loaded from a CDN and silently fell back
+   ========================================================================== */
+
+/* --- self-hosted type ---------------------------------------------------
+   A CDN webfont is a runtime network dependency on a marketing site that
+   promises offline-first software, and it fails silently: the page renders
+   in the fallback and nothing looks broken. Atkinson Hyperlegible is the
+   product's own face (legibility was the reason it was chosen) and it is
+   vendored, so the blog renders the same with the network unplugged. */
+@font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:400;
+  font-display:swap;src:url(/fonts/atkinson-0.woff2) format('woff2');}
+@font-face{font-family:'Atkinson Hyperlegible';font-style:normal;font-weight:700;
+  font-display:swap;src:url(/fonts/atkinson-2.woff2) format('woff2');}
+
+/* --- card list ----------------------------------------------------------- */
+.posts{
+  display:grid; gap:1.25rem;
+  grid-template-columns:1fr;
+}
+@media (min-width:768px){ .posts{ grid-template-columns:repeat(2,1fr); gap:1.5rem; } }
+
+.post{
+  position:relative;
+  display:flex; flex-direction:column;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:1rem;
+  padding:1.5rem;
+  transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+/* the entire card is the hit target, not just the title text */
+.post::before{
+  content:''; position:absolute; inset:0; border-radius:1rem;
+}
+.post:hover{ border-color:#bfdbfe; box-shadow:0 10px 28px rgba(15,23,42,.08);
+  transform:translateY(-2px); }
+.post:focus-within{ border-color:#2563eb; box-shadow:0 0 0 3px rgba(37,99,235,.18); }
+
+.post > *{ position:relative; z-index:1; }
+
+/* the eyebrow doubles as the card's clickable label */
+.post-eyebrow{
+  display:inline-flex; align-items:center; gap:.375rem;
+  align-self:flex-start;
+  font-size:.6875rem; font-weight:700; letter-spacing:.07em;
+  text-transform:uppercase; color:#1d4ed8;
+  background:#eff6ff; border:1px solid #dbeafe;
+  padding:.25rem .5rem; border-radius:999px;
+  transition:background .18s ease, color .18s ease;
+}
+.post:hover .post-eyebrow{ background:#2563eb; color:#fff; border-color:#2563eb; }
+
+.post-title{
+  margin:.875rem 0 0;
+  font-size:1.1875rem; line-height:1.35; font-weight:700;
+  letter-spacing:-.012em; color:#0f172a;
+  /* reserve a min height so cards of different title lengths still align */
+  min-height:2.7em;
+}
+.post-title a{ color:inherit; text-decoration:none; }
+.post:hover .post-title{ color:#1d4ed8; }
+.post-title a:focus-visible{ outline:3px solid #2563eb; outline-offset:3px; border-radius:4px; }
+
+.post-excerpt{
+  margin:.625rem 0 0;
+  font-size:.9375rem; line-height:1.65; color:#475569;
+}
+
+/* meta row pinned to the bottom: date on the left, reading time on the right */
+.post-meta{
+  margin-top:auto; padding-top:1.125rem;
+  display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+  font-size:.75rem; color:#64748b;
+}
+.post-meta .dot{ color:#94a3b8; }
+.post-time{
+  margin-left:auto;
+  display:inline-flex; align-items:center; gap:.3125rem;
+  font-variant-numeric:tabular-nums;
+}
+.post-time svg{ width:.875rem; height:.875rem; opacity:.7; }
+
+/* --- utilities the compiled Tailwind bundle does not contain -------------
+   styles.css is a PREBUILT bundle, not a build-on-save pipeline: it only ships
+   the utility classes the original pages happened to use. Anything a new page
+   reaches for that was never in the original set silently does nothing.
+
+   Confirmed dead by probing the renderer (0 matching rules + the CSS initial
+   value): py-14, py-12, mt-10, mt-8, p-5, gap-x-6, gap-y-5, items-baseline,
+   md:text-5xl, hover:underline, border-white/10, tabular-nums.
+   `py-14` alone had collapsed the "À lire aussi" band to 109px. */
+.blog-pad-y{ padding-block:3.5rem; }
+.blog-pad-y-lg{ padding-block:4rem; }
+.blog-pad-5{ padding:1.25rem; }
+.blog-mt-10{ margin-top:2.5rem; }
+.blog-mt-8{ margin-top:2rem; }
+.blog-gap-x{ column-gap:1.5rem; }
+.blog-gap-y{ row-gap:1.25rem; }
+.blog-baseline{ align-items:baseline; }
+.blog-tnum{ font-variant-numeric:tabular-nums; }
+.blog-cols-4{ grid-template-columns:repeat(4,1fr); }
+@media (max-width:639px){ .blog-cols-4{ grid-template-columns:repeat(2,1fr); } }
+
+/* hero stat values must not wrap ("Dossier & salle" broke onto two lines) */
+.blog-hero dd{ white-space:nowrap; font-size:1.5rem; }
+@media (min-width:768px){ .blog-hero dd{ font-size:1.75rem; } }
+
+/* the hero stat divider: the bundle's border-white/10 does not exist */
+.blog-rule{ border-top:1px solid rgba(255,255,255,.10); }
+
+/* inline prose links: the bundle has no hover:underline */
+.blog-link{ text-decoration:underline; text-underline-offset:2px; }
+.blog-link:hover{ text-decoration:underline; color:#1e3a8a; }
+
+@media (min-width:768px){
+  .blog-pad-y{ padding-block:4rem; }
+  .blog-pad-y-lg{ padding-block:6rem; }
+  /* the bundle has no md:text-5xl, so the hero h1 never scaled up.
+     3.75rem overflowed to four lines inside max-w-3xl, so cap it at 3rem and
+     let the balanced wrap do the work. */
+  .blog-h1-lg{ font-size:2.5rem; line-height:1.15; letter-spacing:-.02em; }
+  .blog-pad-5{ padding:1.5rem; }
+  .blog-mt-8{ margin-top:2.5rem; }
+}
+@media (min-width:1024px){
+  .blog-h1-lg{ font-size:3rem; }
+}
+
+/* --- hero --------------------------------------------------------------- */
+.blog-hero{ background:linear-gradient(168deg,#0f172a 0%,#152244 55%,#1b2f5c 100%); }
+.blog-hero h1{ text-wrap:balance; }
+.blog-hero p{ text-wrap:pretty; }
+
+/* keep the reading column on a comfortable measure */
+.blog-wrap{ max-width:44rem; margin-inline:auto; }
+.blog-prose{ font-size:1.0625rem; line-height:1.8; color:#1e293b; }
+.blog-prose h2{ font-size:1.4375rem; font-weight:700; letter-spacing:-.02em;
+  line-height:1.3; margin:2.5rem 0 1rem; scroll-margin-top:6rem; }
+.blog-prose h3{ font-size:1.125rem; font-weight:700;
+  margin:2rem 0 .75rem; scroll-margin-top:6rem; }
+.blog-prose p{ margin:0 0 1.125rem; }
+.blog-prose ul,.blog-prose ol{ margin:0 0 1.125rem; padding-left:1.375rem; }
+.blog-prose li{ margin-bottom:.5rem; }
+.blog-prose strong{ font-weight:700; color:#0f172a; }
+.blog-prose a{ color:#1d4ed8; text-decoration:underline;
+  text-underline-offset:2px; }
+.blog-prose a:hover{ color:#1e3a8a; }
+.blog-prose blockquote{ margin:1.5rem 0; padding:.875rem 1.25rem;
+  border-left:3px solid #2563eb; background:#f8fafc;
+  border-radius:0 .5rem .5rem 0; color:#334155; }
+
+/* --- article header ------------------------------------------------------ */
+.blog-eyebrow{
+  display:inline-flex; align-items:center; gap:.375rem;
+  font-size:.6875rem; font-weight:700; letter-spacing:.07em;
+  text-transform:uppercase; color:#1d4ed8;
+}
+.byline{
+  display:flex; flex-wrap:wrap; align-items:center; gap:.5rem;
+  font-size:.8125rem; color:#64748b;
+  padding-bottom:1.25rem; margin-bottom:2rem;
+  border-bottom:1px solid #e2e8f0;
+}
+.byline .dot{ color:#94a3b8; }
+.byline time{ font-variant-numeric:tabular-nums; }
+
+/* --- next/previous ------------------------------------------------------ */
+.post-nav{
+  display:grid; gap:1rem; margin-top:3rem;
+  padding-top:2rem; border-top:1px solid #e2e8f0;
+  grid-template-columns:1fr;
+}
+@media (min-width:640px){ .post-nav{ grid-template-columns:1fr 1fr; } }
+.post-nav a{
+  display:block; padding:1rem 1.125rem;
+  border:1px solid #e2e8f0; border-radius:.75rem;
+  text-decoration:none; transition:border-color .18s ease;
+}
+.post-nav a:hover{ border-color:#bfdbfe; }
+.post-nav .k{ display:block; font-size:.6875rem; font-weight:700;
+  letter-spacing:.07em; text-transform:uppercase; color:#64748b;
+  margin-bottom:.375rem; }
+.post-nav .t{ display:block; font-size:.9375rem; font-weight:700;
+  color:#0f172a; line-height:1.4; }
+.post-nav .next{ text-align:right; }
+/* right-align the whole card, not just the text, so the two cards' visual
+   weights match — otherwise the "next" label floats mid-card. */
+.post-nav .next .k{ text-align:right; }
+
+@media (prefers-reduced-motion:reduce){
+  .post,.post-eyebrow,.post-nav a{ transition:none; }
+  .post:hover{ transform:none; }
+}
