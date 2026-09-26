@@ -15,4 +15,25 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/logiciel-cabinet-medical-hors-ligne/"/>
   </url>
+  <url>
+    <loc>https://clinixospro.com/blog/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/blog/"/>
+  </url>
+  <url>
+    <loc>https://clinixospro.com/blog/organiser-son-dossier-patient/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/blog/organiser-son-dossier-patient/"/>
+  </url>
+  <url>
+    <loc>https://clinixospro.com/blog/optimiser-temps-attente-cabinet/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/blog/optimiser-temps-attente-cabinet/"/>
+  </url>
 </urlset>
