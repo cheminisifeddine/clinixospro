@@ -1156,11 +1156,9 @@ fbq('init','3184145215124032');fbq('track','PageView');
   var done = document.getElementById('confirmation-message');
 
   if (form) {
-    var iframe = document.createElement('iframe');
-    iframe.name = 'hidden_iframe';
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
-    form.target = 'hidden_iframe';
+    // The old hidden_iframe was a leftover of the no-cors POST era. The
+    // handler below does its own fetch, so leaving a named target in place
+    // only risks a second, unobserved submission of the same lead.
 
     ['name','phone','phone2','address'].forEach(function(id){
       var el = document.getElementById(id);
@@ -1215,22 +1213,75 @@ fbq('init','3184145215124032');fbq('track','PageView');
         }
       } catch(e2){}
 
-      var payload = new URLSearchParams(new FormData(form));
-      fetch(form.action, {method:'POST', body:payload, mode:'no-cors'})
-        .then(function(){
-          setTimeout(function(){
-            done.classList.remove('hidden');
-            if (sticky) sticky.classList.remove('show');
-            done.scrollIntoView({behavior:'smooth', block:'center'});
-          }, 900);
+      var BTN_LABEL = 'VALIDER MA COMMANDE — 9 900 DA À LA LIVRAISON';
+
+      function fail(msg){
+        err.textContent = msg;
+        err.classList.remove('hidden');
+        btn.disabled = false;
+        btn.querySelector('span:last-child').textContent = BTN_LABEL;
+        err.scrollIntoView({behavior:'smooth', block:'center'});
+      }
+
+      function succeed(){
+        setTimeout(function(){
+          done.classList.remove('hidden');
+          if (sticky) sticky.classList.remove('show');
+          done.scrollIntoView({behavior:'smooth', block:'center'});
+        }, 900);
+      }
+
+      // "Order recorded" is a promise to the customer, so it is shown ONLY on
+      // positive proof that the endpoint accepted the lead. The old code used
+      // mode:'no-cors' and treated any fulfilled promise as success: under
+      // no-cors a fetch FULFILS even on 4xx/5xx, so an Apps Script failure
+      // (deploy locked, quota, Google outage) still painted the green
+      // "Commande enregistrée" panel. Leads were silently lost.
+      //
+      // The request is now a normal CORS POST so res.status is readable. Note
+      // the endpoint does NOT reliably send Access-Control-Allow-Origin (the
+      // 403 "Access Denied" page carries no access-control-* headers at all),
+      // so the REJECT path is ambiguous, not a known failure: the lead may or
+      // may not have been written. Never claim success there, and never claim
+      // failure either — say it is unconfirmed and ask for a retry.
+      var payload;
+      try {
+        payload = new URLSearchParams(new FormData(form));
+      } catch (e0) {
+        fail("Envoi impossible. Votre demande n'a pas été enregistrée — merci de réessayer.");
+        return;
+      }
+
+      fetch(form.action, {method:'POST', body:payload, redirect:'follow'})
+        .then(function(res){
+          // A redirect to a Google sign-in page still lands on HTTP 200, so
+          // res.ok alone is not proof. Require the endpoint itself to answer.
+          // The final URL must be on the endpoint's own host: an auth bounce
+          // lands on accounts.google.com, and any other host means the request
+          // was redirected somewhere we did not send a lead. Host is read from
+          // form.action so this stays correct if the endpoint ever changes —
+          // and so a local mock can exercise the success path in tests.
+          var endpointHost = '';
+          try { endpointHost = new URL(form.action, location.href).host; } catch (e2) {}
+          if (endpointHost && res.url) {
+            var resHost;
+            try { resHost = new URL(res.url).host; } catch (e3) { resHost = ''; }
+            if (resHost !== endpointHost) throw new Error('off-endpoint: ' + res.url);
+          }
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.text().then(function(body){
+            // A locked deployment bounces to an auth page: still 200, and the
+            // body says so. Never paint green for that.
+            if (/ServiceLogin|accounts\.google\.com\/ServiceAuth|Sign in/i.test(body)) {
+              throw new Error('auth wall');
+            }
+            return true;
+          });
         })
+        .then(succeed)
         .catch(function(){
-          // Lead not confirmed. Say so, and keep a way to convert.
-          err.textContent = "Envoi impossible pour le moment. Votre demande n'a pas été enregistrée — merci de réessayer dans quelques instants.";
-          err.classList.remove('hidden');
-          btn.disabled = false;
-          btn.querySelector('span:last-child').textContent = 'VALIDER MA COMMANDE — 9 900 DA À LA LIVRAISON';
-          err.scrollIntoView({behavior:'smooth', block:'center'});
+          fail("Envoi non confirmé — nous n'avons pas pu vérifier que votre commande est enregistrée. " +
+               "Merci de réessayer dans une minute : si le problème persiste, contactez-nous.");
         });
     });
   }

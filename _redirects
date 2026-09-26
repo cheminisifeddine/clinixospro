@@ -1,0 +1,12 @@
+# clinixospro.com — Cloudflare Pages
+# www.clinixospro.com et clinixospro.com doivent servir la même page unique,
+# sinon Google les traite comme deux pages distinctes qui se concurrencent.
+# La redirection ci-dessous est appliquée en amont (edge), avant tout service
+# de fichier : /www/* 301 vers le domaine nu.
+
+/www/*
+  https://clinixospro.com/:splat 301!
+
+# Route www explicite (utile si le trafic arrive sans sous-domaine)
+/www
+  https://clinixospro.com/ 301
