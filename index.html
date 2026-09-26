@@ -312,7 +312,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
             </span>
           </div>
           <div class="bg-slate-900">
-            <img src="img/dashboard-1600.jpg" srcset="img/dashboard-480.jpg 480w, img/dashboard-800.jpg 800w, img/dashboard-1600.jpg 1600w" sizes="(max-width:1023px) 100vw, 470px" alt="Tableau de bord ClinixOS Pro — rendez-vous du jour, chiffre d'affaires et dernières consultations" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-auto block"/>
+            <img src="img/hero-1600.jpg" srcset="img/hero-480.jpg 480w, img/hero-800.jpg 800w, img/hero-1600.jpg 1600w" sizes="(max-width:1023px) 100vw, 470px" alt="ClinixOS Pro en action — tableau de bord du cabinet : rendez-vous du jour, patients, chiffre d'affaires" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-auto block"/>
           </div>
         </div>
         <div class="mt-3 flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200">
@@ -1074,6 +1074,25 @@ fbq('init','3184145215124032');fbq('track','PageView');
       });
     });
     galView.addEventListener('click', function(){ openLb(lbSel.src, lbSel.alt, lbSel.title); });
+
+    /* Preload the full-size photos when the gallery scrolls near the viewport,
+       so switching photos is instant even on slow mobile networks — no more
+       blank wait while the -1600.jpg downloads on tap. */
+    (function(){
+      var galSection = galView.closest('section');
+      if (!galSection || !('IntersectionObserver' in window)) return;
+      var done = false;
+      var io = new IntersectionObserver(function(entries){
+        if (entries[0].isIntersecting && !done) {
+          done = true; io.disconnect();
+          thumbs.forEach(function(btn){
+            var im = new Image();
+            im.src = btn.getAttribute('data-full');
+          });
+        }
+      }, {rootMargin: '800px'});
+      io.observe(galSection);
+    })();
   }
 
   var lb = document.getElementById('lightbox');
