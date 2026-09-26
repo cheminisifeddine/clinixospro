@@ -390,3 +390,12 @@
   transition:background .15s ease, color .15s ease;
 }
 .read-also a:hover .ra-arrow{ background:#1d4ed8; color:#fff; }
+
+/* --- post visuals: real images --------------------------------------------- */
+.post-visual img.pv-img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; z-index:-1;
+}
+/* --- article hero image ---------------------------------------------------- */
+.post-hero{ margin:1.75rem 0 0; border-radius:1rem; overflow:hidden; }
+.post-hero img{ width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover; }
