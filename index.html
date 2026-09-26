@@ -14,22 +14,21 @@
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="fr_DZ"/>
 <meta property="og:url" content="https://clinixospro.com/"/>
-<meta property="og:image" content="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
-<meta property="og:image:width" content="1341"/>
-<meta property="og:image:height" content="336"/>
+<meta property="og:image" content="https://clinixospro.com/img/og-1200x630.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/jpeg"/>
 <meta property="og:image:alt" content="ClinixOS Pro — logiciel de gestion de cabinet médical pour médecins en Algérie"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Logiciel de cabinet médical Algérie | ClinixOS Pro"/>
 <meta name="twitter:description" content="Dossiers patients, ordonnances A5, salle d'attente et caisse, 100% hors-ligne. Licence à vie : 9 900 DA au lieu de 35 000 DA, paiement à la livraison dans les 58 wilayas."/>
-<meta name="twitter:image" content="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
+<meta name="twitter:image" content="https://clinixospro.com/img/og-1200x630.jpg"/>
 <meta name="twitter:image:alt" content="ClinixOS Pro — logiciel de gestion de cabinet médical pour médecins en Algérie"/>
 <link rel="canonical" href="https://clinixospro.com/"/>
 <link rel="icon" type="image/png" href="img/logo.png"/>
 <link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/"/>
 <link rel="alternate" hreflang="x-default" href="https://clinixospro.com/"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="styles.css"/>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -41,6 +40,18 @@ fbq('init','3184145215124032');fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3184145215124032&ev=PageView&noscript=1"/></noscript>
 <style>
+  /* Self-hosted Inter. The Google Fonts <link> was a render-blocking
+     third-party request; this is the same design face, served from our own
+     origin, variable (weight 100-900 in one file), and it covers Latin plus
+     the Latin-Extended range the French copy needs (é è à ç û ô î « »).
+     Declared here rather than in styles.css because that file is a compiled
+     Tailwind bundle and hand edits there get overwritten on rebuild. */
+  @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+    src:url('/fonts/inter-latin-ext.woff2') format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+    src:url('/fonts/inter-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
   html{scroll-behavior:smooth}
   body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
   section{scroll-margin-top:88px}
@@ -56,6 +67,12 @@ fbq('init','3184145215124032');fbq('track','PageView');
      .border-slate-300, so the utility class loses the cascade to the grey
      border these inputs already carry. */
   .field-invalid{border-color:rgb(239 68 68);box-shadow:0 0 0 2px rgb(254 202 202)}
+  /* .underline / .hover\:underline are NOT in the compiled Tailwind bundle
+     (they were never used when styles.css was built), so the contextual
+     blog links below would have had no underline at all. Declared here for
+     the same reason .field-invalid is: the bundle overwrites, this does not. */
+  .underline{text-decoration:underline}
+  .hover\:underline:hover{text-decoration:underline}
 </style>
 <!-- /seo:jsonld -->
 <script type="application/ld+json">{
@@ -225,7 +242,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-7">
         <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-[1.12] mb-5">
-          Docteur, chaque jour sans système, votre cabinet <span class="text-blue-700">perd du temps,</span> des patients... <span class="text-blue-700">et des revenus.</span>
+          <span class="text-blue-700">Logiciel de gestion de cabinet médical Algérie</span> : arrêtez de perdre <span class="text-blue-700">du temps et des revenus.</span>
         </h1>
         <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 max-w-xl">
           Dossiers papier égarés, ordonnances manuscrites interminables, salle d'attente qui déborde, secrétaire débordée : <strong class="text-slate-900 font-semibold">ClinixOS Pro</strong> remet de l'ordre dans votre cabinet — sans Internet, sans abonnement, sans technicien.
@@ -470,27 +487,27 @@ fbq('init','3184145215124032');fbq('track','PageView');
     </div>
     <div id="gal-thumbs" class="mt-4 grid grid-cols-3 sm:grid-cols-6 gap-3">
       <button type="button" data-full="img/dashboard-1600.jpg" data-alt="Tableau de bord ClinixOS Pro — rendez-vous du jour, chiffre d'affaires et dernières consultations" data-title="Tableau de bord — vue d'ensemble" data-caption="RDV du jour, chiffre d'affaires en dinars et dernières consultations : toute votre journée en un coup d'œil." aria-label="Voir : Tableau de bord" class="gal-thumb rounded-lg overflow-hidden border-2 border-blue-700 bg-white transition">
-        <img src="img/dashboard-480.jpg" alt="" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <img src="img/dashboard-480.jpg" alt="Vignette — tableau de bord du logiciel de gestion de cabinet médical : consultations du jour, recettes en dinars, planning et prochaines arrivées" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Tableau de bord</span>
       </button>
       <button type="button" data-full="img/patients-1600.jpg" data-alt="Liste des patients ClinixOS Pro — recherche instantanée, wilayas, groupes sanguins" data-title="Patients — recherche en 1 clic" data-caption="40 dossiers, wilayas algériennes, groupes sanguins, allergies : retrouvez n'importe quel patient en une seconde." aria-label="Voir : Patients" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
-        <img src="img/patients-480.jpg" alt="" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <img src="img/patients-480.jpg" alt="Vignette — liste des dossiers patients : recherche par nom ou téléphone, wilaya, groupe sanguin et allergies" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Patients</span>
       </button>
       <button type="button" data-full="img/ordonnance-1600.jpg" data-alt="Éditeur d'ordonnance A5 ClinixOS Pro — médicaments, posologies, aperçu temps réel" data-title="Ordonnance A5 — 5 secondes" data-caption="Médicaments, posologies types, note pharmacien : l'ordonnance A5 se construit et s'imprime en 5 secondes." aria-label="Voir : Ordonnance" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
-        <img src="img/ordonnance-480.jpg" alt="" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <img src="img/ordonnance-480.jpg" alt="Vignette — éditeur d'ordonnance A5 du logiciel de gestion de cabinet médical : médicaments, posologies et aperçu avant impression" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Ordonnance A5</span>
       </button>
       <button type="button" data-full="img/file-attente-1600.jpg" data-alt="File d'attente ClinixOS Pro — tickets, priorités, appel en salle, écran TV" data-title="File d'attente — écran TV" data-caption="Tickets, priorités, appel en salle avec écran TV : fini les cris dans le couloir, la salle d'attente s'apaise." aria-label="Voir : File d'attente" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
-        <img src="img/file-attente-480.jpg" alt="" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <img src="img/file-attente-480.jpg" alt="Vignette — salle d'attente numérique : ticket, ordre de passage et appel du patient depuis l'écran de consultation" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">File d'attente</span>
       </button>
       <button type="button" data-full="img/caisse-1600.jpg" data-alt="Caisse journalière ClinixOS Pro — encaissements en dinars, reçus, solde du jour" data-title="Caisse — recettes du jour" data-caption="Encaissements en espèces, virements, reçus numérotés : vos recettes du jour en dinars, au dinar près." aria-label="Voir : Caisse" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
-        <img src="img/caisse-480.jpg" alt="" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <img src="img/caisse-480.jpg" alt="Vignette — caisse du cabinet : encaissements en dinars, honoraires, impayés et solde de la journée" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Caisse</span>
       </button>
       <button type="button" data-full="img/statistiques-1600.jpg" data-alt="Statistiques du cabinet ClinixOS Pro — activité, pyramide des âges, répartition" data-title="Statistiques — pilotage" data-caption="Activité mois par mois, pyramide des âges : pilotez votre cabinet sur des chiffres, plus à l'aveugle." aria-label="Voir : Statistiques" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
-        <img src="img/statistiques-480.jpg" alt="" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <img src="img/statistiques-480.jpg" alt="Vignette — statistiques du cabinet médical : recettes par mois, motifs de consultation et pyramide des âges" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Statistiques</span>
       </button>
     </div>
@@ -511,7 +528,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
         </div>
         <h3 class="text-base font-semibold text-slate-900 mb-2">Dossier patient complet</h3>
-        <p class="text-sm text-slate-600 leading-relaxed mb-4">Historique des visites, antécédents, bilans biologiques, notes cliniques : tout le passé médical de chaque patient retrouvé en un clic. Finis les classeurs encombrants.</p>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">Historique des visites, antécédents, bilans biologiques, notes cliniques : tout le passé médical de chaque patient retrouvé en un clic. Finis les classeurs encombrants. <a class="text-blue-700 hover:underline" href="/blog/organiser-son-dossier-patient/">Comment organiser son dossier patient</a> sans perdre de consultation.</p>
         <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Zéro dossier perdu</span>
       </div>
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
@@ -527,7 +544,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <h3 class="text-base font-semibold text-slate-900 mb-2">File d'attente &amp; rendez-vous</h3>
-        <p class="text-sm text-slate-600 leading-relaxed mb-4">La secrétaire enregistre les arrivées en un instant. Vous voyez qui est le suivant directement sur votre écran de consultation. Fini les cris dans le couloir.</p>
+        <p class="text-sm text-slate-600 leading-relaxed mb-4">La secrétaire enregistre les arrivées en un instant. Vous voyez qui est le suivant directement sur votre écran de consultation. Fini les cris dans le couloir. <a class="text-blue-700 hover:underline" href="/blog/optimiser-temps-attente-cabinet/">Réduire le temps d'attente au cabinet</a> : notre méthode pas à pas.</p>
         <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Salle d'attente apaisée</span>
       </div>
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
@@ -1257,18 +1274,23 @@ fbq('init','3184145215124032');fbq('track','PageView');
       fetch(form.action, {method:'POST', body:payload, redirect:'follow'})
         .then(function(res){
           // A redirect to a Google sign-in page still lands on HTTP 200, so
-          // res.ok alone is not proof. Require the endpoint itself to answer.
-          // The final URL must be on the endpoint's own host: an auth bounce
-          // lands on accounts.google.com, and any other host means the request
-          // was redirected somewhere we did not send a lead. Host is read from
-          // form.action so this stays correct if the endpoint ever changes —
-          // and so a local mock can exercise the success path in tests.
+          // res.ok alone is not proof. Require the final URL to be somewhere
+          // we actually sent the lead: the endpoint's own host, or the Apps
+          // Script echo host. A real Apps Script /exec POST answers 302 to
+          // script.googleusercontent.com/macros/echo and the script's output
+          // comes back from there — requiring the endpoint's own host rejects
+          // every genuine success (that was the false negative). An auth
+          // bounce (accounts.google.com) or any other off-site redirect is
+          // still rejected. Host is read from form.action so this stays
+          // correct if the endpoint ever changes — and so a local mock can
+          // exercise the success path in tests.
           var endpointHost = '';
-          try { endpointHost = new URL(form.action, location.href).host; } catch (e2) {}
+          try { endpointHost = new URL(form.action, location.href).hostname; } catch (e2) {}
           if (endpointHost && res.url) {
             var resHost;
-            try { resHost = new URL(res.url).host; } catch (e3) { resHost = ''; }
-            if (resHost !== endpointHost) throw new Error('off-endpoint: ' + res.url);
+            try { resHost = new URL(res.url).hostname; } catch (e3) { resHost = ''; }
+            var okHost = (resHost === endpointHost) || (resHost === 'script.googleusercontent.com');
+            if (!okHost) throw new Error('off-endpoint: ' + res.url);
           }
           if (!res.ok) throw new Error('HTTP ' + res.status);
           return res.text().then(function(body){
