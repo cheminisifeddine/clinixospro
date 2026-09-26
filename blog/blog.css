@@ -360,3 +360,33 @@
   .posts-3{ grid-template-columns:repeat(3,1fr); }
   .posts-3 .post-title{ font-size:1.0625rem; }
 }
+
+/* --- "read also" link cards ------------------------------------------------ */
+.read-also{ display:grid; gap:.75rem; }
+.read-also a{
+  display:flex; align-items:center; gap:1rem;
+  background:#fff; border:1px solid #e2e8f0; border-radius:.875rem;
+  padding:.9375rem 1.125rem; text-decoration:none;
+  transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.read-also a:hover,
+.read-also a:focus-visible{
+  border-color:#bfdbfe; box-shadow:0 8px 20px -10px rgba(37,99,235,.35);
+  transform:translateY(-1px); text-decoration:none;
+}
+.read-also a:focus-visible{ outline:3px solid #2563eb; outline-offset:2px; }
+.read-also .ra-body{ flex:1; min-width:0; }
+.read-also .ra-t{
+  font-weight:700; font-size:.9375rem; line-height:1.45; color:#0f172a;
+}
+.read-also a:hover .ra-t{ color:#1d4ed8; }
+.read-also .ra-d{
+  margin-top:.25rem; font-size:.8125rem; line-height:1.55; color:#64748b;
+}
+.read-also .ra-arrow{
+  flex:none; width:2rem; height:2rem; border-radius:999px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:#eff6ff; color:#1d4ed8; font-size:1rem; line-height:1;
+  transition:background .15s ease, color .15s ease;
+}
+.read-also a:hover .ra-arrow{ background:#1d4ed8; color:#fff; }
