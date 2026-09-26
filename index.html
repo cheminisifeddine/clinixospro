@@ -1271,41 +1271,27 @@ fbq('init','3184145215124032');fbq('track','PageView');
         return;
       }
 
-      fetch(form.action, {method:'POST', body:payload, redirect:'follow'})
-        .then(function(res){
-          // A redirect to a Google sign-in page still lands on HTTP 200, so
-          // res.ok alone is not proof. Require the final URL to be somewhere
-          // we actually sent the lead: the endpoint's own host, or the Apps
-          // Script echo host. A real Apps Script /exec POST answers 302 to
-          // script.googleusercontent.com/macros/echo and the script's output
-          // comes back from there — requiring the endpoint's own host rejects
-          // every genuine success (that was the false negative). An auth
-          // bounce (accounts.google.com) or any other off-site redirect is
-          // still rejected. Host is read from form.action so this stays
-          // correct if the endpoint ever changes — and so a local mock can
-          // exercise the success path in tests.
-          var endpointHost = '';
-          try { endpointHost = new URL(form.action, location.href).hostname; } catch (e2) {}
-          if (endpointHost && res.url) {
-            var resHost;
-            try { resHost = new URL(res.url).hostname; } catch (e3) { resHost = ''; }
-            var okHost = (resHost === endpointHost) || (resHost === 'script.googleusercontent.com');
-            if (!okHost) throw new Error('off-endpoint: ' + res.url);
-          }
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          return res.text().then(function(body){
-            // A locked deployment bounces to an auth page: still 200, and the
-            // body says so. Never paint green for that.
-            if (/ServiceLogin|accounts\.google\.com\/ServiceAuth|Sign in/i.test(body)) {
-              throw new Error('auth wall');
-            }
-            return true;
-          });
-        })
+      // The endpoint is a cross-origin Google Apps Script web app. Its POST
+      // answers 302 -> script.googleusercontent.com/macros/echo, and the replayed
+      // echo leg answers 411. Under CORS mode that can NEVER read as success: the
+      // final response carries no CORS header, so fetch rejects (or yields 411),
+      // and the doctor is told his order failed while the row is in the sheet.
+      //
+      // With mode:'no-cors' the response is opaque, which flips the problem
+      // shape: fetch FULFILS for any completed HTTP exchange, including 302 and
+      // 403, and REJECTS only on a genuine network failure (offline, DNS, refused).
+      // For a 302 the script has already run and the lead IS written, so
+      // "fulfilled" is the correct answer -- which is the opposite of the
+      // CORS-mode verdict. The 403 "deploy locked" case would also read as
+      // success; that is the residual cost, and the only way to remove it is to
+      // stop posting cross-origin (Cloudflare Worker in front of Apps Script).
+      //
+      // Verified: lead delivered, banner said failure, doctor would resubmit.
+      fetch(form.action, {method:'POST', body:payload, mode:'no-cors'})
         .then(succeed)
         .catch(function(){
-          fail("Envoi non confirmé — nous n'avons pas pu vérifier que votre commande est enregistrée. " +
-               "Merci de réessayer dans une minute : si le problème persiste, contactez-nous.");
+          fail("Envoi impossible — votre demande n'a pas été enregistrée. " +
+               "Vérifiez votre connexion internet puis réessayez ; si le problème persiste, contactez-nous.");
         });
     });
   }
