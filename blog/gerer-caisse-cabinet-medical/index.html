@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr-DZ">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Caisse du cabinet médical : recettes, impayés et clôture de journée</title>
+<meta name="description" content="Gérer la caisse d'un cabinet médical en Algérie : séparer les comptes, encaisser chaque acte, suivre les impayés et clôturer sa journée en 5 minutes."/>
+<meta name="author" content="ClinixOS Pro"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta name="theme-color" content="#1D4ED8"/>
+<meta property="og:site_name" content="ClinixOS Pro"/>
+<meta property="og:title" content="Caisse du cabinet médical : recettes, impayés et clôture de journée"/>
+<meta property="og:description" content="Séparer les comptes, encaisser chaque acte, suivre les impayés et clôturer sa journée en 5 minutes : la méthode caisse pour cabinet médical."/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="fr_DZ"/>
+<meta property="og:url" content="https://clinixospro.com/blog/gerer-caisse-cabinet-medical/"/>
+<meta property="og:image" content="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
+<meta property="og:image:alt" content="Module caisse ClinixOS Pro — recettes du cabinet médical"/>
+<meta property="article:published_time" content="2026-09-26"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Caisse du cabinet médical : recettes, impayés et clôture de journée"/>
+<meta name="twitter:description" content="Recettes, impayés, clôture de journée : la méthode caisse pour cabinet médical."/>
+<meta name="twitter:image" content="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
+<link rel="canonical" href="https://clinixospro.com/blog/gerer-caisse-cabinet-medical/"/>
+<link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/blog/gerer-caisse-cabinet-medical/"/>
+<link rel="alternate" hreflang="x-default" href="https://clinixospro.com/blog/gerer-caisse-cabinet-medical/"/>
+<link rel="stylesheet" href="/styles.css"/>
+<link rel="stylesheet" href="/blog/blog.css"/>
+<style>
+  html{scroll-behavior:smooth}
+  body{font-family:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
+  .callout{background:#eff6ff;border-left:4px solid #1D4ED8;border-radius:0.5rem;padding:1rem 1.25rem;margin:1.5rem 0}
+  .callout p:last-child{margin-bottom:0}
+</style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+<div class="progress" aria-hidden="true"><i id="pbar"></i></div>
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/img/logo.png" alt="ClinixOS Pro" width="400" height="100" decoding="async" class="h-8 w-auto object-contain" onerror="this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'"/>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6" aria-label="Navigation principale">
+      <a href="/" class="text-sm text-slate-600 hover:text-blue-700">Accueil</a>
+      <a href="/#fonctionnalites" class="text-sm text-slate-600 hover:text-blue-700">Fonctionnalités</a>
+      <a href="/blog/" class="text-sm text-blue-700 font-semibold" aria-current="page">Blog</a>
+      <a href="/#tarifs" class="text-sm text-slate-600 hover:text-blue-700">Tarifs</a>
+    </nav>
+    <a href="/#commander" class="shrink-0 inline-flex items-center justify-center px-4 h-10 rounded-lg bg-blue-700 text-white text-sm font-semibold hover:bg-blue-800 transition-colors">Commander — 9 900 DA</a>
+  </div>
+</header>
+
+<main>
+  <article class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y">
+
+    <nav aria-label="Fil d'Ariane" class="mb-8">
+      <ol class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+        <li><a href="/" class="hover:text-blue-700">Accueil</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/blog/" class="hover:text-blue-700">Blog</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-slate-700">Caisse du cabinet</li>
+      </ol>
+    </nav>
+
+    <p class="blog-eyebrow mb-4">Gestion</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4" style="text-wrap:balance">Caisse du cabinet médical : recettes, impayés et clôture de journée</h1>
+    <div class="byline">
+      <span>Par l'équipe ClinixOS Pro</span>
+      <span class="dot" aria-hidden="true">·</span>
+      <time datetime="2026-09-26">26 sept. 2026</time>
+      <span class="dot" aria-hidden="true">·</span>
+      <span>7 min de lecture</span>
+    </div>
+
+    <nav class="toc" aria-label="Sommaire">
+      <p class="toc-t">Sommaire</p>
+      <ol>
+        <li><a href="#separer">Séparer l'argent du cabinet de l'argent personnel</a></li>
+        <li><a href="#encaisser">Encaisser chaque acte au moment où il est fait</a></li>
+        <li><a href="#impayes">Les impayés : les noter au lieu de les oublier</a></li>
+        <li><a href="#cloture">La clôture de journée en 5 minutes</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ol>
+    </nav>
+
+    <div class="blog-prose">
+      <p>La plupart des médecins libéraux connaissent leurs recettes « à peu près ». À peu près, c'est le problème : entre les actes encaissés par la secrétaire, les impayés oubliés et les dépenses du cabinet payées de la poche, la réalité financière du cabinet reste floue. Quatre habitudes simples suffisent à y voir clair.</p>
+
+      <h2 id="separer">1. Séparer l'argent du cabinet de l'argent personnel</h2>
+      <p>C'est la règle numéro un, et la plus violée. Quand les recettes du cabinet et les dépenses personnelles passent par la même poche, il devient impossible de savoir ce que le cabinet gagne réellement — et c'est au moment de déclarer ou d'investir que l'addition se paie.</p>
+      <p>En pratique : une caisse physique dédiée au cabinet (tiroir, petite caisse enregistreuse ou simple enveloppe journalière), et un relevé séparé. Chaque dinar qui entre ou sort du cabinet y est noté, même les petites dépenses : papier, encre, ménage.</p>
+
+      <h2 id="encaisser">2. Encaisser chaque acte au moment où il est fait</h2>
+      <p>Le moment où l'argent se perd, c'est entre la consultation et l'encaissement. Le patient sort, la secrétaire est occupée, « on réglera la prochaine fois » — et la prochaine fois n'arrive pas toujours.</p>
+      <p>La méthode qui fonctionne : <strong>chaque acte est enregistré et encaissé avant que le patient quitte le cabinet</strong>. Consultation, acte technique, certificat : tout est noté au moment où c'est fait, avec le montant. Si votre secrétaire gère l'accueil, c'est elle qui tient ce registre en temps réel, pas le soir de mémoire.</p>
+
+      <h2 id="impayes">3. Les impayés : les noter au lieu de les oublier</h2>
+      <p>Il y aura des impayés : un patient qui n'a pas assez sur lui, un habitué à qui vous faites crédit. Le problème n'est pas l'impayé, c'est l'impayé non noté — celui-là est perdu d'office.</p>
+      <p>Tenez une simple liste : nom du patient, montant, date, et une case « réglé ». Relancez poliment à la visite suivante — la plupart des impayés se règlent quand on les rappelle, pas quand on les ignore. Un impayé noté a de bonnes chances d'être payé ; un impayé oublié est un don involontaire.</p>
+
+      <div class="takeaway">
+        <p class="tk-t">À retenir</p>
+        <p>Caisse séparée, encaissement immédiat, impayés notés et relancés : trois habitudes qui valent plus qu'un comptable pour un cabinet libéral.</p>
+      </div>
+
+      <h2 id="cloture">4. La clôture de journée en 5 minutes</h2>
+      <p>En fin de journée, cinq minutes suffisent si tout a été noté au fil de l'eau :</p>
+      <ol>
+        <li><strong>Totalisez les encaissements</strong> du jour par type d'acte.</li>
+        <li><strong>Comptez la caisse physique</strong> : le total doit correspondre au registre. Un écart, même petit, se cherche le jour même — pas une semaine plus tard.</li>
+        <li><strong>Notez les dépenses</strong> du jour (fournitures, charges).</li>
+        <li><strong>Mettez à jour la liste des impayés</strong> : qui a payé, qui reste dû.</li>
+      </ol>
+      <p>Ce rituel quotidien vous donne, mois après mois, une vision exacte de votre activité : quels jours sont les plus chargés, quels actes rapportent le plus, et combien le cabinet gagne vraiment.</p>
+
+      <p class="blog-mt-8 blog-pad-5 bg-slate-50 border border-slate-200 rounded-xl">
+        <strong>ClinixOS Pro</strong> inclut un module caisse : chaque acte est enregistré et encaissé en un clic, les impayés sont suivis par patient, et le récapitulatif de journée se fait en quelques secondes. <a href="/#fonctionnalites" class="text-blue-700 font-semibold blog-link">Voir les fonctionnalités</a>.
+      </p>
+
+      <section class="faq" id="faq" aria-label="Questions fréquentes">
+        <h2>Questions fréquentes</h2>
+        <details>
+          <summary>Qui doit tenir la caisse : le médecin ou la secrétaire ?</summary>
+          <div class="a"><p>La secrétaire, au quotidien : elle est à l'accueil quand le patient paie. Le médecin contrôle : il vérifie la clôture de journée et valide les écarts. Séparer la saisie et le contrôle, c'est la base d'une caisse saine.</p></div>
+        </details>
+        <details>
+          <summary>Comment gérer les patients qui paient à la prochaine visite ?</summary>
+          <div class="a"><p>Notez l'impayé immédiatement avec le nom, le montant et la date. À la visite suivante, la fiche du patient rappelle la dette avant même la consultation — c'est le moment naturel de régler, sans gêne des deux côtés.</p></div>
+        </details>
+        <details>
+          <summary>Faut-il un logiciel pour tenir sa caisse ?</summary>
+          <div class="a"><p>Un cahier bien tenu fait l'affaire pour démarrer. Le logiciel devient utile quand le volume augmente : il totalise automatiquement, croise les actes et les encaissements, et signale les impayés sans que vous ayez à y penser.</p></div>
+        </details>
+        <details>
+          <summary>Que faire en cas d'écart de caisse ?</summary>
+          <div class="a"><p>Cherchez-le le jour même : recomptez, revérifiez les actes de la journée, demandez à la secrétaire. Un écart inexpliqué aujourd'hui devient une habitude demain. Si les écarts se répètent, c'est la méthode qu'il faut revoir, pas les personnes.</p></div>
+        </details>
+      </section>
+    </div>
+  </article>
+
+  <section class="bg-slate-50 border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y">
+      <div class="post-nav">
+        <a href="/blog/ordonnance-electronique-algerie/" class="prev">
+          <span class="k">← Article précédent</span>
+          <span class="t">Ordonnance électronique en Algérie : le guide pratique du médecin libéral</span>
+        </a>
+        <a href="/blog/choisir-logiciel-cabinet-medical-algerie/" class="next">
+          <span class="k">Article suivant →</span>
+          <span class="t">Choisir son logiciel de cabinet médical en Algérie : 7 critères concrets</span>
+        </a>
+      </div>
+
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-5">À lire ensuite</h2>
+      <ul class="space-y-3 text-sm">
+        <li><a href="/blog/choisir-logiciel-cabinet-medical-algerie/" class="text-blue-700 font-semibold blog-link">Choisir son logiciel de cabinet médical en Algérie : 7 critères concrets</a></li>
+        <li><a href="/blog/organiser-son-dossier-patient/" class="text-blue-700 font-semibold blog-link">Comment organiser son dossier patient sans perdre une consultation</a></li>
+        <li><a href="/blog/" class="text-blue-700 font-semibold blog-link">Tous les articles du blog</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-slate-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y text-center">
+      <h2 class="text-2xl font-bold tracking-tight mb-4">Une caisse claire, sans effort comptable</h2>
+      <p class="text-slate-300 mb-6 leading-relaxed">ClinixOS Pro tourne entièrement sur votre ordinateur. Licence à vie, 9 900 DA, paiement à la livraison dans les 58 wilayas.</p>
+      <a href="/#commander" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors">Commander — 9 900 DA</a>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-white border-t border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-slate-500">© 2026 ClinixOS Pro. Tous droits réservés.</p>
+      <nav aria-label="Navigation de pied de page" class="flex flex-wrap gap-4 text-xs text-slate-600">
+        <a href="/" class="hover:text-blue-700">Accueil</a>
+        <a href="/blog/" class="hover:text-blue-700">Blog</a>
+        <a href="/#faq" class="hover:text-blue-700">FAQ</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById('pbar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;var p=m>0?h.scrollTop/m:0;b.style.transform='scaleX('+p+')';}addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://clinixospro.com/blog/gerer-caisse-cabinet-medical/#post",
+      "url": "https://clinixospro.com/blog/gerer-caisse-cabinet-medical/",
+      "headline": "Caisse du cabinet médical : recettes, impayés et clôture de journée",
+      "description": "Gérer la caisse d'un cabinet médical en Algérie : séparer les comptes, encaisser chaque acte, suivre les impayés et clôturer sa journée en 5 minutes.",
+      "inLanguage": "fr-DZ",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "author": { "@id": "https://clinixospro.com/#organization" },
+      "publisher": { "@id": "https://clinixospro.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://clinixospro.com/blog/gerer-caisse-cabinet-medical/#post" },
+      "image": "https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png",
+      "articleSection": "Gestion",
+      "wordCount": 900
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://clinixospro.com/blog/gerer-caisse-cabinet-medical/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qui doit tenir la caisse : le médecin ou la secrétaire ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "La secrétaire, au quotidien : elle est à l'accueil quand le patient paie. Le médecin contrôle : il vérifie la clôture de journée et valide les écarts." }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment gérer les patients qui paient à la prochaine visite ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Notez l'impayé immédiatement avec le nom, le montant et la date. À la visite suivante, la fiche du patient rappelle la dette avant même la consultation." }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il un logiciel pour tenir sa caisse ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Un cahier bien tenu fait l'affaire pour démarrer. Le logiciel devient utile quand le volume augmente : il totalise automatiquement et signale les impayés." }
+        },
+        {
+          "@type": "Question",
+          "name": "Que faire en cas d'écart de caisse ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Cherchez-le le jour même : recomptez, revérifiez les actes de la journée. Un écart inexpliqué aujourd'hui devient une habitude demain." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

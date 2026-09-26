@@ -37,6 +37,7 @@
 </style>
 </head>
 <body class="bg-white text-slate-900 antialiased" style="font-family:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif">
+<div class="progress" aria-hidden="true"><i id="pbar"></i></div>
 
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
@@ -67,11 +68,11 @@
     </nav>
 
     <header class="mb-10">
-      <p class="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-3">Organisation</p>
+      <p class="blog-eyebrow mb-4">Organisation</p>
       <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-[1.15] mb-4">Réduire le temps d'attente au cabinet : la méthode salle d'attente</h1>
       <p class="text-slate-600 leading-relaxed mb-4">Le temps d'attente n'est pas une simple question d'organisation. C'est le moment où un patient juge votre cabinet, et où une partie d'entre eux décide de ne plus venir.</p>
       <div class="byline">
-        <span>ClinixOS Pro</span>
+        <span>Par l'équipe ClinixOS Pro</span>
         <span class="dot" aria-hidden="true">·</span>
         <time datetime="2026-09-26">26 septembre 2026</time>
         <span class="dot" aria-hidden="true">·</span>
@@ -82,12 +83,17 @@
     </header>
 
     <div class="post-body blog-prose blog-wrap text-slate-700">
+    <nav class="toc" aria-label="Sommaire">
+      <p class="toc-t">Sommaire</p>
+      <ol><li><a href="#sec-0">Le parcours réel d'un patient</a></li><li><a href="#sec-1">Les trois blocages les plus fréquents</a></li><li><a href="#sec-2">Ce que change une file visible en temps réel</a></li><li><a href="#sec-3">Trois mesures simples, avant tout logiciel</a></li><li><a href="#sec-4">Comment savoir si votre file fonctionne</a></li><li><a href="#faq">Questions fréquentes</a></li></ol>
+    </nav>
 
+    
       <p>Un patient qui attend vingt minutes ne se dit pas « ce cabinet est mal organisé ». Il se dit « je vais consulter ailleurs la prochaine fois ». C'est le premier vrai coût d'une mauvaise file d'attente, et il est invisible dans un tableau de bord.</p>
 
       <p>Ce guide décrit le parcours réel d'un patient, les trois points où la file se bloque le plus souvent, et ce que change une file visible en temps réel.</p>
 
-      <h2>Le parcours réel d'un patient</h2>
+      <h2 id="sec-0">Le parcours réel d'un patient</h2>
 
       <p>Un patient qui vient pour une consultation traverse quatre étapes. Chacune peut devenir un point d'attente :</p>
 
@@ -100,7 +106,7 @@
 
       <p>La plupart des cabinets ne mesurent que la durée entre l'étape 3 et l'étape 4. Or le temps perdu aux étapes 1 et 2 s'ajoute silencieusement à l'attente réelle du patient.</p>
 
-      <h2>Les trois blocages les plus fréquents</h2>
+      <h2 id="sec-1">Les trois blocages les plus fréquents</h2>
 
       <h3>1. L'arrivée non enregistrée</h3>
 
@@ -124,7 +130,7 @@
         <p><strong>Le test :</strong> quand le médecin revient de consultation, sait-il immédiatement qui est le suivant ? Si la réponse est « il faut demander à la secrétaire », la file n'est pas partagée.</p>
       </div>
 
-      <h2>Ce que change une file visible en temps réel</h2>
+      <h2 id="sec-2">Ce que change une file visible en temps réel</h2>
 
       <p>Une salle d'attente logicielle ne se contente pas d'afficher une liste. Ce qui change concrètement :</p>
 
@@ -137,7 +143,7 @@
 
       <p>Et dans un cabinet avec un secrétariat, cette visibilité suppose que les deux postes se voient. C'est un module de réseau local : les deux ordinateurs sont sur le même modem ou routeur, et se voient mutuellement <em>sans connexion internet active</em>. La file reste donc opérationnelle même en coupure réseau.</p>
 
-      <h2>Trois mesures simples, avant tout logiciel</h2>
+      <h2 id="sec-3">Trois mesures simples, avant tout logiciel</h2>
 
       <p>Un logiciel aide, mais il ne remplace pas une organisation. Trois mesures coûtent presque rien et produisent un effet immédiat :</p>
 
@@ -147,7 +153,7 @@
         <li><strong>Une information visible pour le patient.</strong> Un écran ou un affichage de l'ordre de passage change la perception du temps, même quand la durée ne change pas.</li>
       </ol>
 
-      <h2>Comment savoir si votre file fonctionne</h2>
+      <h2 id="sec-4">Comment savoir si votre file fonctionne</h2>
 
       <p>Quatre questions à poser à votre équipe, sans instrument complexe :</p>
 
@@ -160,6 +166,31 @@
 
       <p>Les questions 2 et 4 sont les plus discriminantes. Un cabinet qui répond oui aux deux a une file d'attente fonctionnelle, quel que soit le logiciel.</p>
 
+      <div class="takeaway">
+        <p class="tk-t">À retenir</p>
+        <p>Une file fonctionnelle = file visible en temps réel par la secrétaire et le médecin, patient informé dès l'arrivée, et retards détectés avant les plaintes. La technologie aide quand elle partage l'information, pas quand elle la stocke.</p>
+      </div>
+
+      <section class="faq" id="faq" aria-label="Questions fréquentes">
+        <h2>Questions fréquentes</h2>
+        <details>
+          <summary>Quel est le premier levier pour réduire l'attente ?</summary>
+          <div class="a"><p>Rendre la file visible en temps réel : quand la secrétaire et le médecin voient la même file, les temps morts et les doublons disparaissent.</p></div>
+        </details>
+        <details>
+          <summary>Faut-il prendre rendez-vous ou accepter les sans-rendez-vous ?</summary>
+          <div class="a"><p>Les deux modèles fonctionnent si la file est gérée. Le problème n'est pas le modèle, c'est l'absence de visibilité sur qui attend depuis quand.</p></div>
+        </details>
+        <details>
+          <summary>Combien de temps d'attente est acceptable ?</summary>
+          <div class="a"><p>Au-delà de 30 minutes sans information, les patients s'impatientent et certains ne reviennent pas. Informer réduit la frustration même quand l'attente est longue.</p></div>
+        </details>
+        <details>
+          <summary>Un logiciel peut-il vraiment changer quelque chose ?</summary>
+          <div class="a"><p>Oui sur la coordination : file partagée entre l'accueil et le médecin, dossier préparé avant l'entrée du patient, et statistiques pour repérer les heures de pointe.</p></div>
+        </details>
+      </section>
+
       <p class="blog-mt-8 blog-pad-5 bg-slate-50 border border-slate-200 rounded-xl">
         <strong>ClinixOS Pro</strong> inclut une salle d'attente partagée : la secrétaire enregistre les arrivées, le médecin voit la file en temps réel sur son écran de consultation, et la synchronisation fonctionne en réseau local sans dépendre d'internet. <a href="/#fonctionnalites" class="text-blue-700 font-semibold blog-link">Voir les fonctionnalités</a>.
       </p>
@@ -170,13 +201,13 @@
   <section class="bg-slate-50 border-t border-slate-200">
     <div class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y">
       <div class="post-nav">
-        <a href="/blog/" class="prev">
-          <span class="k">← Blog</span>
-          <span class="t">Tous les articles</span>
-        </a>
-        <a href="/blog/organiser-son-dossier-patient/" class="next">
-          <span class="k">Article suivant →</span>
+        <a href="/blog/organiser-son-dossier-patient/" class="prev">
+          <span class="k">← Article précédent</span>
           <span class="t">Comment organiser son dossier patient sans perdre une consultation</span>
+        </a>
+        <a href="/blog/ordonnance-electronique-algerie/" class="next">
+          <span class="k">Article suivant →</span>
+          <span class="t">Ordonnance électronique en Algérie : le guide pratique du médecin libéral</span>
         </a>
       </div>
 
@@ -233,6 +264,49 @@
   },
   "image": "https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png",
   "articleSection": "Organisation"
+}
+</script>
+<script>
+(function(){var b=document.getElementById('pbar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;var p=m>0?h.scrollTop/m:0;b.style.transform='scaleX('+p+')';}addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();})();
+</script>
+<script type="application/ld+json">
+{
+  "@type": "FAQPage",
+  "@id": "https://clinixospro.com/blog/optimiser-temps-attente-cabinet/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quel est le premier levier pour réduire l'attente ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rendre la file visible en temps réel : quand la secrétaire et le médecin voient la même file, les temps morts et les doublons disparaissent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il prendre rendez-vous ou accepter les sans-rendez-vous ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les deux modèles fonctionnent si la file est gérée. Le problème n'est pas le modèle, c'est l'absence de visibilité sur qui attend depuis quand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de temps d'attente est acceptable ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Au-delà de 30 minutes sans information, les patients s'impatientent et certains ne reviennent pas. Informer réduit la frustration même quand l'attente est longue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Un logiciel peut-il vraiment changer quelque chose ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui sur la coordination : file partagée entre l'accueil et le médecin, dossier préparé avant l'entrée du patient, et statistiques pour repérer les heures de pointe."
+      }
+    }
+  ]
 }
 </script>
 </body>

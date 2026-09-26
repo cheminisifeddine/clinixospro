@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr-DZ">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sauvegarde des données du cabinet : ne perdez plus jamais un dossier</title>
+<meta name="description" content="Sauvegarder les dossiers patients de son cabinet médical : règle du 3-2-1 simplifiée, copie externe, et comment tester sa restauration avant la panne."/>
+<meta name="author" content="ClinixOS Pro"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta name="theme-color" content="#1D4ED8"/>
+<meta property="og:site_name" content="ClinixOS Pro"/>
+<meta property="og:title" content="Sauvegarde des données du cabinet : ne perdez plus jamais un dossier"/>
+<meta property="og:description" content="Règle du 3-2-1 simplifiée, copie externe, test de restauration : la méthode sauvegarde pour ne jamais perdre un dossier patient."/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="fr_DZ"/>
+<meta property="og:url" content="https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/"/>
+<meta property="og:image" content="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
+<meta property="og:image:alt" content="Sauvegarde des données du cabinet médical — protéger les dossiers patients"/>
+<meta property="article:published_time" content="2026-09-26"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Sauvegarde des données du cabinet : ne perdez plus jamais un dossier"/>
+<meta name="twitter:description" content="La méthode sauvegarde pour ne jamais perdre un dossier patient."/>
+<meta name="twitter:image" content="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
+<link rel="canonical" href="https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/"/>
+<link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/"/>
+<link rel="alternate" hreflang="x-default" href="https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/"/>
+<link rel="stylesheet" href="/styles.css"/>
+<link rel="stylesheet" href="/blog/blog.css"/>
+<style>
+  html{scroll-behavior:smooth}
+  body{font-family:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
+  .callout{background:#eff6ff;border-left:4px solid #1D4ED8;border-radius:0.5rem;padding:1rem 1.25rem;margin:1.5rem 0}
+  .callout p:last-child{margin-bottom:0}
+</style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+<div class="progress" aria-hidden="true"><i id="pbar"></i></div>
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="/img/logo.png" alt="ClinixOS Pro" width="400" height="100" decoding="async" class="h-8 w-auto object-contain" onerror="this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'"/>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6" aria-label="Navigation principale">
+      <a href="/" class="text-sm text-slate-600 hover:text-blue-700">Accueil</a>
+      <a href="/#fonctionnalites" class="text-sm text-slate-600 hover:text-blue-700">Fonctionnalités</a>
+      <a href="/blog/" class="text-sm text-blue-700 font-semibold" aria-current="page">Blog</a>
+      <a href="/#tarifs" class="text-sm text-slate-600 hover:text-blue-700">Tarifs</a>
+    </nav>
+    <a href="/#commander" class="shrink-0 inline-flex items-center justify-center px-4 h-10 rounded-lg bg-blue-700 text-white text-sm font-semibold hover:bg-blue-800 transition-colors">Commander — 9 900 DA</a>
+  </div>
+</header>
+
+<main>
+  <article class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y">
+
+    <nav aria-label="Fil d'Ariane" class="mb-8">
+      <ol class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+        <li><a href="/" class="hover:text-blue-700">Accueil</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="/blog/" class="hover:text-blue-700">Blog</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-slate-700">Sauvegarde des données</li>
+      </ol>
+    </nav>
+
+    <p class="blog-eyebrow mb-4">Sécurité</p>
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-4" style="text-wrap:balance">Sauvegarde des données du cabinet : ne perdez plus jamais un dossier</h1>
+    <div class="byline">
+      <span>Par l'équipe ClinixOS Pro</span>
+      <span class="dot" aria-hidden="true">·</span>
+      <time datetime="2026-09-26">26 sept. 2026</time>
+      <span class="dot" aria-hidden="true">·</span>
+      <span>6 min de lecture</span>
+    </div>
+
+    <nav class="toc" aria-label="Sommaire">
+      <p class="toc-t">Sommaire</p>
+      <ol>
+        <li><a href="#regle">La règle du 3-2-1, version cabinet médical</a></li>
+        <li><a href="#auto">La sauvegarde automatique, pas la bonne intention</a></li>
+        <li><a href="#externe">La copie externe : la clé USB du tiroir</a></li>
+        <li><a href="#tester">Tester sa restauration avant la panne</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ol>
+    </nav>
+
+    <div class="blog-prose">
+      <p>Un disque dur finit toujours par lâcher. Un ordinateur est volé, un café est renversé sur le clavier, une mise à jour tourne mal. Ce n'est pas de la malchance, c'est une certitude statistique — et le jour où ça arrive, la seule question qui compte est : « ma dernière sauvegarde date de quand ? » Voici la méthode simple qui protège un cabinet libéral.</p>
+
+      <h2 id="regle">1. La règle du 3-2-1, version cabinet médical</h2>
+      <p>Les informaticiens résument la sauvegarde sérieuse en trois chiffres : <strong>3 copies</strong> de vos données, sur <strong>2 supports différents</strong>, dont <strong>1 hors du cabinet</strong>.</p>
+      <ul>
+        <li><strong>Copie 1 :</strong> vos données en cours, sur l'ordinateur du cabinet.</li>
+        <li><strong>Copie 2 :</strong> une sauvegarde automatique sur un second support au cabinet (disque externe, deuxième PC en réseau local).</li>
+        <li><strong>Copie 3 :</strong> une copie hors du cabinet — clé USB que vous emportez, disque chez vous. En cas d'incendie ou de vol, c'est elle qui sauve le cabinet.</li>
+      </ul>
+      <p>Trois copies peut sembler excessif jusqu'au jour où deux pannes se combinent. Ce jour-là, on regrette toujours de ne pas les avoir.</p>
+
+      <h2 id="auto">2. La sauvegarde automatique, pas la bonne intention</h2>
+      <p>La sauvegarde manuelle ne marche pas : on la fait trois semaines, puis on oublie, et la panne arrive au sixième mois. La seule sauvegarde qui compte est celle qui se fait <strong>sans que vous ayez à y penser</strong>.</p>
+      <p>Vérifiez que votre logiciel sauvegarde automatiquement — chaque jour au minimum, idéalement à chaque fermeture. Et vérifiez où va cette sauvegarde : un fichier perdu au fond d'un dossier système que personne ne retrouve, c'est presque comme pas de sauvegarde.</p>
+
+      <h2 id="externe">3. La copie externe : la clé USB du tiroir</h2>
+      <p>Le geste le plus rentable de cet article : une clé USB dédiée, dans un tiroir du bureau, sur laquelle vous copiez la sauvegarde <strong>chaque semaine</strong> — chaque jour si votre activité est intense. Coût : quelques centaines de dinars. Valeur le jour de la panne : inestimable.</p>
+      <p>Deux précautions : chiffrez la clé ou protégez-la par mot de passe — ce sont des données de patients — et remplacez-la tous les deux ans. Une clé USB n'est pas éternelle non plus.</p>
+
+      <div class="takeaway">
+        <p class="tk-t">À retenir</p>
+        <p>Sauvegarde automatique quotidienne + copie hebdomadaire sur clé USB emportée hors du cabinet + un test de restauration par an. C'est tout, et c'est suffisant.</p>
+      </div>
+
+      <h2 id="tester">4. Tester sa restauration avant la panne</h2>
+      <p>Une sauvegarde jamais testée est une promesse, pas une protection. Une fois par an, faites l'exercice : prenez votre clé USB, restaurez les données sur un autre ordinateur, et vérifiez qu'un dossier patient s'ouvre correctement.</p>
+      <p>Si le test échoue, vous venez de découvrir le problème un jour calme — pas un matin de panne avec une salle d'attente pleine. C'est exactement le but de l'exercice.</p>
+
+      <p class="blog-mt-8 blog-pad-5 bg-slate-50 border border-slate-200 rounded-xl">
+        <strong>ClinixOS Pro</strong> sauvegarde automatiquement votre base de données en local, et l'export sur clé USB se fait en un clic — vos dossiers restent sur votre ordinateur, sous votre contrôle. <a href="/#fonctionnalites" class="text-blue-700 font-semibold blog-link">Voir les fonctionnalités</a>.
+      </p>
+
+      <section class="faq" id="faq" aria-label="Questions fréquentes">
+        <h2>Questions fréquentes</h2>
+        <details>
+          <summary>À quelle fréquence sauvegarder ?</summary>
+          <div class="a"><p>Au minimum une fois par jour, automatiquement. Chaque dossier patient créé dans la journée doit être dans la sauvegarde du soir. La copie externe (clé USB) peut être hebdomadaire.</p></div>
+        </details>
+        <details>
+          <summary>Le cloud est-il une bonne sauvegarde ?</summary>
+          <div class="a"><p>C'est une copie hors site pratique, mais attention aux données de santé : elles sont sensibles et leur hébergement à l'étranger pose des questions de confidentialité. Si vous utilisez le cloud, chiffrez vos sauvegardes et gardez toujours une copie locale que vous contrôlez.</p></div>
+        </details>
+        <details>
+          <summary>Que faire si l'ordinateur est volé ?</summary>
+          <div class="a"><p>C'est le scénario de la copie externe : vous rachetez un ordinateur, vous restaurez depuis votre clé USB, et le cabinet redémarre. Sans copie externe, les dossiers sont perdus avec la machine. Déposez aussi plainte — des données patients volées, c'est sérieux.</p></div>
+        </details>
+        <details>
+          <summary>Combien de temps garder les sauvegardes ?</summary>
+          <div class="a"><p>Gardez au minimum les sauvegardes des 30 derniers jours en rotation, plus une sauvegarde mensuelle archivée. Les dossiers patients ont une valeur médico-légale : en cas de litige, pouvoir produire l'historique exact d'un patient est précieux.</p></div>
+        </details>
+      </section>
+    </div>
+  </article>
+
+  <section class="bg-slate-50 border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y">
+      <div class="post-nav">
+        <a href="/blog/choisir-logiciel-cabinet-medical-algerie/" class="prev">
+          <span class="k">← Article précédent</span>
+          <span class="t">Choisir son logiciel de cabinet médical en Algérie : 7 critères concrets</span>
+        </a>
+        <a href="/blog/" class="next">
+          <span class="k">Blog →</span>
+          <span class="t">Tous les articles</span>
+        </a>
+      </div>
+
+      <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-5">À lire ensuite</h2>
+      <ul class="space-y-3 text-sm">
+        <li><a href="/blog/choisir-logiciel-cabinet-medical-algerie/" class="text-blue-700 font-semibold blog-link">Choisir son logiciel de cabinet médical en Algérie : 7 critères concrets</a></li>
+        <li><a href="/blog/organiser-son-dossier-patient/" class="text-blue-700 font-semibold blog-link">Comment organiser son dossier patient sans perdre une consultation</a></li>
+        <li><a href="/blog/" class="text-blue-700 font-semibold blog-link">Tous les articles du blog</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-slate-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 md:px-6 blog-pad-y text-center">
+      <h2 class="text-2xl font-bold tracking-tight mb-4">Vos dossiers, sauvegardés automatiquement</h2>
+      <p class="text-slate-300 mb-6 leading-relaxed">ClinixOS Pro tourne entièrement sur votre ordinateur. Licence à vie, 9 900 DA, paiement à la livraison dans les 58 wilayas.</p>
+      <a href="/#commander" class="inline-flex items-center justify-center px-8 h-12 rounded-lg bg-blue-700 text-white font-semibold hover:bg-blue-800 transition-colors">Commander — 9 900 DA</a>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-white border-t border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-slate-500">© 2026 ClinixOS Pro. Tous droits réservés.</p>
+      <nav aria-label="Navigation de pied de page" class="flex flex-wrap gap-4 text-xs text-slate-600">
+        <a href="/" class="hover:text-blue-700">Accueil</a>
+        <a href="/blog/" class="hover:text-blue-700">Blog</a>
+        <a href="/#faq" class="hover:text-blue-700">FAQ</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById('pbar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;var p=m>0?h.scrollTop/m:0;b.style.transform='scaleX('+p+')';}addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/#post",
+      "url": "https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/",
+      "headline": "Sauvegarde des données du cabinet : ne perdez plus jamais un dossier",
+      "description": "Sauvegarder les dossiers patients de son cabinet médical : règle du 3-2-1 simplifiée, copie externe, et comment tester sa restauration avant la panne.",
+      "inLanguage": "fr-DZ",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "author": { "@id": "https://clinixospro.com/#organization" },
+      "publisher": { "@id": "https://clinixospro.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/#post" },
+      "image": "https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png",
+      "articleSection": "Sécurité",
+      "wordCount": 800
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "À quelle fréquence sauvegarder ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Au minimum une fois par jour, automatiquement. Chaque dossier patient créé dans la journée doit être dans la sauvegarde du soir." }
+        },
+        {
+          "@type": "Question",
+          "name": "Le cloud est-il une bonne sauvegarde ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "C'est une copie hors site pratique, mais les données de santé sont sensibles : chiffrez vos sauvegardes et gardez toujours une copie locale que vous contrôlez." }
+        },
+        {
+          "@type": "Question",
+          "name": "Que faire si l'ordinateur est volé ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "C'est le scénario de la copie externe : vous rachetez un ordinateur, vous restaurez depuis votre clé USB, et le cabinet redémarre." }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps garder les sauvegardes ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Gardez au minimum les sauvegardes des 30 derniers jours en rotation, plus une sauvegarde mensuelle archivée." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

@@ -4,13 +4,13 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Blog — Gestion de cabinet médical en Algérie | ClinixOS</title>
-<meta name="description" content="Guides pratiques pour les médecins libéraux en Algérie : dossier patient, ordonnances, salle d'attente, sauvegarde. ClinixOS Pro, 9 900 DA."/>
+<meta name="description" content="Guides pratiques pour les médecins libéraux en Algérie : dossier patient, ordonnances, caisse, sauvegarde, choix du logiciel. ClinixOS Pro, 9 900 DA."/>
 <meta name="author" content="ClinixOS Pro"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
 <meta name="theme-color" content="#1D4ED8"/>
 <meta property="og:site_name" content="ClinixOS Pro"/>
 <meta property="og:title" content="Blog — ClinixOS Pro : bien gérer son cabinet médical en Algérie"/>
-<meta property="og:description" content="Des guides concrets pour les médecins libéraux : dossiers patients, ordonnances, salle d'attente, sauvegarde et organisation du cabinet."/>
+<meta property="og:description" content="Des guides concrets pour les médecins libéraux : dossiers patients, ordonnances, caisse, sauvegarde et choix du logiciel de cabinet."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="fr_DZ"/>
 <meta property="og:url" content="https://clinixospro.com/blog/"/>
@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="Blog ClinixOS Pro — gestion de cabinet médical en Algérie"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Blog — ClinixOS Pro : bien gérer son cabinet médical en Algérie"/>
-<meta name="twitter:description" content="Des guides concrets pour les médecins libéraux : dossiers patients, ordonnances, salle d'attente, sauvegarde et organisation du cabinet."/>
+<meta name="twitter:description" content="Des guides concrets pour les médecins libéraux : dossiers patients, ordonnances, caisse, sauvegarde et choix du logiciel."/>
 <meta name="twitter:image" content="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png"/>
 <link rel="canonical" href="https://clinixospro.com/blog/"/>
 <link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/blog/"/>
@@ -53,19 +53,19 @@
       <dl class="blog-mt-10 pt-8 border-t blog-rule grid grid-cols-2 blog-cols-4 blog-gap-x blog-gap-y max-w-3xl">
         <div>
           <dt class="text-xs uppercase tracking-wider text-slate-400">Articles</dt>
-          <dd class="mt-1 text-2xl font-bold blog-tnum">2</dd>
+          <dd class="mt-1 text-2xl font-bold blog-tnum">6</dd>
         </div>
         <div>
           <dt class="text-xs uppercase tracking-wider text-slate-400">Lecture cumulée</dt>
-          <dd class="mt-1 text-2xl font-bold blog-tnum">13 min</dd>
+          <dd class="mt-1 text-2xl font-bold blog-tnum">43 min</dd>
         </div>
         <div>
           <dt class="text-xs uppercase tracking-wider text-slate-400">Thèmes</dt>
-          <dd class="mt-1 text-2xl font-bold">Dossier &amp; salle</dd>
+          <dd class="mt-1 text-2xl font-bold">6 thèmes</dd>
         </div>
         <div>
           <dt class="text-xs uppercase tracking-wider text-slate-400">Public</dt>
-          <dd class="mt-1 text-2xl font-bold">Algeria</dd>
+          <dd class="mt-1 text-2xl font-bold">Algérie</dd>
         </div>
       </dl>
     </div>
@@ -73,15 +73,93 @@
 
   <section class="bg-white">
     <div class="max-w-6xl mx-auto px-4 md:px-6 blog-pad-y">
-      <div class="flex blog-baseline justify-between gap-4 mb-8">
-        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500">Derniers articles</h2>
+      <div class="flex blog-baseline justify-between gap-4 mb-6">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500">À la une</h2>
         <p class="text-xs text-slate-500">Tout est en français, pour le cabinet.</p>
       </div>
 
-      <div class="posts">
+      <article class="post-featured">
+        <div class="post-visual" data-cat="guide"><span class="vk">Guide d'achat</span></div>
+        <div class="pf-body">
+          <span class="pf-flag">À la une</span>
+          <h3><a href="/blog/choisir-logiciel-cabinet-medical-algerie/">Choisir son logiciel de cabinet médical en Algérie : 7 critères concrets</a></h3>
+          <p class="pf-excerpt">Fonctionnement sans internet, propriété des données, coût réel sur 3 ans, sauvegarde, support joignable : les sept critères qui séparent un bon investissement d'une dépense regrettée.</p>
+          <p class="post-meta">
+            <time datetime="2026-09-26">26 sept. 2026</time>
+            <span class="dot" aria-hidden="true">·</span>
+            <span class="post-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              9 min de lecture
+            </span>
+          </p>
+        </div>
+      </article>
 
-        <article class="post">
-          <span class="post-eyebrow">Dossier patient</span>
+      <div class="flex blog-baseline justify-between gap-4 mb-4 mt-12">
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500">Tous les articles</h2>
+      </div>
+
+      <div class="chips" role="group" aria-label="Filtrer par thème">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">Tous <span class="n">6</span></button>
+        <button type="button" class="chip" data-filter="dossier" aria-pressed="false">Dossier patient <span class="n">1</span></button>
+        <button type="button" class="chip" data-filter="organisation" aria-pressed="false">Organisation <span class="n">1</span></button>
+        <button type="button" class="chip" data-filter="ordonnances" aria-pressed="false">Ordonnances <span class="n">1</span></button>
+        <button type="button" class="chip" data-filter="gestion" aria-pressed="false">Gestion <span class="n">1</span></button>
+        <button type="button" class="chip" data-filter="securite" aria-pressed="false">Sécurité <span class="n">1</span></button>
+      </div>
+
+      <div class="posts" id="post-grid">
+
+        <article class="post has-visual" data-cat="ordonnances">
+          <div class="post-visual" data-cat="ordonnances"><span class="vk">Ordonnances</span></div>
+          <h3 class="post-title">
+            <a href="/blog/ordonnance-electronique-algerie/">Ordonnance électronique en Algérie : le guide pratique du médecin libéral</a>
+          </h3>
+          <p class="post-excerpt">Mentions obligatoires, format A5 accepté par les officines, lisibilité et plan B quand l'imprimante tombe en panne.</p>
+          <p class="post-meta">
+            <time datetime="2026-09-26">26 sept. 2026</time>
+            <span class="dot" aria-hidden="true">·</span>
+            <span class="post-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              8 min de lecture
+            </span>
+          </p>
+        </article>
+
+        <article class="post has-visual" data-cat="gestion">
+          <div class="post-visual" data-cat="gestion"><span class="vk">Gestion</span></div>
+          <h3 class="post-title">
+            <a href="/blog/gerer-caisse-cabinet-medical/">Caisse du cabinet médical : recettes, impayés et clôture de journée</a>
+          </h3>
+          <p class="post-excerpt">Séparer les comptes, encaisser chaque acte au moment où il est fait, suivre les impayés et clôturer sa journée en 5 minutes.</p>
+          <p class="post-meta">
+            <time datetime="2026-09-26">26 sept. 2026</time>
+            <span class="dot" aria-hidden="true">·</span>
+            <span class="post-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              7 min de lecture
+            </span>
+          </p>
+        </article>
+
+        <article class="post has-visual" data-cat="securite">
+          <div class="post-visual" data-cat="securite"><span class="vk">Sécurité</span></div>
+          <h3 class="post-title">
+            <a href="/blog/sauvegarde-donnees-cabinet-medical/">Sauvegarde des données du cabinet : ne perdez plus jamais un dossier</a>
+          </h3>
+          <p class="post-excerpt">Règle du 3-2-1 simplifiée, copie externe sur clé USB, et comment tester sa restauration avant la panne.</p>
+          <p class="post-meta">
+            <time datetime="2026-09-26">26 sept. 2026</time>
+            <span class="dot" aria-hidden="true">·</span>
+            <span class="post-time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              6 min de lecture
+            </span>
+          </p>
+        </article>
+
+        <article class="post has-visual" data-cat="dossier">
+          <div class="post-visual" data-cat="dossier"><span class="vk">Dossier patient</span></div>
           <h3 class="post-title">
             <a href="/blog/organiser-son-dossier-patient/">Comment organiser son dossier patient sans perdre une consultation</a>
           </h3>
@@ -96,8 +174,8 @@
           </p>
         </article>
 
-        <article class="post">
-          <span class="post-eyebrow">Organisation</span>
+        <article class="post has-visual" data-cat="organisation">
+          <div class="post-visual" data-cat="organisation"><span class="vk">Organisation</span></div>
           <h3 class="post-title">
             <a href="/blog/optimiser-temps-attente-cabinet/">Réduire le temps d'attente au cabinet : la méthode salle d'attente</a>
           </h3>
@@ -113,6 +191,7 @@
         </article>
 
       </div>
+      <p id="no-results" class="text-sm text-slate-500 mt-6" hidden>Aucun article dans ce thème pour le moment.</p>
     </div>
   </section>
 
@@ -174,6 +253,27 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip');
+  var cards=document.querySelectorAll('#post-grid .post');
+  var empty=document.getElementById('no-results');
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      chips.forEach(function(c){c.setAttribute('aria-pressed','false');});
+      chip.setAttribute('aria-pressed','true');
+      var f=chip.getAttribute('data-filter');
+      var shown=0;
+      cards.forEach(function(card){
+        var show=(f==='all'||card.getAttribute('data-cat')===f);
+        card.style.display=show?'':'none';
+        if(show)shown++;
+      });
+      empty.hidden=shown>0;
+    });
+  });
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -181,7 +281,7 @@
   "@id": "https://clinixospro.com/blog/#blog",
   "url": "https://clinixospro.com/blog/",
   "name": "Blog ClinixOS Pro",
-  "description": "Guides pratiques pour les médecins libéraux en Algérie : dossiers patients, ordonnances, salle d'attente, sauvegarde et organisation du cabinet.",
+  "description": "Guides pratiques pour les médecins libéraux en Algérie : dossiers patients, ordonnances, caisse, sauvegarde et choix du logiciel de cabinet.",
   "inLanguage": "fr-DZ",
   "isPartOf": {
     "@id": "https://clinixospro.com/#website"
@@ -192,6 +292,58 @@
   "blogPost": [
     {
       "@type": "BlogPosting",
+      "@id": "https://clinixospro.com/blog/choisir-logiciel-cabinet-medical-algerie/#post",
+      "url": "https://clinixospro.com/blog/choisir-logiciel-cabinet-medical-algerie/",
+      "headline": "Choisir son logiciel de cabinet médical en Algérie : 7 critères concrets",
+      "description": "Comment choisir un logiciel de gestion de cabinet médical en Algérie : hors-ligne, propriété des données, coût réel, sauvegarde, support.",
+      "inLanguage": "fr-DZ",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "author": { "@id": "https://clinixospro.com/#organization" },
+      "publisher": { "@id": "https://clinixospro.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://clinixospro.com/blog/choisir-logiciel-cabinet-medical-algerie/#post" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://clinixospro.com/blog/ordonnance-electronique-algerie/#post",
+      "url": "https://clinixospro.com/blog/ordonnance-electronique-algerie/",
+      "headline": "Ordonnance électronique en Algérie : le guide pratique du médecin libéral",
+      "description": "Ordonnance imprimée en Algérie : mentions obligatoires, format A5 accepté par les officines, lisibilité, et que faire quand l'imprimante tombe en panne.",
+      "inLanguage": "fr-DZ",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "author": { "@id": "https://clinixospro.com/#organization" },
+      "publisher": { "@id": "https://clinixospro.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://clinixospro.com/blog/ordonnance-electronique-algerie/#post" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://clinixospro.com/blog/gerer-caisse-cabinet-medical/#post",
+      "url": "https://clinixospro.com/blog/gerer-caisse-cabinet-medical/",
+      "headline": "Caisse du cabinet médical : recettes, impayés et clôture de journée",
+      "description": "Gérer la caisse d'un cabinet médical en Algérie : séparer les comptes, encaisser chaque acte, suivre les impayés et clôturer sa journée en 5 minutes.",
+      "inLanguage": "fr-DZ",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "author": { "@id": "https://clinixospro.com/#organization" },
+      "publisher": { "@id": "https://clinixospro.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://clinixospro.com/blog/gerer-caisse-cabinet-medical/#post" }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/#post",
+      "url": "https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/",
+      "headline": "Sauvegarde des données du cabinet : ne perdez plus jamais un dossier",
+      "description": "Sauvegarder les dossiers patients de son cabinet médical : règle du 3-2-1 simplifiée, copie externe, et comment tester sa restauration avant la panne.",
+      "inLanguage": "fr-DZ",
+      "datePublished": "2026-09-26",
+      "dateModified": "2026-09-26",
+      "author": { "@id": "https://clinixospro.com/#organization" },
+      "publisher": { "@id": "https://clinixospro.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://clinixospro.com/blog/sauvegarde-donnees-cabinet-medical/#post" }
+    },
+    {
+      "@type": "BlogPosting",
       "@id": "https://clinixospro.com/blog/organiser-son-dossier-patient/#post",
       "url": "https://clinixospro.com/blog/organiser-son-dossier-patient/",
       "headline": "Comment organiser son dossier patient sans perdre une consultation",
@@ -199,15 +351,9 @@
       "inLanguage": "fr-DZ",
       "datePublished": "2026-09-26",
       "dateModified": "2026-09-26",
-      "author": {
-        "@id": "https://clinixospro.com/#organization"
-      },
-      "publisher": {
-        "@id": "https://clinixospro.com/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://clinixospro.com/blog/organiser-son-dossier-patient/#post"
-      }
+      "author": { "@id": "https://clinixospro.com/#organization" },
+      "publisher": { "@id": "https://clinixospro.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://clinixospro.com/blog/organiser-son-dossier-patient/#post" }
     },
     {
       "@type": "BlogPosting",
@@ -218,15 +364,9 @@
       "inLanguage": "fr-DZ",
       "datePublished": "2026-09-26",
       "dateModified": "2026-09-26",
-      "author": {
-        "@id": "https://clinixospro.com/#organization"
-      },
-      "publisher": {
-        "@id": "https://clinixospro.com/#organization"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://clinixospro.com/blog/optimiser-temps-attente-cabinet/#post"
-      }
+      "author": { "@id": "https://clinixospro.com/#organization" },
+      "publisher": { "@id": "https://clinixospro.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://clinixospro.com/blog/optimiser-temps-attente-cabinet/#post" }
     }
   ]
 }

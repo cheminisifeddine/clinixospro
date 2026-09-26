@@ -16,6 +16,10 @@ PAGES = [
     ("blog/index", "index"),
     ("blog/organiser-son-dossier-patient/index", "dossier"),
     ("blog/optimiser-temps-attente-cabinet/index", "attente"),
+    ("blog/ordonnance-electronique-algerie/index", "ordonnance"),
+    ("blog/gerer-caisse-cabinet-medical/index", "caisse"),
+    ("blog/choisir-logiciel-cabinet-medical-algerie/index", "choisir"),
+    ("blog/sauvegarde-donnees-cabinet-medical/index", "sauvegarde"),
 ]
 WIDTHS = [1440, 390]
 
