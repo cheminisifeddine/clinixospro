@@ -74,6 +74,19 @@ fbq('init','3184145215124032');fbq('track','PageView');
      .border-slate-300, so the utility class loses the cascade to the grey
      border these inputs already carry. */
   .field-invalid{border-color:rgb(239 68 68);box-shadow:0 0 0 2px rgb(254 202 202)}
+  /* Windows 11 style window chrome for the hero app frame. Plain CSS (not
+     Tailwind) because styles.css is a pre-compiled bundle: new utility
+     classes would silently not exist. */
+  .win11{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(2,32,71,.10)}
+  .win11-bar{display:flex;align-items:stretch;justify-content:space-between;height:40px;background:linear-gradient(#fcfcfc,#f3f3f3);border-bottom:1px solid rgba(226,232,240,.9);user-select:none;-webkit-user-select:none}
+  .win11-title{display:flex;align-items:center;gap:8px;padding-left:12px;min-width:0;font-size:12px;font-weight:500;color:#1e293b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .win11-right{display:flex;align-items:stretch}
+  .win11-pill{align-self:center;margin-right:6px}
+  .win11-btns{display:flex;align-items:stretch}
+  .win11-btn{width:46px;display:flex;align-items:center;justify-content:center;color:#334155;transition:background .12s ease,color .12s ease}
+  .win11-btn:hover{background:rgba(148,163,184,.28)}
+  .win11-btn.close:hover{background:#e81123;color:#fff}
+  @media (max-width:430px){.win11-pill{display:none}}
   /* .underline / .hover\:underline are NOT in the compiled Tailwind bundle
      (they were never used when styles.css was built), so the contextual
      blog links below would have had no underline at all. Declared here for
@@ -98,7 +111,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
   "url": "https://clinixospro.com/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://clinixospro.com/img/logo.png"
+    "url": "https://clinixospro.com/img/logo-v2.png"
   }
 }</script>
 <script type="application/ld+json">{
@@ -200,7 +213,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
     <a href="#top" class="flex items-center gap-3" aria-label="ClinixOS Pro — Accueil">
-      <img src="img/logo.png" alt="ClinixOS" width="400" height="100" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none';document.getElementById('brand-fb').style.display='block'}"/>
+      <img src="img/logo-v2.png" alt="ClinixOS" width="400" height="100" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none';document.getElementById('brand-fb').style.display='block'}"/>
       <span id="brand-fb" style="display:none" class="text-lg font-bold tracking-tight">ClinixOS</span>
     </a>
     <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
@@ -294,24 +307,27 @@ fbq('init','3184145215124032');fbq('track','PageView');
           </div>
         </div>
       </div>
-      <!-- Enterprise application frame -->
+      <!-- Enterprise application frame · Windows 11 style window -->
       <div class="lg:col-span-5">
-        <div class="bg-white rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] overflow-hidden">
-          <div class="bg-slate-900 px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span class="flex gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-              </span>
-              <span class="text-xs font-medium text-slate-300 ml-2">ClinixOS Pro v4.2 — Cabinet Médical</span>
+        <div class="win11">
+          <div class="win11-bar">
+            <div class="win11-title">
+              <img src="img/favicon.png" alt="" width="16" height="16"/>
+              <span>ClinixOS Pro</span>
             </div>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold">
-              <svg class="lucide" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
-              <span>100% hors-ligne</span>
-            </span>
+            <div class="win11-right">
+              <span class="win11-pill inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-semibold">
+                <svg class="lucide" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+                <span>100% hors-ligne</span>
+              </span>
+              <span class="win11-btns" aria-hidden="true">
+                <span class="win11-btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 5h8"/></svg></span>
+                <span class="win11-btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><rect x="1" y="1" width="8" height="8"/></svg></span>
+                <span class="win11-btn close"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 1l8 8M9 1L1 9"/></svg></span>
+              </span>
+            </div>
           </div>
-          <div class="bg-slate-900">
+          <div>
             <img src="img/hero-1600.jpg" srcset="img/hero-480.jpg 480w, img/hero-800.jpg 800w, img/hero-1600.jpg 1600w" sizes="(max-width:1023px) 100vw, 470px" alt="ClinixOS Pro en action — tableau de bord du cabinet : rendez-vous du jour, patients, chiffre d'affaires" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-auto block"/>
           </div>
         </div>
@@ -944,7 +960,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
   <div class="max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-slate-200">
       <div>
-        <img src="img/logo.png" alt="ClinixOS Pro" width="400" height="100" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none'}"/>
+        <img src="img/logo-v2.png" alt="ClinixOS Pro" width="400" height="100" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none'}"/>
         <p class="text-xs text-slate-600 leading-relaxed">Le système de gestion médicale autonome 100% hors-ligne pour praticiens et spécialistes en Algérie. Zéro abonnement, zéro dépendance cloud.</p>
         <p class="flex items-center gap-1.5 text-xs text-slate-500 pt-2">
           <svg class="lucide text-emerald-700" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
