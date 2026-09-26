@@ -679,6 +679,13 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <p class="text-xs text-slate-500 text-center mt-3">Après les 20 premiers cabinets : <strong class="text-slate-700">retour automatique au tarif officiel de 35 000 DA.</strong></p>
+        <div class="mt-6 p-5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start gap-4">
+          <svg class="lucide text-emerald-700 shrink-0 mt-0.5" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+          <div class="text-left">
+            <p class="text-sm font-bold text-slate-900 mb-1">Garantie 7 jours « satisfait ou remboursé »</p>
+            <p class="text-sm text-slate-600 leading-relaxed">Installez ClinixOS Pro et utilisez-le dans votre cabinet pendant 7 jours. S'il ne vous convient pas, un simple appel suffit : nous vous remboursons intégralement les 9 900 DA, sans question.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -895,6 +902,13 @@ fbq('init','3184145215124032');fbq('track','PageView');
         </button>
         <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed">Ce tarif promotionnel à 9 900 DA est strictement réservé au quota initial de lancement de 20 cabinets pour amorcer les retours d'expérience par wilaya. Une fois ce quota atteint, le tarif bascule automatiquement à 35 000 DA (tarif officiel avec déplacement technicien).</p></div>
       </div>
+      <div class="faq-item bg-white border border-slate-200 rounded-xl">
+        <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
+          <span>7. Et si le logiciel ne convient pas à mon cabinet ?</span>
+          <svg class="lucide faq-icon text-slate-500" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed">Vous êtes couvert par notre <strong class="text-slate-900">garantie 7 jours « satisfait ou remboursé »</strong>. Utilisez ClinixOS Pro dans votre cabinet pendant une semaine complète : si le logiciel ne vous convient pas, contactez-nous et nous vous remboursons intégralement les 9 900 DA, sans question ni formulaire.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -912,6 +926,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
       <span class="inline-flex items-center gap-1.5"><svg class="lucide text-emerald-400" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>Paiement en espèces à la réception</span>
       <span class="inline-flex items-center gap-1.5"><svg class="lucide text-emerald-400" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>Vérifiez le colis avant de payer</span>
       <span class="inline-flex items-center gap-1.5"><svg class="lucide text-emerald-400" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>58 wilayas livrées</span>
+      <span class="inline-flex items-center gap-1.5"><svg class="lucide text-emerald-400" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>Garantie 7 jours satisfait ou remboursé</span>
     </div>
   </div>
 </section>
@@ -1251,46 +1266,53 @@ fbq('init','3184145215124032');fbq('track','PageView');
       }
 
       // "Order recorded" is a promise to the customer, so it is shown ONLY on
-      // positive proof that the endpoint accepted the lead. The old code used
-      // mode:'no-cors' and treated any fulfilled promise as success: under
-      // no-cors a fetch FULFILS even on 4xx/5xx, so an Apps Script failure
-      // (deploy locked, quota, Google outage) still painted the green
-      // "Commande enregistrée" panel. Leads were silently lost.
+      // positive proof that the endpoint accepted the lead: a 2xx response
+      // from an expected host whose JSON body carries result:"success".
+      // (2026-09-26: the Apps Script deploy now answers 200
+      // {"result":"success"} with Access-Control-Allow-Origin: * on both
+      // legs, so CORS mode can read the real outcome. The old no-cors
+      // approach treated any fulfilled promise as success — under no-cors a
+      // fetch FULFILS even on 4xx/5xx, so an Apps Script failure still
+      // painted the green panel while leads were silently lost.)
       //
-      // The request is now a normal CORS POST so res.status is readable. Note
-      // the endpoint does NOT reliably send Access-Control-Allow-Origin (the
-      // 403 "Access Denied" page carries no access-control-* headers at all),
-      // so the REJECT path is ambiguous, not a known failure: the lead may or
-      // may not have been written. Never claim success there, and never claim
-      // failure either — say it is unconfirmed and ask for a retry.
+      // A REJECT (network failure, CORS block) is ambiguous, not a known
+      // failure: the lead may or may not have been written. Never claim
+      // success there — say it is unconfirmed and ask for a retry.
       var payload;
       try {
         payload = new URLSearchParams(new FormData(form));
       } catch (e0) {
-        fail("Envoi impossible. Votre demande n'a pas été enregistrée — merci de réessayer.");
+        fail("Envoi impossible pour le moment — merci de réessayer.");
         return;
       }
 
       // The endpoint is a cross-origin Google Apps Script web app. Its POST
-      // answers 302 -> script.googleusercontent.com/macros/echo, and the replayed
-      // echo leg answers 411. Under CORS mode that can NEVER read as success: the
-      // final response carries no CORS header, so fetch rejects (or yields 411),
-      // and the doctor is told his order failed while the row is in the sheet.
-      //
-      // With mode:'no-cors' the response is opaque, which flips the problem
-      // shape: fetch FULFILS for any completed HTTP exchange, including 302 and
-      // 403, and REJECTS only on a genuine network failure (offline, DNS, refused).
-      // For a 302 the script has already run and the lead IS written, so
-      // "fulfilled" is the correct answer -- which is the opposite of the
-      // CORS-mode verdict. The 403 "deploy locked" case would also read as
-      // success; that is the residual cost, and the only way to remove it is to
-      // stop posting cross-origin (Cloudflare Worker in front of Apps Script).
-      //
-      // Verified: lead delivered, banner said failure, doctor would resubmit.
-      fetch(form.action, {method:'POST', body:payload, mode:'no-cors'})
-        .then(succeed)
+      // answers 302 -> script.googleusercontent.com/macros/echo, and the
+      // echo leg replies 200 {"result":"success"} with ACAO * on both legs.
+      // A normal CORS POST therefore sees the real outcome, and the green
+      // panel is gated on: res.ok, final URL host = endpoint host OR
+      // script.googleusercontent.com, and JSON result === "success".
+      // Anything else — HTTP error, off-site redirect, missing/bad JSON,
+      // or a rejected fetch — shows the retry message. No more
+      // no-cors blind success: an opaque response can no longer claim
+      // "Commande enregistrée".
+      fetch(form.action, {method:'POST', body:payload})
+        .then(function(res){
+          if (!res.ok) throw new Error('http-' + res.status);
+          var host = '';
+          try { host = new URL(res.url).hostname; } catch(e3){}
+          var expected = '';
+          try { expected = new URL(form.action).hostname; } catch(e4){}
+          if (host !== expected && host !== 'script.googleusercontent.com')
+            throw new Error('unexpected-host');
+          return res.json();
+        })
+        .then(function(body){
+          if (body && body.result === 'success') { succeed(); }
+          else { fail("Envoi non confirmé — votre demande n'a pas pu être enregistrée pour le moment. Merci de réessayer."); }
+        })
         .catch(function(){
-          fail("Envoi impossible — votre demande n'a pas été enregistrée. " +
+          fail("Envoi non confirmé — nous n'avons pas pu vérifier l'enregistrement de votre demande. " +
                "Vérifiez votre connexion internet puis réessayez ; si le problème persiste, contactez-nous.");
         });
     });
