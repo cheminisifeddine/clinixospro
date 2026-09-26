@@ -80,6 +80,8 @@ fbq('init','3184145215124032');fbq('track','PageView');
   .win11{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(2,32,71,.10)}
   .win11-bar{display:flex;align-items:stretch;justify-content:space-between;height:40px;background:linear-gradient(#fcfcfc,#f3f3f3);border-bottom:1px solid rgba(226,232,240,.9);user-select:none;-webkit-user-select:none}
   .win11-title{display:flex;align-items:center;gap:8px;padding-left:12px;min-width:0;font-size:12px;font-weight:500;color:#1e293b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .win11-title > span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .win11-count{align-self:center;margin-right:6px;padding:2px 10px;border-radius:9999px;background:#eef2f7;border:1px solid #e2e8f0;font-size:11px;font-weight:600;color:#64748b;white-space:nowrap;flex-shrink:0}
   .win11-right{display:flex;align-items:stretch}
   .win11-pill{align-self:center;margin-right:6px}
   .win11-btns{display:flex;align-items:stretch}
@@ -489,19 +491,22 @@ fbq('init','3184145215124032');fbq('track','PageView');
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">Voyez ClinixOS Pro <span class="text-blue-700">en action</span></h2>
       <p class="text-sm sm:text-base text-slate-600 leading-relaxed">De vraies captures du logiciel : tableau de bord, dossiers patients, ordonnances A5, file d'attente, caisse et statistiques. Cliquez sur une vignette pour l'agrandir.</p>
     </div>
-    <div class="bg-white rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] overflow-hidden">
-      <div class="bg-slate-900 px-4 py-3 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <span class="flex gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
-          </span>
-          <span id="gal-title" class="text-xs font-medium text-slate-300 ml-2">Tableau de bord — vue d'ensemble</span>
+    <div class="win11">
+      <div class="win11-bar">
+        <div class="win11-title">
+          <img src="img/favicon.png" alt="" width="16" height="16"/>
+          <span id="gal-title">Tableau de bord — vue d'ensemble</span>
         </div>
-        <span id="gal-count" class="text-[11px] font-semibold text-slate-400">1 / 6</span>
+        <div class="win11-right">
+          <span id="gal-count" class="win11-count">1 / 6</span>
+          <span class="win11-btns" aria-hidden="true">
+            <span class="win11-btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 5h8"/></svg></span>
+            <span class="win11-btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><rect x="1" y="1" width="8" height="8"/></svg></span>
+            <span class="win11-btn close"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 1l8 8M9 1L1 9"/></svg></span>
+          </span>
+        </div>
       </div>
-      <div class="bg-slate-900">
+      <div>
         <img id="gal-view" src="img/dashboard-1600.jpg" srcset="img/dashboard-480.jpg 480w, img/dashboard-800.jpg 800w, img/dashboard-1600.jpg 1600w" sizes="(max-width:767px) 100vw, 1120px" alt="Tableau de bord ClinixOS Pro — rendez-vous du jour, chiffre d'affaires et dernières consultations" width="1600" height="900" loading="lazy" decoding="async" class="w-full h-auto block transition-opacity duration-200 cursor-zoom-in"/>
       </div>
       <div class="px-4 md:px-5 py-4 border-t border-slate-200">
