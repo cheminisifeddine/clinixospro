@@ -10,3 +10,7 @@
 # Route www explicite (utile si le trafic arrive sans sous-domaine)
 /www
   https://clinixospro.com/ 301
+
+# /affiliation.html -> URL propre (déplacé le 2026-09-27)
+/affiliation.html
+  /affiliation/ 301

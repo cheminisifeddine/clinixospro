@@ -214,23 +214,21 @@ fbq('init','3184145215124032');fbq('track','PageView');
 <!-- Navigation -->
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
-    <a href="#top" class="flex items-center gap-3" aria-label="ClinixOS Pro — Accueil">
-      <img src="img/logo-v2.png" alt="ClinixOS" width="400" height="100" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none';document.getElementById('brand-fb').style.display='block'}"/>
+    <a href="/" class="flex items-center gap-3" aria-label="ClinixOS Pro — Accueil">
+      <img src="/img/logo-v2.png" alt="ClinixOS" width="400" height="100" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none';document.getElementById('brand-fb').style.display='block'}"/>
       <span id="brand-fb" style="display:none" class="text-lg font-bold tracking-tight">ClinixOS</span>
     </a>
     <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
-      <a class="hover:text-blue-700 transition-colors" href="#probleme">Le Problème</a>
-      <a class="hover:text-blue-700 transition-colors" href="#solution">Solution</a>
-      <a class="hover:text-blue-700 transition-colors" href="#captures">Captures</a>
-      <a class="hover:text-blue-700 transition-colors" href="#fonctionnalites">Fonctionnalités</a>
-      <a class="hover:text-blue-700 transition-colors" href="#comparatif">Comparatif</a>
-      <a class="hover:text-blue-700 transition-colors" href="#tarifs">Tarifs</a>
-      <a class="hover:text-blue-700 transition-colors" href="#faq">FAQ</a>
+      <a class="text-blue-700 font-semibold" aria-current="page" href="/">Accueil</a>
+      <a class="hover:text-blue-700 transition-colors" href="/blog/">Blog</a>
+      <a class="hover:text-blue-700 transition-colors" href="/logiciel-cabinet-medical-hors-ligne/">Pourquoi hors-ligne ?</a>
+      <a class="hover:text-blue-700 transition-colors" href="/affiliation/">Affiliation</a>
+      <a class="hover:text-blue-700 transition-colors" href="/#faq">FAQ</a>
     </nav>
     <div class="flex items-center gap-3">
-      <a href="#commander" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-semibold text-sm transition-colors">
+      <a href="/#commander" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-semibold text-sm transition-colors">
         <svg class="lucide" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
-        <span>Commander — 9 900 DA</span>
+        <span>Commander — 9&nbsp;900&nbsp;DA</span>
       </a>
       <button id="burger" type="button" aria-label="Menu" aria-expanded="false" class="lg:hidden w-11 h-11 rounded-lg border border-slate-200 bg-white inline-flex items-center justify-center text-slate-700">
         <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -238,14 +236,12 @@ fbq('init','3184145215124032');fbq('track','PageView');
     </div>
   </div>
   <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-2">
-    <a href="#probleme" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Le Problème</a>
-    <a href="#solution" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Solution</a>
-    <a href="#captures" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Captures</a>
-    <a href="#fonctionnalites" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Fonctionnalités</a>
-    <a href="#comparatif" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Comparatif</a>
-    <a href="#tarifs" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Tarifs</a>
-    <a href="#faq" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">FAQ</a>
-    <a href="#commander" class="block py-3 text-sm font-semibold text-blue-700">Commander — 9 900 DA</a>
+    <a href="/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Accueil</a>
+    <a href="/blog/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Blog</a>
+    <a href="/logiciel-cabinet-medical-hors-ligne/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Pourquoi hors-ligne ?</a>
+    <a href="/affiliation/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Affiliation</a>
+    <a href="/#faq" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">FAQ</a>
+    <a href="/#commander" class="block py-3 text-sm font-semibold text-blue-700">Commander — 9&nbsp;900&nbsp;DA</a>
   </div>
 </header>
 
@@ -970,12 +966,31 @@ fbq('init','3184145215124032');fbq('track','PageView');
   <div class="max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-slate-200">
       <div>
-        <img src="img/logo-v2.png" alt="ClinixOS Pro" width="400" height="100" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none'}"/>
+        <img src="/img/logo-v2.png" alt="ClinixOS Pro" width="400" height="100" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none'}"/>
         <p class="text-xs text-slate-600 leading-relaxed">Le système de gestion médicale autonome 100% hors-ligne pour praticiens et spécialistes en Algérie. Zéro abonnement, zéro dépendance cloud.</p>
         <p class="flex items-center gap-1.5 text-xs text-slate-500 pt-2">
           <svg class="lucide text-emerald-700" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
           <span>Conforme déontologie médicale &amp; secret médical</span>
         </p>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Produit</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-blue-700 transition-colors" href="/#solution">Solution</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#captures">Captures du logiciel</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#tarifs">Tarifs — 9&nbsp;900&nbsp;DA</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#commander">Commander (paiement à la livraison)</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#faq">Questions fréquentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Ressources</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-blue-700 transition-colors" href="/blog/">Blog — gestion de cabinet</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/logiciel-cabinet-medical-hors-ligne/">Pourquoi un logiciel hors-ligne ?</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/affiliation/">Programme d’affiliation</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/affiliation/#conditions">Conditions d’affiliation</a></li>
+        </ul>
       </div>
       <div>
         <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Support Praticiens Algérie</h4>
@@ -988,40 +1003,6 @@ fbq('init','3184145215124032');fbq('track','PageView');
             <svg class="lucide text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
             <span>Livraison Yalidine / Maystro — 58 wilayas</span>
           </li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Commande</h4>
-        <ul class="space-y-2 text-xs text-slate-600">
-          <li class="flex items-start gap-1.5">
-            <svg class="lucide text-emerald-700 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
-            <span>Paiement à la réception après contrôle</span>
-          </li>
-          <li class="flex items-start gap-1.5">
-            <svg class="lucide text-emerald-700 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
-            <span>Licence permanente à vie sans frais mensuels</span>
-          </li>
-          <li class="flex items-start gap-1.5">
-            <svg class="lucide text-emerald-700 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
-            <span>Données hébergées à 100% dans votre cabinet</span>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul class="space-y-2 text-xs text-slate-600">
-          <li><a href="/logiciel-cabinet-medical-hors-ligne/" class="hover:text-blue-700">Pourquoi un logiciel hors-ligne ?</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Navigation</h4>
-        <ul class="space-y-2 text-xs text-slate-600">
-          <li><a class="hover:text-blue-700 transition-colors" href="#probleme">Le Problème</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="#captures">Captures du logiciel</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="#tarifs">Tarifs — 9 900 DA</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="#commander">Commander (paiement à la livraison)</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="#faq">Questions fréquentes</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="/blog/">Blog — gestion de cabinet</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="/logiciel-cabinet-medical-hors-ligne/">Pourquoi un logiciel hors-ligne ?</a></li>
         </ul>
       </div>
     </div>
@@ -1221,7 +1202,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
   })();
 
   // Referral links (?ref=CODE): prefill the promo field, persist the code,
-  // show a -10% banner, and beacon one click to the backend (affiliation.html).
+  // show a -10% banner, and beacon one click to the backend (Apps Script).
   (function(){
     function cleanRef(s){ return String(s||'').toUpperCase().replace(/[^A-Z0-9\-_]/g,'').slice(0,32); }
     var fresh = '', code = '';

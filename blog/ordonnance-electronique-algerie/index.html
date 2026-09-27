@@ -38,16 +38,34 @@
 
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
-    <a href="/" class="flex items-center gap-2 shrink-0">
-      <img src="/img/logo-v2.png" alt="ClinixOS Pro" width="400" height="100" decoding="async" class="h-8 w-auto object-contain" onerror="this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'"/>
+    <a href="/" class="flex items-center gap-3" aria-label="ClinixOS Pro — Accueil">
+      <img src="/img/logo-v2.png" alt="ClinixOS" width="400" height="100" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none';document.getElementById('brand-fb').style.display='block'}"/>
+      <span id="brand-fb" style="display:none" class="text-lg font-bold tracking-tight">ClinixOS</span>
     </a>
-    <nav class="hidden lg:flex items-center gap-6" aria-label="Navigation principale">
-      <a href="/" class="text-sm text-slate-600 hover:text-blue-700">Accueil</a>
-      <a href="/#fonctionnalites" class="text-sm text-slate-600 hover:text-blue-700">Fonctionnalités</a>
-      <a href="/blog/" class="text-sm text-blue-700 font-semibold" aria-current="page">Blog</a>
-      <a href="/#tarifs" class="text-sm text-slate-600 hover:text-blue-700">Tarifs</a>
+    <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
+      <a class="hover:text-blue-700 transition-colors" href="/">Accueil</a>
+      <a class="text-blue-700 font-semibold" aria-current="page" href="/blog/">Blog</a>
+      <a class="hover:text-blue-700 transition-colors" href="/logiciel-cabinet-medical-hors-ligne/">Pourquoi hors-ligne ?</a>
+      <a class="hover:text-blue-700 transition-colors" href="/affiliation/">Affiliation</a>
+      <a class="hover:text-blue-700 transition-colors" href="/#faq">FAQ</a>
     </nav>
-    <a href="/#commander" class="shrink-0 inline-flex items-center justify-center px-4 h-10 rounded-lg bg-blue-700 text-white text-sm font-semibold hover:bg-blue-800 transition-colors">Commander — 9 900 DA</a>
+    <div class="flex items-center gap-3">
+      <a href="/#commander" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-semibold text-sm transition-colors">
+        <svg class="lucide" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span>Commander — 9&nbsp;900&nbsp;DA</span>
+      </a>
+      <button id="burger" type="button" aria-label="Menu" aria-expanded="false" class="lg:hidden w-11 h-11 rounded-lg border border-slate-200 bg-white inline-flex items-center justify-center text-slate-700">
+        <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-2">
+    <a href="/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Accueil</a>
+    <a href="/blog/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Blog</a>
+    <a href="/logiciel-cabinet-medical-hors-ligne/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Pourquoi hors-ligne ?</a>
+    <a href="/affiliation/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Affiliation</a>
+    <a href="/#faq" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">FAQ</a>
+    <a href="/#commander" class="block py-3 text-sm font-semibold text-blue-700">Commander — 9&nbsp;900&nbsp;DA</a>
   </div>
 </header>
 
@@ -197,14 +215,52 @@
 </main>
 
 <footer class="bg-white border-t border-slate-200">
-  <div class="max-w-6xl mx-auto px-4 md:px-6 py-8">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-slate-500">© 2026 ClinixOS Pro. Tous droits réservés.</p>
-      <nav aria-label="Navigation de pied de page" class="flex flex-wrap gap-4 text-xs text-slate-600">
-        <a href="/" class="hover:text-blue-700">Accueil</a>
-        <a href="/blog/" class="hover:text-blue-700">Blog</a>
-        <a href="/#faq" class="hover:text-blue-700">FAQ</a>
-      </nav>
+  <div class="max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-slate-200">
+      <div>
+        <img src="/img/logo-v2.png" alt="ClinixOS Pro" width="400" height="100" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none'}"/>
+        <p class="text-xs text-slate-600 leading-relaxed">Le système de gestion médicale autonome 100% hors-ligne pour praticiens et spécialistes en Algérie. Zéro abonnement, zéro dépendance cloud.</p>
+        <p class="flex items-center gap-1.5 text-xs text-slate-500 pt-2">
+          <svg class="lucide text-emerald-700" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+          <span>Conforme déontologie médicale &amp; secret médical</span>
+        </p>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Produit</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-blue-700 transition-colors" href="/#solution">Solution</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#captures">Captures du logiciel</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#tarifs">Tarifs — 9&nbsp;900&nbsp;DA</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#commander">Commander (paiement à la livraison)</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#faq">Questions fréquentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Ressources</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-blue-700 transition-colors" href="/blog/">Blog — gestion de cabinet</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/logiciel-cabinet-medical-hors-ligne/">Pourquoi un logiciel hors-ligne ?</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/affiliation/">Programme d’affiliation</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/affiliation/#conditions">Conditions d’affiliation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Support Praticiens Algérie</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li class="flex items-center gap-2">
+            <svg class="lucide text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span>Dimanche au Jeudi : 08h30 - 18h00</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="lucide text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <span>Livraison Yalidine / Maystro — 58 wilayas</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <div>© 2026 ClinixOS Pro Algérie. Tous droits réservés. Conçu pour le corps médical algérien.</div>
+      <div>Offre de lancement limitée aux 20 premiers cabinets, puis retour au tarif officiel de 35 000 DA.</div>
     </div>
   </div>
 </footer>
@@ -260,6 +316,9 @@
     }
   ]
 }
+</script>
+<script>
+(function(){var b=document.getElementById('burger'),m=document.getElementById('mobile-menu');if(b&&m&&!b.dataset.wired){b.dataset.wired='1';b.addEventListener('click',function(){var hidden=m.classList.toggle('hidden');b.setAttribute('aria-expanded',hidden?'false':'true');});}})();
 </script>
 </body>
 </html>

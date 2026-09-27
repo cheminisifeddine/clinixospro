@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr-DZ">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Programme d'affiliation — ClinixOS Pro</title>
+<link rel="canonical" href="https://clinixospro.com/affiliation/"/>
+<meta name="description" content="Recommandez ClinixOS Pro à votre audience et gagnez 1 337 DA par vente livrée. Code unique, lien personnel, tableau de bord en temps réel, paiement mensuel."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#1D4ED8"/>
+<link rel="icon" href="/img/logo-v2.png"/>
+<style>
+  :root{--blue:#1D4ED8;--blue-d:#1E40AF;--ink:#0F172A;--mut:#475569;--bg:#F8FAFC;--card:#fff;--line:#E2E8F0;--green:#15803D;--amber:#B45309}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:18px}
+  .brand img{height:32px;width:32px;object-fit:contain}
+  nav.main{display:flex;gap:22px}
+  nav.main a{color:var(--mut);text-decoration:none;font-size:14.5px;font-weight:600}
+  nav.main a:hover{color:var(--blue)}
+  .btn{display:inline-block;background:var(--blue);color:#fff;font-weight:700;padding:12px 26px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-size:15.5px;transition:.15s}
+  .btn:hover{background:var(--blue-d);transform:translateY(-1px)}
+  .btn.ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
+  .btn.ghost:hover{background:#EFF6FF}
+  .btn.sm{padding:9px 18px;font-size:14px}
+  .hero{background:linear-gradient(135deg,#0F172A 0%,#1E3A8A 60%,#1D4ED8 100%);color:#fff;padding:72px 0 64px}
+  .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.15;font-weight:800;letter-spacing:-.5px;max-width:760px}
+  .hero h1 .hl{color:#93C5FD}
+  .hero p.sub{color:#CBD5E1;font-size:18px;max-width:640px;margin:18px 0 30px}
+  .pill{display:inline-block;background:rgba(147,197,253,.15);border:1px solid rgba(147,197,253,.4);color:#BFDBFE;font-size:13px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .strip{background:#fff;border-bottom:1px solid var(--line)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .strip .cell{padding:22px 18px;text-align:center;border-left:1px solid var(--line)}
+  .strip .cell:first-child{border-left:0}
+  .strip .num{font-size:26px;font-weight:800;color:var(--blue)}
+  .strip .lbl{font-size:13.5px;color:var(--mut)}
+  section{padding:64px 0}
+  section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  h2.sec{font-size:clamp(24px,3.5vw,34px);font-weight:800;letter-spacing:-.4px;text-align:center;margin-bottom:12px}
+  p.lead{text-align:center;color:var(--mut);max-width:680px;margin:0 auto 40px;font-size:16.5px}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 20px;position:relative}
+  .step .n{position:absolute;top:-16px;left:20px;background:var(--blue);color:#fff;font-weight:800;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .step h3{font-size:16.5px;margin:8px 0 8px}
+  .step p{font-size:14px;color:var(--mut)}
+  .step code{background:#EFF6FF;color:var(--blue-d);padding:2px 8px;border-radius:6px;font-size:13px;word-break:break-all}
+  .calc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px;max-width:720px;margin:0 auto;box-shadow:0 12px 40px rgba(29,78,216,.08)}
+  .calc label{font-weight:700;font-size:15px}
+  .calc output{font-size:15px;font-weight:800;color:var(--blue)}
+  input[type=range]{width:100%;margin:14px 0 6px;accent-color:var(--blue);height:28px}
+  .calc .res{background:#EFF6FF;border:1px dashed var(--blue);border-radius:12px;padding:20px;text-align:center;margin-top:18px}
+  .calc .res .big{font-size:38px;font-weight:800;color:var(--blue-d)}
+  .calc .res .sm{color:var(--mut);font-size:13.5px;margin-top:4px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 22px}
+  .feat .ic{font-size:26px;margin-bottom:10px}
+  .feat h3{font-size:16px;margin-bottom:8px}
+  .feat p{font-size:14px;color:var(--mut)}
+  .terms{background:#0F172A;color:#E2E8F0;border-radius:18px;padding:40px 36px}
+  .terms h2.sec{color:#fff}
+  .terms ol{max-width:760px;margin:0 auto;padding-left:22px;display:grid;gap:14px;font-size:14.5px}
+  .terms ol b{color:#fff}
+  .terms a{color:#93C5FD}
+  details.faq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px;max-width:760px;margin-left:auto;margin-right:auto}
+  details.faq summary{font-weight:700;cursor:pointer;font-size:15.5px;list-style:none}
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"+";float:right;color:var(--blue);font-size:20px;font-weight:800}
+  details.faq[open] summary::after{content:"–"}
+  details.faq p{margin-top:10px;color:var(--mut);font-size:14.5px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px;max-width:720px;margin:0 auto}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13.5px;font-weight:700;margin-bottom:6px}
+  .field label .opt{font-weight:400;color:var(--mut)}
+  .field input,.field select{width:100%;height:48px;padding:0 14px;border:1px solid #CBD5E1;border-radius:10px;font-size:15px;background:#fff;color:var(--ink)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,78,216,.15)}
+  .field .hint{font-size:12.5px;color:var(--mut);margin-top:4px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mut);margin:6px 0 18px}
+  .check input{margin-top:4px;accent-color:var(--blue);width:17px;height:17px}
+  .msg{border-radius:12px;padding:16px 18px;font-size:14.5px;margin-top:16px;display:none}
+  .msg.ok{display:block;background:#F0FDF4;border:1px solid #86EFAC;color:#14532D}
+  .msg.err{display:block;background:#FEF2F2;border:1px solid #FCA5A5;color:#7F1D1D}
+  .msg code{background:rgba(29,78,216,.1);padding:2px 8px;border-radius:6px;font-weight:800}
+  .dash-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+  .dcard{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center}
+  .dcard .v{font-size:24px;font-weight:800;color:var(--ink)}
+  .dcard .v.money{color:var(--green)}
+  .dcard .k{font-size:12.5px;color:var(--mut);margin-top:2px}
+  .badge{display:inline-block;font-size:12.5px;font-weight:800;padding:5px 14px;border-radius:999px}
+  .badge.actif{background:#DCFCE7;color:#15803D}
+  .badge.attente{background:#FEF3C7;color:#B45309}
+  .badge.suspendu{background:#FEE2E2;color:#B91C1C}
+  table.orders{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+  table.orders th{text-align:left;padding:10px 8px;border-bottom:2px solid var(--line);color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+  table.orders td{padding:10px 8px;border-bottom:1px solid var(--line)}
+  .st{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#EFF6FF;color:var(--blue-d)}
+  .st.livre{background:#DCFCE7;color:#15803D}
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:13.5px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  footer a{color:var(--blue);text-decoration:none;font-weight:600}
+  .tabs{display:flex;gap:8px;justify-content:center;margin-bottom:34px;flex-wrap:wrap}
+  .tabs button{border:2px solid var(--line);background:#fff;border-radius:999px;padding:10px 24px;font-size:14.5px;font-weight:700;cursor:pointer;color:var(--mut)}
+  .tabs button.on{border-color:var(--blue);color:var(--blue);background:#EFF6FF}
+  @media(max-width:860px){.steps,.grid3{grid-template-columns:1fr 1fr}.strip .wrap{grid-template-columns:1fr}.strip .cell{border-left:0;border-top:1px solid var(--line)}.strip .cell:first-child{border-top:0}}
+  @media(max-width:600px){.steps,.grid3,.row2,.dash-cards{grid-template-columns:1fr}nav.main{display:none}.calc,.panel{padding:24px 20px}}
+
+  /* ---- unified site chrome ---- */
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header.site .bar{max-width:1080px;margin:0 auto;padding:0 20px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  header.site .brand img{height:36px;width:auto}
+  header.site nav.main{display:none;align-items:center;gap:26px}
+  @media(min-width:1024px){header.site nav.main{display:flex}}
+  header.site nav.main a{color:var(--mut);text-decoration:none;font-size:14.5px;font-weight:600}
+  header.site nav.main a:hover{color:var(--blue)}
+  header.site nav.main a[aria-current]{color:var(--blue);font-weight:800}
+  header.site .cta{background:var(--blue);color:#fff;font-weight:700;padding:10px 20px;border-radius:10px;text-decoration:none;font-size:14px;white-space:nowrap}
+  header.site .cta:hover{background:var(--blue-d)}
+  .subnav{background:#fff;border-bottom:1px solid var(--line)}
+  .subnav .wrap{display:flex;gap:4px;overflow-x:auto;padding:0 20px;scrollbar-width:none}
+  .subnav a{white-space:nowrap;padding:12px 12px;font-size:13.5px;font-weight:600;color:var(--mut);text-decoration:none;border-bottom:2px solid transparent}
+  .subnav a:hover{color:var(--blue)}
+  footer.site{background:#fff;border-top:1px solid var(--line);margin-top:0}
+  footer.site .cols{max-width:1080px;margin:0 auto;padding:44px 20px 32px;display:grid;grid-template-columns:1fr;gap:32px}
+  @media(min-width:768px){footer.site .cols{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+  footer.site h4{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+  footer.site ul{list-style:none}
+  footer.site ul li{margin-bottom:10px}
+  footer.site ul a{color:var(--mut);text-decoration:none;font-size:13.5px}
+  footer.site ul a:hover{color:var(--blue)}
+  footer.site .brandline{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;margin-bottom:12px}
+  footer.site .brandline img{height:30px;width:auto}
+  footer.site p.desc{font-size:13px;color:var(--mut);max-width:300px}
+  footer.site .legal{border-top:1px solid var(--line);padding:20px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;max-width:1080px;margin:0 auto;font-size:12.5px;color:var(--mut)}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="/"><img src="/img/logo-v2.png" alt="ClinixOS Pro"/> ClinixOS Pro</a>
+    <nav class="main" aria-label="Navigation principale">
+      <a href="/">Accueil</a>
+      <a href="/blog/">Blog</a>
+      <a href="/logiciel-cabinet-medical-hors-ligne/">Pourquoi hors-ligne ?</a>
+      <a href="/affiliation/" aria-current="page">Affiliation</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="cta" href="#inscription">Devenir affili&eacute;</a>
+  </div>
+  <nav class="subnav" aria-label="Sections du programme">
+    <div class="wrap">
+      <a href="#comment">Comment &ccedil;a marche</a>
+      <a href="#calculateur">Calculateur</a>
+      <a href="#avantages">Avantages</a>
+      <a href="#conditions">Conditions</a>
+      <a href="#faq">FAQ</a>
+      <a href="#espace">Espace affili&eacute;</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="pill">PROGRAMME D'AFFILIATION — PILOTE 2026</span>
+    <h1>Recommandez ClinixOS Pro à votre audience.<br/><span class="hl">Gagnez 1 337 DA par vente livrée.</span></h1>
+    <p class="sub">Vous recevez un <b>code unique</b> et un <b>lien personnel</b>. Vos abonnés économisent <b>10&nbsp;%</b>, vous touchez <b>15&nbsp;% de commission</b> sur chaque commande livrée. Zéro avance, zéro stock, tableau de bord en temps réel.</p>
+    <div class="cta-row">
+      <a class="btn" href="#inscription">Créer mon compte affilié</a>
+      <a class="btn ghost" href="#espace" style="background:transparent;color:#fff;border-color:#fff">Accéder à mon espace</a>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="cell"><div class="num">9 900 DA</div><div class="lbl">Prix public — licence à vie</div></div>
+    <div class="cell"><div class="num">8 910 DA</div><div class="lbl">Prix pour vos abonnés (-10 % avec votre code)</div></div>
+    <div class="cell"><div class="num">1 337 DA</div><div class="lbl">Votre commission par vente livrée (15 %)</div></div>
+  </div>
+</div>
+
+<section id="comment">
+  <div class="wrap">
+    <h2 class="sec">Comment ça marche</h2>
+    <p class="lead">Quatre étapes. Vous pouvez publier votre premier contenu le jour même de votre inscription.</p>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3>Créez votre compte</h3><p>Remplissez le formulaire ci-dessous. Sous 48 h ouvrées, vous recevez votre <b>code unique</b> (ex. <code>DR-AMINE10</code>) et votre <b>lien personnel</b> <code>clinixospro.com/?ref=VOTRE-CODE</code>.</p></div>
+      <div class="step"><span class="n">2</span><h3>Recevez votre licence gratuite</h3><p>Nous vous offrons ClinixOS Pro pour tester le logiciel et le montrer dans vos vidéos : ordonnance en 2 clics, dossier patient, 100 % hors-ligne.</p></div>
+      <div class="step"><span class="n">3</span><h3>Partagez votre lien</h3><p>Démo, avis, « une journée au cabinet avec ClinixOS »… Vos abonnés commandent avec votre code et paient <b>8 910 DA</b> au lieu de 9 900 DA.</p></div>
+      <div class="step"><span class="n">4</span><h3>Suivez et encaissez</h3><p>Clics, commandes et livraisons en temps réel dans votre espace affilié. Commission versée sur votre CCP <b>entre le 1<sup>er</sup> et le 10 de chaque mois</b>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="calculateur">
+  <div class="wrap">
+    <h2 class="sec">Simulez vos gains</h2>
+    <p class="lead">15 % du montant encaissé (8 910 DA) = <b>1 336,50 DA par vente livrée</b>. Seules les commandes livrées et payées comptent.</p>
+    <div class="calc">
+      <label for="sales">Ventes livrées par mois : <output id="salesOut">10</output></label>
+      <input type="range" id="sales" min="1" max="50" value="10"/>
+      <div class="res">
+        <div class="big"><span id="earnOut">13 365</span> DA<span style="font-size:18px">/mois</span></div>
+        <div class="sm">= <span id="salesOut2">10</span> ventes × 1 336,50 DA de commission</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="avantages">
+  <div class="wrap">
+    <h2 class="sec">Pourquoi rejoindre le programme</h2>
+    <p class="lead">Pensé pour les créateurs : tout est automatisé, vous vous concentrez sur le contenu.</p>
+    <div class="grid3">
+      <div class="feat"><div class="ic">🔑</div><h3>Licence gratuite</h3><p>ClinixOS Pro offert pour tester et filmer le vrai logiciel. Pas de version « démo » bridée.</p></div>
+      <div class="feat"><div class="ic">🔗</div><h3>Lien unique</h3><p><code>clinixospro.com/?ref=VOTRE-CODE</code> : le code de réduction s'applique automatiquement pour vos abonnés.</p></div>
+      <div class="feat"><div class="ic">📊</div><h3>Dashboard temps réel</h3><p>Clics, commandes, livraisons et commissions visibles à tout moment dans votre espace affilié.</p></div>
+      <div class="feat"><div class="ic">💸</div><h3>Paiement mensuel</h3><p>Virement CCP ou bancaire entre le 1<sup>er</sup> et le 10 de chaque mois, avec relevé détaillé.</p></div>
+      <div class="feat"><div class="ic">🎁</div><h3>-10 % pour votre audience</h3><p>Votre code fait économiser 990 DA à chaque abonné : un vrai argument pour convertir.</p></div>
+      <div class="feat"><div class="ic">🚫</div><h3>Zéro risque</h3><p>Pas d'avance, pas de stock, pas d'objectif minimum. Résiliable à tout moment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="conditions">
+  <div class="wrap">
+    <div class="terms">
+      <h2 class="sec">Les règles du jeu</h2>
+      <p class="lead" style="color:#94A3B8">Transparent, sans surprise. En participant, vous acceptez ces conditions.</p>
+      <ol>
+        <li><b>15 % de commission</b> sur le montant réellement encaissé de chaque commande <b>livrée et payée</b> avec votre code (≈ 1 337 DA / vente). Annulées, retournées ou non réceptionnées : pas de commission.</li>
+        <li><b>Votre code = -10 % pour vos abonnés</b> : ils paient 8 910 DA au lieu de 9 900 DA. Votre code est personnel et incessible.</li>
+        <li><b>Paiement mensuel</b> entre le 1<sup>er</sup> et le 10 du mois suivant, par virement CCP ou bancaire, avec relevé détaillé (commandes, dates, montants).</li>
+        <li><b>Contenu honnête exigé</b> : montrez le vrai logiciel avec votre licence gratuite. Interdit : fausses promesses (« gratuit », « remboursé par l'État »), faux témoignages, spam en commentaires/DM, dénigrement des concurrents en notre nom.</li>
+        <li><b>Fraude = exclusion immédiate</b> : vos propres commandes avec votre code, commandes fictives de proches, diffusion sur des sites de coupons → exclusion et annulation des commissions concernées.</li>
+        <li><b>Réutilisation de vos contenus</b> : vous autorisez ClinixOS à réutiliser vos vidéos/posts présentant ClinixOS Pro dans ses publicités, sans rémunération supplémentaire. Crédit créateur quand le format le permet.</li>
+        <li><b>Sans engagement</b> : résiliable à tout moment (30 jours de préavis). Les commissions acquises restent dues. Le taux peut évoluer avec 30 jours de préavis ; les meilleurs affiliés peuvent négocier plus.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 class="sec">Questions fréquentes</h2>
+    <p class="lead">Tout ce que les créateurs nous demandent avant de rejoindre.</p>
+    <details class="faq"><summary>Quand et comment suis-je payé ?</summary><p>Entre le 1<sup>er</sup> et le 10 de chaque mois, par virement sur votre CCP ou compte bancaire (coordonnées fournies à l'inscription). Vous recevez un relevé détaillé : chaque commande, sa date, son montant et votre commission.</p></details>
+    <details class="faq"><summary>Sur quoi porte exactement la commission ?</summary><p>Uniquement les commandes <b>livrées et payées</b> (paiement cash à la livraison via Maystro). Une commande annulée, retournée ou non réceptionnée ne génère pas de commission — même si elle a été passée avec votre code.</p></details>
+    <details class="faq"><summary>Faut-il un minimum d'abonnés ?</summary><p>Non. Mais le programme performe surtout avec une audience <b>médicale ou tech en Algérie</b> (médecins, étudiants en médecine, créateurs tech DZ). 500 abonnés ultra-ciblés valent mieux que 50 000 abonnés généralistes.</p></details>
+    <details class="faq"><summary>Puis-je commander avec mon propre code ?</summary><p>Non — c'est considéré comme de la fraude : exclusion immédiate du programme et annulation des commissions. Votre licence gratuite couvre déjà votre usage personnel.</p></details>
+    <details class="faq"><summary>Combien de temps pour valider mon compte ?</summary><p>Sous <b>48 h ouvrées</b>. Nous vérifions que votre compte existe et correspond à votre niche, puis nous activons votre code. Vous êtes notifié par téléphone/SMS.</p></details>
+    <details class="faq"><summary>Que se passe-t-il si un client saisit mal mon code ?</summary><p>Le champ accepte les codes en majuscules et ignore les espaces. Si le code reste invalide, la commande passe au prix normal (9 900 DA) et ne vous est pas attribuée. D'où l'intérêt de partager votre <b>lien personnel</b> : le code s'applique automatiquement.</p></details>
+  </div>
+</section>
+
+<section class="alt" id="inscription">
+  <div class="wrap">
+    <h2 class="sec">Créer mon compte affilié</h2>
+    <p class="lead">2 minutes. Votre code et votre lien personnel sont générés automatiquement.</p>
+    <div class="panel">
+      <form id="aff-form" novalidate>
+        <div class="row2">
+          <div class="field"><label for="af-nom">Nom complet *</label><input id="af-nom" name="nom" type="text" autocomplete="name" placeholder="Ex : Amine Benali"/></div>
+          <div class="field"><label for="af-tel">Téléphone *</label><input id="af-tel" name="telephone" type="tel" inputmode="tel" placeholder="05 / 06 / 07 XX XX XX XX"/><div class="hint">Numéro algérien — pour la validation du compte et les notifications.</div></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="af-plateforme">Plateforme principale *</label>
+            <select id="af-plateforme" name="plateforme">
+              <option value="">— Choisir —</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option><option>Autre</option>
+            </select></div>
+          <div class="field"><label for="af-pseudo">Pseudo / lien du compte *</label><input id="af-pseudo" name="pseudo" type="text" placeholder="Ex : @dr.amine ou lien du profil"/></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="af-abonnes">Abonnés <span class="opt">(approx.)</span></label><input id="af-abonnes" name="abonnes" type="number" min="0" inputmode="numeric" placeholder="Ex : 12000"/></div>
+          <div class="field"><label for="af-email">Email <span class="opt">(optionnel)</span></label><input id="af-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="af-paiement">CCP ou RIP *</label><input id="af-paiement" name="paiement" type="text" inputmode="numeric" placeholder="N° de compte pour recevoir vos commissions"/></div>
+          <div class="field"><label for="af-titulaire">Titulaire du compte *</label><input id="af-titulaire" name="titulaire" type="text" placeholder="Nom figurant sur le compte"/></div>
+        </div>
+        <div class="field"><label for="af-code">Code souhaité <span class="opt">(optionnel)</span></label><input id="af-code" name="code_souhaite" type="text" maxlength="20" placeholder="Ex : DR-AMINE10"/><div class="hint">Majuscules, chiffres et tirets. Si indisponible, nous générons un équivalent.</div></div>
+        <label class="check"><input type="checkbox" id="af-cgu"/><span>J'ai lu et j'accepte <a href="#conditions" style="color:var(--blue);font-weight:700">les conditions du programme</a> (commission sur ventes livrées uniquement, contenu honnête, fraude = exclusion). *</span></label>
+        <button class="btn" type="submit" id="af-btn" style="width:100%"><span>Créer mon compte affilié</span></button>
+        <div class="msg" id="af-msg" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="espace">
+  <div class="wrap">
+    <h2 class="sec">Espace affilié</h2>
+    <p class="lead">Suivez vos clics, commandes, livraisons et commissions en temps réel.</p>
+    <div class="panel">
+      <form id="dash-form" novalidate>
+        <div class="field"><label for="dash-code">Votre code affilié</label>
+          <div style="display:flex;gap:10px"><input id="dash-code" type="text" placeholder="Ex : DR-AMINE10" style="text-transform:uppercase" maxlength="32"/><button class="btn sm" type="submit" style="white-space:nowrap">Voir mes stats</button></div>
+        </div>
+        <div class="msg" id="dash-msg" role="status"></div>
+      </form>
+      <div id="dash-result" style="display:none">
+        <div style="margin-top:6px"><span class="badge attente" id="dash-status">EN ATTENTE</span>
+        <span style="font-size:13px;color:var(--mut);margin-left:8px">Votre lien : <code id="dash-url" style="background:#EFF6FF;padding:2px 8px;border-radius:6px;color:var(--blue-d)"></code></span></div>
+        <div class="dash-cards">
+          <div class="dcard"><div class="v" id="d-clicks">0</div><div class="k">Clics (30 j)</div></div>
+          <div class="dcard"><div class="v" id="d-orders">0</div><div class="k">Commandes</div></div>
+          <div class="dcard"><div class="v" id="d-delivered">0</div><div class="k">Livrées</div></div>
+          <div class="dcard"><div class="v money" id="d-earned">0 DA</div><div class="k">Commissions acquises</div></div>
+          <div class="dcard"><div class="v" id="d-pending">0 DA</div><div class="k">En attente de paiement</div></div>
+          <div class="dcard"><div class="v" id="d-paid">0 DA</div><div class="k">Déjà versées</div></div>
+        </div>
+        <h3 style="font-size:15px;margin:6px 0 4px">Dernières commandes</h3>
+        <div style="overflow-x:auto"><table class="orders"><thead><tr><th>Date</th><th>Wilaya</th><th>Statut</th><th style="text-align:right">Commission</th></tr></thead><tbody id="d-rows"></tbody></table></div>
+        <p style="font-size:12.5px;color:var(--mut);margin-top:12px">Paiement entre le 1<sup>er</sup> et le 10 de chaque mois sur votre CCP. Seules les commandes <b>livrées</b> ouvrent droit à commission. Par souci de confidentialité, les coordonnées des clients ne sont jamais affichées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="cols">
+    <div>
+      <div class="brandline"><img src="/img/logo-v2.png" alt="ClinixOS Pro"/> ClinixOS Pro</div>
+      <p class="desc">Le syst&egrave;me de gestion m&eacute;dicale autonome 100% hors-ligne pour praticiens et sp&eacute;cialistes en Alg&eacute;rie. Z&eacute;ro abonnement, z&eacute;ro d&eacute;pendance cloud.</p>
+    </div>
+    <div>
+      <h4>Produit</h4>
+      <ul>
+        <li><a href="/#solution">Solution</a></li>
+        <li><a href="/#tarifs">Tarifs &mdash; 9&nbsp;900&nbsp;DA</a></li>
+        <li><a href="/#commander">Commander</a></li>
+        <li><a href="/#faq">Questions fr&eacute;quentes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="/blog/">Blog &mdash; gestion de cabinet</a></li>
+        <li><a href="/logiciel-cabinet-medical-hors-ligne/">Pourquoi un logiciel hors-ligne ?</a></li>
+        <li><a href="/affiliation/">Programme d'affiliation</a></li>
+        <li><a href="/affiliation/#conditions">Conditions d'affiliation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <ul>
+        <li><a href="/">Dimanche au Jeudi : 08h30 - 18h00</a></li>
+        <li><a href="/">Livraison 58 wilayas</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="legal">
+    <span>&copy; 2026 ClinixOS Pro Alg&eacute;rie. Tous droits r&eacute;serv&eacute;s.</span>
+    <span>Programme pilote &mdash; commission sur ventes livr&eacute;es uniquement.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbzvjQ9Yjm-oIrKqz1Ii1-XiCvNATamySYDrSEk1Pc0XEcdCBSXVmcVzgD-YoykESeS35w/exec";
+
+  /* ---------- Commission calculator ---------- */
+  var sales = document.getElementById('sales');
+  function fmt(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  function updCalc(){
+    var v = parseInt(sales.value, 10) || 1;
+    document.getElementById('salesOut').textContent = v;
+    document.getElementById('salesOut2').textContent = v;
+    document.getElementById('earnOut').textContent = fmt(Math.round(v * 1336.5));
+  }
+  sales.addEventListener('input', updCalc); updCalc();
+
+  /* ---------- Helpers ---------- */
+  function cleanCode(s){ return String(s||'').trim().toUpperCase().replace(/[^A-Z0-9\-_]/g,'').slice(0,32); }
+  function validDzPhone(v){ return /^(05|06|07)\d{8}$/.test(String(v||'').replace(/[\s.\-]/g,'')); }
+  function showMsg(el, html, ok){ el.className = 'msg ' + (ok ? 'ok' : 'err'); el.innerHTML = html; el.scrollIntoView({behavior:'smooth', block:'center'}); }
+  function postAction(params){
+    // Same proven pattern as the order form: CORS POST, gate on 2xx + echo host + JSON.
+    var body = new URLSearchParams(params);
+    return fetch(ENDPOINT, {method:'POST', body:body}).then(function(res){
+      if (!res.ok) throw new Error('http-' + res.status);
+      var host = ''; try { host = new URL(res.url).hostname; } catch(e){}
+      if (host !== 'script.google.com' && host !== 'script.googleusercontent.com') throw new Error('unexpected-host');
+      return res.json();
+    });
+  }
+
+  /* ---------- Signup ---------- */
+  var affForm = document.getElementById('aff-form');
+  affForm.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var msg = document.getElementById('af-msg');
+    var btn = document.getElementById('af-btn');
+    var nom = document.getElementById('af-nom').value.trim();
+    var tel = document.getElementById('af-tel').value.trim();
+    var plateforme = document.getElementById('af-plateforme').value;
+    var pseudo = document.getElementById('af-pseudo').value.trim();
+    var paiement = document.getElementById('af-paiement').value.trim();
+    var titulaire = document.getElementById('af-titulaire').value.trim();
+    var cgu = document.getElementById('af-cgu').checked;
+    var errs = [];
+    if (nom.length < 3) errs.push('votre nom complet');
+    if (!validDzPhone(tel)) errs.push('un numéro algérien valide (05/06/07)');
+    if (!plateforme) errs.push('votre plateforme principale');
+    if (pseudo.length < 2) errs.push('votre pseudo / lien de compte');
+    if (paiement.length < 5) errs.push('votre CCP ou RIP');
+    if (titulaire.length < 3) errs.push('le titulaire du compte');
+    if (!cgu) errs.push("l'acceptation des conditions");
+    if (errs.length){ showMsg(msg, 'Il manque : ' + errs.join(', ') + '.', false); return; }
+    btn.disabled = true; btn.querySelector('span').textContent = 'CRÉATION DU COMPTE…';
+    postAction({
+      action: 'affiliate_signup',
+      nom: nom, telephone: tel, plateforme: plateforme, pseudo: pseudo,
+      abonnes: document.getElementById('af-abonnes').value.trim(),
+      email: document.getElementById('af-email').value.trim(),
+      paiement: paiement, titulaire: titulaire,
+      code_souhaite: cleanCode(document.getElementById('af-code').value)
+    }).then(function(data){
+      if (data && data.result === 'success' && data.code){
+        var url = 'https://clinixospro.com/?ref=' + encodeURIComponent(data.code);
+        try { localStorage.setItem('clinix_aff_code', data.code); } catch(e){}
+        showMsg(msg, '<b>Compte créé !</b><br/>Votre code : <code>' + data.code + '</code><br/>Votre lien personnel : <code>' + url + '</code><br/><br/>Votre compte est <b>en cours de validation</b> (sous 48 h ouvrées). Vous recevrez votre licence gratuite dès l\'activation. Conservez bien votre code : c\'est aussi votre accès à l\'espace affilié.', true);
+        affForm.reset();
+      } else {
+        showMsg(msg, 'Envoi non confirmé — ' + ((data && data.error) || 'réessayez dans un instant.') , false);
+      }
+    }).catch(function(){
+      showMsg(msg, "Envoi non confirmé — vérifiez votre connexion puis réessayez. Si le problème persiste, contactez-nous.", false);
+    }).then(function(){ btn.disabled = false; btn.querySelector('span').textContent = 'Créer mon compte affilié'; });
+  });
+
+  /* ---------- Dashboard ---------- */
+  var dashForm = document.getElementById('dash-form');
+  try {
+    var saved = localStorage.getItem('clinix_aff_code');
+    if (saved) document.getElementById('dash-code').value = saved;
+  } catch(e){}
+  dashForm.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var msg = document.getElementById('dash-msg');
+    var code = cleanCode(document.getElementById('dash-code').value);
+    if (!code){ showMsg(msg, 'Saisissez votre code affilié.', false); return; }
+    msg.className = 'msg'; msg.style.display = 'none';
+    document.getElementById('dash-result').style.display = 'none';
+    fetch(ENDPOINT + '?action=stats&code=' + encodeURIComponent(code) + '&_=' + Date.now())
+      .then(function(res){
+        if (!res.ok) throw new Error('http-' + res.status);
+        return res.json();
+      })
+      .then(function(d){
+        if (!d || d.result !== 'success'){ showMsg(msg, 'Code introuvable. Vérifiez votre code affilié.', false); return; }
+        try { localStorage.setItem('clinix_aff_code', code); } catch(e){}
+        var st = document.getElementById('dash-status');
+        var s = String(d.status || '').toLowerCase();
+        st.textContent = (d.status || '').toUpperCase();
+        st.className = 'badge ' + (s.indexOf('actif') === 0 ? 'actif' : (s.indexOf('suspend') === 0 || s.indexOf('exclu') === 0 ? 'suspendu' : 'attente'));
+        document.getElementById('dash-url').textContent = 'clinixospro.com/?ref=' + d.code;
+        document.getElementById('d-clicks').textContent = d.clicks_30d || 0;
+        document.getElementById('d-orders').textContent = d.orders || 0;
+        document.getElementById('d-delivered').textContent = d.delivered || 0;
+        document.getElementById('d-earned').textContent = fmt(d.commission_earned || 0) + ' DA';
+        document.getElementById('d-pending').textContent = fmt(d.commission_pending || 0) + ' DA';
+        document.getElementById('d-paid').textContent = fmt(d.commission_paid || 0) + ' DA';
+        var tb = document.getElementById('d-rows'); tb.innerHTML = '';
+        (d.recent || []).forEach(function(r){
+          var tr = document.createElement('tr');
+          var liv = String(r.statut || '').toLowerCase().indexOf('livr') === 0;
+          tr.innerHTML = '<td>' + r.date + '</td><td>' + r.wilaya + '</td>' +
+            '<td><span class="st' + (liv ? ' livre' : '') + '">' + r.statut + '</span></td>' +
+            '<td style="text-align:right">' + (liv ? fmt(r.commission || 0) + ' DA' : '—') + '</td>';
+          tb.appendChild(tr);
+        });
+        if (!(d.recent || []).length) tb.innerHTML = '<tr><td colspan="4" style="color:var(--mut)">Aucune commande pour le moment — partagez votre lien !</td></tr>';
+        document.getElementById('dash-result').style.display = 'block';
+        document.getElementById('dash-result').scrollIntoView({behavior:'smooth', block:'nearest'});
+      })
+      .catch(function(){ showMsg(msg, 'Statistiques indisponibles pour le moment — réessayez dans un instant.', false); });
+  });
+})();
+</script>
+</body>
+</html>
