@@ -1,9 +1,7 @@
 // POST /api/aff/set-password — step 2: the affiliate sets their password (enrollment).
 import { json, getAffiliate, hashPassword, makeSalt, publicProfile } from './lib.js';
 
-export async function onRequestPost(ctx) {
-  try {
-  const { request, env } = ctx;
+export async function onRequestPost({ request, env }) {
   const db = env.AFF_DB;
   if (!db) return json({ result: 'error', error: 'Base de données indisponible.' }, 500);
   const aff = await getAffiliate(db, request);
@@ -23,5 +21,4 @@ export async function onRequestPost(ctx) {
 
   const row = await db.prepare('SELECT * FROM aff_affiliates WHERE id = ?').bind(aff.affiliate_id).first();
   return json({ result: 'success', affiliate: publicProfile(row) });
-  } catch (e) { return json({ result: 'error', debug: String((e && e.stack) || e) }, 500); }
 }
