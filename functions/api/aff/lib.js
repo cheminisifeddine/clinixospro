@@ -114,16 +114,23 @@ async function gasPost(params) {
 
 // Dual-write: keep the "Affiliés" sheet in sync (validation + payouts happen there).
 export async function gasSignup(aff) {
-  try {
-    const d = await gasPost({
-      action: 'affiliate_signup',
-      nom: aff.nom, telephone: aff.telephone, plateforme: aff.plateforme,
-      pseudo: aff.pseudo, abonnes: aff.abonnes || '', email: aff.email,
-      paiement: 'À compléter', titulaire: 'À compléter',
-      code_souhaite: aff.code,
-    });
-    return d && d.result === 'success' ? d.code : null;
-  } catch (e) { return null; }
+  const payload = {
+    action: 'affiliate_signup',
+    nom: aff.nom, telephone: aff.telephone, plateforme: aff.plateforme,
+    pseudo: aff.pseudo, abonnes: aff.abonnes || '', email: aff.email,
+    paiement: 'À compléter', titulaire: 'À compléter',
+    code_souhaite: aff.code,
+  };
+  // Retry once: the Sheet is Oussama's back-office, the dual-write must land.
+  // (affSignup_ rejects duplicate codes, so a retry can never create two rows.)
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const d = await gasPost(payload);
+      if (d && d.result === 'success') return d.code || null;
+    } catch (e) { /* transient: retry once */ }
+    if (attempt === 0) await new Promise(r => setTimeout(r, 1500));
+  }
+  return null;
 }
 
 export async function gasStats(code) {
