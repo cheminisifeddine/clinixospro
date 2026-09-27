@@ -135,6 +135,8 @@ export async function gasStats(code) {
 export async function gasSetPaiement(code, paiement, titulaire) {
   try {
     const d = await gasPost({ action: 'affiliate_set_paiement', code, paiement, titulaire });
-    return !!(d && d.result === 'success');
+    // Fail closed: only a deployed affSetPaiement_ returns paiement_updated.
+    // (Unknown actions fall through to the order logic and return a bare success.)
+    return !!(d && d.result === 'success' && d.paiement_updated === true);
   } catch (e) { return false; }
 }
