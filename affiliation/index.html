@@ -99,6 +99,7 @@
   table.orders td{padding:10px 8px;border-bottom:1px solid var(--line)}
   .st{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#EFF6FF;color:var(--blue-d)}
   .st.livre{background:#DCFCE7;color:#15803D}
+  .welcome{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:14px 18px;font-size:14px;color:#1E3A8A;margin:12px 0 4px;line-height:1.6}
   footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:13.5px}
   footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
   footer a{color:var(--blue);text-decoration:none;font-weight:600}
@@ -310,6 +311,12 @@
       </form>
       <div id="dash-result" style="display:none">
         <div style="margin-top:6px"><span class="badge attente" id="dash-status">EN ATTENTE</span></div>
+        <div class="welcome" id="dash-welcome" style="display:none"><b>Bienvenue !</b> Votre compte est <b>en cours de validation</b> (sous 48 h ouvrées) — mais votre lien est <b>déjà actif</b> : toute commande passée avec votre code sera comptabilisée. Votre licence gratuite arrive dès l'activation. En attendant, commencez à partager.</div>
+        <div class="steps" style="grid-template-columns:repeat(3,1fr);margin-top:28px">
+          <div class="step"><div class="n">1</div><h3>Partagez</h3><p>Votre lien ou code : <b>-10%</b> pour vos abonnés (8 910 DA au lieu de 9 900 DA).</p></div>
+          <div class="step"><div class="n">2</div><h3>Gagnez</h3><p><b>1 337 DA</b> par commande <b>livrée</b> avec votre code. Suivi en temps réel ci-dessous.</p></div>
+          <div class="step"><div class="n">3</div><h3>Recevez</h3><p>Versement entre le 1<sup>er</sup> et le 10 de chaque mois sur votre CCP.</p></div>
+        </div>
         <div class="linkbox">
           <div class="linkrow"><div><div class="lk">Votre code affili&eacute;</div><code id="dash-code2"></code></div><button class="btn sm ghost copybtn" data-copy="dash-code2" type="button">Copier</button></div>
           <div class="linkrow"><div><div class="lk">Votre lien personnel</div><code id="dash-url"></code></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm ghost copybtn" data-copy="dash-url" type="button">Copier</button><a class="btn sm" id="dash-wa" href="#" target="_blank" rel="noopener">Partager sur WhatsApp</a></div></div>
@@ -435,10 +442,11 @@
       code_souhaite: cleanCode(document.getElementById('af-code').value)
     }).then(function(data){
       if (data && data.result === 'success' && data.code){
-        var url = 'https://clinixospro.com/?ref=' + encodeURIComponent(data.code);
         try { localStorage.setItem('clinix_aff_code', data.code); } catch(e){}
-        showMsg(msg, '<b>Compte créé !</b><br/>Votre code : <code>' + data.code + '</code><br/>Votre lien personnel : <code>' + url + '</code><br/><br/>Votre compte est <b>en cours de validation</b> (sous 48 h ouvrées). Vous recevrez votre licence gratuite dès l\'activation. Conservez bien votre code : c\'est aussi votre accès à l\'espace affilié.', true);
+        showMsg(msg, '<b>Compte créé !</b> Ouverture de votre tableau de bord…', true);
         affForm.reset();
+        document.getElementById('dash-code').value = data.code;
+        loadDash(data.code, true);
       } else {
         showMsg(msg, 'Envoi non confirmé — ' + ((data && data.error) || 'réessayez dans un instant.') , false);
       }
@@ -449,10 +457,13 @@
 
   /* ---------- Dashboard ---------- */
   var dashForm = document.getElementById('dash-form');
-  try {
-    var saved = localStorage.getItem('clinix_aff_code');
-    if (saved) document.getElementById('dash-code').value = saved;
-  } catch(e){}
+  function loadDash(code, fresh){
+    var msg = document.getElementById('dash-msg');
+    code = cleanCode(code);
+    if (!code){ showMsg(msg, 'Saisissez votre code affilié.', false); return; }
+    msg.className = 'msg'; msg.style.display = 'none';
+    document.getElementById('dash-result').style.display = 'none';
+    document.getElementById('dash-welcome').style.display = 'none';
   document.addEventListener('click', function(ev){
     var b = ev.target.closest ? ev.target.closest('.copybtn') : null;
     if (!b) return;
@@ -462,13 +473,6 @@
     if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done, legacy); } else { legacy(); }
   });
 
-  dashForm.addEventListener('submit', function(ev){
-    ev.preventDefault();
-    var msg = document.getElementById('dash-msg');
-    var code = cleanCode(document.getElementById('dash-code').value);
-    if (!code){ showMsg(msg, 'Saisissez votre code affilié.', false); return; }
-    msg.className = 'msg'; msg.style.display = 'none';
-    document.getElementById('dash-result').style.display = 'none';
     fetch(ENDPOINT + '?action=stats&code=' + encodeURIComponent(code) + '&_=' + Date.now())
       .then(function(res){
         if (!res.ok) throw new Error('http-' + res.status);
@@ -504,11 +508,21 @@
           tb.appendChild(tr);
         });
         if (!(d.recent || []).length) tb.innerHTML = '<tr><td colspan="4" style="color:var(--mut)">Aucune commande pour le moment — partagez votre lien !</td></tr>';
+        document.getElementById('dash-welcome').style.display = fresh ? 'block' : 'none';
         document.getElementById('dash-result').style.display = 'block';
-        document.getElementById('dash-result').scrollIntoView({behavior:'smooth', block:'nearest'});
+        if (fresh) document.getElementById('espace').scrollIntoView({behavior:'smooth'});
+        else document.getElementById('dash-result').scrollIntoView({behavior:'smooth', block:'nearest'});
       })
       .catch(function(){ showMsg(msg, 'Statistiques indisponibles pour le moment — réessayez dans un instant.', false); });
+  }
+  dashForm.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    loadDash(document.getElementById('dash-code').value, false);
   });
+  try {
+    var saved = localStorage.getItem('clinix_aff_code');
+    if (saved){ document.getElementById('dash-code').value = saved; loadDash(saved, false); }
+  } catch(e){}
 })();
 </script>
 </body>
