@@ -1220,6 +1220,37 @@ fbq('init','3184145215124032');fbq('track','PageView');
     });
   })();
 
+  // Referral links (?ref=CODE): prefill the promo field, persist the code,
+  // show a -10% banner, and beacon one click to the backend (affiliation.html).
+  (function(){
+    function cleanRef(s){ return String(s||'').toUpperCase().replace(/[^A-Z0-9\-_]/g,'').slice(0,32); }
+    var fresh = '', code = '';
+    try {
+      fresh = cleanRef(new URLSearchParams(location.search).get('ref'));
+      if (fresh) {
+        code = fresh;
+        try { localStorage.setItem('clinix_ref', code); } catch(e){}
+      } else {
+        try { code = cleanRef(localStorage.getItem('clinix_ref')); } catch(e){}
+      }
+    } catch(e){}
+    if (!code) return;
+    var promo = document.getElementById('promo_code');
+    var form = document.getElementById('order-form');
+    if (promo && !promo.value) promo.value = code;
+    if (form && !document.getElementById('ref-banner')) {
+      var b = document.createElement('div');
+      b.id = 'ref-banner';
+      b.setAttribute('style', 'background:#EFF6FF;border:1px solid #BFDBFE;color:#1E40AF;border-radius:10px;padding:12px 16px;font-size:14px;margin-bottom:16px');
+      b.innerHTML = 'Code parrain <b>' + code.replace(/</g,'&lt;') + '</b> appliqu&eacute; : vous b&eacute;n&eacute;ficiez de <b>-10&nbsp;%</b> (8&nbsp;910&nbsp;DA au lieu de 9&nbsp;900&nbsp;DA).';
+      form.insertBefore(b, form.firstChild);
+    }
+    if (fresh && form && form.action) {
+      var img = new Image();
+      img.src = form.action.split('?')[0] + '?action=click&code=' + encodeURIComponent(code) + '&_=' + Date.now();
+    }
+  })();
+
   function populateWilayas(){
   var wilayaSelect = document.getElementById('wilaya');
   var citySelect = document.getElementById('city');
