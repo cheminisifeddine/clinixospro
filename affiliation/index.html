@@ -17,7 +17,7 @@
   header.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:18px}
-  .brand img{height:32px;width:32px;object-fit:contain}
+  .brand img{height:36px;width:auto}
   nav.main{display:flex;gap:22px}
   nav.main a{color:var(--mut);text-decoration:none;font-size:14.5px;font-weight:600}
   nav.main a:hover{color:var(--blue)}
@@ -26,7 +26,7 @@
   .btn.ghost{background:#fff;color:var(--blue);border:2px solid var(--blue)}
   .btn.ghost:hover{background:#EFF6FF}
   .btn.sm{padding:9px 18px;font-size:14px}
-  .hero{background:linear-gradient(135deg,#0F172A 0%,#1E3A8A 60%,#1D4ED8 100%);color:#fff;padding:72px 0 64px}
+  .hero{background:linear-gradient(135deg,rgba(15,23,42,.9) 0%,rgba(30,58,138,.85) 60%,rgba(29,78,216,.8) 100%),url('/img/affiliation-hero.jpg') center/cover no-repeat;color:#fff;padding:72px 0 64px}
   .hero h1{font-size:clamp(30px,5vw,48px);line-height:1.15;font-weight:800;letter-spacing:-.5px;max-width:760px}
   .hero h1 .hl{color:#93C5FD}
   .hero p.sub{color:#CBD5E1;font-size:18px;max-width:640px;margin:18px 0 30px}
@@ -135,13 +135,23 @@
   footer.site .brandline img{height:30px;width:auto}
   footer.site p.desc{font-size:13px;color:var(--mut);max-width:300px}
   footer.site .legal{border-top:1px solid var(--line);padding:20px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;max-width:1080px;margin:0 auto;font-size:12.5px;color:var(--mut)}
+
+  .linkbox{background:#F8FAFC;border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:14px;display:grid;gap:12px}
+  .linkrow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .linkrow .lk{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+  .linkrow code{background:#EFF6FF;padding:6px 12px;border-radius:8px;color:var(--blue-d);font-weight:700;font-size:14px;word-break:break-all}
+  .kit{display:grid;gap:12px;margin-top:4px}
+  @media(min-width:768px){.kit{grid-template-columns:repeat(3,1fr)}}
+  .kitcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column}
+  .kitcard .kh{display:flex;align-items:center;justify-content:space-between;font-weight:800;font-size:14px;margin-bottom:8px}
+  .kitcard p{font-size:13px;color:var(--mut);white-space:pre-line;flex:1}
 </style>
 </head>
 <body>
 
 <header class="site">
   <div class="bar">
-    <a class="brand" href="/"><img src="/img/logo-v2.png" alt="ClinixOS Pro"/> ClinixOS Pro</a>
+    <a class="brand" href="/"><img src="/img/logo-v2.png" alt="ClinixOS Pro"/></a>
     <nav class="main" aria-label="Navigation principale">
       <a href="/">Accueil</a>
       <a href="/blog/">Blog</a>
@@ -278,10 +288,6 @@
           <div class="field"><label for="af-abonnes">Abonnés <span class="opt">(approx.)</span></label><input id="af-abonnes" name="abonnes" type="number" min="0" inputmode="numeric" placeholder="Ex : 12000"/></div>
           <div class="field"><label for="af-email">Email <span class="opt">(optionnel)</span></label><input id="af-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
         </div>
-        <div class="row2">
-          <div class="field"><label for="af-paiement">CCP ou RIP *</label><input id="af-paiement" name="paiement" type="text" inputmode="numeric" placeholder="N° de compte pour recevoir vos commissions"/></div>
-          <div class="field"><label for="af-titulaire">Titulaire du compte *</label><input id="af-titulaire" name="titulaire" type="text" placeholder="Nom figurant sur le compte"/></div>
-        </div>
         <div class="field"><label for="af-code">Code souhaité <span class="opt">(optionnel)</span></label><input id="af-code" name="code_souhaite" type="text" maxlength="20" placeholder="Ex : DR-AMINE10"/><div class="hint">Majuscules, chiffres et tirets. Si indisponible, nous générons un équivalent.</div></div>
         <label class="check"><input type="checkbox" id="af-cgu"/><span>J'ai lu et j'accepte <a href="#conditions" style="color:var(--blue);font-weight:700">les conditions du programme</a> (commission sur ventes livrées uniquement, contenu honnête, fraude = exclusion). *</span></label>
         <button class="btn" type="submit" id="af-btn" style="width:100%"><span>Créer mon compte affilié</span></button>
@@ -303,8 +309,11 @@
         <div class="msg" id="dash-msg" role="status"></div>
       </form>
       <div id="dash-result" style="display:none">
-        <div style="margin-top:6px"><span class="badge attente" id="dash-status">EN ATTENTE</span>
-        <span style="font-size:13px;color:var(--mut);margin-left:8px">Votre lien : <code id="dash-url" style="background:#EFF6FF;padding:2px 8px;border-radius:6px;color:var(--blue-d)"></code></span></div>
+        <div style="margin-top:6px"><span class="badge attente" id="dash-status">EN ATTENTE</span></div>
+        <div class="linkbox">
+          <div class="linkrow"><div><div class="lk">Votre code affili&eacute;</div><code id="dash-code2"></code></div><button class="btn sm ghost copybtn" data-copy="dash-code2" type="button">Copier</button></div>
+          <div class="linkrow"><div><div class="lk">Votre lien personnel</div><code id="dash-url"></code></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm ghost copybtn" data-copy="dash-url" type="button">Copier</button><a class="btn sm" id="dash-wa" href="#" target="_blank" rel="noopener">Partager sur WhatsApp</a></div></div>
+        </div>
         <div class="dash-cards">
           <div class="dcard"><div class="v" id="d-clicks">0</div><div class="k">Clics (30 j)</div></div>
           <div class="dcard"><div class="v" id="d-orders">0</div><div class="k">Commandes</div></div>
@@ -315,6 +324,13 @@
         </div>
         <h3 style="font-size:15px;margin:6px 0 4px">Dernières commandes</h3>
         <div style="overflow-x:auto"><table class="orders"><thead><tr><th>Date</th><th>Wilaya</th><th>Statut</th><th style="text-align:right">Commission</th></tr></thead><tbody id="d-rows"></tbody></table></div>
+        <h3 style="font-size:15px;margin:20px 0 4px">Kit de contenu &mdash; pr&ecirc;t &agrave; publier</h3>
+        <p style="font-size:13px;color:var(--mut);margin-bottom:12px">Textes v&eacute;rifi&eacute;s, conformes aux conditions du programme. Copiez, collez, publiez.</p>
+        <div class="kit">
+          <div class="kitcard"><div class="kh"><span>Post / Reel</span><button class="btn sm ghost copybtn" data-copy="kit1" type="button">Copier</button></div><p id="kit1"></p></div>
+          <div class="kitcard"><div class="kh"><span>Story</span><button class="btn sm ghost copybtn" data-copy="kit2" type="button">Copier</button></div><p id="kit2"></p></div>
+          <div class="kitcard"><div class="kh"><span>Message WhatsApp</span><button class="btn sm ghost copybtn" data-copy="kit3" type="button">Copier</button></div><p id="kit3"></p></div>
+        </div>
         <p style="font-size:12.5px;color:var(--mut);margin-top:12px">Paiement entre le 1<sup>er</sup> et le 10 de chaque mois sur votre CCP. Seules les commandes <b>livrées</b> ouvrent droit à commission. Par souci de confidentialité, les coordonnées des clients ne sont jamais affichées.</p>
       </div>
     </div>
@@ -324,7 +340,7 @@
 <footer class="site">
   <div class="cols">
     <div>
-      <div class="brandline"><img src="/img/logo-v2.png" alt="ClinixOS Pro"/> ClinixOS Pro</div>
+      <div class="brandline"><img src="/img/logo-v2.png" alt="ClinixOS Pro"/></div>
       <p class="desc">Le syst&egrave;me de gestion m&eacute;dicale autonome 100% hors-ligne pour praticiens et sp&eacute;cialistes en Alg&eacute;rie. Z&eacute;ro abonnement, z&eacute;ro d&eacute;pendance cloud.</p>
     </div>
     <div>
@@ -400,16 +416,12 @@
     var tel = document.getElementById('af-tel').value.trim();
     var plateforme = document.getElementById('af-plateforme').value;
     var pseudo = document.getElementById('af-pseudo').value.trim();
-    var paiement = document.getElementById('af-paiement').value.trim();
-    var titulaire = document.getElementById('af-titulaire').value.trim();
     var cgu = document.getElementById('af-cgu').checked;
     var errs = [];
     if (nom.length < 3) errs.push('votre nom complet');
     if (!validDzPhone(tel)) errs.push('un numéro algérien valide (05/06/07)');
     if (!plateforme) errs.push('votre plateforme principale');
     if (pseudo.length < 2) errs.push('votre pseudo / lien de compte');
-    if (paiement.length < 5) errs.push('votre CCP ou RIP');
-    if (titulaire.length < 3) errs.push('le titulaire du compte');
     if (!cgu) errs.push("l'acceptation des conditions");
     if (errs.length){ showMsg(msg, 'Il manque : ' + errs.join(', ') + '.', false); return; }
     btn.disabled = true; btn.querySelector('span').textContent = 'CRÉATION DU COMPTE…';
@@ -418,7 +430,6 @@
       nom: nom, telephone: tel, plateforme: plateforme, pseudo: pseudo,
       abonnes: document.getElementById('af-abonnes').value.trim(),
       email: document.getElementById('af-email').value.trim(),
-      paiement: paiement, titulaire: titulaire,
       code_souhaite: cleanCode(document.getElementById('af-code').value)
     }).then(function(data){
       if (data && data.result === 'success' && data.code){
@@ -440,6 +451,15 @@
     var saved = localStorage.getItem('clinix_aff_code');
     if (saved) document.getElementById('dash-code').value = saved;
   } catch(e){}
+  document.addEventListener('click', function(ev){
+    var b = ev.target.closest ? ev.target.closest('.copybtn') : null;
+    if (!b) return;
+    var t = document.getElementById(b.getAttribute('data-copy')).textContent;
+    function done(){ var o = b.textContent; b.textContent = 'Copi\u00e9 \u2713'; setTimeout(function(){ b.textContent = o; }, 1500); }
+    function legacy(){ var ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch(e){} document.body.removeChild(ta); }
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done, legacy); } else { legacy(); }
+  });
+
   dashForm.addEventListener('submit', function(ev){
     ev.preventDefault();
     var msg = document.getElementById('dash-msg');
@@ -460,6 +480,12 @@
         st.textContent = (d.status || '').toUpperCase();
         st.className = 'badge ' + (s.indexOf('actif') === 0 ? 'actif' : (s.indexOf('suspend') === 0 || s.indexOf('exclu') === 0 ? 'suspendu' : 'attente'));
         document.getElementById('dash-url').textContent = 'clinixospro.com/?ref=' + d.code;
+        document.getElementById('dash-code2').textContent = d.code;
+        var fullUrl = 'https://clinixospro.com/?ref=' + encodeURIComponent(d.code);
+        document.getElementById('kit1').textContent = 'Je vous presente ClinixOS Pro : le logiciel qui gere tout le cabinet medical \u2014 patients, ordonnances, rendez-vous, caisse \u2014 100% hors-ligne, sans abonnement.\n\nLicence a vie : 9 900 DA. Avec mon code ' + d.code + ' : -10%, soit 8 910 DA, paiement a la livraison.\n' + fullUrl;
+        document.getElementById('kit2').textContent = 'Docteurs : fini le papier ! ClinixOS Pro gere votre cabinet sans internet, sans abonnement.\n-10% avec mon code ' + d.code + ' \uD83D\uDC46\n' + fullUrl;
+        document.getElementById('kit3').textContent = 'Salam docteur, je vous recommande ClinixOS Pro : logiciel de gestion de cabinet 100% hors-ligne, licence a vie 9 900 DA.\nAvec mon code ' + d.code + ', vous avez -10% (8 910 DA), paiement a la livraison apres inspection du colis.\nDetails : ' + fullUrl;
+        document.getElementById('dash-wa').href = 'https://wa.me/?text=' + encodeURIComponent(document.getElementById('kit3').textContent);
         document.getElementById('d-clicks').textContent = d.clicks_30d || 0;
         document.getElementById('d-orders').textContent = d.orders || 0;
         document.getElementById('d-delivered').textContent = d.delivered || 0;
