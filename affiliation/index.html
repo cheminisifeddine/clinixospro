@@ -289,6 +289,14 @@
           <div class="field"><label for="af-email">Email <span class="opt">(optionnel)</span></label><input id="af-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
         </div>
         <div class="field"><label for="af-code">Code souhaité <span class="opt">(optionnel)</span></label><input id="af-code" name="code_souhaite" type="text" maxlength="20" placeholder="Ex : DR-AMINE10"/><div class="hint">Majuscules, chiffres et tirets. Si indisponible, nous générons un équivalent.</div></div>
+        <div class="row2">
+          <div class="field"><label for="af-paiement-type">Moyen de paiement *</label>
+            <select id="af-paiement-type" name="paiement_type">
+              <option value="">— Choisir —</option><option>CCP</option><option>BaridiMob</option><option>Virement bancaire</option>
+            </select></div>
+          <div class="field"><label for="af-paiement-num">N° CCP / RIP / compte *</label><input id="af-paiement-num" name="paiement_num" type="text" inputmode="numeric" placeholder="Ex : 0023456789-45"/></div>
+        </div>
+        <div class="field"><label for="af-titulaire">Titulaire du compte *</label><input id="af-titulaire" name="titulaire" type="text" autocomplete="name" placeholder="Nom exact du titulaire du compte"/><div class="hint">Nécessaire pour le versement mensuel de vos commissions (1<sup>er</sup>–10 du mois).</div></div>
         <label class="check"><input type="checkbox" id="af-cgu"/><span>J'ai lu et j'accepte <a href="#conditions" style="color:var(--blue);font-weight:700">les conditions du programme</a> (commission sur ventes livrées uniquement, contenu honnête, fraude = exclusion). *</span></label>
         <button class="btn" type="submit" id="af-btn" style="width:100%"><span>Créer mon compte affilié</span></button>
         <div class="msg" id="af-msg" role="status"></div>
@@ -416,12 +424,18 @@
     var tel = document.getElementById('af-tel').value.trim();
     var plateforme = document.getElementById('af-plateforme').value;
     var pseudo = document.getElementById('af-pseudo').value.trim();
+    var ptype = document.getElementById('af-paiement-type').value;
+    var pnum = document.getElementById('af-paiement-num').value.trim().replace(/[\s.\-]/g, '');
+    var titulaire = document.getElementById('af-titulaire').value.trim();
     var cgu = document.getElementById('af-cgu').checked;
     var errs = [];
     if (nom.length < 3) errs.push('votre nom complet');
     if (!validDzPhone(tel)) errs.push('un numéro algérien valide (05/06/07)');
     if (!plateforme) errs.push('votre plateforme principale');
     if (pseudo.length < 2) errs.push('votre pseudo / lien de compte');
+    if (!ptype) errs.push('votre moyen de paiement');
+    if (pnum.length < 5) errs.push('votre n° CCP / RIP / compte');
+    if (titulaire.length < 3) errs.push('le titulaire du compte');
     if (!cgu) errs.push("l'acceptation des conditions");
     if (errs.length){ showMsg(msg, 'Il manque : ' + errs.join(', ') + '.', false); return; }
     btn.disabled = true; btn.querySelector('span').textContent = 'CRÉATION DU COMPTE…';
@@ -430,6 +444,8 @@
       nom: nom, telephone: tel, plateforme: plateforme, pseudo: pseudo,
       abonnes: document.getElementById('af-abonnes').value.trim(),
       email: document.getElementById('af-email').value.trim(),
+      paiement: ptype + ' ' + document.getElementById('af-paiement-num').value.trim(),
+      titulaire: titulaire,
       code_souhaite: cleanCode(document.getElementById('af-code').value)
     }).then(function(data){
       if (data && data.result === 'success' && data.code){
