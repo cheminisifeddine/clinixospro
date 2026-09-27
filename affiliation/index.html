@@ -615,7 +615,7 @@
   function cleanCode(s){ return String(s||'').trim().toUpperCase().replace(/[^A-Z0-9\-_]/g,'').slice(0,32); }
   function validDzPhone(v){ return /^(05|06|07)\d{8}$/.test(String(v||'').replace(/[\s.\-]/g,'')); }
   function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(v||'')); }
-  function showMsg(el, html, ok){ el.className = 'msg ' + (ok ? 'ok' : 'err'); el.innerHTML = html; }
+  function showMsg(el, html, ok){ el.className = 'msg ' + (ok ? 'ok' : 'err'); el.style.display = ''; el.innerHTML = html; }
   function hideMsg(el){ el.className = 'msg'; el.style.display = 'none'; el.innerHTML = ''; }
   function api(path, method, body){
     return fetch(API + path, {
@@ -633,8 +633,8 @@
     } else fallback();
     function fallback(){
       var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta);
-      ta.select(); try { document.execCommand('copy'); done(); } catch(e){}
-      document.body.removeChild(ta);
+      ta.select(); try { document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta); done();
     }
   }
 
