@@ -149,6 +149,49 @@
   .kitcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column}
   .kitcard .kh{display:flex;align-items:center;justify-content:space-between;font-weight:800;font-size:14px;margin-bottom:8px}
   .kitcard p{font-size:13px;color:var(--mut);white-space:pre-line;flex:1}
+
+  /* ---- affiliate portal ---- */
+  .portal{max-width:1080px;margin:0 auto;padding:26px 20px 60px}
+  .p-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .p-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px}
+  .p-brand img{height:30px}
+  .p-user{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .p-user code{background:#EFF6FF;padding:6px 12px;border-radius:8px;color:var(--blue-d);font-weight:700}
+  .p-onboard{background:#FFFBEB;border:1px solid #FDE68A;border-radius:14px;padding:24px;margin-bottom:18px}
+  .p-onboard h2{font-size:19px;margin:0 0 8px}
+  .p-onboard p{font-size:14px;color:var(--mut);margin:0 0 16px;line-height:1.6}
+  .p-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:12px 18px;font-size:13.5px;color:#1E3A8A;margin-bottom:18px;line-height:1.55}
+  .p-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:22px;border-bottom:2px solid var(--line)}
+  .p-tabs button{border:0;background:none;padding:10px 14px;font-size:14px;font-weight:700;color:var(--mut);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+  .p-tabs button.on{color:var(--blue);border-bottom-color:var(--blue)}
+  .p-h{font-size:16px;margin:26px 0 12px}
+  .p-lead{font-size:13.5px;color:var(--mut);margin:-4px 0 14px;line-height:1.6}
+  .p-welcome{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:14px 18px;font-size:14px;color:#1E3A8A;margin-bottom:6px;line-height:1.6}
+  .p-bigcode{font-size:34px;font-weight:800;letter-spacing:.04em;color:var(--blue-d);margin:6px 0 12px}
+  .p-linkhero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:4px}
+  .lk-label{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+  .p-qrrow{display:flex;align-items:center;gap:18px;margin:18px 0;flex-wrap:wrap}
+  .p-qrrow img{border:1px solid var(--line);border-radius:12px;background:#fff}
+  .p-qrrow p{font-size:13.5px;color:var(--mut);max-width:340px;line-height:1.6}
+  .p-share{display:flex;gap:10px;flex-wrap:wrap}
+  .p-tip{font-size:13px;color:var(--mut);margin-top:14px;line-height:1.6}
+  .p-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0}
+  @media(max-width:860px){.p-facts{grid-template-columns:1fr 1fr}}
+  .p-fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+  .p-fact .v{font-size:19px;font-weight:800;color:var(--blue-d)}
+  .p-fact .k{font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.5}
+  .p-modules{columns:2;font-size:14px;line-height:2.1;margin:0;padding-left:20px}
+  @media(max-width:600px){.p-modules{columns:1}}
+  .p-args{display:grid;gap:10px;margin:12px 0}
+  .p-arg{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:12px 16px;font-size:14px;line-height:1.6}
+  .p-faq details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:8px}
+  .p-faq summary{font-weight:700;cursor:pointer;font-size:14px}
+  .p-faq p{font-size:13.5px;color:var(--mut);margin:8px 0 0;line-height:1.6}
+  .p-rules{display:grid;gap:8px;margin:0 0 6px}
+  .p-rule{font-size:14px;background:#F8FAFC;border:1px solid var(--line);border-radius:10px;padding:10px 16px;line-height:1.6}
+  .msg{display:none;margin-top:12px;font-size:13.5px;padding:10px 14px;border-radius:10px;line-height:1.55}
+  .msg.ok{display:block;background:#DCFCE7;color:#15803D}
+  .msg.err{display:block;background:#FEE2E2;color:#B91C1C}
 </style>
 </head>
 <body>
@@ -177,6 +220,7 @@
   </nav>
 </header>
 
+<div id="view-marketing">
 <div class="hero">
   <div class="wrap">
     <span class="pill">PROGRAMME D'AFFILIATION — PILOTE 2026</span>
@@ -290,7 +334,7 @@
         </div>
         <div class="row2">
           <div class="field"><label for="af-abonnes">Abonnés <span class="opt">(approx.)</span></label><input id="af-abonnes" name="abonnes" type="number" min="0" inputmode="numeric" placeholder="Ex : 12000"/></div>
-          <div class="field"><label for="af-email">Email <span class="opt">(optionnel)</span></label><input id="af-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
+          <div class="field"><label for="af-email">Email *</label><input id="af-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required/></div>
         </div>
         <div class="field"><label for="af-code">Code souhaité <span class="opt">(optionnel)</span></label><input id="af-code" name="code_souhaite" type="text" maxlength="20" placeholder="Ex : DR-AMINE10"/><div class="hint">Majuscules, chiffres et tirets. Si indisponible, nous générons un équivalent.</div></div>
         <label class="check"><input type="checkbox" id="af-cgu"/><span>J'ai lu et j'accepte <a href="#conditions" style="color:var(--blue);font-weight:700">les conditions du programme</a> (commission sur ventes livrées uniquement, contenu honnête, fraude = exclusion). *</span></label>
@@ -303,66 +347,213 @@
 
 <section id="espace">
   <div class="wrap">
-    <h2 class="sec">Espace affilié</h2>
-    <p class="lead">Suivez vos clics, commandes, livraisons et commissions en temps réel.</p>
-    <div class="panel">
-      <form id="dash-form" novalidate>
-        <div class="row2">
-          <div class="field"><label for="dash-email">Email</label><input id="dash-email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
-          <div class="field"><label for="dash-pass">Mot de passe</label><input id="dash-pass" type="password" autocomplete="current-password" placeholder="••••••••"/></div>
-        </div>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-          <button class="btn sm" type="submit" style="white-space:nowrap">Voir mes stats</button>
-          <a href="#" id="dash-usecode" style="font-size:13.5px;font-weight:600">Pas encore de mot de passe ? Utiliser mon code</a>
-        </div>
-        <div class="field" id="dash-codewrap" style="display:none;margin-top:12px"><label for="dash-code">Votre code affilié</label><input id="dash-code" type="text" placeholder="Ex : DR-AMINE10" style="text-transform:uppercase" maxlength="32"/></div>
-        <div class="msg" id="dash-msg" role="status"></div>
+    <h2 class="sec">Espace affili&eacute;</h2>
+    <p class="lead">Connectez-vous pour acc&eacute;der &agrave; votre tableau de bord : lien personnel, statistiques en temps r&eacute;el, kit de contenu et paiements.</p>
+    <div class="panel" style="max-width:540px">
+      <form id="login-form" novalidate>
+        <div class="field"><label for="li-email">Email</label><input id="li-email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
+        <div class="field"><label for="li-pass">Mot de passe</label><input id="li-pass" type="password" autocomplete="current-password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"/></div>
+        <button class="btn" type="submit" id="li-btn"><span>Se connecter</span></button>
+        <div class="msg" id="li-msg" role="status"></div>
+        <p style="font-size:13.5px;color:var(--mut);margin-top:14px">Pas encore de compte ? <a href="#inscription" style="font-weight:700">Cr&eacute;ez-le en 1 minute</a>.</p>
       </form>
-      <div id="dash-result" style="display:none">
-        <div style="margin-top:6px"><span class="badge attente" id="dash-status">EN ATTENTE</span></div>
-        <div class="welcome" id="dash-welcome" style="display:none"><b>Bienvenue !</b> Votre compte est <b>en cours de validation</b> (sous 48 h ouvrées) — mais votre lien est <b>déjà actif</b> : toute commande passée avec votre code sera comptabilisée. Votre licence gratuite arrive dès l'activation. En attendant, commencez à partager.</div>
-        <div class="setlogin" id="dash-setlogin" style="display:none">
-          <h3>Sécurisez votre compte</h3>
-          <p>Dernière étape : créez votre mot de passe. Vous pourrez ensuite vous connecter avec votre email.</p>
-          <div class="field"><label for="sl-email">Email *</label><input id="sl-email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
-          <div class="row2">
-            <div class="field"><label for="sl-pass1">Mot de passe *</label><input id="sl-pass1" type="password" autocomplete="new-password" placeholder="8 caractères minimum"/></div>
-            <div class="field"><label for="sl-pass2">Confirmation *</label><input id="sl-pass2" type="password" autocomplete="new-password" placeholder="Répétez le mot de passe"/></div>
-          </div>
-          <button class="btn sm" type="button" id="sl-btn">Créer mon mot de passe</button>
-          <div class="msg" id="sl-msg" role="status"></div>
-        </div>
-        <div class="steps" style="grid-template-columns:repeat(3,1fr);margin-top:28px">
-          <div class="step"><div class="n">1</div><h3>Partagez</h3><p>Votre lien ou code : <b>-10%</b> pour vos abonnés (8 910 DA au lieu de 9 900 DA).</p></div>
-          <div class="step"><div class="n">2</div><h3>Gagnez</h3><p><b>1 337 DA</b> par commande <b>livrée</b> avec votre code. Suivi en temps réel ci-dessous.</p></div>
-          <div class="step"><div class="n">3</div><h3>Recevez</h3><p>Versement entre le 1<sup>er</sup> et le 10 de chaque mois sur votre CCP.</p></div>
-        </div>
-        <div class="linkbox">
-          <div class="linkrow"><div><div class="lk">Votre code affili&eacute;</div><code id="dash-code2"></code></div><button class="btn sm ghost copybtn" data-copy="dash-code2" type="button">Copier</button></div>
-          <div class="linkrow"><div><div class="lk">Votre lien personnel</div><code id="dash-url"></code></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm ghost copybtn" data-copy="dash-url" type="button">Copier</button><a class="btn sm" id="dash-wa" href="#" target="_blank" rel="noopener">Partager sur WhatsApp</a></div></div>
-        </div>
-        <div class="dash-cards">
-          <div class="dcard"><div class="v" id="d-clicks">0</div><div class="k">Clics (30 j)</div></div>
-          <div class="dcard"><div class="v" id="d-orders">0</div><div class="k">Commandes</div></div>
-          <div class="dcard"><div class="v" id="d-delivered">0</div><div class="k">Livrées</div></div>
-          <div class="dcard"><div class="v money" id="d-earned">0 DA</div><div class="k">Commissions acquises</div></div>
-          <div class="dcard"><div class="v" id="d-pending">0 DA</div><div class="k">En attente de paiement</div></div>
-          <div class="dcard"><div class="v" id="d-paid">0 DA</div><div class="k">Déjà versées</div></div>
-        </div>
-        <h3 style="font-size:15px;margin:6px 0 4px">Dernières commandes</h3>
-        <div style="overflow-x:auto"><table class="orders"><thead><tr><th>Date</th><th>Wilaya</th><th>Statut</th><th style="text-align:right">Commission</th></tr></thead><tbody id="d-rows"></tbody></table></div>
-        <h3 style="font-size:15px;margin:20px 0 4px">Kit de contenu &mdash; pr&ecirc;t &agrave; publier</h3>
-        <p style="font-size:13px;color:var(--mut);margin-bottom:12px">Textes v&eacute;rifi&eacute;s, conformes aux conditions du programme. Copiez, collez, publiez.</p>
-        <div class="kit">
-          <div class="kitcard"><div class="kh"><span>Post / Reel</span><button class="btn sm ghost copybtn" data-copy="kit1" type="button">Copier</button></div><p id="kit1"></p></div>
-          <div class="kitcard"><div class="kh"><span>Story</span><button class="btn sm ghost copybtn" data-copy="kit2" type="button">Copier</button></div><p id="kit2"></p></div>
-          <div class="kitcard"><div class="kh"><span>Message WhatsApp</span><button class="btn sm ghost copybtn" data-copy="kit3" type="button">Copier</button></div><p id="kit3"></p></div>
-        </div>
-        <p style="font-size:12.5px;color:var(--mut);margin-top:12px">Paiement entre le 1<sup>er</sup> et le 10 de chaque mois sur votre CCP. Seules les commandes <b>livrées</b> ouvrent droit à commission. Par souci de confidentialité, les coordonnées des clients ne sont jamais affichées.</p>
-      </div>
     </div>
   </div>
 </section>
+
+</div><!-- /view-marketing -->
+
+<div id="view-portal" style="display:none">
+  <div class="portal">
+    <div class="p-top">
+      <div class="p-brand"><img src="/img/logo-v2.png" alt="ClinixOS Pro"/><span>Espace affili&eacute;</span></div>
+      <div class="p-user">
+        <span class="badge attente" id="p-status">EN ATTENTE</span>
+        <code id="p-code">&mdash;</code>
+        <button class="btn sm ghost" id="p-logout" type="button">D&eacute;connexion</button>
+      </div>
+    </div>
+
+    <div class="p-onboard" id="p-onboard" style="display:none">
+      <h2>Derni&egrave;re &eacute;tape : cr&eacute;ez votre mot de passe</h2>
+      <p>Votre compte <b id="p-ob-email"></b> est cr&eacute;&eacute;. Choisissez un mot de passe pour s&eacute;curiser votre acc&egrave;s &mdash; ensuite, votre tableau de bord est &agrave; vous.</p>
+      <div class="row2">
+        <div class="field"><label for="ob-p1">Mot de passe *</label><input id="ob-p1" type="password" autocomplete="new-password" placeholder="8 caract&egrave;res minimum"/></div>
+        <div class="field"><label for="ob-p2">Confirmation *</label><input id="ob-p2" type="password" autocomplete="new-password" placeholder="R&eacute;p&eacute;tez le mot de passe"/></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+        <button class="btn sm" type="button" id="ob-btn">Activer mon compte</button>
+        <a href="#" id="ob-skip" style="font-size:13.5px;font-weight:600">Plus tard</a>
+      </div>
+      <div class="msg" id="ob-msg" role="status"></div>
+    </div>
+
+    <div class="p-banner" id="p-banner" style="display:none">
+      <span><b>Compte en cours de validation</b> (sous 48 h ouvr&eacute;es). Votre lien est <b>d&eacute;j&agrave; actif</b> : chaque commande pass&eacute;e avec votre code est comptabilis&eacute;e. Votre licence gratuite arrive d&egrave;s l'activation.</span>
+      <button class="btn sm ghost" id="p-banner-pw" type="button" style="display:none">Cr&eacute;er mon mot de passe</button>
+    </div>
+
+    <nav class="p-tabs" id="p-tabs">
+      <button data-tab="overview" class="on" type="button">Vue d'ensemble</button>
+      <button data-tab="link" type="button">Mon lien</button>
+      <button data-tab="kit" type="button">Kit de contenu</button>
+      <button data-tab="product" type="button">Produit</button>
+      <button data-tab="payout" type="button">Paiements</button>
+      <button data-tab="settings" type="button">Param&egrave;tres</button>
+    </nav>
+
+    <section class="p-pane" id="pane-overview">
+      <div class="p-welcome" id="p-welcome" style="display:none"><b>Bienvenue !</b> Voici votre tableau de bord. Commencez par copier votre lien personnel dans l'onglet <b>Mon lien</b>.</div>
+      <div class="steps" style="grid-template-columns:repeat(3,1fr);margin:28px 0 6px">
+        <div class="step"><div class="n">1</div><h3>Partagez</h3><p>Votre lien ou code : <b>-10%</b> pour vos abonn&eacute;s (8 910 DA au lieu de 9 900 DA).</p></div>
+        <div class="step"><div class="n">2</div><h3>Gagnez</h3><p><b>1 337 DA</b> par commande <b>livr&eacute;e</b> avec votre code.</p></div>
+        <div class="step"><div class="n">3</div><h3>Recevez</h3><p>Versement entre le 1<sup>er</sup> et le 10 de chaque mois sur votre CCP.</p></div>
+      </div>
+      <h3 class="p-h">Statistiques en temps r&eacute;el</h3>
+      <div class="dash-cards">
+        <div class="dcard"><div class="v" id="s-clicks">0</div><div class="k">Clics (30 j)</div></div>
+        <div class="dcard"><div class="v" id="s-orders">0</div><div class="k">Commandes</div></div>
+        <div class="dcard"><div class="v" id="s-delivered">0</div><div class="k">Livr&eacute;es</div></div>
+        <div class="dcard"><div class="v money" id="s-earned">0 DA</div><div class="k">Commissions acquises</div></div>
+        <div class="dcard"><div class="v" id="s-pending">0 DA</div><div class="k">En attente de paiement</div></div>
+        <div class="dcard"><div class="v" id="s-paid">0 DA</div><div class="k">D&eacute;j&agrave; vers&eacute;es</div></div>
+      </div>
+      <h3 class="p-h">Derni&egrave;res commandes</h3>
+      <div style="overflow-x:auto"><table class="orders"><thead><tr><th>Date</th><th>Wilaya</th><th>Statut</th><th style="text-align:right">Commission</th></tr></thead><tbody id="s-rows"></tbody></table></div>
+      <p style="font-size:12.5px;color:var(--mut);margin-top:12px">Par souci de confidentialit&eacute;, les coordonn&eacute;es des clients ne sont jamais affich&eacute;es.</p>
+    </section>
+
+    <section class="p-pane" id="pane-link" style="display:none">
+      <div class="p-linkhero">
+        <div><div class="lk-label">Votre code affili&eacute;</div><div class="p-bigcode" id="lk-code">&mdash;</div></div>
+        <button class="btn sm" type="button" id="lk-copy-code">Copier le code</button>
+      </div>
+      <div class="linkbox">
+        <div class="linkrow"><div><div class="lk">Votre lien personnel</div><code id="lk-url">&mdash;</code></div>
+        <button class="btn sm ghost" type="button" id="lk-copy-url">Copier</button></div>
+      </div>
+      <div class="p-qrrow">
+        <img id="lk-qr" alt="QR code de votre lien" width="160" height="160"/>
+        <p><b>QR code de votre lien.</b><br/>Affichez-le en story, en vid&eacute;o ou imprimez-le : un scan am&egrave;ne directement sur la page avec votre code.</p>
+      </div>
+      <h3 class="p-h">Partager</h3>
+      <div class="p-share">
+        <a class="btn sm" id="lk-wa" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn sm" id="lk-tg" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn sm" id="lk-fb" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn sm" id="lk-x" target="_blank" rel="noopener">X</a>
+      </div>
+      <p class="p-tip">Important : demandez &agrave; votre audience d'<b>utiliser votre code au moment de commander</b> &mdash; c'est lui qui attribue la vente &agrave; votre compte.</p>
+    </section>
+
+    <section class="p-pane" id="pane-kit" style="display:none">
+      <p class="p-lead">Textes pr&ecirc;ts &agrave; publier, conformes aux conditions du programme. Copiez, collez, publiez.</p>
+      <div class="kit" style="grid-template-columns:repeat(2,1fr)">
+        <div class="kitcard"><div class="kh"><span>Post / Reel</span><button class="btn sm ghost" data-kit="kit1" type="button">Copier</button></div><p id="kit1"></p></div>
+        <div class="kitcard"><div class="kh"><span>Story</span><button class="btn sm ghost" data-kit="kit2" type="button">Copier</button></div><p id="kit2"></p></div>
+        <div class="kitcard"><div class="kh"><span>Message WhatsApp</span><button class="btn sm ghost" data-kit="kit3" type="button">Copier</button></div><p id="kit3"></p></div>
+        <div class="kitcard"><div class="kh"><span>Lien en bio</span><button class="btn sm ghost" data-kit="kit4" type="button">Copier</button></div><p id="kit4"></p></div>
+      </div>
+    </section>
+
+    <section class="p-pane" id="pane-product" style="display:none">
+      <h3 class="p-h" style="margin-top:0">ClinixOS Pro en 30 secondes</h3>
+      <p class="p-lead">Logiciel de gestion de cabinet m&eacute;dical <b>100% hors-ligne</b>, con&ccedil;u pour les praticiens en Alg&eacute;rie. Un seul paiement, z&eacute;ro abonnement, paiement &agrave; la livraison.</p>
+      <div class="p-facts">
+        <div class="p-fact"><div class="v">9 900 DA</div><div class="k">Licence &agrave; vie &mdash; paiement unique</div></div>
+        <div class="p-fact"><div class="v">8 910 DA</div><div class="k">Prix avec votre code (-10%)</div></div>
+        <div class="p-fact"><div class="v">100% hors-ligne</div><div class="k">Fonctionne sans internet</div></div>
+        <div class="p-fact"><div class="v">15 modules</div><div class="k">Gestion compl&egrave;te du cabinet</div></div>
+      </div>
+      <h3 class="p-h">Ce que fait le logiciel</h3>
+      <ul class="p-modules">
+        <li>Dossiers patients complets</li>
+        <li>Consultations &amp; historique</li>
+        <li>Ordonnances A5 imprimables</li>
+        <li>File d'attente + &eacute;cran TV salle d'attente</li>
+        <li>Rendez-vous &amp; planning</li>
+        <li>Caisse &amp; tickets de caisse</li>
+        <li>Statistiques du cabinet</li>
+        <li>Posologie &amp; guide ANPP</li>
+        <li>Documents m&eacute;dico-l&eacute;gaux (certificats&hellip;)</li>
+        <li>Sauvegarde chiffr&eacute;e</li>
+        <li>Multi-poste en r&eacute;seau local</li>
+        <li>Comptes secr&eacute;taire / m&eacute;decin</li>
+      </ul>
+      <h3 class="p-h">Arguments qui vendent</h3>
+      <div class="p-args">
+        <div class="p-arg"><b>Il marche sans internet.</b> Coupure r&eacute;seau ? Le cabinet continue de tourner &mdash; argument n&deg;1 hors des grandes villes.</div>
+        <div class="p-arg"><b>Licence &agrave; vie, pas d'abonnement.</b> 9 900 DA une fois, contre 19 000 DA chez les concurrents &agrave; abonnement.</div>
+        <div class="p-arg"><b>Paiement &agrave; la livraison.</b> Le m&eacute;decin inspecte le colis avant de payer &mdash; z&eacute;ro risque per&ccedil;u.</div>
+        <div class="p-arg"><b>Pens&eacute; pour l'Alg&eacute;rie.</b> Interface en fran&ccedil;ais, adapte&eacute;e aux cabinets locaux.</div>
+        <div class="p-arg"><b>Installation assist&eacute;e offerte.</b> Support d'installation &agrave; distance inclus.</div>
+      </div>
+      <h3 class="p-h">Objections fr&eacute;quentes</h3>
+      <div class="p-faq">
+        <details><summary>&laquo; Et si mon cabinet n'a pas internet ? &raquo;</summary><p>C'est exactement le point fort : ClinixOS Pro est 100% hors-ligne. Tout fonctionne sans connexion &mdash; patients, ordonnances, caisse.</p></details>
+        <details><summary>&laquo; Pourquoi payer quand il existe des solutions gratuites ? &raquo;</summary><p>Les donn&eacute;es m&eacute;dicales sont sensibles : un logiciel local, sans cloud &eacute;tranger, avec support et mises &agrave; jour, n'a rien &agrave; voir avec un outil gratuit sans garantie.</p></details>
+        <details><summary>&laquo; C'est compliqu&eacute; &agrave; installer ? &raquo;</summary><p>Non : l'installation &agrave; distance est offerte et assist&eacute;e. Le m&eacute;decin est op&eacute;rationnel le jour m&ecirc;me.</p></details>
+        <details><summary>&laquo; Et si &ccedil;a ne me pla&icirc;t pas ? &raquo;</summary><p>Le paiement se fait &agrave; la livraison, apr&egrave;s inspection du colis. Le risque est nul.</p></details>
+      </div>
+    </section>
+
+    <section class="p-pane" id="pane-payout" style="display:none">
+      <div class="dash-cards" style="grid-template-columns:repeat(3,1fr)">
+        <div class="dcard"><div class="v money" id="p-earned">0 DA</div><div class="k">Commissions acquises</div></div>
+        <div class="dcard"><div class="v" id="p-pending">0 DA</div><div class="k">En attente de paiement</div></div>
+        <div class="dcard"><div class="v" id="p-paid">0 DA</div><div class="k">D&eacute;j&agrave; vers&eacute;es</div></div>
+      </div>
+      <div class="p-rules">
+        <div class="p-rule"><b>15%</b> de chaque vente <b>livr&eacute;e</b> avec votre code &mdash; soit <b>1 337 DA</b> par commande.</div>
+        <div class="p-rule">Versement entre le <b>1<sup>er</sup></b> et le <b>10</b> de chaque mois, sur le compte ci-dessous.</div>
+        <div class="p-rule">Seules les commandes <b>livr&eacute;es</b> ouvrent droit &agrave; commission. Commande annul&eacute;e ou retourn&eacute;e = pas de commission.</div>
+      </div>
+      <h3 class="p-h">Mes informations de paiement</h3>
+      <p class="p-lead">Indispensable pour recevoir vos commissions. Modifiable &agrave; tout moment.</p>
+      <form id="payout-form" novalidate>
+        <div class="row2">
+          <div class="field"><label for="po-type">Moyen de paiement *</label><select id="po-type"><option value="">— Choisir —</option><option>CCP</option><option>BaridiMob</option><option>Virement bancaire</option></select></div>
+          <div class="field"><label for="po-num">N&deg; CCP / RIP / compte *</label><input id="po-num" inputmode="numeric" placeholder="Ex : 0023456789-45"/></div>
+        </div>
+        <div class="field"><label for="po-tit">Titulaire du compte *</label><input id="po-tit" autocomplete="name" placeholder="Nom exact du titulaire"/></div>
+        <button class="btn sm" type="submit" id="po-btn"><span>Enregistrer</span></button>
+        <div class="msg" id="po-msg" role="status"></div>
+      </form>
+    </section>
+
+    <section class="p-pane" id="pane-settings" style="display:none">
+      <h3 class="p-h" style="margin-top:0">Mon profil</h3>
+      <form id="prof-form" novalidate>
+        <div class="row2">
+          <div class="field"><label>Nom complet</label><input id="pf-nom" disabled/></div>
+          <div class="field"><label>Email</label><input id="pf-email" disabled/></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="pf-tel">T&eacute;l&eacute;phone *</label><input id="pf-tel" inputmode="tel"/></div>
+          <div class="field"><label for="pf-plateforme">Plateforme *</label><select id="pf-plateforme"><option value="">— Choisir —</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Facebook</option><option>Autre</option></select></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="pf-pseudo">Pseudo / lien *</label><input id="pf-pseudo"/></div>
+          <div class="field"><label for="pf-abonnes">Abonn&eacute;s</label><input id="pf-abonnes"/></div>
+        </div>
+        <button class="btn sm" type="submit" id="pf-btn"><span>Enregistrer</span></button>
+        <div class="msg" id="pf-msg" role="status"></div>
+      </form>
+      <h3 class="p-h">Mot de passe</h3>
+      <form id="pw-form" novalidate>
+        <div class="field"><label for="pw-cur">Mot de passe actuel *</label><input id="pw-cur" type="password" autocomplete="current-password"/></div>
+        <div class="row2">
+          <div class="field"><label for="pw-new">Nouveau mot de passe *</label><input id="pw-new" type="password" autocomplete="new-password" placeholder="8 caract&egrave;res minimum"/></div>
+          <div class="field"><label for="pw-new2">Confirmation *</label><input id="pw-new2" type="password" autocomplete="new-password"/></div>
+        </div>
+        <button class="btn sm" type="submit" id="pw-btn"><span>Changer le mot de passe</span></button>
+        <div class="msg" id="pw-msg" role="status"></div>
+      </form>
+      <h3 class="p-h">Session</h3>
+      <button class="btn sm ghost" id="pf-logout" type="button">Se d&eacute;connecter</button>
+    </section>
+  </div>
+</div>
 
 <footer class="site">
   <div class="cols">
@@ -405,11 +596,12 @@
 <script>
 (function(){
   "use strict";
-  var ENDPOINT = "https://script.google.com/macros/s/AKfycbzvjQ9Yjm-oIrKqz1Ii1-XiCvNATamySYDrSEk1Pc0XEcdCBSXVmcVzgD-YoykESeS35w/exec";
+  var API = '/api/aff';
+  var ME = null, FRESH = false;
 
-  /* ---------- Commission calculator ---------- */
+  /* ---------- Commission calculator (marketing) ---------- */
   var sales = document.getElementById('sales');
-  function fmt(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
   function updCalc(){
     var v = parseInt(sales.value, 10) || 1;
     document.getElementById('salesOut').textContent = v;
@@ -419,192 +611,325 @@
   sales.addEventListener('input', updCalc); updCalc();
 
   /* ---------- Helpers ---------- */
+  function $(id){ return document.getElementById(id); }
   function cleanCode(s){ return String(s||'').trim().toUpperCase().replace(/[^A-Z0-9\-_]/g,'').slice(0,32); }
   function validDzPhone(v){ return /^(05|06|07)\d{8}$/.test(String(v||'').replace(/[\s.\-]/g,'')); }
-  function showMsg(el, html, ok){ el.className = 'msg ' + (ok ? 'ok' : 'err'); el.innerHTML = html; el.scrollIntoView({behavior:'smooth', block:'center'}); }
-  function postAction(params){
-    // Same proven pattern as the order form: CORS POST, gate on 2xx + echo host + JSON.
-    var body = new URLSearchParams(params);
-    return fetch(ENDPOINT, {method:'POST', body:body}).then(function(res){
-      if (!res.ok) throw new Error('http-' + res.status);
-      var host = ''; try { host = new URL(res.url).hostname; } catch(e){}
-      if (host !== 'script.google.com' && host !== 'script.googleusercontent.com') throw new Error('unexpected-host');
-      return res.json();
+  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(v||'')); }
+  function showMsg(el, html, ok){ el.className = 'msg ' + (ok ? 'ok' : 'err'); el.innerHTML = html; }
+  function hideMsg(el){ el.className = 'msg'; el.style.display = 'none'; el.innerHTML = ''; }
+  function api(path, method, body){
+    return fetch(API + path, {
+      method: method || 'GET', credentials: 'same-origin',
+      headers: {'Content-Type': 'application/json'},
+      body: body ? JSON.stringify(body) : undefined
+    }).then(function(res){
+      return res.json().then(function(d){ return {status: res.status, data: d}; });
+    });
+  }
+  function copyText(t, btn){
+    function done(){ var o = btn.textContent; btn.textContent = 'Copié !'; setTimeout(function(){ btn.textContent = o; }, 1500); }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(done, function(){ fallback(); });
+    } else fallback();
+    function fallback(){
+      var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta);
+      ta.select(); try { document.execCommand('copy'); done(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  }
+
+  /* ---------- Views ---------- */
+  function showMarketing(){
+    ME = null;
+    $('view-portal').style.display = 'none';
+    $('view-marketing').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+  function setStatusBadge(el, statut){
+    var s = String(statut || '').toLowerCase();
+    el.textContent = String(statut || '').toUpperCase();
+    el.className = 'badge ' + (s.indexOf('actif') === 0 ? 'actif'
+      : (s.indexOf('suspend') === 0 || s.indexOf('exclu') === 0 ? 'suspendu' : 'attente'));
+  }
+
+  function kitTexts(code, url){
+    return {
+      kit1: "Je vous présente ClinixOS Pro : le logiciel qui gère tout le cabinet médical — patients, ordonnances, rendez-vous, caisse — 100% hors-ligne, sans abonnement.\n\nLicence à vie : 9 900 DA. Avec mon code " + code + " : -10%, soit 8 910 DA, paiement à la livraison.\n" + url,
+      kit2: "Docteurs : fini le papier ! ClinixOS Pro gère votre cabinet sans internet, sans abonnement.\n-10% avec mon code " + code + "\n" + url,
+      kit3: "Salam docteur, je vous recommande ClinixOS Pro : logiciel de gestion de cabinet 100% hors-ligne, licence à vie 9 900 DA.\nAvec mon code " + code + ", vous avez -10% (8 910 DA), paiement à la livraison après inspection du colis.\nDétails : " + url,
+      kit4: "Logiciel cabinet médical 100% hors-ligne — -10% avec mon code " + code + "\n" + url
+    };
+  }
+
+  function renderAll(){
+    var a = ME;
+    setStatusBadge($('p-status'), a.statut);
+    $('p-code').textContent = a.code;
+    var url = 'https://clinixospro.com/?ref=' + encodeURIComponent(a.code);
+    // Link tab
+    $('lk-code').textContent = a.code;
+    $('lk-url').textContent = 'clinixospro.com/?ref=' + a.code;
+    $('lk-qr').src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=8&data=' + encodeURIComponent(url);
+    var shareTxt = encodeURIComponent('ClinixOS Pro : logiciel de gestion de cabinet 100% hors-ligne, -10% avec mon code ' + a.code);
+    $('lk-wa').href = 'https://wa.me/?text=' + shareTxt + '%0A' + encodeURIComponent(url);
+    $('lk-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + shareTxt;
+    $('lk-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+    $('lk-x').href = 'https://twitter.com/intent/tweet?text=' + shareTxt + '&url=' + encodeURIComponent(url);
+    // Kit
+    var kt = kitTexts(a.code, url), k;
+    for (k in kt){ if ($(k)) $(k).textContent = kt[k]; }
+    // Payout form
+    $('po-type').value = a.paiement_type || '';
+    $('po-num').value = a.paiement_num || '';
+    $('po-tit').value = a.titulaire || '';
+    // Settings
+    $('pf-nom').value = a.nom || '';
+    $('pf-email').value = a.email || '';
+    $('pf-tel').value = a.telephone || '';
+    $('pf-plateforme').value = a.plateforme || '';
+    $('pf-pseudo').value = a.pseudo || '';
+    $('pf-abonnes').value = a.abonnes || '';
+    // Banner
+    var pending = String(a.statut || '').toLowerCase().indexOf('actif') !== 0;
+    $('p-banner').style.display = pending ? 'flex' : 'none';
+    $('p-banner-pw').style.display = (!a.has_password && pending) ? '' : 'none';
+  }
+
+  function renderStats(st){
+    st = st || {};
+    $('s-clicks').textContent = st.clicks_30d || 0;
+    $('s-orders').textContent = st.orders || 0;
+    $('s-delivered').textContent = st.delivered || 0;
+    $('s-earned').textContent = fmt(st.commission_earned || 0) + ' DA';
+    $('s-pending').textContent = fmt(st.commission_pending || 0) + ' DA';
+    $('s-paid').textContent = fmt(st.commission_paid || 0) + ' DA';
+    $('p-earned').textContent = fmt(st.commission_earned || 0) + ' DA';
+    $('p-pending').textContent = fmt(st.commission_pending || 0) + ' DA';
+    $('p-paid').textContent = fmt(st.commission_paid || 0) + ' DA';
+    var tb = $('s-rows'); tb.innerHTML = '';
+    (st.recent || []).forEach(function(r){
+      var tr = document.createElement('tr');
+      var liv = String(r.statut || '').toLowerCase().indexOf('livr') === 0;
+      tr.innerHTML = '<td>' + r.date + '</td><td>' + r.wilaya + '</td>' +
+        '<td><span class="st' + (liv ? ' livre' : '') + '">' + r.statut + '</span></td>' +
+        '<td style="text-align:right">' + (liv ? fmt(r.commission || 0) + ' DA' : '—') + '</td>';
+      tb.appendChild(tr);
+    });
+    if (!(st.recent || []).length)
+      tb.innerHTML = '<tr><td colspan="4" style="color:var(--mut)">Aucune commande pour le moment — partagez votre lien !</td></tr>';
+  }
+
+  function loadStats(){
+    api('/stats').then(function(r){
+      if (r.status === 401){ doLogout(true); return; }
+      if (r.data && r.data.result === 'success'){
+        if (r.data.affiliate){ ME = r.data.affiliate; renderAll(); }
+        renderStats(r.data.stats);
+      }
     });
   }
 
-  /* ---------- Signup ---------- */
-  var affForm = document.getElementById('aff-form');
+  function enterPortal(aff, fresh){
+    ME = aff; FRESH = !!fresh;
+    $('view-marketing').style.display = 'none';
+    $('view-portal').style.display = 'block';
+    renderAll();
+    var needPw = !aff.has_password;
+    $('p-onboard').style.display = needPw ? 'block' : 'none';
+    if (needPw) $('p-ob-email').textContent = aff.email;
+    $('p-welcome').style.display = fresh ? 'block' : 'none';
+    switchTab('overview');
+    loadStats();
+    window.scrollTo(0, 0);
+  }
+
+  function doLogout(silent){
+    api('/logout', 'POST').then(function(){}, function(){});
+    showMarketing();
+    if (!silent){ var m = $('li-msg'); if (m) showMsg(m, 'Vous êtes déconnecté.', true); }
+  }
+
+  /* ---------- Tabs ---------- */
+  function switchTab(name){
+    var btns = $('p-tabs').querySelectorAll('button');
+    for (var i = 0; i < btns.length; i++){
+      var on = btns[i].getAttribute('data-tab') === name;
+      btns[i].className = on ? 'on' : '';
+      $('pane-' + btns[i].getAttribute('data-tab')).style.display = on ? 'block' : 'none';
+    }
+  }
+  $('p-tabs').addEventListener('click', function(ev){
+    var b = ev.target.closest('button');
+    if (b) switchTab(b.getAttribute('data-tab'));
+  });
+
+  /* ---------- Signup (marketing) ---------- */
+  var affForm = $('aff-form');
   affForm.addEventListener('submit', function(ev){
     ev.preventDefault();
-    var msg = document.getElementById('af-msg');
-    var btn = document.getElementById('af-btn');
-    var nom = document.getElementById('af-nom').value.trim();
-    var tel = document.getElementById('af-tel').value.trim();
-    var plateforme = document.getElementById('af-plateforme').value;
-    var pseudo = document.getElementById('af-pseudo').value.trim();
-    var cgu = document.getElementById('af-cgu').checked;
+    var msg = $('af-msg'), btn = $('af-btn');
+    var nom = $('af-nom').value.trim();
+    var tel = $('af-tel').value.trim();
+    var plateforme = $('af-plateforme').value;
+    var pseudo = $('af-pseudo').value.trim();
+    var email = $('af-email').value.trim();
+    var cgu = $('af-cgu').checked;
     var errs = [];
     if (nom.length < 3) errs.push('votre nom complet');
     if (!validDzPhone(tel)) errs.push('un numéro algérien valide (05/06/07)');
     if (!plateforme) errs.push('votre plateforme principale');
     if (pseudo.length < 2) errs.push('votre pseudo / lien de compte');
+    if (!validEmail(email)) errs.push('un email valide');
     if (!cgu) errs.push("l'acceptation des conditions");
     if (errs.length){ showMsg(msg, 'Il manque : ' + errs.join(', ') + '.', false); return; }
     btn.disabled = true; btn.querySelector('span').textContent = 'CRÉATION DU COMPTE…';
-    postAction({
-      action: 'affiliate_signup',
+    hideMsg(msg);
+    api('/signup', 'POST', {
       nom: nom, telephone: tel, plateforme: plateforme, pseudo: pseudo,
-      abonnes: document.getElementById('af-abonnes').value.trim(),
-      email: document.getElementById('af-email').value.trim(),
-      paiement: 'À compléter',   /* collecté lors de la validation (48 h), pas à l'inscription */
-      titulaire: 'À compléter',
-      code_souhaite: cleanCode(document.getElementById('af-code').value)
-    }).then(function(data){
-      if (data && data.result === 'success' && data.code){
-        try { localStorage.setItem('clinix_aff_code', data.code); } catch(e){}
-        showMsg(msg, '<b>Compte créé !</b> Ouverture de votre tableau de bord…', true);
+      abonnes: $('af-abonnes').value.trim(), email: email,
+      code_souhaite: cleanCode($('af-code').value)
+    }).then(function(r){
+      var d = r.data;
+      if (d && d.result === 'success' && d.affiliate){
         affForm.reset();
-        document.getElementById('dash-code').value = data.code;
-        loadDash(data.code, true);
+        enterPortal(d.affiliate, true);
       } else {
-        showMsg(msg, 'Envoi non confirmé — ' + ((data && data.error) || 'réessayez dans un instant.') , false);
+        showMsg(msg, (d && d.error) || "Création impossible pour le moment.", false);
       }
     }).catch(function(){
-      showMsg(msg, "Envoi non confirmé — vérifiez votre connexion puis réessayez. Si le problème persiste, contactez-nous.", false);
-    }).then(function(){ btn.disabled = false; btn.querySelector('span').textContent = 'Créer mon compte affilié'; });
+      showMsg(msg, 'Connexion impossible — vérifiez votre connexion puis réessayez.', false);
+    }).then(function(){ btn.disabled = false; btn.querySelector('span').textContent = 'CRÉER MON COMPTE AFFILIÉ'; });
   });
 
-  /* ---------- Dashboard ---------- */
-  var dashForm = document.getElementById('dash-form');
-  var dashCode = null;
-  function loadDash(code, fresh){
-    var msg = document.getElementById('dash-msg');
-    code = cleanCode(code);
-    if (!code){ showMsg(msg, 'Saisissez votre code affilié.', false); return; }
-    msg.className = 'msg'; msg.style.display = 'none';
-    document.getElementById('dash-result').style.display = 'none';
-    document.getElementById('dash-welcome').style.display = 'none';
-  document.addEventListener('click', function(ev){
-    var b = ev.target.closest ? ev.target.closest('.copybtn') : null;
-    if (!b) return;
-    var t = document.getElementById(b.getAttribute('data-copy')).textContent;
-    function done(){ var o = b.textContent; b.textContent = 'Copi\u00e9 \u2713'; setTimeout(function(){ b.textContent = o; }, 1500); }
-    function legacy(){ var ta = document.createElement('textarea'); ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch(e){} document.body.removeChild(ta); }
-    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done, legacy); } else { legacy(); }
-  });
-
-    fetch(ENDPOINT + '?action=stats&code=' + encodeURIComponent(code) + '&_=' + Date.now())
-      .then(function(res){
-        if (!res.ok) throw new Error('http-' + res.status);
-        return res.json();
-      })
-      .then(function(d){
-        if (!d || d.result !== 'success'){ showMsg(msg, 'Code introuvable. Vérifiez votre code affilié.', false); return; }
-        try { localStorage.setItem('clinix_aff_code', code); } catch(e){}
-        var st = document.getElementById('dash-status');
-        var s = String(d.status || '').toLowerCase();
-        st.textContent = (d.status || '').toUpperCase();
-        st.className = 'badge ' + (s.indexOf('actif') === 0 ? 'actif' : (s.indexOf('suspend') === 0 || s.indexOf('exclu') === 0 ? 'suspendu' : 'attente'));
-        document.getElementById('dash-url').textContent = 'clinixospro.com/?ref=' + d.code;
-        document.getElementById('dash-code2').textContent = d.code;
-        var fullUrl = 'https://clinixospro.com/?ref=' + encodeURIComponent(d.code);
-        document.getElementById('kit1').textContent = 'Je vous presente ClinixOS Pro : le logiciel qui gere tout le cabinet medical \u2014 patients, ordonnances, rendez-vous, caisse \u2014 100% hors-ligne, sans abonnement.\n\nLicence a vie : 9 900 DA. Avec mon code ' + d.code + ' : -10%, soit 8 910 DA, paiement a la livraison.\n' + fullUrl;
-        document.getElementById('kit2').textContent = 'Docteurs : fini le papier ! ClinixOS Pro gere votre cabinet sans internet, sans abonnement.\n-10% avec mon code ' + d.code + ' \uD83D\uDC46\n' + fullUrl;
-        document.getElementById('kit3').textContent = 'Salam docteur, je vous recommande ClinixOS Pro : logiciel de gestion de cabinet 100% hors-ligne, licence a vie 9 900 DA.\nAvec mon code ' + d.code + ', vous avez -10% (8 910 DA), paiement a la livraison apres inspection du colis.\nDetails : ' + fullUrl;
-        document.getElementById('dash-wa').href = 'https://wa.me/?text=' + encodeURIComponent(document.getElementById('kit3').textContent);
-        document.getElementById('d-clicks').textContent = d.clicks_30d || 0;
-        document.getElementById('d-orders').textContent = d.orders || 0;
-        document.getElementById('d-delivered').textContent = d.delivered || 0;
-        document.getElementById('d-earned').textContent = fmt(d.commission_earned || 0) + ' DA';
-        document.getElementById('d-pending').textContent = fmt(d.commission_pending || 0) + ' DA';
-        document.getElementById('d-paid').textContent = fmt(d.commission_paid || 0) + ' DA';
-        var tb = document.getElementById('d-rows'); tb.innerHTML = '';
-        (d.recent || []).forEach(function(r){
-          var tr = document.createElement('tr');
-          var liv = String(r.statut || '').toLowerCase().indexOf('livr') === 0;
-          tr.innerHTML = '<td>' + r.date + '</td><td>' + r.wilaya + '</td>' +
-            '<td><span class="st' + (liv ? ' livre' : '') + '">' + r.statut + '</span></td>' +
-            '<td style="text-align:right">' + (liv ? fmt(r.commission || 0) + ' DA' : '—') + '</td>';
-          tb.appendChild(tr);
-        });
-        if (!(d.recent || []).length) tb.innerHTML = '<tr><td colspan="4" style="color:var(--mut)">Aucune commande pour le moment — partagez votre lien !</td></tr>';
-        document.getElementById('dash-welcome').style.display = fresh ? 'block' : 'none';
-        dashCode = d.code;
-        var hasLogin = !!d.has_login;
-        document.getElementById('dash-setlogin').style.display = hasLogin ? 'none' : 'block';
-        if (!hasLogin && d.email && !document.getElementById('sl-email').value)
-          document.getElementById('sl-email').value = d.email;
-        document.getElementById('dash-result').style.display = 'block';
-        if (fresh) document.getElementById('espace').scrollIntoView({behavior:'smooth'});
-        else document.getElementById('dash-result').scrollIntoView({behavior:'smooth', block:'nearest'});
-      })
-      .catch(function(){ showMsg(msg, 'Statistiques indisponibles pour le moment — réessayez dans un instant.', false); });
-  }
-  document.getElementById('dash-usecode').addEventListener('click', function(ev){
+  /* ---------- Login (marketing) ---------- */
+  $('login-form').addEventListener('submit', function(ev){
     ev.preventDefault();
-    var w = document.getElementById('dash-codewrap');
-    w.style.display = w.style.display === 'none' ? 'block' : 'none';
-  });
-  dashForm.addEventListener('submit', function(ev){
-    ev.preventDefault();
-    var codeVal = document.getElementById('dash-code').value.trim();
-    var codeVisible = document.getElementById('dash-codewrap').style.display !== 'none';
-    if (codeVisible && codeVal){ loadDash(codeVal, false); return; }
-    var email = document.getElementById('dash-email').value.trim();
-    var pass = document.getElementById('dash-pass').value;
-    var msg = document.getElementById('dash-msg');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ showMsg(msg, 'Saisissez votre email.', false); return; }
-    if (!pass){ showMsg(msg, 'Saisissez votre mot de passe.', false); return; }
-    msg.className = 'msg'; msg.style.display = 'none';
-    postAction({action: 'affiliate_login', email: email, password: pass}).then(function(data){
-      if (data && data.result === 'success' && data.code){
-        try { localStorage.setItem('clinix_aff_code', data.code); } catch(e2){}
-        document.getElementById('dash-code').value = data.code;
-        loadDash(data.code, false);
-      } else if (data && data.error === 'no_password'){
-        document.getElementById('dash-codewrap').style.display = 'block';
-        showMsg(msg, "Ce compte n'a pas encore de mot de passe : entrez avec votre code ci-dessous, puis créez votre mot de passe dans le tableau de bord.", false);
-      } else if (data && data.error === 'unknown_action'){
-        document.getElementById('dash-codewrap').style.display = 'block';
-        showMsg(msg, "Connexion par email en cours d'activation — utilisez votre code pour le moment.", false);
-      } else {
-        showMsg(msg, 'Email ou mot de passe incorrect.', false);
-      }
+    var msg = $('li-msg'), btn = $('li-btn');
+    var email = $('li-email').value.trim(), pw = $('li-pass').value;
+    if (!validEmail(email)){ showMsg(msg, 'Saisissez votre email.', false); return; }
+    if (!pw){ showMsg(msg, 'Saisissez votre mot de passe.', false); return; }
+    btn.disabled = true; hideMsg(msg);
+    api('/login', 'POST', {email: email, password: pw}).then(function(r){
+      var d = r.data;
+      if (d && d.result === 'success' && d.affiliate){ enterPortal(d.affiliate, false); }
+      else showMsg(msg, (d && d.error) || 'Email ou mot de passe incorrect.', false);
     }).catch(function(){
-      showMsg(msg, 'Connexion impossible pour le moment — réessayez dans un instant.', false);
-    });
-  });
-  document.getElementById('sl-btn').addEventListener('click', function(){
-    var msg = document.getElementById('sl-msg');
-    var email = document.getElementById('sl-email').value.trim();
-    var p1 = document.getElementById('sl-pass1').value;
-    var p2 = document.getElementById('sl-pass2').value;
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ showMsg(msg, 'Saisissez un email valide.', false); return; }
-    if (p1.length < 8){ showMsg(msg, 'Mot de passe : 8 caractères minimum.', false); return; }
-    if (p1 !== p2){ showMsg(msg, 'Les deux mots de passe ne correspondent pas.', false); return; }
-    if (!dashCode){ showMsg(msg, 'Rechargez votre tableau de bord puis réessayez.', false); return; }
-    var btn = document.getElementById('sl-btn');
-    btn.disabled = true;
-    postAction({action: 'affiliate_set_login', code: dashCode, email: email, password: p1}).then(function(data){
-      if (data && data.result === 'success'){
-        document.getElementById('dash-email').value = email;
-        showMsg(msg, '<b>Compte sécurisé.</b> Vous pouvez désormais vous connecter avec votre email et ce mot de passe.', true);
-        setTimeout(function(){ document.getElementById('dash-setlogin').style.display = 'none'; }, 2500);
-      } else if (data && data.error === 'unknown_action'){
-        showMsg(msg, "Fonctionnalité en cours d'activation — réessayez dans quelques minutes.", false);
-      } else {
-        showMsg(msg, (data && data.error) || 'Enregistrement impossible pour le moment.', false);
-      }
-    }).catch(function(){
-      showMsg(msg, 'Enregistrement impossible — vérifiez votre connexion.', false);
+      showMsg(msg, 'Connexion impossible — réessayez dans un instant.', false);
     }).then(function(){ btn.disabled = false; });
   });
-  try {
-    var saved = localStorage.getItem('clinix_aff_code');
-    if (saved){ document.getElementById('dash-code').value = saved; loadDash(saved, false); }
-  } catch(e){}
+
+  /* ---------- Onboarding: set password ---------- */
+  function submitOnboard(){
+    var msg = $('ob-msg');
+    var p1 = $('ob-p1').value, p2 = $('ob-p2').value;
+    if (p1.length < 8){ showMsg(msg, 'Mot de passe : 8 caractères minimum.', false); return; }
+    if (p1 !== p2){ showMsg(msg, 'Les deux mots de passe ne correspondent pas.', false); return; }
+    var btn = $('ob-btn'); btn.disabled = true; hideMsg(msg);
+    api('/set-password', 'POST', {password: p1}).then(function(r){
+      var d = r.data;
+      if (d && d.result === 'success'){
+        ME = d.affiliate; renderAll();
+        $('p-onboard').style.display = 'none';
+        $('p-welcome').style.display = 'block';
+        $('p-welcome').innerHTML = '<b>Compte activé !</b> Votre tableau de bord est à vous. Commencez par copier votre lien personnel dans l\'onglet <b>Mon lien</b>.';
+      } else showMsg(msg, (d && d.error) || "Enregistrement impossible.", false);
+    }).catch(function(){
+      showMsg(msg, 'Enregistrement impossible — réessayez.', false);
+    }).then(function(){ btn.disabled = false; });
+  }
+  $('ob-btn').addEventListener('click', submitOnboard);
+  $('ob-skip').addEventListener('click', function(ev){
+    ev.preventDefault(); $('p-onboard').style.display = 'none';
+  });
+  $('p-banner-pw').addEventListener('click', function(){
+    $('p-onboard').style.display = 'block';
+    $('p-onboard').scrollIntoView({behavior: 'smooth'});
+  });
+
+  /* ---------- Copy buttons ---------- */
+  $('lk-copy-code').addEventListener('click', function(){ copyText(ME.code, this); });
+  $('lk-copy-url').addEventListener('click', function(){
+    copyText('https://clinixospro.com/?ref=' + encodeURIComponent(ME.code), this);
+  });
+  document.querySelectorAll('#pane-kit [data-kit]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      copyText($(btn.getAttribute('data-kit')).textContent, btn);
+    });
+  });
+
+  /* ---------- Payout form ---------- */
+  $('payout-form').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var msg = $('po-msg'), btn = $('po-btn');
+    var type = $('po-type').value;
+    var num = $('po-num').value.trim();
+    var tit = $('po-tit').value.trim();
+    if (!type){ showMsg(msg, 'Choisissez votre moyen de paiement.', false); return; }
+    if (num.replace(/[\s.\-]/g, '').length < 5){ showMsg(msg, 'Numéro de compte invalide.', false); return; }
+    if (tit.length < 3){ showMsg(msg, 'Indiquez le titulaire du compte.', false); return; }
+    btn.disabled = true; hideMsg(msg);
+    api('/payout', 'POST', {paiement_type: type, paiement_num: num, titulaire: tit}).then(function(r){
+      var d = r.data;
+      if (d && d.result === 'success'){
+        ME = d.affiliate; renderAll();
+        showMsg(msg, '<b>Enregistré.</b> Vos commissions seront versées sur ce compte entre le 1<sup>er</sup> et le 10 de chaque mois.', true);
+      } else showMsg(msg, (d && d.error) || 'Enregistrement impossible.', false);
+    }).catch(function(){
+      showMsg(msg, 'Enregistrement impossible — réessayez.', false);
+    }).then(function(){ btn.disabled = false; });
+  });
+
+  /* ---------- Settings ---------- */
+  $('prof-form').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var msg = $('pf-msg'), btn = $('pf-btn');
+    var tel = $('pf-tel').value.trim();
+    var plateforme = $('pf-plateforme').value;
+    var pseudo = $('pf-pseudo').value.trim();
+    if (!validDzPhone(tel)){ showMsg(msg, 'Numéro algérien invalide (05/06/07).', false); return; }
+    if (!plateforme){ showMsg(msg, 'Choisissez votre plateforme.', false); return; }
+    if (pseudo.length < 2){ showMsg(msg, 'Pseudo requis.', false); return; }
+    btn.disabled = true; hideMsg(msg);
+    api('/update-profile', 'POST', {
+      telephone: tel, plateforme: plateforme, pseudo: pseudo, abonnes: $('pf-abonnes').value.trim()
+    }).then(function(r){
+      var d = r.data;
+      if (d && d.result === 'success'){ ME = d.affiliate; showMsg(msg, '<b>Profil mis à jour.</b>', true); }
+      else showMsg(msg, (d && d.error) || 'Enregistrement impossible.', false);
+    }).catch(function(){
+      showMsg(msg, 'Enregistrement impossible — réessayez.', false);
+    }).then(function(){ btn.disabled = false; });
+  });
+
+  $('pw-form').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var msg = $('pw-msg'), btn = $('pw-btn');
+    var cur = $('pw-cur').value, p1 = $('pw-new').value, p2 = $('pw-new2').value;
+    if (!cur){ showMsg(msg, 'Saisissez votre mot de passe actuel.', false); return; }
+    if (p1.length < 8){ showMsg(msg, 'Nouveau mot de passe : 8 caractères minimum.', false); return; }
+    if (p1 !== p2){ showMsg(msg, 'Les deux mots de passe ne correspondent pas.', false); return; }
+    btn.disabled = true; hideMsg(msg);
+    api('/change-password', 'POST', {current: cur, password: p1}).then(function(r){
+      var d = r.data;
+      if (d && d.result === 'success'){
+        $('pw-cur').value = ''; $('pw-new').value = ''; $('pw-new2').value = '';
+        showMsg(msg, '<b>Mot de passe changé.</b>', true);
+      } else showMsg(msg, (d && d.error) || 'Changement impossible.', false);
+    }).catch(function(){
+      showMsg(msg, 'Changement impossible — réessayez.', false);
+    }).then(function(){ btn.disabled = false; });
+  });
+
+  /* ---------- Logout ---------- */
+  $('p-logout').addEventListener('click', function(){ doLogout(false); });
+  $('pf-logout').addEventListener('click', function(){ doLogout(false); });
+
+  /* ---------- Boot: restore session ---------- */
+  api('/me').then(function(r){
+    if (r.data && r.data.result === 'success' && r.data.affiliate) enterPortal(r.data.affiliate, false);
+  });
 })();
+
 </script>
 </body>
 </html>
