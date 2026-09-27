@@ -808,6 +808,11 @@ fbq('init','3184145215124032');fbq('track','PageView');
             <label for="address" class="block text-xs font-semibold text-slate-900 mb-1.5">Adresse exacte du cabinet ou repère *</label>
             <input id="address" name="address" type="text" autocomplete="street-address" required="" placeholder="Ex : Cité 500 logts, Bâtiment B, en face de la clinique..." class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
           </div>
+          <div>
+            <label for="promo_code" class="block text-xs font-semibold text-slate-900 mb-1.5">Code promo / parrain <span class="font-normal text-slate-500">(Optionnel)</span></label>
+            <input id="promo_code" name="promo_code" type="text" inputmode="text" autocomplete="off" placeholder="Ex : DR-AMINE10 — si un partenaire vous l'a communiqué" maxlength="32" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
+            <span class="text-[11px] text-slate-500 block mt-1">Si un créateur ou un confrère vous a partagé un code, saisissez-le ici pour bénéficier de sa remise.</span>
+          </div>
           <button id="submit-btn" type="submit" class="w-full mt-2 py-4 px-6 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm sm:text-base transition-colors flex items-center justify-center gap-2 cursor-pointer">
             <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
             <span>VALIDER MA COMMANDE — 9 900 DA À LA LIVRAISON</span>
@@ -1306,6 +1311,9 @@ fbq('init','3184145215124032');fbq('track','PageView');
       mark(wilaya, !wilaya.value); if(!wilaya.value) errors.push('votre wilaya');
       mark(city, !city.value || city.disabled); if(!city.value || city.disabled) errors.push('votre commune');
       mark(address, !address.value.trim()); if(!address.value.trim()) errors.push('votre adresse');
+      // Promo / affiliate code: optional, normalized before the payload is built.
+      var promo = document.getElementById('promo_code');
+      if (promo) promo.value = promo.value.trim().toUpperCase().replace(/[^A-Z0-9\-_]/g, '').slice(0, 32);
 
       if (errors.length) {
         err.textContent = 'Il manque : ' + errors.join(', ') + '. Vérifiez les champs signalés.';
