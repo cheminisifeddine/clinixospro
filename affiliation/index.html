@@ -100,6 +100,9 @@
   .st{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:#EFF6FF;color:var(--blue-d)}
   .st.livre{background:#DCFCE7;color:#15803D}
   .welcome{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:12px;padding:14px 18px;font-size:14px;color:#1E3A8A;margin:12px 0 4px;line-height:1.6}
+  .setlogin{background:#FFFBEB;border:1px solid #FDE68A;border-radius:12px;padding:20px;margin:14px 0}
+  .setlogin h3{font-size:16px;margin:0 0 6px}
+  .setlogin p{font-size:13.5px;color:var(--mut);margin:0 0 14px}
   footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:13.5px}
   footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
   footer a{color:var(--blue);text-decoration:none;font-weight:600}
@@ -304,14 +307,31 @@
     <p class="lead">Suivez vos clics, commandes, livraisons et commissions en temps réel.</p>
     <div class="panel">
       <form id="dash-form" novalidate>
-        <div class="field"><label for="dash-code">Votre code affilié</label>
-          <div style="display:flex;gap:10px"><input id="dash-code" type="text" placeholder="Ex : DR-AMINE10" style="text-transform:uppercase" maxlength="32"/><button class="btn sm" type="submit" style="white-space:nowrap">Voir mes stats</button></div>
+        <div class="row2">
+          <div class="field"><label for="dash-email">Email</label><input id="dash-email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
+          <div class="field"><label for="dash-pass">Mot de passe</label><input id="dash-pass" type="password" autocomplete="current-password" placeholder="••••••••"/></div>
         </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+          <button class="btn sm" type="submit" style="white-space:nowrap">Voir mes stats</button>
+          <a href="#" id="dash-usecode" style="font-size:13.5px;font-weight:600">Pas encore de mot de passe ? Utiliser mon code</a>
+        </div>
+        <div class="field" id="dash-codewrap" style="display:none;margin-top:12px"><label for="dash-code">Votre code affilié</label><input id="dash-code" type="text" placeholder="Ex : DR-AMINE10" style="text-transform:uppercase" maxlength="32"/></div>
         <div class="msg" id="dash-msg" role="status"></div>
       </form>
       <div id="dash-result" style="display:none">
         <div style="margin-top:6px"><span class="badge attente" id="dash-status">EN ATTENTE</span></div>
         <div class="welcome" id="dash-welcome" style="display:none"><b>Bienvenue !</b> Votre compte est <b>en cours de validation</b> (sous 48 h ouvrées) — mais votre lien est <b>déjà actif</b> : toute commande passée avec votre code sera comptabilisée. Votre licence gratuite arrive dès l'activation. En attendant, commencez à partager.</div>
+        <div class="setlogin" id="dash-setlogin" style="display:none">
+          <h3>Sécurisez votre compte</h3>
+          <p>Dernière étape : créez votre mot de passe. Vous pourrez ensuite vous connecter avec votre email.</p>
+          <div class="field"><label for="sl-email">Email *</label><input id="sl-email" type="email" autocomplete="email" placeholder="vous@exemple.com"/></div>
+          <div class="row2">
+            <div class="field"><label for="sl-pass1">Mot de passe *</label><input id="sl-pass1" type="password" autocomplete="new-password" placeholder="8 caractères minimum"/></div>
+            <div class="field"><label for="sl-pass2">Confirmation *</label><input id="sl-pass2" type="password" autocomplete="new-password" placeholder="Répétez le mot de passe"/></div>
+          </div>
+          <button class="btn sm" type="button" id="sl-btn">Créer mon mot de passe</button>
+          <div class="msg" id="sl-msg" role="status"></div>
+        </div>
         <div class="steps" style="grid-template-columns:repeat(3,1fr);margin-top:28px">
           <div class="step"><div class="n">1</div><h3>Partagez</h3><p>Votre lien ou code : <b>-10%</b> pour vos abonnés (8 910 DA au lieu de 9 900 DA).</p></div>
           <div class="step"><div class="n">2</div><h3>Gagnez</h3><p><b>1 337 DA</b> par commande <b>livrée</b> avec votre code. Suivi en temps réel ci-dessous.</p></div>
@@ -457,6 +477,7 @@
 
   /* ---------- Dashboard ---------- */
   var dashForm = document.getElementById('dash-form');
+  var dashCode = null;
   function loadDash(code, fresh){
     var msg = document.getElementById('dash-msg');
     code = cleanCode(code);
@@ -509,15 +530,75 @@
         });
         if (!(d.recent || []).length) tb.innerHTML = '<tr><td colspan="4" style="color:var(--mut)">Aucune commande pour le moment — partagez votre lien !</td></tr>';
         document.getElementById('dash-welcome').style.display = fresh ? 'block' : 'none';
+        dashCode = d.code;
+        var hasLogin = !!d.has_login;
+        document.getElementById('dash-setlogin').style.display = hasLogin ? 'none' : 'block';
+        if (!hasLogin && d.email && !document.getElementById('sl-email').value)
+          document.getElementById('sl-email').value = d.email;
         document.getElementById('dash-result').style.display = 'block';
         if (fresh) document.getElementById('espace').scrollIntoView({behavior:'smooth'});
         else document.getElementById('dash-result').scrollIntoView({behavior:'smooth', block:'nearest'});
       })
       .catch(function(){ showMsg(msg, 'Statistiques indisponibles pour le moment — réessayez dans un instant.', false); });
   }
+  document.getElementById('dash-usecode').addEventListener('click', function(ev){
+    ev.preventDefault();
+    var w = document.getElementById('dash-codewrap');
+    w.style.display = w.style.display === 'none' ? 'block' : 'none';
+  });
   dashForm.addEventListener('submit', function(ev){
     ev.preventDefault();
-    loadDash(document.getElementById('dash-code').value, false);
+    var codeVal = document.getElementById('dash-code').value.trim();
+    var codeVisible = document.getElementById('dash-codewrap').style.display !== 'none';
+    if (codeVisible && codeVal){ loadDash(codeVal, false); return; }
+    var email = document.getElementById('dash-email').value.trim();
+    var pass = document.getElementById('dash-pass').value;
+    var msg = document.getElementById('dash-msg');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ showMsg(msg, 'Saisissez votre email.', false); return; }
+    if (!pass){ showMsg(msg, 'Saisissez votre mot de passe.', false); return; }
+    msg.className = 'msg'; msg.style.display = 'none';
+    postAction({action: 'affiliate_login', email: email, password: pass}).then(function(data){
+      if (data && data.result === 'success' && data.code){
+        try { localStorage.setItem('clinix_aff_code', data.code); } catch(e2){}
+        document.getElementById('dash-code').value = data.code;
+        loadDash(data.code, false);
+      } else if (data && data.error === 'no_password'){
+        document.getElementById('dash-codewrap').style.display = 'block';
+        showMsg(msg, "Ce compte n'a pas encore de mot de passe : entrez avec votre code ci-dessous, puis créez votre mot de passe dans le tableau de bord.", false);
+      } else if (data && data.error === 'unknown_action'){
+        document.getElementById('dash-codewrap').style.display = 'block';
+        showMsg(msg, "Connexion par email en cours d'activation — utilisez votre code pour le moment.", false);
+      } else {
+        showMsg(msg, 'Email ou mot de passe incorrect.', false);
+      }
+    }).catch(function(){
+      showMsg(msg, 'Connexion impossible pour le moment — réessayez dans un instant.', false);
+    });
+  });
+  document.getElementById('sl-btn').addEventListener('click', function(){
+    var msg = document.getElementById('sl-msg');
+    var email = document.getElementById('sl-email').value.trim();
+    var p1 = document.getElementById('sl-pass1').value;
+    var p2 = document.getElementById('sl-pass2').value;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ showMsg(msg, 'Saisissez un email valide.', false); return; }
+    if (p1.length < 8){ showMsg(msg, 'Mot de passe : 8 caractères minimum.', false); return; }
+    if (p1 !== p2){ showMsg(msg, 'Les deux mots de passe ne correspondent pas.', false); return; }
+    if (!dashCode){ showMsg(msg, 'Rechargez votre tableau de bord puis réessayez.', false); return; }
+    var btn = document.getElementById('sl-btn');
+    btn.disabled = true;
+    postAction({action: 'affiliate_set_login', code: dashCode, email: email, password: p1}).then(function(data){
+      if (data && data.result === 'success'){
+        document.getElementById('dash-email').value = email;
+        showMsg(msg, '<b>Compte sécurisé.</b> Vous pouvez désormais vous connecter avec votre email et ce mot de passe.', true);
+        setTimeout(function(){ document.getElementById('dash-setlogin').style.display = 'none'; }, 2500);
+      } else if (data && data.error === 'unknown_action'){
+        showMsg(msg, "Fonctionnalité en cours d'activation — réessayez dans quelques minutes.", false);
+      } else {
+        showMsg(msg, (data && data.error) || 'Enregistrement impossible pour le moment.', false);
+      }
+    }).catch(function(){
+      showMsg(msg, 'Enregistrement impossible — vérifiez votre connexion.', false);
+    }).then(function(){ btn.disabled = false; });
   });
   try {
     var saved = localStorage.getItem('clinix_aff_code');
