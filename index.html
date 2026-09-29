@@ -1042,8 +1042,14 @@ fbq('init','3184145215124032');fbq('track','PageView');
       <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
-  <div id="lb-stage" class="flex-1 min-h-0 overflow-hidden flex items-center justify-center px-4 pb-1">
-    <img id="lb-img" src="" alt="" class="max-w-full max-h-full w-auto h-auto rounded-lg border border-white/20 object-contain transition-transform duration-150"/>
+  <div id="lb-stage" class="relative flex-1 min-h-0 overflow-hidden flex items-center justify-center px-4 pb-1">
+    <img id="lb-img" src="" alt="" style="touch-action:none" class="max-w-full max-h-full w-auto h-auto rounded-lg border border-white/20 object-contain transition-transform duration-150 select-none"/>
+    <button id="lb-prev" type="button" aria-label="Photo précédente" class="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-24 rounded-xl bg-black/50 hover:bg-black/70 text-white inline-flex items-center justify-center transition-colors">
+      <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button id="lb-next" type="button" aria-label="Photo suivante" class="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-24 rounded-xl bg-black/50 hover:bg-black/70 text-white inline-flex items-center justify-center transition-colors">
+      <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
   </div>
   <div class="flex items-center justify-center gap-2.5 px-4 pt-2 pb-5">
     <button id="lb-out" type="button" aria-label="Zoom arrière" class="w-11 h-11 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xl font-bold inline-flex items-center justify-center transition-colors">
@@ -1079,10 +1085,17 @@ fbq('init','3184145215124032');fbq('track','PageView');
   var galCount = document.getElementById('gal-count');
   var thumbs = Array.prototype.slice.call(document.querySelectorAll('.gal-thumb'));
   var lbSel = {src:'img/dashboard-1600.jpg', alt:'Tableau de bord ClinixOS Pro', title:'Tableau de bord'};
+  var lbIndex = 0; /* current lightbox position in the gallery */
+  function galItems(){
+    return thumbs.map(function(btn){
+      return {src: btn.getAttribute('data-full'), alt: btn.getAttribute('data-alt') || '', title: btn.getAttribute('data-title') || ''};
+    });
+  }
   if (galView && thumbs.length) {
     thumbs.forEach(function(btn, i){
       btn.addEventListener('click', function(){
         lbSel = {src: btn.getAttribute('data-full'), alt: btn.getAttribute('data-alt'), title: btn.getAttribute('data-title')};
+        lbIndex = i;
         galView.style.opacity = '0';
         setTimeout(function(){
           galView.src = lbSel.src;
@@ -1128,31 +1141,85 @@ fbq('init','3184145215124032');fbq('track','PageView');
   var lbTitle = document.getElementById('lb-title');
   var lbLevel = document.getElementById('lb-level');
   var lbStage = document.getElementById('lb-stage');
-  var lbScale = 1;
+  var lbScale = 1, lbTx = 0, lbTy = 0;
   function lbApply(){
-    lbImg.style.transform = 'scale(' + lbScale + ')';
+    /* keep the exact 'scale(N)' string when not panned — the QA suite asserts it */
+    lbImg.style.transform = (lbTx || lbTy)
+      ? 'translate(' + lbTx + 'px,' + lbTy + 'px) scale(' + lbScale + ')'
+      : 'scale(' + lbScale + ')';
     lbLevel.textContent = Math.round(lbScale * 100) + '%';
     lbStage.style.cursor = lbScale > 1 ? 'zoom-out' : 'zoom-in';
   }
+  function lbShow(i){
+    var items = galItems(), n = items.length;
+    if (!n) return;
+    lbIndex = ((i % n) + n) % n;
+    var it = items[lbIndex];
+    lbImg.src = it.src; lbImg.alt = it.alt;
+    lbTitle.textContent = it.title;
+    lbScale = 1; lbTx = 0; lbTy = 0; lbApply();
+  }
   function openLb(src, alt, title){
+    /* legacy entry point: open the item matching src, else the tracked index */
+    var items = galItems();
+    for (var k = 0; k < items.length; k++) if (items[k].src === src) { lbIndex = k; break; }
     lbImg.src = src; lbImg.alt = alt || '';
     lbTitle.textContent = title || '';
-    lbScale = 1; lbApply();
+    lbScale = 1; lbTx = 0; lbTy = 0; lbApply();
     lb.classList.remove('hidden'); lb.classList.add('flex');
     document.body.style.overflow = 'hidden';
   }
   function closeLb(){
     lb.classList.add('hidden'); lb.classList.remove('flex');
     document.body.style.overflow = '';
+    ptrs.clear(); pinchDist = 0;
   }
   document.getElementById('lb-close').addEventListener('click', closeLb);
-  document.getElementById('lb-out').addEventListener('click', function(){ lbScale = Math.max(1, +(lbScale - 0.5).toFixed(2)); lbApply(); });
+  document.getElementById('lb-out').addEventListener('click', function(){ lbScale = Math.max(1, +(lbScale - 0.5).toFixed(2)); if (lbScale === 1){ lbTx = 0; lbTy = 0; } lbApply(); });
   document.getElementById('lb-in').addEventListener('click', function(){ lbScale = Math.min(3, +(lbScale + 0.5).toFixed(2)); lbApply(); });
-  document.getElementById('lb-reset').addEventListener('click', function(){ lbScale = 1; lbApply(); });
+  document.getElementById('lb-reset').addEventListener('click', function(){ lbScale = 1; lbTx = 0; lbTy = 0; lbApply(); });
+  document.getElementById('lb-prev').addEventListener('click', function(e){ e.stopPropagation(); lbShow(lbIndex - 1); });
+  document.getElementById('lb-next').addEventListener('click', function(e){ e.stopPropagation(); lbShow(lbIndex + 1); });
   lbStage.addEventListener('click', function(e){ if (e.target === lbStage) closeLb(); });
-  lbImg.addEventListener('click', function(){ lbScale = lbScale > 1 ? 1 : 2; lbApply(); });
+  var ptrs = new Map(), pinchDist = 0, pinchStart = 1, lbMoved = false;
+  function ptrDist(){
+    var p = Array.from(ptrs.values());
+    return Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+  }
+  lbImg.addEventListener('pointerdown', function(e){
+    try { lbImg.setPointerCapture(e.pointerId); } catch (err) {}
+    ptrs.set(e.pointerId, {x: e.clientX, y: e.clientY});
+    lbMoved = false;
+    if (ptrs.size === 2) { pinchDist = ptrDist(); pinchStart = lbScale; }
+  });
+  lbImg.addEventListener('pointermove', function(e){
+    if (!ptrs.has(e.pointerId)) return;
+    var prev = ptrs.get(e.pointerId);
+    if (Math.abs(e.clientX - prev.x) + Math.abs(e.clientY - prev.y) > 8) lbMoved = true;
+    ptrs.set(e.pointerId, {x: e.clientX, y: e.clientY});
+    if (ptrs.size === 2 && pinchDist > 0) {
+      /* pinch-to-zoom: touch-action:none on the image keeps the page from scrolling */
+      lbScale = Math.min(3, Math.max(1, +(pinchStart * ptrDist() / pinchDist).toFixed(2)));
+      lbApply();
+    } else if (ptrs.size === 1 && lbScale > 1) {
+      lbTx += e.clientX - prev.x; lbTy += e.clientY - prev.y;
+      lbApply();
+    }
+  });
+  function ptrEnd(e){
+    ptrs.delete(e.pointerId);
+    if (ptrs.size < 2) pinchDist = 0;
+  }
+  lbImg.addEventListener('pointerup', ptrEnd);
+  lbImg.addEventListener('pointercancel', ptrEnd);
+  lbImg.addEventListener('click', function(){ if (lbMoved) return; lbScale = lbScale > 1 ? 1 : 2; if (lbScale === 1){ lbTx = 0; lbTy = 0; } lbApply(); });
   lbStage.addEventListener('wheel', function(e){ e.preventDefault(); lbScale = Math.min(3, Math.max(1, +(lbScale + (e.deltaY < 0 ? 0.25 : -0.25)).toFixed(2))); lbApply(); }, {passive:false});
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !lb.classList.contains('hidden')) closeLb(); });
+  document.addEventListener('keydown', function(e){
+    if (lb.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLb();
+    else if (e.key === 'ArrowLeft') lbShow(lbIndex - 1);
+    else if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
+  });
 
   var burger = document.getElementById('burger');  var menu = document.getElementById('mobile-menu');
   if (burger && menu) {
