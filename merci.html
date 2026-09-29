@@ -8,6 +8,51 @@
 <meta name="robots" content="noindex, nofollow"/>
 <meta name="theme-color" content="#1D4ED8"/>
 <link rel="icon" type="image/png" href="img/favicon.png"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+  /* Self-hosted Inter — same face as the landing page (copied from index.html). */
+  @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+    src:url('/fonts/inter-latin-ext.woff2') format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+  @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;
+    src:url('/fonts/inter-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
+  /* WhatsApp brand green is not a Tailwind token on this site — plain CSS. */
+  .wa-btn{background:#25d366}
+  .wa-btn:hover{background:#1fb857}
+  /* Utilities absent from the compiled styles.css bundle (it predates some
+     index.html classes) — defined here with exact Tailwind v3 values so this
+     page renders the same everywhere, independent of the bundle. */
+  .bg-amber-50{background-color:#fffbeb}
+  .bg-blue-50{background-color:#eff6ff}
+  .border-amber-200{border-color:#fde68a}
+  .border-blue-200{border-color:#bfdbfe}
+  .flex-none{flex:none}
+  .font-extrabold{font-weight:800}
+  .gap-1{gap:.25rem}
+  .h-16{height:4rem}.w-16{width:4rem}
+  .h-7{height:1.75rem}.w-7{width:1.75rem}
+  .mt-6{margin-top:1.5rem}
+  .opacity-95{opacity:.95}
+  .p-5{padding:1.25rem}
+  .rounded-2xl{border-radius:1rem}
+  .shadow-sm{box-shadow:0 1px 2px 0 rgb(0 0 0/.05)}
+  .whitespace-nowrap{white-space:nowrap}
+  .space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}
+  .space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}
+  .merci-main{padding-top:2.5rem;padding-bottom:2.5rem}
+  .merci-h1{font-size:1.5rem;line-height:2rem}
+  .backbtn:hover{border-color:#1d4ed8;color:#1d4ed8}
+  .ytcard:hover{border-color:#fca5a5}
+  .ytbtn{background:#dc2626}
+  .ytbtn:hover{background:#b91c1c}
+  @media (min-width:768px){
+    .merci-main{padding-top:3.5rem;padding-bottom:3.5rem}
+    .merci-h1{font-size:1.875rem;line-height:2.25rem}
+  }
+</style>
 <script>
 /* Meta Pixel, deferred: the fbq stub and queued events (init, PageView, …)
    run immediately so no event is lost even if the library is slow. */
@@ -31,76 +76,124 @@ try {
 } catch(e){}
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3184145215124032&ev=PageView&noscript=1"/></noscript>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Inter,-apple-system,'Segoe UI',Roboto,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.6;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:640px;margin:0 auto;padding:24px 16px 48px}
-  .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:28px 24px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-  .check{width:72px;height:72px;border-radius:50%;background:#ecfdf5;border:2px solid #a7f3d0;display:flex;align-items:center;justify-content:center;margin:8px auto 16px}
-  h1{font-size:26px;font-weight:800;text-align:center;letter-spacing:-.02em}
-  .sub{text-align:center;color:#475569;font-size:15px;margin-top:6px}
-  .recap{display:flex;justify-content:space-between;align-items:center;background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:14px 16px;margin-top:18px;font-size:15px}
-  .recap strong{font-weight:800}
-  .price{font-size:20px;font-weight:800;color:#1d4ed8;white-space:nowrap}
-  h2{font-size:17px;font-weight:800;margin-bottom:12px}
-  .steps{list-style:none;display:grid;gap:10px}
-  .steps li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:#334155}
-  .n{flex:0 0 28px;height:28px;border-radius:50%;background:#1d4ed8;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
-  .wa{display:block;background:#25d366;color:#fff;text-align:center;font-weight:800;font-size:17px;border-radius:12px;padding:16px;text-decoration:none;margin-top:4px;box-shadow:0 4px 14px rgba(37,211,102,.35)}
-  .wa small{display:block;font-weight:500;font-size:13px;opacity:.95;margin-top:2px}
-  .wa:hover{background:#1fb857}
-  .note{font-size:13.5px;color:#475569;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:12px 14px;margin-top:12px}
-  .yt{display:block;border:1px solid #e2e8f0;border-radius:12px;padding:16px;text-decoration:none;color:#0f172a;margin-top:4px}
-  .yt:hover{border-color:#fca5a5}
-  .yt .t{font-weight:800;font-size:15.5px;display:flex;align-items:center;gap:8px}
-  .yt p{font-size:13.5px;color:#475569;margin-top:4px}
-  .ytbtn{display:inline-block;margin-top:10px;background:#ff0000;color:#fff;font-weight:700;font-size:14px;border-radius:8px;padding:10px 18px}
-  footer{text-align:center;font-size:12.5px;color:#94a3b8;margin-top:8px}
-  footer a{color:#1d4ed8;text-decoration:none;font-weight:600}
-</style>
 </head>
-<body>
-<div class="wrap">
+<body class="bg-slate-50 text-slate-900">
 
-  <div class="card">
-    <div class="check">
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
-    </div>
-    <h1>Commande enregistrée&nbsp;!</h1>
-    <p class="sub">Merci Docteur — votre demande a bien été prise en compte.</p>
-    <div class="recap">
-      <div><strong>Pack ClinixOS Pro — Clé USB</strong><br/><span style="font-size:13px;color:#475569">Licence à vie · 100&nbsp;% hors-ligne</span></div>
-      <div class="price">9&nbsp;900&nbsp;DA</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>Et maintenant&nbsp;?</h2>
-    <ol class="steps">
-      <li><span class="n">1</span><span><strong>Confirmation.</strong> Notre équipe vous contacte très vite au numéro indiqué pour confirmer votre commande.</span></li>
-      <li><span class="n">2</span><span><strong>Expédition 24–48&nbsp;h.</strong> Votre clé USB part vers votre wilaya dès confirmation.</span></li>
-      <li><span class="n">3</span><span><strong>Paiement à la livraison.</strong> Vous payez 9&nbsp;900&nbsp;DA à la réception, après avoir vérifié le colis.</span></li>
-    </ol>
-    <a class="wa" href="https://wa.me/213558495780?text=Bonjour%2C%20je%20viens%20de%20commander%20ClinixOS%20Pro.%20Je%20confirme%20ma%20commande." target="_blank" rel="noopener">
-      ⚡ Confirmer maintenant sur WhatsApp
-      <small>Le moyen le plus rapide — votre colis part en priorité</small>
+<!-- HEADER — same bar as the landing page -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-3" aria-label="ClinixOS Pro — Accueil">
+      <img src="/img/logo-v2.png" alt="ClinixOS" width="400" height="100" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none';document.getElementById('brand-fb').style.display='block'}"/>
+      <span id="brand-fb" style="display:none" class="text-lg font-bold tracking-tight">ClinixOS</span>
     </a>
-    <div class="note">Chaque commande est vérifiée avant expédition. <strong>Sans votre confirmation, l'envoi peut être retardé</strong> — un simple message suffit pour débloquer l'expédition.</div>
-  </div>
-
-  <div class="card">
-    <h2>En attendant votre colis…</h2>
-    <a class="yt" href="https://www.youtube.com/playlist?list=PLFdPCyDifssU" target="_blank" rel="noopener">
-      <div class="t"><svg width="22" height="22" viewBox="0 0 24 24" fill="#ff0000"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.6 3.6 12 3.6 12 3.6s-4.6 0-7.7.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.6 1 1.9.2 7.5.3 7.5.3s4.6 0 7.7-.4c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.7 15V8.4l6.2 3.3-6.2 3.3z"/></svg> 17 tutoriels vidéo ClinixOS Pro</div>
-      <p>Prenez en main le logiciel avant même de le recevoir : patients, ordonnances, caisse, sauvegarde — tout est expliqué pas à pas.</p>
-      <span class="ytbtn">▶ Voir la playlist YouTube</span>
+    <a href="/" class="backbtn inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-700 font-semibold text-sm transition-colors">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <span>Retour à l'accueil</span>
     </a>
   </div>
+</header>
 
-  <footer>
-    <a href="https://clinixospro.com/">clinixospro.com</a> · ClinixOS Pro — le logiciel des cabinets médicaux algériens
-  </footer>
+<main>
+  <div class="max-w-3xl mx-auto px-4 md:px-6 merci-main">
 
-</div>
+    <!-- Confirmation card -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm text-center">
+      <div class="w-16 h-16 rounded-full bg-emerald-50 border-2 border-emerald-200 flex items-center justify-center mx-auto mb-4">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+      </div>
+      <h1 class="merci-h1 font-extrabold tracking-tight">Commande enregistrée&nbsp;!</h1>
+      <p class="text-slate-600 mt-2">Merci Docteur — votre demande a bien été prise en compte.</p>
+      <div class="mt-6 flex items-center justify-between gap-4 bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 text-left">
+        <div>
+          <div class="font-bold">Pack ClinixOS Pro — Clé USB</div>
+          <div class="text-sm text-slate-500">Licence à vie · 100&nbsp;% hors-ligne</div>
+        </div>
+        <div class="text-xl font-extrabold text-blue-700 whitespace-nowrap">9&nbsp;900&nbsp;DA</div>
+      </div>
+    </section>
+
+    <!-- Next steps + WhatsApp fast-track -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm mt-6">
+      <h2 class="text-lg font-extrabold mb-4">Et maintenant&nbsp;?</h2>
+      <ol class="space-y-3">
+        <li class="flex gap-3 items-start">
+          <span class="flex-none w-7 h-7 rounded-full bg-blue-700 text-white text-sm font-extrabold flex items-center justify-center">1</span>
+          <p class="text-slate-600"><strong class="text-slate-900">Confirmation.</strong> Notre équipe vous contacte très vite au numéro indiqué pour confirmer votre commande.</p>
+        </li>
+        <li class="flex gap-3 items-start">
+          <span class="flex-none w-7 h-7 rounded-full bg-blue-700 text-white text-sm font-extrabold flex items-center justify-center">2</span>
+          <p class="text-slate-600"><strong class="text-slate-900">Expédition 24–48&nbsp;h.</strong> Votre clé USB part vers votre wilaya dès confirmation.</p>
+        </li>
+        <li class="flex gap-3 items-start">
+          <span class="flex-none w-7 h-7 rounded-full bg-blue-700 text-white text-sm font-extrabold flex items-center justify-center">3</span>
+          <p class="text-slate-600"><strong class="text-slate-900">Paiement à la livraison.</strong> Vous payez 9&nbsp;900&nbsp;DA à la réception, après avoir vérifié le colis.</p>
+        </li>
+      </ol>
+      <a class="wa-btn mt-6 flex flex-col items-center justify-center gap-1 text-white font-extrabold text-lg rounded-xl px-6 py-4 transition-colors shadow-sm" href="https://wa.me/213558495780?text=Bonjour%2C%20je%20viens%20de%20commander%20ClinixOS%20Pro.%20Je%20confirme%20ma%20commande." target="_blank" rel="noopener">
+        <span>⚡ Confirmer maintenant sur WhatsApp</span>
+        <span class="text-sm font-medium opacity-95">Le moyen le plus rapide — votre colis part en priorité</span>
+      </a>
+      <p class="mt-4 text-sm text-slate-600 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">Chaque commande est vérifiée avant expédition. <strong class="text-slate-900">Sans votre confirmation, l'envoi peut être retardé</strong> — un simple message suffit pour débloquer l'expédition.</p>
+    </section>
+
+    <!-- Tutorials card -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm mt-6">
+      <h2 class="text-lg font-extrabold mb-4">En attendant votre colis…</h2>
+      <a class="ytcard block border border-slate-200 rounded-xl p-5 transition-colors" href="https://www.youtube.com/playlist?list=PLFdPCyDifssU" target="_blank" rel="noopener">
+        <div class="font-extrabold flex items-center gap-2">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#ff0000"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.6 3.6 12 3.6 12 3.6s-4.6 0-7.7.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.6 1 1.9.2 7.5.3 7.5.3s4.6 0 7.7-.4c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.7 15V8.4l6.2 3.3-6.2 3.3z"/></svg>
+          17 tutoriels vidéo ClinixOS Pro
+        </div>
+        <p class="text-sm text-slate-600 mt-1">Prenez en main le logiciel avant même de le recevoir : patients, ordonnances, caisse, sauvegarde — tout est expliqué pas à pas.</p>
+        <span class="ytbtn inline-flex items-center gap-2 mt-3 text-white font-bold text-sm rounded-lg px-5 py-2.5 transition-colors">▶ Voir la playlist YouTube</span>
+      </a>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER — same as the landing page -->
+<footer class="bg-white border-t border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-slate-200">
+      <div>
+        <img src="/img/logo-v2.png" alt="ClinixOS Pro" width="400" height="100" loading="lazy" decoding="async" class="h-8 w-auto object-contain mb-3" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none'}"/>
+        <p class="text-xs text-slate-600 leading-relaxed">Le système de gestion médicale autonome 100% hors-ligne pour praticiens et spécialistes en Algérie. Zéro abonnement, zéro dépendance cloud.</p>
+        <p class="flex items-center gap-1.5 text-xs text-slate-500 pt-2">
+          <svg class="text-emerald-700" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
+          <span>Conforme déontologie médicale &amp; secret médical</span>
+        </p>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Produit</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-blue-700 transition-colors" href="/#solution">Solution</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#captures">Captures du logiciel</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#tarifs">Tarifs — 9&nbsp;900&nbsp;DA</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#commander">Commander (paiement à la livraison)</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#faq">Questions fréquentes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Support Praticiens Algérie</h4>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li class="flex items-center gap-2">
+            <svg class="text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span>Dimanche au Jeudi : 08h30 - 18h00</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <span>Livraison Yalidine / Maystro — 58 wilayas</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <div>© 2026 ClinixOS Pro Algérie. Tous droits réservés. Conçu pour le corps médical algérien.</div>
+      <div>Offre de lancement limitée aux 20 premiers cabinets, puis retour au tarif officiel de 35 000 DA.</div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
