@@ -96,6 +96,10 @@ fbq('init','3184145215124032');fbq('track','PageView');
      the same reason .field-invalid is: the bundle overwrites, this does not. */
   .underline{text-decoration:underline}
   .hover\:underline:hover{text-decoration:underline}
+  /* Gallery thumbnails: deterministic 16:9 crop, image flush at the top of
+     the card with no white gaps — aspect-ratio holds the box even before the
+     lazy image bytes arrive, object-fit:cover keeps every shot edge-to-edge. */
+  .gal-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f1f5f9}
 </style>
 <!-- /seo:jsonld -->
 <script type="application/ld+json">{
