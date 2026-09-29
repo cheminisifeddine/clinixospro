@@ -1422,11 +1422,12 @@ fbq('init','3184145215124032');fbq('track','PageView');
       btn.disabled = true;
       btn.querySelector('span:last-child').textContent = 'ENVOI DE VOTRE COMMANDE…';
 
+      // Lead fires on submit (a real form attempt). Purchase fires ONLY on
+      // the thank-you page (/merci.html), after the endpoint VERIFIED the
+      // order (result:"success") — never on a blind submit, so Meta never
+      // counts purchases for orders that were never recorded.
       try {
-        if (typeof fbq === 'function') {
-          fbq('track', 'Lead');
-          fbq('track', 'Purchase', {currency:'DZD', value:9900, content_name:'ClinixOS Pro - Cle USB', content_type:'product'});
-        }
+        if (typeof fbq === 'function') { fbq('track', 'Lead'); }
       } catch(e2){}
 
       var BTN_LABEL = 'VALIDER MA COMMANDE — 9 900 DA À LA LIVRAISON';
@@ -1444,6 +1445,10 @@ fbq('init','3184145215124032');fbq('track','PageView');
           done.classList.remove('hidden');
           if (sticky) sticky.classList.remove('show');
           done.scrollIntoView({behavior:'smooth', block:'center'});
+          // Arm the one-shot Purchase guard, then hand off to the thank-you
+          // page where the Purchase event fires exactly once.
+          try { sessionStorage.setItem('cx_order_ok','1'); } catch(e5){}
+          setTimeout(function(){ window.location.href = '/merci.html'; }, 1500);
         }, 900);
       }
 
