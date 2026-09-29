@@ -30,6 +30,7 @@
 <link rel="alternate" hreflang="fr-DZ" href="https://clinixospro.com/"/>
 <link rel="alternate" hreflang="x-default" href="https://clinixospro.com/"/>
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="img/promo-hero-poster.jpg" as="image" fetchpriority="high"/>
 <link rel="stylesheet" href="styles.css"/>
 <script>
 /* Meta Pixel, deferred: the fbq stub and queued events (init, PageView, …)
@@ -326,7 +327,11 @@ fbq('init','3184145215124032');fbq('track','PageView');
             </div>
           </div>
           <div>
-            <img src="img/hero-1600.jpg" srcset="img/hero-480.jpg 480w, img/hero-800.jpg 800w, img/hero-1600.jpg 1600w" sizes="(max-width:1023px) 100vw, 470px" alt="ClinixOS Pro en action — tableau de bord du cabinet : rendez-vous du jour, patients, chiffre d'affaires" width="1600" height="900" fetchpriority="high" decoding="async" class="w-full h-auto block"/>
+            <video id="hero-video" width="1280" height="720" class="w-full h-auto block"
+                   poster="img/promo-hero-poster.jpg" preload="none" playsinline controls
+                   aria-label="Présentation vidéo ClinixOS Pro — tour complet du logiciel en 94 secondes">
+              <source src="img/promo-hero.mp4" type="video/mp4"/>
+            </video>
           </div>
         </div>
         <div class="mt-3 flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-white border border-slate-200">
@@ -485,7 +490,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
     <div class="text-center max-w-2xl mx-auto mb-10">
       <span class="inline-block px-3.5 py-1 rounded-full border border-slate-200 bg-white text-slate-700 text-xs font-medium uppercase tracking-wider mb-3">Captures du logiciel</span>
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">Voyez ClinixOS Pro <span class="text-blue-700">en action</span></h2>
-      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">De vraies captures du logiciel : tableau de bord, dossiers patients, ordonnances A5, file d'attente, caisse et statistiques. Cliquez sur une vignette pour l'agrandir.</p>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">De vraies captures du logiciel : tableau de bord, patients, planning, file d'attente, consultations, ordonnances A5, médicaments, documents, caisse, statistiques et paramètres. Cliquez sur une vignette pour l'agrandir.</p>
     </div>
     <div class="win11">
       <div class="win11-bar">
@@ -494,7 +499,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <span id="gal-title">Tableau de bord — vue d'ensemble</span>
         </div>
         <div class="win11-right">
-          <span id="gal-count" class="win11-count">1 / 6</span>
+          <span id="gal-count" class="win11-count">1 / 11</span>
           <span class="win11-btns" aria-hidden="true">
             <span class="win11-btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 5h8"/></svg></span>
             <span class="win11-btn"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1"><rect x="1" y="1" width="8" height="8"/></svg></span>
@@ -518,13 +523,29 @@ fbq('init','3184145215124032');fbq('track','PageView');
         <img src="img/patients-480.jpg" alt="Vignette — liste des dossiers patients : recherche par nom ou téléphone, wilaya, groupe sanguin et allergies" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Patients</span>
       </button>
-      <button type="button" data-full="img/ordonnance-1600.jpg" data-alt="Éditeur d'ordonnance A5 ClinixOS Pro — médicaments, posologies, aperçu temps réel" data-title="Ordonnance A5 — 5 secondes" data-caption="Médicaments, posologies types, note pharmacien : l'ordonnance A5 se construit et s'imprime en 5 secondes." aria-label="Voir : Ordonnance" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
-        <img src="img/ordonnance-480.jpg" alt="Vignette — éditeur d'ordonnance A5 du logiciel de gestion de cabinet médical : médicaments, posologies et aperçu avant impression" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
-        <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Ordonnance A5</span>
+      <button type="button" data-full="img/planning-1600.jpg" data-alt="Planning ClinixOS Pro — rendez-vous du jour, rappels et statuts de consultation" data-title="Planning — rendez-vous du jour" data-caption="Rendez-vous du jour, rappels et statuts : la journée se pilote sans agenda papier." aria-label="Voir : Planning" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
+        <img src="img/planning-480.jpg" alt="Vignette — planning du cabinet médical : rendez-vous du jour, rappels et statuts de consultation" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Planning</span>
       </button>
       <button type="button" data-full="img/file-attente-1600.jpg" data-alt="File d'attente ClinixOS Pro — tickets, priorités, appel en salle, écran TV" data-title="File d'attente — écran TV" data-caption="Tickets, priorités, appel en salle avec écran TV : fini les cris dans le couloir, la salle d'attente s'apaise." aria-label="Voir : File d'attente" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
         <img src="img/file-attente-480.jpg" alt="Vignette — salle d'attente numérique : ticket, ordre de passage et appel du patient depuis l'écran de consultation" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">File d'attente</span>
+      </button>
+      <button type="button" data-full="img/consultations-1600.jpg" data-alt="Consultations ClinixOS Pro — motif, examen clinique et diagnostic par patient" data-title="Consultations — historique complet" data-caption="Motif, examen clinique, diagnostic : chaque consultation consignée et retrouvée en un clic." aria-label="Voir : Consultations" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
+        <img src="img/consultations-480.jpg" alt="Vignette — historique des consultations : motif, examen clinique et diagnostic par patient" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Consultations</span>
+      </button>
+      <button type="button" data-full="img/ordonnance-1600.jpg" data-alt="Éditeur d'ordonnance A5 ClinixOS Pro — médicaments, posologies, aperçu temps réel" data-title="Ordonnance A5 — 5 secondes" data-caption="Médicaments, posologies types, note pharmacien : l'ordonnance A5 se construit et s'imprime en 5 secondes." aria-label="Voir : Ordonnance" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
+        <img src="img/ordonnance-480.jpg" alt="Vignette — éditeur d'ordonnance A5 du logiciel de gestion de cabinet médical : médicaments, posologies et aperçu avant impression" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Ordonnance A5</span>
+      </button>
+      <button type="button" data-full="img/medicaments-1600.jpg" data-alt="Médicaments ClinixOS Pro — base ANPP, recherche instantanée d'un médicament" data-title="Médicaments — base ANPP" data-caption="Base médicamenteuse ANPP intégrée, recherche instantanée : le bon médicament, la bonne posologie." aria-label="Voir : Médicaments" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
+        <img src="img/medicaments-480.jpg" alt="Vignette — base médicamenteuse ANPP : recherche instantanée d'un médicament" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Médicaments</span>
+      </button>
+      <button type="button" data-full="img/documents-1600.jpg" data-alt="Documents médicaux ClinixOS Pro — certificats, arrêts de travail et courriers" data-title="Documents — certificats & courriers" data-caption="Certificats, arrêts de travail, courriers médicaux : tous vos documents prêts en un clic." aria-label="Voir : Documents" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
+        <img src="img/documents-480.jpg" alt="Vignette — documents médicaux : certificats, arrêts de travail et courriers" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Documents</span>
       </button>
       <button type="button" data-full="img/caisse-1600.jpg" data-alt="Caisse journalière ClinixOS Pro — encaissements en dinars, reçus, solde du jour" data-title="Caisse — recettes du jour" data-caption="Encaissements en espèces, virements, reçus numérotés : vos recettes du jour en dinars, au dinar près." aria-label="Voir : Caisse" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
         <img src="img/caisse-480.jpg" alt="Vignette — caisse du cabinet : encaissements en dinars, honoraires, impayés et solde de la journée" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
@@ -533,6 +554,10 @@ fbq('init','3184145215124032');fbq('track','PageView');
       <button type="button" data-full="img/statistiques-1600.jpg" data-alt="Statistiques du cabinet ClinixOS Pro — activité, pyramide des âges, répartition" data-title="Statistiques — pilotage" data-caption="Activité mois par mois, pyramide des âges : pilotez votre cabinet sur des chiffres, plus à l'aveugle." aria-label="Voir : Statistiques" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
         <img src="img/statistiques-480.jpg" alt="Vignette — statistiques du cabinet médical : recettes par mois, motifs de consultation et pyramide des âges" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
         <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Statistiques</span>
+      </button>
+      <button type="button" data-full="img/parametres-1600.jpg" data-alt="Paramètres ClinixOS Pro — actes, tarifs et utilisateurs du cabinet" data-title="Paramètres — votre cabinet" data-caption="Actes, tarifs, utilisateurs : ClinixOS Pro s'adapte à votre cabinet." aria-label="Voir : Paramètres" class="gal-thumb rounded-lg overflow-hidden border-2 border-slate-200 bg-white transition">
+        <img src="img/parametres-480.jpg" alt="Vignette — paramètres du cabinet : actes, tarifs et utilisateurs" width="480" height="270" loading="lazy" decoding="async" class="w-full h-auto block"/>
+        <span class="block px-1.5 py-1.5 text-[11px] font-semibold text-slate-900 leading-tight">Paramètres</span>
       </button>
     </div>
   </div>
