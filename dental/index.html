@@ -914,7 +914,9 @@ fbq('init','3184145215124032');fbq('track','PageView');
     var cards = document.querySelectorAll('.tier-card');
     var radios = document.querySelectorAll('input[name="tier"]');
     radios.forEach(function(r){
-      var card = r.closest('label').querySelector('.tier-card');
+      var label = r.closest('label');
+      var card = label ? label.querySelector('.tier-card') : null;
+      if (!card) return;
       if (r.value === t) { card.classList.add('border-blue-700','bg-blue-50/50'); card.classList.remove('border-slate-200','bg-white'); }
       else { card.classList.remove('border-blue-700','bg-blue-50/50'); card.classList.add('border-slate-200','bg-white'); }
     });
