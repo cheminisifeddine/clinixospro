@@ -1513,6 +1513,16 @@ fbq('init','3184145215124032');fbq('track','PageView');
         fail("Envoi impossible pour le moment — merci de réessayer.");
         return;
       }
+      // Idempotence : un identifiant unique par tentative d'envoi. Le relais
+      // echo de Google peut renvoyer une page d'erreur HTML alors que la
+      // commande EST déjà enregistrée ; le formulaire réessaie alors avec le
+      // MÊME submission_id et le serveur ignore le doublon (colonne
+      // "Submission ID" + verrou). Sans ça, un réessai créerait 2 lignes.
+      try {
+        payload.append('submission_id',
+          (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+            : 'sid-' + Date.now() + '-' + Math.random().toString(36).slice(2));
+      } catch(e6){}
 
       // The endpoint is a cross-origin Google Apps Script web app. Its POST
       // answers 302 -> script.googleusercontent.com/macros/echo, and the
@@ -1520,29 +1530,45 @@ fbq('init','3184145215124032');fbq('track','PageView');
       // A normal CORS POST therefore sees the real outcome, and the green
       // panel is gated on: res.ok, final URL host = endpoint host OR
       // script.googleusercontent.com, and JSON result === "success".
-      // Anything else — HTTP error, off-site redirect, missing/bad JSON,
-      // or a rejected fetch — shows the retry message. No more
-      // no-cors blind success: an opaque response can no longer claim
-      // "Commande enregistrée".
-      fetch(form.action, {method:'POST', body:payload})
-        .then(function(res){
-          if (!res.ok) throw new Error('http-' + res.status);
-          var host = '';
-          try { host = new URL(res.url).hostname; } catch(e3){}
-          var expected = '';
-          try { expected = new URL(form.action).hostname; } catch(e4){}
-          if (host !== expected && host !== 'script.googleusercontent.com')
-            throw new Error('unexpected-host');
-          return res.json();
-        })
-        .then(function(body){
-          if (body && body.result === 'success') { succeed(); }
-          else { fail("Envoi non confirmé — votre demande n'a pas pu être enregistrée pour le moment. Merci de réessayer."); }
-        })
-        .catch(function(){
-          fail("Envoi non confirmé — nous n'avons pas pu vérifier l'enregistrement de votre demande. " +
-               "Vérifiez votre connexion internet puis réessayez ; si le problème persiste, contactez-nous.");
-        });
+      // The echo hop is intermittently flaky (HTML error page instead of
+      // JSON, observed 2026-10-05) — so on any non-success outcome we retry
+      // up to 3 times with the SAME submission_id before telling the user
+      // the send is unconfirmed. Retries are duplicate-safe by design.
+      function postAttempt(n){
+        var ctrl = null, timer = null;
+        try {
+          ctrl = new AbortController();
+          timer = setTimeout(function(){ try { ctrl.abort(); } catch(e7){} }, 45000);
+        } catch(e8){}
+        var opts = {method:'POST', body:payload};
+        if (ctrl) opts.signal = ctrl.signal;
+        fetch(form.action, opts)
+          .then(function(res){
+            if (timer) clearTimeout(timer);
+            if (!res.ok) throw new Error('http-' + res.status);
+            var host = '';
+            try { host = new URL(res.url).hostname; } catch(e3){}
+            var expected = '';
+            try { expected = new URL(form.action).hostname; } catch(e4){}
+            if (host !== expected && host !== 'script.googleusercontent.com')
+              throw new Error('unexpected-host');
+            return res.json();
+          })
+          .then(function(body){
+            if (body && body.result === 'success') { succeed(); }
+            else if (n < 3) { postAttempt(n + 1); }
+            else { fail("Envoi non confirmé — votre demande n'a pas pu être enregistrée pour le moment. Merci de réessayer."); }
+          })
+          .catch(function(){
+            if (timer) clearTimeout(timer);
+            if (n < 3) { postAttempt(n + 1); }
+            else {
+              fail("Envoi non confirmé — nous n'avons pas pu vérifier l'enregistrement de votre demande. " +
+                   "Vérifiez votre connexion internet puis réessayez ; si le problème persiste, contactez-nous.");
+            }
+          });
+      }
+      postAttempt(1);
     });
   }
 })();
