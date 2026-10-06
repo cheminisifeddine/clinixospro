@@ -119,8 +119,8 @@ for m in re.finditer(r'url\((?:"|\')?([^"\')]+)', blog_css):
 # ---------------------------------------------------------------- 3. structure
 idx = (BLOG / "index.html").read_text(encoding="utf-8")
 n_cards = idx.count('class="post"') + idx.count('class="post has-visual"') + idx.count('class="post-featured"')
-if n_cards != 6:
-    note("err", "blog/index", f"expected 6 article entries (1 featured + 5 cards), found {n_cards}")
+if n_cards != 7:
+    note("err", "blog/index", f"expected 7 article entries (1 featured + 6 cards), found {n_cards}")
 if idx.count('<time datetime=') < n_cards:
     note("err", "blog/index", "article cards lack machine-readable <time datetime>")
 if '"@type": "Blog"' not in idx:
