@@ -206,10 +206,10 @@ fbq('init','3184145215124032');fbq('track','PageView');
     },
     {
       "@type": "Question",
-      "name": "Que se passe-t-il après les 20 premiers cabinets ?",
+      "name": "Que se passe-t-il après expiration de l'offre ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ce tarif promotionnel à 9 900 DA est strictement réservé au quota initial de lancement de 20 cabinets pour amorcer les retours d'expérience par wilaya. Une fois ce quota atteint, le tarif bascule automatiquement à 35 000 DA (tarif officiel avec déplacement technicien)."
+        "text": "Le tarif à 9 900 DA est une offre à durée limitée avec compte à rebours. Après expiration, le tarif passe à 35 000 DA (tarif officiel avec déplacement technicien)."
       }
     }
   ]
@@ -218,9 +218,12 @@ fbq('init','3184145215124032');fbq('track','PageView');
 <body class="bg-white text-slate-900 antialiased">
 
 <!-- Announcement -->
-<div class="bg-white border-b border-slate-200">
+<div class="bg-red-700 border-b border-red-800">
   <div class="max-w-6xl mx-auto px-4 py-2.5 flex justify-center">
-    <span class="inline-flex items-center border border-slate-200 bg-white text-slate-700 text-xs font-medium px-3 py-1 rounded-full">Offre de lancement officielle · 20 premières licences cabinet</span>
+    <span class="inline-flex items-center gap-2 text-white text-xs font-semibold px-3 py-1">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span>Offre à 9&nbsp;900&nbsp;DA se termine dans <span id="timer-top" class="font-bold tabular-nums">47:59:59</span></span>
+    </span>
   </div>
 </div>
 
@@ -704,7 +707,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
   <div class="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-24">
     <div class="bg-white rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] overflow-hidden">
       <div class="px-6 sm:px-10 pt-8 sm:pt-10 pb-6 text-center border-b border-slate-200">
-        <span class="inline-block px-3.5 py-1 rounded-full bg-slate-900 text-white text-xs font-semibold uppercase tracking-wider mb-4">Offre de lancement — 20 premiers cabinets</span>
+        <span class="inline-block px-3.5 py-1 rounded-full bg-red-700 text-white text-xs font-semibold uppercase tracking-wider mb-4">Offre limitée — <span id="timer-badge" class="tabular-nums">47:59:59</span> restantes</span>
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2">Le système complet, pour le prix d'une journée de consultations</h2>
         <p class="text-sm sm:text-base text-slate-600">Clé USB + licence complète à vie + livraison 58 wilayas. Sans intermédiaire, sans abonnement mensuel.</p>
       </div>
@@ -716,7 +719,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
             <div class="text-xs text-slate-500 mt-1">Prix agence + technicien de déploiement</div>
           </div>
           <div class="p-6 rounded-xl bg-white border border-slate-200 text-center">
-            <div class="text-xs font-semibold text-slate-500 uppercase mb-1">Tarif de Lancement Spécial</div>
+            <div class="text-xs font-semibold text-slate-500 uppercase mb-1">Offre à durée limitée</div>
             <div class="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight"><span class="whitespace-nowrap">9&nbsp;900</span> <span class="text-lg font-semibold text-slate-500">DA</span></div>
             <div class="text-xs font-semibold text-emerald-700 mt-1">Licence complète définitive à vie</div>
           </div>
@@ -728,12 +731,12 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <li class="flex items-start gap-3 text-sm text-slate-700"><svg class="lucide text-emerald-700 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Livraison Yalidine / Maystro</strong> sur les 58 wilayas, paiement en espèces à la réception</span></li>
           <li class="flex items-start gap-3 text-sm text-slate-700"><svg class="lucide text-emerald-700 mt-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Guide d'installation en 2 clics</strong> + assistance prioritaire Téléphone &amp; WhatsApp 7j/7</span></li>
         </ul>
-        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200 text-center text-sm text-slate-700 mb-6">Tarif de lancement réservé aux 20 premiers cabinets libéraux — <strong class="font-semibold text-slate-900">9 900 DA au lieu de 35 000 DA.</strong></div>
+        <div class="p-4 rounded-lg bg-red-50 border border-red-200 text-center text-sm text-slate-700 mb-6">⚡ Offre spéciale à <strong class="font-semibold text-slate-900">9 900 DA au lieu de 35 000 DA</strong> — se termine dans <strong id="timer-box" class="font-bold text-red-700 tabular-nums">47:59:59</strong></div>
         <a href="#commander" class="w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-base transition-colors">
-          <span>Je réserve ma place parmi les 20 premiers — 9 900 DA</span>
+          <span>Je commande maintenant — 9 900 DA</span>
           <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <p class="text-xs text-slate-500 text-center mt-3">Après les 20 premiers cabinets : <strong class="text-slate-700">retour automatique au tarif officiel de 35 000 DA.</strong></p>
+        <p class="text-xs text-slate-500 text-center mt-3">Après expiration du compte à rebours : <strong class="text-slate-700">retour au tarif officiel de 35 000 DA.</strong></p>
         <div class="mt-6 p-5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start gap-4">
           <svg class="lucide text-emerald-700 shrink-0 mt-0.5" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
           <div class="text-left">
@@ -862,7 +865,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
             <span class="line-through text-slate-500">35 000 DA</span>
           </div>
           <div class="flex items-center justify-between py-1.5 text-slate-900 font-medium">
-            <span>Remise promotionnelle de lancement</span>
+            <span>Remise offre limitée</span>
             <span>- 25 100 DA</span>
           </div>
           <div class="flex items-center justify-between py-1.5 text-slate-600">
@@ -953,10 +956,10 @@ fbq('init','3184145215124032');fbq('track','PageView');
       </div>
       <div class="faq-item bg-white border border-slate-200 rounded-xl">
         <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
-          <span>6. Que se passe-t-il après les 20 premiers cabinets ?</span>
+          <span>6. Que se passe-t-il après expiration de l'offre ?</span>
           <svg class="lucide faq-icon text-slate-500" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed">Ce tarif promotionnel à 9 900 DA est strictement réservé au quota initial de lancement de 20 cabinets pour amorcer les retours d'expérience par wilaya. Une fois ce quota atteint, le tarif bascule automatiquement à 35 000 DA (tarif officiel avec déplacement technicien).</p></div>
+        <div class="faq-a px-5"><p class="pb-5 text-sm text-slate-600 leading-relaxed">Le tarif à 9 900 DA est une offre à durée limitée affichée avec un compte à rebours sur cette page. Une fois le compte à rebours expiré, le tarif bascule à 35 000 DA (tarif officiel avec déplacement technicien).</p></div>
       </div>
       <div class="faq-item bg-white border border-slate-200 rounded-xl">
         <button type="button" class="faq-q w-full flex items-center justify-between text-left text-sm md:text-base font-semibold text-slate-900 px-5 py-4 focus:outline-none">
@@ -1026,7 +1029,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
     </div>
     <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
       <div>© 2026 ClinixOS Pro Algérie. Tous droits réservés. Conçu pour le corps médical algérien.</div>
-      <div>Offre de lancement limitée aux 20 premiers cabinets, puis retour au tarif officiel de 35 000 DA.</div>
+      <div>Offre à durée limitée : 9 900 DA au lieu de 35 000 DA jusqu'à expiration du compte à rebours.</div>
     </div>
   </div>
 </footer>
@@ -1074,6 +1077,36 @@ fbq('init','3184145215124032');fbq('track','PageView');
 <script>
 (function(){
   'use strict';
+
+  /* Countdown timer — 48h evergreen urgency */
+  var TIMER_KEY = 'clinixos_offer_deadline';
+  var TIMER_HOURS = 48;
+  function getDeadline(){
+    try {
+      var stored = localStorage.getItem(TIMER_KEY);
+      var now = Date.now();
+      if (stored && parseInt(stored, 10) > now) return parseInt(stored, 10);
+      var deadline = now + TIMER_HOURS * 3600 * 1000;
+      localStorage.setItem(TIMER_KEY, String(deadline));
+      return deadline;
+    } catch(e){ return Date.now() + TIMER_HOURS * 3600 * 1000; }
+  }
+  var deadline = getDeadline();
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function tick(){
+    var diff = Math.max(0, deadline - Date.now());
+    var h = Math.floor(diff / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    var str = pad(h) + ':' + pad(m) + ':' + pad(s);
+    ['timer-top','timer-badge','timer-box'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.textContent = str;
+    });
+    if (diff <= 0) { deadline = getDeadline(); }
+  }
+  tick();
+  setInterval(tick, 1000);
 
   /* Screenshot gallery viewer + lightbox (zoom in/out, exit) */
   var galView = document.getElementById('gal-view');
