@@ -73,6 +73,10 @@ fbq('init','3184145215124032');fbq('track','PageView');
     box-shadow:0 6px 20px rgba(0,0,0,.25);transition:transform .2s ease}
   #wa-float:hover{transform:scale(1.08)}
   #wa-float svg{width:30px;height:30px;fill:#fff}
+  /* Perf: skip rendering below-fold sections until scrolled into view.
+     The hero is the first <section>; everything after it defers layout/paint.
+     contain-intrinsic-size reserves space to avoid layout shift (CLS). */
+  main section:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 900px}
   @media (max-width:640px){#wa-float{width:52px;height:52px;right:14px;bottom:84px}}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
   .faq-icon{transition:transform .25s ease}
