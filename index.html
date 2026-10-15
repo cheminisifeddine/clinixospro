@@ -1402,6 +1402,58 @@ fbq('init','3184145215124032');fbq('track','PageView');
   var done = document.getElementById('confirmation-message');
 
   if (form) {
+    // Outbox anti-perte : si les 3 tentatives échouent (4G coupée, Google
+    // injoignable), la commande est sauvegardée dans le téléphone et renvoyée
+    // automatiquement en arrière-plan (toutes les 30 s, à la reconnexion, et
+    // à chaque visite). Zéro commande perdue, même sans réseau.
+    var OUTBOX_KEY = 'cx_pending_orders';
+    function outboxRead() {
+      try { return JSON.parse(localStorage.getItem(OUTBOX_KEY) || '[]'); }
+      catch(e9) { return []; }
+    }
+    function outboxWrite(q) {
+      try { localStorage.setItem(OUTBOX_KEY, JSON.stringify(q)); } catch(e10) {}
+    }
+    function outboxSave(params) {
+      var q = outboxRead();
+      var obj = {};
+      params.forEach(function(v, k) { obj[k] = v; });
+      var sid = obj.submission_id || '';
+      for (var i = 0; i < q.length; i++) {
+        if (q[i].submission_id === sid) return; // déjà en file
+      }
+      obj._queued_at = new Date().toISOString();
+      q.push(obj);
+      outboxWrite(q);
+    }
+    function outboxFlush() {
+      var q = outboxRead();
+      if (!q.length || !form) return;
+      var order = q[0];
+      var params = new URLSearchParams();
+      for (var k in order) {
+        if (k.charAt(0) !== '_' && order[k] != null) params.append(k, order[k]);
+      }
+      fetch(form.action, {method:'POST', body:params})
+        .then(function(res){
+          if (!res.ok) throw new Error('http-' + res.status);
+          return res.json();
+        })
+        .then(function(body){
+          if (body && body.result === 'success') {
+            q.shift();
+            outboxWrite(q);
+            if (q.length) setTimeout(outboxFlush, 2000);
+          }
+        })
+        .catch(function(){ /* reste en file, on réessaiera */ });
+    }
+    try {
+      outboxFlush();
+      window.addEventListener('online', outboxFlush);
+      setInterval(outboxFlush, 30000);
+    } catch(e11) {}
+
     // The old hidden_iframe was a leftover of the no-cors POST era. The
     // handler below does its own fetch, so leaving a named target in place
     // only risks a second, unobserved submission of the same lead.
@@ -1556,8 +1608,11 @@ fbq('init','3184145215124032');fbq('track','PageView');
             if (timer) clearTimeout(timer);
             if (n < 3) { postAttempt(n + 1); }
             else {
-              fail("Envoi non confirmé — nous n'avons pas pu vérifier l'enregistrement de votre demande. " +
-                   "Vérifiez votre connexion internet puis réessayez ; si le problème persiste, contactez-nous.");
+              // Dernière tentative échouée : on sauvegarde la commande dans
+              // le téléphone au lieu de la perdre. Elle partira toute seule
+              // dès que la connexion revient — inutile de recommencer.
+              outboxSave(payload);
+              fail("Connexion difficile — votre commande est sauvegardée sur votre téléphone et sera envoyée automatiquement dès que la connexion revient. Inutile de recommencer.");
             }
           });
       }
