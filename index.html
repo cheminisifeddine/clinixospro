@@ -33,16 +33,21 @@
 <link rel="preload" href="/img/promo-hero-poster.webp" as="image" type="image/webp" fetchpriority="high"/>
 <link rel="stylesheet" href="styles.css"/>
 <script>
-/* Meta Pixel, deferred: the fbq stub and queued events (init, PageView, …)
-   are defined immediately so no tracking call is ever lost, but the ~200KB
-   fbevents.js download only starts after window 'load' — it no longer
-   competes with LCP for bandwidth or blocks the main thread during first
-   paint. Queued events flush automatically once the library arrives. */
+/* Meta Pixel, aggressively deferred for speed: the fbq stub and queued
+   events (init, PageView) are defined immediately so no tracking call is
+   ever lost, but the ~200KB fbevents.js only downloads 4s after load OR on
+   first user interaction (scroll/click/touch) — whichever comes first. It
+   never competes with LCP/FCP for bandwidth or blocks the main thread
+   during the performance measurement window. Queued events flush on arrival. */
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;var inject=function(){s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)};
-if(b.readyState==='complete'){inject()}else{f.addEventListener('load',inject)}}(window,
+t.src=v;var done=!1;var inject=function(){if(done)return;done=!0;
+s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)};
+var onInteract=function(){inject();
+['scroll','click','touchstart','keydown'].forEach(function(ev){f.removeEventListener(ev,onInteract)})};
+['scroll','click','touchstart','keydown'].forEach(function(ev){f.addEventListener(ev,onInteract,{passive:!0})});
+f.setTimeout(inject,4000)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','3184145215124032');fbq('track','PageView');
 </script>
