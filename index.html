@@ -1412,10 +1412,10 @@ fbq('init','3184145215124032');fbq('track','PageView');
   var done = document.getElementById('confirmation-message');
 
   if (form) {
-    // Outbox anti-perte : si les 3 tentatives échouent (4G coupée, Google
-    // injoignable), la commande est sauvegardée dans le téléphone et renvoyée
-    // automatiquement en arrière-plan (toutes les 30 s, à la reconnexion, et
-    // à chaque visite). Zéro commande perdue, même sans réseau.
+    // Outbox anti-perte : chaque commande est sauvegardée dans le téléphone
+    // AVANT l'envoi. Si le navigateur se ferme, si la 4G coupe, ou si Google
+    // est injoignable, la commande est renvoyée automatiquement (toutes les
+    // 30 s, à la reconnexion, et à chaque visite). Zéro commande perdue.
     var OUTBOX_KEY = 'cx_pending_orders';
     function outboxRead() {
       try { return JSON.parse(localStorage.getItem(OUTBOX_KEY) || '[]'); }
@@ -1435,6 +1435,15 @@ fbq('init','3184145215124032');fbq('track','PageView');
       obj._queued_at = new Date().toISOString();
       q.push(obj);
       outboxWrite(q);
+    }
+    function outboxRemove(sid) {
+      if (!sid) return;
+      var q = outboxRead();
+      var nq = [];
+      for (var i = 0; i < q.length; i++) {
+        if (q[i].submission_id !== sid) nq.push(q[i]);
+      }
+      if (nq.length !== q.length) outboxWrite(nq);
     }
     function outboxFlush() {
       var q = outboxRead();
@@ -1585,6 +1594,12 @@ fbq('init','3184145215124032');fbq('track','PageView');
       // immediately; the POST runs in the background with retries + outbox
       // fallback. No more stuck "ENVOI DE VOTRE COMMANDE..." — the 45s x 3
       // blocking wait is gone. Retries are duplicate-safe via submission_id.
+      // ZERO-LOSS: the order is saved to the phone outbox BEFORE sending, so
+      // even if the browser closes mid-send, it will be retried on next visit.
+      var bgSid = '';
+      try {
+        payload.forEach(function(v, k){ if (k === 'submission_id') bgSid = v; });
+      } catch(e2c){}
       function sendBackground(attempt){
         var ctrl = null, timer = null;
         try {
@@ -1600,17 +1615,20 @@ fbq('init','3184145215124032');fbq('track','PageView');
             return res.json();
           })
           .then(function(body){
-            if (body && body.result === 'success') { /* delivered */ }
+            if (body && body.result === 'success') {
+              outboxRemove(bgSid); // delivered — clear from phone queue
+            }
             else if (attempt < 3) { setTimeout(function(){ sendBackground(attempt + 1); }, 2000); }
-            else { outboxSave(payload); }
+            /* else: already in outbox, flush will retry */
           })
           .catch(function(){
             if (timer) clearTimeout(timer);
             if (attempt < 3) { setTimeout(function(){ sendBackground(attempt + 1); }, 2000); }
-            else { outboxSave(payload); }
+            /* else: already in outbox, flush will retry */
           });
       }
-      // Optimistic: show success NOW, deliver in background.
+      // Optimistic: save to phone FIRST, show success NOW, deliver in background.
+      outboxSave(payload);
       try { if (typeof fbq === 'function') fbq('track', 'Lead'); } catch(e2b){}
       sendBackground(1);
       succeed();
