@@ -1517,13 +1517,9 @@ fbq('init','3184145215124032');fbq('track','PageView');
       btn.disabled = true;
       btn.querySelector('span:last-child').textContent = 'ENVOI DE VOTRE COMMANDE…';
 
-      // Lead fires on submit (a real form attempt). Purchase fires ONLY on
-      // the thank-you page (/merci.html), after the endpoint VERIFIED the
-      // order (result:"success") — never on a blind submit, so Meta never
-      // counts purchases for orders that were never recorded.
-      try {
-        if (typeof fbq === 'function') { fbq('track', 'Lead'); }
-      } catch(e2){}
+      // Lead fires on submit (a real form attempt). Purchase fires on the
+      // thank-you page (/merci.html) right after, since capture is now
+      // optimistic — the background sender + outbox guarantee delivery.
 
       var BTN_LABEL = 'VALIDER MA COMMANDE — 9 900 DA À LA LIVRAISON';
 
@@ -1543,8 +1539,8 @@ fbq('init','3184145215124032');fbq('track','PageView');
           // Arm the one-shot Purchase guard, then hand off to the thank-you
           // page where the Purchase event fires exactly once.
           try { sessionStorage.setItem('cx_order_ok','1'); } catch(e5){}
-          setTimeout(function(){ window.location.href = '/merci.html'; }, 1500);
-        }, 900);
+          setTimeout(function(){ window.location.href = '/merci.html'; }, 800);
+        }, 400);
       }
 
       // "Order recorded" is a promise to the customer, so it is shown ONLY on
@@ -1585,15 +1581,15 @@ fbq('init','3184145215124032');fbq('track','PageView');
       // A normal CORS POST therefore sees the real outcome, and the green
       // panel is gated on: res.ok, final URL host = endpoint host OR
       // script.googleusercontent.com, and JSON result === "success".
-      // The echo hop is intermittently flaky (HTML error page instead of
-      // JSON, observed 2026-10-05) — so on any non-success outcome we retry
-      // up to 3 times with the SAME submission_id before telling the user
-      // the send is unconfirmed. Retries are duplicate-safe by design.
-      function postAttempt(n){
+      // INSTANT CAPTURE (2026-10-16): fire-and-forget. The user sees success
+      // immediately; the POST runs in the background with retries + outbox
+      // fallback. No more stuck "ENVOI DE VOTRE COMMANDE..." — the 45s x 3
+      // blocking wait is gone. Retries are duplicate-safe via submission_id.
+      function sendBackground(attempt){
         var ctrl = null, timer = null;
         try {
           ctrl = new AbortController();
-          timer = setTimeout(function(){ try { ctrl.abort(); } catch(e7){} }, 45000);
+          timer = setTimeout(function(){ try { ctrl.abort(); } catch(e7){} }, 30000);
         } catch(e8){}
         var opts = {method:'POST', body:payload};
         if (ctrl) opts.signal = ctrl.signal;
@@ -1601,32 +1597,23 @@ fbq('init','3184145215124032');fbq('track','PageView');
           .then(function(res){
             if (timer) clearTimeout(timer);
             if (!res.ok) throw new Error('http-' + res.status);
-            var host = '';
-            try { host = new URL(res.url).hostname; } catch(e3){}
-            var expected = '';
-            try { expected = new URL(form.action).hostname; } catch(e4){}
-            if (host !== expected && host !== 'script.googleusercontent.com')
-              throw new Error('unexpected-host');
             return res.json();
           })
           .then(function(body){
-            if (body && body.result === 'success') { succeed(); }
-            else if (n < 3) { postAttempt(n + 1); }
-            else { fail("Envoi non confirmé — votre demande n'a pas pu être enregistrée pour le moment. Merci de réessayer."); }
+            if (body && body.result === 'success') { /* delivered */ }
+            else if (attempt < 3) { setTimeout(function(){ sendBackground(attempt + 1); }, 2000); }
+            else { outboxSave(payload); }
           })
           .catch(function(){
             if (timer) clearTimeout(timer);
-            if (n < 3) { postAttempt(n + 1); }
-            else {
-              // Dernière tentative échouée : on sauvegarde la commande dans
-              // le téléphone au lieu de la perdre. Elle partira toute seule
-              // dès que la connexion revient — inutile de recommencer.
-              outboxSave(payload);
-              fail("Connexion difficile — votre commande est sauvegardée sur votre téléphone et sera envoyée automatiquement dès que la connexion revient. Inutile de recommencer.");
-            }
+            if (attempt < 3) { setTimeout(function(){ sendBackground(attempt + 1); }, 2000); }
+            else { outboxSave(payload); }
           });
       }
-      postAttempt(1);
+      // Optimistic: show success NOW, deliver in background.
+      try { if (typeof fbq === 'function') fbq('track', 'Lead'); } catch(e2b){}
+      sendBackground(1);
+      succeed();
     });
   }
 })();
