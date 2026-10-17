@@ -1527,8 +1527,8 @@ fbq('init','3184145215124032');fbq('track','PageView');
       btn.querySelector('span:last-child').textContent = 'ENVOI DE VOTRE COMMANDE…';
 
       // Lead fires on submit (a real form attempt). Purchase fires on the
-      // thank-you page (/merci.html) right after, since capture is now
-      // optimistic — the background sender + outbox guarantee delivery.
+      // thank-you page (/merci.html) right after, since the redirect
+      // happens only on confirmed server success.
 
       var BTN_LABEL = 'VALIDER MA COMMANDE — 9 900 DA À LA LIVRAISON';
 
@@ -1567,65 +1567,61 @@ fbq('init','3184145215124032');fbq('track','PageView');
         return;
       }
 
-      // Idempotence : un identifiant unique par tentative d'envoi. Le relais
-      // echo de Google peut renvoyer une page d'erreur HTML alors que la
-      // commande EST déjà enregistrée ; le formulaire réessaie alors avec le
-      // MÊME submission_id et le serveur ignore le doublon (colonne
-      // "Submission ID" + verrou). Sans ça, un réessai créerait 2 lignes.
-      try {
-        payload.append('submission_id',
-          (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
-            : 'sid-' + Date.now() + '-' + Math.random().toString(36).slice(2));
-      } catch(e6){}
+      // Idempotence : UN identifiant par chargement de page, réutilisé à
+      // chaque tentative. Le relais echo de Google peut renvoyer une page
+      // d'erreur HTML alors que la commande EST déjà enregistrée ; le
+      // réessai repart alors avec le MÊME submission_id et le serveur
+      // ignore le doublon (colonne "Submission ID" + verrou). Sans ça,
+      // un réessai créerait 2 lignes.
+      if (!form._cxSid) {
+        try {
+          form._cxSid = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+            : 'sid-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+        } catch(e6){ form._cxSid = 'sid-' + Date.now(); }
+      }
+      try { payload.append('submission_id', form._cxSid); } catch(e6b){}
 
       // The endpoint is a cross-origin Google Apps Script web app. Its POST
       // answers 302 -> script.googleusercontent.com/macros/echo, and the
       // echo leg replies 200 {"result":"success"} with ACAO * on both legs.
-      // A normal CORS POST therefore sees the real outcome, and the green
-      // panel is gated on: res.ok, final URL host = endpoint host OR
-      // script.googleusercontent.com, and JSON result === "success".
-      // INSTANT CAPTURE (2026-10-16): fire-and-forget. The user sees success
-      // immediately; the POST runs in the background with retries + outbox
-      // fallback. No more stuck "ENVOI DE VOTRE COMMANDE..." — the 45s x 3
-      // blocking wait is gone. Retries are duplicate-safe via submission_id.
-      // ZERO-LOSS: the order is saved to the phone outbox BEFORE sending, so
-      // even if the browser closes mid-send, it will be retried on next visit.
-      var bgSid = '';
-      try {
-        payload.forEach(function(v, k){ if (k === 'submission_id') bgSid = v; });
-      } catch(e2c){}
-      function sendBackground(attempt){
-        var ctrl = null, timer = null;
-        try {
-          ctrl = new AbortController();
-          timer = setTimeout(function(){ try { ctrl.abort(); } catch(e7){} }, 30000);
-        } catch(e8){}
-        var opts = {method:'POST', body:payload};
-        if (ctrl) opts.signal = ctrl.signal;
-        fetch(form.action, opts)
-          .then(function(res){
-            if (timer) clearTimeout(timer);
-            if (!res.ok) throw new Error('http-' + res.status);
-            return res.json();
-          })
-          .then(function(body){
-            if (body && body.result === 'success') {
-              outboxRemove(bgSid); // delivered — clear from phone queue
-            }
-            else if (attempt < 3) { setTimeout(function(){ sendBackground(attempt + 1); }, 2000); }
-            /* else: already in outbox, flush will retry */
-          })
-          .catch(function(){
-            if (timer) clearTimeout(timer);
-            if (attempt < 3) { setTimeout(function(){ sendBackground(attempt + 1); }, 2000); }
-            /* else: already in outbox, flush will retry */
-          });
-      }
-      // Optimistic: save to phone FIRST, show success NOW, deliver in background.
-      outboxSave(payload);
+      // A normal CORS POST therefore sees the real outcome.
+      // CONFIRMED-SUCCESS (2026-10-17): the customer reaches /merci.html
+      // ONLY after the server answers result:"success". The 2026-10-16
+      // optimistic redirect sent customers to merci BEFORE the POST
+      // completed — background failures then produced "ghost orders":
+      // WhatsApp confirmations with no sheet row (orders silently lost).
+      // One foreground attempt, 25 s cap. The phone outbox stays as a
+      // safety net: saved BEFORE sending, retried on next visit.
+      var fgSid = form._cxSid;
+      outboxSave(payload); // safety net BEFORE sending
       try { if (typeof fbq === 'function') fbq('track', 'Lead'); } catch(e2b){}
-      sendBackground(1);
-      succeed();
+      var ctrl = null, timer = null;
+      try {
+        ctrl = new AbortController();
+        timer = setTimeout(function(){ try { ctrl.abort(); } catch(e7){} }, 25000);
+      } catch(e8){}
+      var opts = {method:'POST', body:payload};
+      if (ctrl) opts.signal = ctrl.signal;
+      fetch(form.action, opts)
+        .then(function(res){
+          if (timer) clearTimeout(timer);
+          if (!res.ok) throw new Error('http-' + res.status);
+          return res.json();
+        })
+        .then(function(body){
+          if (body && body.result === 'success') {
+            outboxRemove(fgSid); // delivered — clear from phone queue
+            succeed();
+          } else {
+            // Server refused (validation): show WHY so she can fix the field.
+            var why = (body && body.message) ? ' — ' + body.message : '';
+            fail("La commande n'a pas été enregistrée" + why + ". Vérifiez les champs et réessayez.");
+          }
+        })
+        .catch(function(){
+          if (timer) clearTimeout(timer);
+          fail("Envoi impossible — vérifiez votre connexion et réessayez. Votre commande est sauvegardée dans votre téléphone et sera renvoyée automatiquement.");
+        });
     });
   }
 })();
