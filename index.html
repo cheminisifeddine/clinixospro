@@ -1088,9 +1088,9 @@ fbq('init','3184145215124032');fbq('track','PageView');
 (function(){
   'use strict';
 
-  /* Countdown timer — 48h evergreen urgency */
-  var TIMER_KEY = 'clinixos_offer_deadline';
-  var TIMER_HOURS = 48;
+  /* Countdown timer — 72h evergreen urgency (extended +24h 2026-10-21, key bumped so all visitors get the new window) */
+  var TIMER_KEY = 'clinixos_offer_deadline_v2';
+  var TIMER_HOURS = 72;
   function getDeadline(){
     try {
       var stored = localStorage.getItem(TIMER_KEY);
