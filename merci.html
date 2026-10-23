@@ -108,12 +108,20 @@ try {
       </div>
       <h1 class="merci-h1 font-extrabold tracking-tight">Commande enregistrée&nbsp;!</h1>
       <p class="text-slate-600 mt-2">Merci Docteur — votre demande a bien été prise en compte.</p>
-      <div class="mt-6 flex items-center justify-between gap-4 bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 text-left">
-        <div>
-          <div class="font-bold">Pack ClinixOS Pro — Clé USB</div>
-          <div class="text-sm text-slate-500">Licence à vie · 100&nbsp;% hors-ligne</div>
+      <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 text-left">
+        <div class="font-bold mb-2">Récapitulatif de votre commande</div>
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold">Pack ClinixOS Pro — Clé USB</div>
+            <div class="text-sm text-slate-500">Licence à vie · 2 postes inclus · 100&nbsp;% hors-ligne</div>
+          </div>
+          <div id="sum-base" class="font-bold whitespace-nowrap">19&nbsp;900&nbsp;DA</div>
         </div>
-        <div class="text-xl font-extrabold text-blue-700 whitespace-nowrap">9&nbsp;900&nbsp;DA</div>
+        <div id="sum-options"></div>
+        <div class="flex items-center justify-between gap-4 border-t border-blue-200 mt-3 pt-3">
+          <div class="font-bold">Total à payer à la livraison</div>
+          <div id="sum-total" class="text-xl font-extrabold text-blue-700 whitespace-nowrap">19&nbsp;900&nbsp;DA</div>
+        </div>
       </div>
     </section>
 
@@ -131,7 +139,7 @@ try {
         </li>
         <li class="flex gap-3 items-start">
           <span class="flex-none w-7 h-7 rounded-full bg-blue-700 text-white text-sm font-extrabold flex items-center justify-center">3</span>
-          <p class="text-slate-600"><strong class="text-slate-900">Paiement à la livraison.</strong> Vous payez 9&nbsp;900&nbsp;DA à la réception, après avoir vérifié le colis.</p>
+          <p class="text-slate-600"><strong class="text-slate-900">Paiement à la livraison.</strong> Vous payez <span id="pay-amount">19&nbsp;900&nbsp;DA</span> à la réception, après avoir vérifié le colis.</p>
         </li>
       </ol>
       <a class="wa-btn mt-6 flex flex-col items-center justify-center gap-1 text-white font-extrabold text-lg rounded-xl px-6 py-4 transition-colors shadow-sm" href="https://wa.me/213558495780?text=Bonjour%2C%20je%20viens%20de%20commander%20ClinixOS%20Pro.%20Je%20confirme%20ma%20commande." target="_blank" rel="noopener">
@@ -174,7 +182,7 @@ try {
         <ul class="space-y-2 text-xs text-slate-600">
           <li><a class="hover:text-blue-700 transition-colors" href="/#solution">Solution</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="/#captures">Captures du logiciel</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="/#tarifs">Tarifs — 9&nbsp;900&nbsp;DA</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#tarifs">Tarifs — 19&nbsp;900&nbsp;DA</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="/#commander">Commander (paiement à la livraison)</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="/#faq">Questions fréquentes</a></li>
         </ul>
@@ -200,5 +208,45 @@ try {
   </div>
 </footer>
 
+<script>
+/* Order recap: shows the exact amount THIS customer will pay — base only
+   or base + checked upsells. Data comes from sessionStorage (written by
+   index.html right before the redirect); ?price= is the fallback for the
+   total when storage is unavailable. */
+(function(){
+  function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' DA'; }
+  var total = 19900, upsells = '';
+  try {
+    var qp = parseInt(new URLSearchParams(window.location.search).get('price'), 10);
+    if (qp >= 1000 && qp <= 999999) total = qp;
+    var raw = window.sessionStorage && sessionStorage.getItem('cx_order_summary');
+    if (raw) {
+      var s = JSON.parse(raw);
+      if (s && s.total) { var st = parseInt(s.total, 10); if (st >= 1000 && st <= 999999) total = st; }
+      if (s && s.upsells) upsells = String(s.upsells);
+    }
+  } catch(e){}
+  var opts = [], optSum = 0;
+  if (upsells) {
+    upsells.split('|').forEach(function(part){
+      var m = part.trim().match(/^(.*?)\s*\(\+(\d+)\s*DA\)\s*$/);
+      if (m) { var amt = parseInt(m[2], 10); opts.push({name: m[1], amt: amt}); optSum += amt; }
+    });
+  }
+  var base = total - optSum; if (base < 0) base = total;
+  var el;
+  el = document.getElementById('sum-base');  if (el) el.textContent = fmt(base);
+  el = document.getElementById('sum-total'); if (el) el.textContent = fmt(total);
+  el = document.getElementById('pay-amount'); if (el) el.textContent = fmt(total);
+  var box = document.getElementById('sum-options');
+  if (box && opts.length) {
+    box.innerHTML = opts.map(function(o){
+      return '<div class="flex items-center justify-between gap-4 mt-2">' +
+        '<div class="text-sm text-slate-600">+ ' + o.name + '</div>' +
+        '<div class="font-semibold whitespace-nowrap">' + fmt(o.amt) + '</div></div>';
+    }).join('');
+  }
+})();
+</script>
 </body>
 </html>

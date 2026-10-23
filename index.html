@@ -1653,6 +1653,16 @@ fbq('init','3184145215124032');fbq('track','PageView');
         var total = '19900';
         var pi = document.getElementById('order-price-input');
         if (pi && /^\d+$/.test(pi.value)) total = pi.value;
+        // Order summary for the merci.html recap (exact total + checked
+        // upsells, so the thank-you page shows what this customer pays,
+        // with or without options).
+        try {
+          var ups = document.getElementById('upsells-selected');
+          sessionStorage.setItem('cx_order_summary', JSON.stringify({
+            total: total,
+            upsells: ups ? ups.value : ''
+          }));
+        } catch(e6){}
         window.location.href = '/merci.html?price=' + encodeURIComponent(total);
       }
 

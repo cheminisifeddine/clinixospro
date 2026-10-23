@@ -29,8 +29,16 @@ NEW = re.compile(r"19[ , ]?900")
 
 
 def scan_text(text):
-    """Returns (old_hits, has_new)."""
-    return OLD.findall(text), bool(NEW.search(text))
+    """Returns (old_hits, has_new).
+
+    HTML entities are normalized first: on 2026-10-23 the merci page hid
+    the old price as "9&nbsp;900" (rendered 9 900) and the raw-text scan
+    missed it. Normalizing &nbsp; / &#160; / &#xA0; to a space closes
+    that hole for every file type scanned here.
+    """
+    norm = (text.replace("&nbsp;", " ").replace("&#160;", " ")
+                .replace("&#xA0;", " ").replace("&#xa0;", " "))
+    return OLD.findall(norm), bool(NEW.search(norm))
 
 
 def scan_file(path):
