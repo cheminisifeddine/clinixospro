@@ -9,17 +9,26 @@ Exit 1 on any old-price leak or missing new price; exit 0 when clean.
 
 Usage: python3 verify_price.py [--self-test]
 """
+import os
 import re
 import sys
 
 WS = "/home/hatch/workspace"
 GOAL = WS + "/goals/clinixos-500-000-dzd-month-revenue/hidden_files"
+REPO = WS + "/repos/clinixospro"
+# Core money files: old price forbidden AND new price must be present.
 FILES = [
-    WS + "/repos/clinixospro/index.html",
-    WS + "/repos/clinixospro/merci.html",
+    REPO + "/index.html",
+    REPO + "/merci.html",
     GOAL + "/order-confirmation/watch_orders.py",
     GOAL + "/clinixos-handbook.md",
 ]
+# Every other HTML page in the repo: old price forbidden (new-price
+# presence not required — e.g. dental pages price at 19 000 by design).
+# Added 2026-10-23 late: the old price also lived on home.html (a stale
+# duplicate landing with its own form + pixel), the blog, the affiliation
+# page, the hors-ligne landing and 404.html — the 4-file guard missed them.
+SKIP_HTML = {"index-19900.html"}  # untracked scratch, never deployed
 
 # Old price: "9900" not preceded by 1 (else it's 19900), or "9 900"/"9,900"
 # not preceded by 1 (else it's 19 900 / 19,900).
@@ -67,6 +76,23 @@ def main():
             print(f"FAIL {name}: new price 19900 not found")
         else:
             print(f"OK   {name}: no old price, 19900 present")
+    extra = 0
+    for root, dirs, names in os.walk(REPO):
+        if ".git" in root:
+            continue
+        for fn in names:
+            if not fn.endswith(".html") or fn in SKIP_HTML:
+                continue
+            path = os.path.join(root, fn)
+            if path in FILES:
+                continue
+            hits, _ = scan_file(path)
+            if hits:
+                failed = True
+                print(f"FAIL {path.replace(WS + '/', '')}: "
+                      f"{len(hits)} old-price leak(s): {hits[:5]}")
+            extra += 1
+    print(f"(also scanned {extra} additional HTML pages for old-price leaks)")
     print("RESULT:", "FAIL" if failed else "PASS — zero 9900 leaks")
     return 1 if failed else 0
 
