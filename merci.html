@@ -70,7 +70,12 @@ try {
   if (window.sessionStorage &&
       sessionStorage.getItem('cx_order_ok') === '1' &&
       sessionStorage.getItem('cx_purchase_fired') !== '1') {
-    fbq('track','Purchase',{currency:'DZD', value:9900, content_name:'ClinixOS Pro - Cle USB', content_type:'product'});
+    var cxPurchaseValue = 19900;
+    try {
+      var qp = parseInt(new URLSearchParams(window.location.search).get('price'), 10);
+      if (qp >= 1000 && qp <= 999999) cxPurchaseValue = qp;
+    } catch(e2){}
+    fbq('track','Purchase',{currency:'DZD', value:cxPurchaseValue, content_name:'ClinixOS Pro - Cle USB', content_type:'product'});
     sessionStorage.setItem('cx_purchase_fired','1');
   }
 } catch(e){}
