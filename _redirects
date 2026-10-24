@@ -16,5 +16,4 @@
   /affiliation/ 301
 
 # Alias orthographe : /download/free-trail -> page d'essai (fichier hébergé sur R2)
-/download/free-trail
-  /download/free-trial/ 301
+/download/free-trail /download/free-trial/ 301
