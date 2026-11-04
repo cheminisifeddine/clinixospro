@@ -85,7 +85,6 @@ fbq('init','3184145215124032');fbq('track','PageView');
   /* Perf: skip rendering below-fold sections until scrolled into view.
      The hero is the first <section>; everything after it defers layout/paint.
      contain-intrinsic-size reserves space to avoid layout shift (CLS). */
-  main section:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 900px}
   @media (max-width:640px){#wa-float{width:52px;height:52px;right:14px;bottom:84px}}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
   .faq-icon{transition:transform .25s ease}
@@ -129,10 +128,9 @@ fbq('init','3184145215124032');fbq('track','PageView');
   @media(max-width:380px){.cta-long{display:none}.cta-short{display:inline}}
   #wa-float{transition:opacity .2s ease, transform .2s ease}
   #wa-float.wa-hidden{opacity:0;pointer-events:none;transform:scale(.8)}
+  #checkout{scroll-margin-top:88px}
   @media(max-width:640px){#wa-float{display:none}}
   .win11-count{color:#475569}
-  /* Keep the order form and pricing in the accessibility/paint tree: content-visibility:auto made contrast checks read the dark final-CTA background behind offscreen form text. */
-  #commander, #tarifs{content-visibility:visible}
   .h-16{height:4rem}
   .bg-blue-50{background-color:#eff6ff}
   .text-blue-300{color:#93c5fd}
@@ -145,7 +143,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
 <!-- /seo:jsonld -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://clinixospro.com/#website","url":"https://clinixospro.com/","name":"ClinixOS Pro","inLanguage":"fr-DZ"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://clinixospro.com/#organization","name":"ClinixOS Pro","url":"https://clinixospro.com/","logo":{"@type":"ImageObject","url":"https://clinixospro.com/img/logo-v2.png"},"contactPoint":{"@type":"ContactPoint","telephone":"+213558495780","contactType":"customer support","areaServed":"DZ","availableLanguage":["fr"]}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ClinixOS Pro","url":"https://clinixospro.com/","image":"https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png","description":"Logiciel de gestion de cabinet médical 100% hors-ligne pour médecins libéraux en Algérie : dossiers patients, ordonnances A5, salle d'attente, caisse et statistiques, avec synchronisation médecin-secrétaire sur réseau local.","inLanguage":"fr-DZ","applicationCategory":"MedicalApplication","operatingSystem":"Windows 7, Windows 8, Windows 10, Windows 11, macOS","softwareVersion":"4.2","publisher":{"@id":"https://clinixospro.com/#organization"},"offers":{"@type":"Offer","price":"9900","priceCurrency":"DZD","availability":"https://schema.org/InStock","url":"https://clinixospro.com/#commander","priceValidUntil":"2027-12-31"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ClinixOS Pro","url":"https://clinixospro.com/","image":"https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png","description":"Logiciel de gestion de cabinet médical 100% hors-ligne pour médecins libéraux en Algérie : dossiers patients, ordonnances A5, salle d'attente, caisse et statistiques, avec synchronisation médecin-secrétaire sur réseau local.","inLanguage":"fr-DZ","applicationCategory":"MedicalApplication","operatingSystem":"Windows 7, Windows 8, Windows 10, Windows 11, macOS","softwareVersion":"4.2","publisher":{"@id":"https://clinixospro.com/#organization"},"offers":{"@type":"Offer","price":"9900","priceCurrency":"DZD","availability":"https://schema.org/InStock","url":"https://clinixospro.com/#checkout","priceValidUntil":"2027-12-31"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://clinixospro.com/#faq","inLanguage":"fr-DZ","mainEntity":[{"@type":"Question","name":"1. Ai-je besoin d'une connexion Internet ?","acceptedAnswer":{"@type":"Answer","text":"Non. ClinixOS Pro fonctionne à 100% en local sur votre ordinateur. Une panne d'ADSL ou une chute de 4G ne peut pas bloquer vos consultations. Vos dossiers et ordonnances restent disponibles 365 jours par an."}},{"@type":"Question","name":"2. La licence est-elle vraiment à vie ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Vous payez les 9 900 DA une seule fois, à la réception. Aucun abonnement mensuel, aucun frais de renouvellement annuel. Le logiciel vous appartient."}},{"@type":"Question","name":"3. Comment ça marche avec ma secrétaire ?","acceptedAnswer":{"@type":"Answer","text":"Vos deux ordinateurs (médecin et secrétariat) se connectent au réseau local du cabinet , sans Internet actif. La secrétaire enregistre les arrivées et vous voyez la file d'attente en temps réel sur votre écran. Les 2 postes sont inclus dans la licence."}},{"@type":"Question","name":"4. Et si je change d'ordinateur dans 2 ans ?","acceptedAnswer":{"@type":"Answer","text":"Un module de sauvegarde / restauration en 1 clic est inclus. Vous sauvegardez sur une clé USB ou un disque externe, vous réinstallez sur le nouveau PC et vous restaurez votre base en quelques secondes."}},{"@type":"Question","name":"5. Comment se passent la livraison et le paiement ?","acceptedAnswer":{"@type":"Answer","text":"Livraison par Yalidine Express ou Maystro Delivery dans les 58 wilayas, à votre cabinet ou à domicile. Vous ne payez rien à l'avance : vous ouvrez le colis, vous vérifiez la clé USB et le guide, puis vous remettez 9 900 DA en espèces au livreur."}},{"@type":"Question","name":"6. Et si le logiciel ne me convient pas ?","acceptedAnswer":{"@type":"Answer","text":"Vous êtes couvert par notre garantie 7 jours satisfait ou remboursé . Utilisez ClinixOS Pro dans votre cabinet pendant une semaine : s'il ne vous convient pas, contactez-nous et nous vous remboursons intégralement les 9 900 DA, sans question ni formulaire."}},{"@type":"Question","name":"7. Mes données patients sont-elles en sécurité ?","acceptedAnswer":{"@type":"Answer","text":"Vos données restent sur votre ordinateur, dans votre cabinet . Pas de cloud, pas de serveur étranger, pas d'abonnement. Vous gardez le contrôle total, avec sauvegarde sur clé USB ou disque externe."}},{"@type":"Question","name":"8. Compatible Mac et Windows ?","acceptedAnswer":{"@type":"Answer","text":"Oui. ClinixOS Pro fonctionne sur Windows 7/8/10/11 et macOS , y compris en réseau local mixte (Mac pour le médecin, PC Windows pour la secrétaire)."}}]}</script>
 <link rel="preconnect" href="https://pub-00a581c21b8040a7b6746ef936cb9b01.r2.dev" crossorigin>
 <link rel="preconnect" href="https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev" crossorigin>
@@ -170,7 +168,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
         <svg width="16" height="16" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
         <span>WhatsApp</span>
       </a>
-      <a href="#commander" class="inline-flex items-center gap-1.5 px-3 sm:px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-semibold text-xs sm:text-sm transition-colors">
+      <a href="#checkout" class="inline-flex items-center gap-1.5 px-3 sm:px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-semibold text-xs sm:text-sm transition-colors">
         <svg class="lucide" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
         <span><span class="cta-short">Commander</span><span class="cta-long">Commander — 9&nbsp;900&nbsp;DA</span></span>
       </a>
@@ -184,7 +182,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
     <a href="#captures" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Voir la démo</a>
     <a href="#tarifs" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Tarifs — 9&nbsp;900&nbsp;DA</a>
     <a href="#faq" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">FAQ</a>
-    <a href="#commander" class="block py-3 text-sm font-semibold text-blue-700 border-b border-slate-100">Commander — 9&nbsp;900&nbsp;DA</a>
+    <a href="#checkout" class="block py-3 text-sm font-semibold text-blue-700 border-b border-slate-100">Commander — 9&nbsp;900&nbsp;DA</a>
     <a href="https://wa.me/213558495780?text=Bonjour%2C%20je%20veux%20des%20infos%20sur%20ClinixOS%20Pro" target="_blank" rel="noopener" class="block py-3 text-sm font-medium text-emerald-700">WhatsApp commandes : 0558 495 780</a>
   </div>
 </header>
@@ -221,7 +219,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
               <div>Garantie 7 jours</div>
             </div>
           </div>
-          <a href="#commander" class="mt-4 flex items-center justify-center gap-2 w-full px-5 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm sm:text-base transition-colors">
+          <a href="#checkout" class="mt-4 flex items-center justify-center gap-2 w-full px-5 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm sm:text-base transition-colors">
             <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
             <span>Commander ma clé USB — 9&nbsp;900&nbsp;DA</span>
           </a>
@@ -416,7 +414,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
       </div>
     </div>
     <div class="mt-6 text-center">
-      <a href="#commander" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
+      <a href="#checkout" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
         Je veux régler ça — 9&nbsp;900&nbsp;DA
         <svg class="lucide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -655,7 +653,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
         </div>
       </div>
       <div class="px-6 sm:px-10 pb-8">
-        <a href="#commander" class="w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-base transition-colors">
+        <a href="#checkout" class="w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-base transition-colors">
           <span>Commander ma clé USB — 9&nbsp;900&nbsp;DA</span>
           <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -739,7 +737,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
       </div>
     </div>
     <div class="mt-6 text-center">
-      <a href="#commander" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
+      <a href="#checkout" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
         Commander ma clé USB — 9&nbsp;900&nbsp;DA
         <svg class="lucide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -756,7 +754,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
       <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Remplissez le formulaire. Nous vous appelons pour confirmer votre commande. Vous payez 9&nbsp;900 DA en espèces à la réception, après avoir vérifié le colis.</p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-      <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+      <div id="checkout" class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
         <form id="order-form" action="https://script.google.com/macros/s/AKfycbzvjQ9Yjm-oIrKqz1Ii1-XiCvNATamySYDrSEk1Pc0XEcdCBSXVmcVzgD-YoykESeS35w/exec" method="POST" novalidate class="space-y-4">
           <input type="hidden" name="product" value="ClinixOS Pro - Cle USB"/>
           <input type="hidden" id="order-price-input" name="price" value="9900"/>
@@ -862,7 +860,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
   <div class="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-24 text-center">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight mb-3">Dans 6 mois, votre cabinet sera organisé… <span class="text-blue-300">ou toujours débordé.</span></h2>
     <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">La différence se joue aujourd'hui : 9&nbsp;900 DA une seule fois, au lieu des heures perdues chaque semaine pendant des années.</p>
-    <a href="#commander" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm sm:text-base transition-colors">
+    <a href="#checkout" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-lg bg-white hover:bg-slate-100 text-slate-900 font-bold text-sm sm:text-base transition-colors">
       Commander — 9&nbsp;900 DA à la livraison
       <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
@@ -894,7 +892,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
           <li><a class="hover:text-blue-700 transition-colors" href="#solution">Comment ça marche</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="#captures">Démo du logiciel</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="#tarifs">Tarifs — 9&nbsp;900 DA</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="#commander">Commander (paiement à la livraison)</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="#checkout">Commander (paiement à la livraison)</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="#faq">Questions fréquentes</a></li>
         </ul>
       </div>
@@ -973,7 +971,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
 
 <!-- Sticky order bar -->
 <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 px-4 py-3">
-  <a href="#commander" class="max-w-xl mx-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
+  <a href="#checkout" class="max-w-xl mx-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
     <svg class="lucide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
     <span>COMMANDER — 9 900 DA · PAIEMENT À LA LIVRAISON</span>
   </a>
@@ -1225,6 +1223,38 @@ fbq('init','3184145215124032');fbq('track','PageView');
       }
     });
   });
+
+
+  /* Reliable in-page CTAs: native hash scrolling was stopping at the wrong
+     section because deferred sections changed the document height mid-scroll.
+     Scroll to the exact target with the sticky header offset, then update the hash. */
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      var hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      var target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      var header = document.querySelector('header');
+      var offset = (header ? header.offsetHeight : 64) + 16;
+      var top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({top: Math.max(0, top), behavior: 'smooth'});
+      if (history.pushState) history.pushState(null, '', hash);
+    });
+  });
+
+  /* Legacy links to #commander (old ads, bookmarks, external pages) should
+     still land on the form itself, not on the section heading. */
+  if (location.hash === '#commander') {
+    setTimeout(function(){
+      var legacy = document.getElementById('checkout');
+      if (!legacy) return;
+      var header = document.querySelector('header');
+      var offset = (header ? header.offsetHeight : 64) + 16;
+      window.scrollTo({top: legacy.getBoundingClientRect().top + window.scrollY - offset, behavior: 'auto'});
+      if (history.replaceState) history.replaceState(null, '', '#checkout');
+    }, 250);
+  }
 
   /* locations.js (22KB of wilaya/commune data) is only needed by the order
      form. It loads on demand — when the form scrolls near the viewport or on
@@ -1491,7 +1521,7 @@ fbq('init','3184145215124032');fbq('track','PageView');
             total: total
           }));
         } catch(e6){}
-        window.location.href = '/merci.html?price=' + encodeURIComponent(total);
+        window.location.href = '/merci.html?price=' + encodeURIComponent(total) + '&v=' + Date.now();
       }
 
       // "Order recorded" is a promise to the customer, so it is shown ONLY on

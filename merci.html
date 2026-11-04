@@ -7,6 +7,7 @@
 <meta name="description" content="Votre commande ClinixOS Pro est enregistrée. Confirmez-la sur WhatsApp pour une expédition prioritaire."/>
 <meta name="robots" content="noindex, nofollow"/>
 <meta name="theme-color" content="#1D4ED8"/>
+<meta http-equiv="Cache-Control" content="no-store"/>
 <link rel="icon" type="image/png" href="img/favicon.png"/>
 <link rel="stylesheet" href="styles.css"/>
 <style>
@@ -70,12 +71,9 @@ try {
   if (window.sessionStorage &&
       sessionStorage.getItem('cx_order_ok') === '1' &&
       sessionStorage.getItem('cx_purchase_fired') !== '1') {
-    var cxPurchaseValue = 9900;
-    try {
-      var qp = parseInt(new URLSearchParams(window.location.search).get('price'), 10);
-      if (qp >= 1000 && qp <= 999999) cxPurchaseValue = qp;
-    } catch(e2){}
-    fbq('track','Purchase',{currency:'DZD', value:cxPurchaseValue, content_name:'ClinixOS Pro - Cle USB', content_type:'product'});
+    /* Fixed price: 9 900 DA — must match index.html CX_BASE. */
+    var CX_PRICE = 9900;
+    fbq('track','Purchase',{currency:'DZD', value:CX_PRICE, content_name:'ClinixOS Pro - Cle USB', content_type:'product'});
     sessionStorage.setItem('cx_purchase_fired','1');
   }
 } catch(e){}
@@ -182,7 +180,7 @@ try {
           <li><a class="hover:text-blue-700 transition-colors" href="/#solution">Solution</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="/#captures">Captures du logiciel</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="/#tarifs">Tarifs — 9&nbsp;900&nbsp;DA</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="/#commander">Commander (paiement à la livraison)</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/#checkout">Commander (paiement à la livraison)</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="/#faq">Questions fréquentes</a></li>
         </ul>
       </div>
@@ -213,22 +211,13 @@ try {
    redirect); ?price= is the fallback for the total when storage is
    unavailable. */
 (function(){
+  /* Fixed price: 9 900 DA — must match index.html CX_BASE. */
+  var CX_PRICE = 9900;
   function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' DA'; }
-  var total = 9900;
-  try {
-    var qp = parseInt(new URLSearchParams(window.location.search).get('price'), 10);
-    if (qp >= 1000 && qp <= 999999) total = qp;
-    var raw = window.sessionStorage && sessionStorage.getItem('cx_order_summary');
-    if (raw) {
-      var s = JSON.parse(raw);
-      if (s && s.total) { var st = parseInt(s.total, 10); if (st >= 1000 && st <= 999999) total = st; }
-    }
-  } catch(e){}
-  var base = total;
   var el;
-  el = document.getElementById('sum-base');  if (el) el.textContent = fmt(base);
-  el = document.getElementById('sum-total'); if (el) el.textContent = fmt(total);
-  el = document.getElementById('pay-amount'); if (el) el.textContent = fmt(total);
+  el = document.getElementById('sum-base');  if (el) el.textContent = fmt(CX_PRICE);
+  el = document.getElementById('sum-total'); if (el) el.textContent = fmt(CX_PRICE);
+  el = document.getElementById('pay-amount'); if (el) el.textContent = fmt(CX_PRICE);
 })();
 </script>
 </body>
