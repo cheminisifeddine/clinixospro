@@ -7,6 +7,7 @@ Allow: /
 
 # Documentation et fichiers de développement : aucune valeur pour l'indexation
 Disallow: /README.md
+Disallow: /ADS.md
 Disallow: /scripts/
 
 Sitemap: https://clinixospro.com/sitemap.xml
