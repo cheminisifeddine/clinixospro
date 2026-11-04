@@ -127,7 +127,7 @@ La page répète ces trois promesses, avec une seule action : **commander la cl�
 - Prix + CTA **au-dessus de la ligne de flottaison** sur mobile.
 - CTA « Commander » toujours visible dans le header mobile.
 - Formulaire réduit à **5 champs** : nom, téléphone, wilaya, commune, adresse.
-- Suppression du compte à rebours et des options payantes (poste supplémentaire, migration) : **total fixe 9 900 DA**.
+- Suppression du compte à rebours et du poste supplémentaire ; migration proposée séparément sur devis. **Total du logiciel : 9 900 DA.**
 - Ancien prix 35 000 DA expliqué honnêtement : version agence avec technicien vs version clé USB auto-installation. Pas de « offre à durée limitée ».
 - Section témoignages prête : ajoutez uniquement de **vrais** avis dans `window.CX_TESTIMONIALS` (dans `index.html`). La section s'affiche automatiquement dès qu'il y a au moins un avis.
 - Pages légales : `legal.html` (mentions, confidentialité, CGV, remboursement).
@@ -183,7 +183,7 @@ En attendant, la page s'appuie sur des preuves vérifiables : captures réelles,
 
 ## Migration (upsell séparé)
 
-- Migration des anciens dossiers (EasyDoc, Daoini, Excel…) : **service payant sur devis, à partir de 9 000 DA**.
+- Migration des anciens dossiers (EasyDoc, Daoini, Excel…) : **service payant sur devis**.
 - Elle reste **séparée** du pack à 9 900 DA : le total du formulaire et la valeur `Purchase` restent **9900 DZD**.
 - Angle retargeting : « Vous avez déjà EasyDoc/Daoini/Excel ? On migre vos dossiers. Demandez un devis. »
 - Ne pas mettre la migration dans le prix du logiciel ni dans l'événement Purchase.
