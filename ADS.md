@@ -180,3 +180,10 @@ En attendant, la page s'appuie sur des preuves vérifiables : captures réelles,
 - No public phone number: avoids inbound support calls and keeps the team focused on order confirmation.
 - **0770 49 49 50** is used only for **outbound confirmation calls**; never put it in the ad copy or landing page.
 - In ads, use “Commandez en ligne / paiement à la livraison” and send people to the form or WhatsApp — not to a phone call.
+
+## Migration (upsell séparé)
+
+- Migration des anciens dossiers (EasyDoc, Daoini, Excel…) : **service payant sur devis, à partir de 9 000 DA**.
+- Elle reste **séparée** du pack à 9 900 DA : le total du formulaire et la valeur `Purchase` restent **9900 DZD**.
+- Angle retargeting : « Vous avez déjà EasyDoc/Daoini/Excel ? On migre vos dossiers. Demandez un devis. »
+- Ne pas mettre la migration dans le prix du logiciel ni dans l'événement Purchase.
