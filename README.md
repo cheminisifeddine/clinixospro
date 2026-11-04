@@ -32,3 +32,9 @@ curl -s -X POST "https://api.cloudflare.com/client/v4/accounts/<ACCOUNT>/pages/p
 - Testimonials: fill `window.CX_TESTIMONIALS` in `index.html` with **real** doctor quotes. The section stays hidden until at least one quote is added.
 - HTML is now sent with `Cache-Control: no-store` (the old 4h browser cache kept showing the countdown/upsell version on mobile).
 - For ads, use a UTM-tagged URL (e.g. `?utm_source=facebook&utm_medium=paid&utm_campaign=cold_medecins_dz`) so mobile browsers never reuse a stale cached copy.
+
+## Contact policy
+
+- **Public contact: WhatsApp only** — +213 558 495 780 (`https://wa.me/213558495780`). No phone number or `tel:` link is published, so the site does not generate inbound calls.
+- **0770 49 49 50** is reserved for **outbound order-confirmation calls** only. Do not publish it on the site; use it as the caller ID when confirming COD orders.
+- If the business later wants an inbound order line, add it deliberately and expect call volume.

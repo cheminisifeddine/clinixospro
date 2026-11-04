@@ -171,3 +171,12 @@ window.CX_TESTIMONIALS = [
 Envoyez-moi 3 à 6 vrais témoignages (nom, spécialité, wilaya, citation) et je les ajoute. **Ne mettez jamais de faux avis** : c'est illégal, contraire aux règles Meta, et les médecins le repèrent immédiatement.
 
 En attendant, la page s'appuie sur des preuves vérifiables : captures réelles, démo vidéo, 58 wilayas, paiement après inspection, garantie 7 jours, licence à vie, 2 postes inclus, assistance WhatsApp.
+
+---
+
+## Contact policy for ads
+
+- Landing page and footer show **WhatsApp only**: +213 558 495 780.
+- No public phone number: avoids inbound support calls and keeps the team focused on order confirmation.
+- **0770 49 49 50** is used only for **outbound confirmation calls**; never put it in the ad copy or landing page.
+- In ads, use “Commandez en ligne / paiement à la livraison” and send people to the form or WhatsApp — not to a phone call.
