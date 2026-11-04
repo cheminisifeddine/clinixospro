@@ -1,19 +1,20 @@
 # clinixospro.com — Cloudflare Pages custom headers
-# Goal: edge-cache everything aggressively for Algerian visitors.
-# Cloudflare Pages purges the edge cache on every production deploy, so long
-# s-maxage values are safe: a new deploy always serves fresh files.
-# Browser max-age stays short on files that change often (HTML/CSS/JS) to
-# avoid stale repeat-visitor caches; the edge (s-maxage) does the heavy
-# lifting for first-time and cross-visitor speed.
+# Goal: edge-cache STATIC ASSETS aggressively, but never cache HTML.
+# 2026-11-04: the previous assumption ("Pages purges the edge cache on every
+# production deploy, so long s-maxage values are safe") was WRONG. A deploy
+# reached the origin but the edge kept serving the 2h-old HTML at "/" for
+# ~2 hours: the live root had removed upsells/countdown while every
+# cache-busted URL had them gone. Visitors saw the stale page. HTML is now
+# edge-cached for 60s only. Assets keep their long TTLs.
 
 /
-  Cache-Control: public, max-age=120, s-maxage=7200, must-revalidate
+  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
 /*.html
-  Cache-Control: public, max-age=120, s-maxage=7200, must-revalidate
+  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
 /blog/*
-  Cache-Control: public, max-age=120, s-maxage=7200, must-revalidate
+  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
 /logiciel-cabinet-medical-hors-ligne/*
-  Cache-Control: public, max-age=120, s-maxage=7200, must-revalidate
+  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
 /img/*
   Cache-Control: public, max-age=14400, s-maxage=31536000, must-revalidate
 /fonts/*
