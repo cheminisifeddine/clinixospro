@@ -1,25 +1,36 @@
 # clinixospro.com — Cloudflare Pages custom headers
-# Goal: edge-cache STATIC ASSETS aggressively, but never cache HTML.
-# 2026-11-04: the previous assumption ("Pages purges the edge cache on every
-# production deploy, so long s-maxage values are safe") was WRONG. A deploy
-# reached the origin but the edge kept serving the 2h-old HTML at "/" for
-# ~2 hours: the live root had removed upsells/countdown while every
-# cache-busted URL had them gone. Visitors saw the stale page. HTML is now
-# edge-cached for 60s only. Assets keep their long TTLs.
+# HTML must never be cached by the browser: a 4-hour browser cache was
+# serving the old countdown/upsell version to mobile visitors after deploys.
+# Assets keep long TTLs; the HTML is always revalidated.
 
 /
-  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
 /*.html
-  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
 /blog/*
-  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
 /logiciel-cabinet-medical-hors-ligne/*
-  Cache-Control: public, max-age=60, s-maxage=60, must-revalidate
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+
 /img/*
   Cache-Control: public, max-age=14400, s-maxage=31536000, must-revalidate
+
 /fonts/*
   Cache-Control: public, max-age=14400, s-maxage=31536000, must-revalidate
+
 /styles.css
   Cache-Control: public, max-age=3600, s-maxage=31536000, must-revalidate
+
 /locations.js
   Cache-Control: public, max-age=3600, s-maxage=31536000, must-revalidate
