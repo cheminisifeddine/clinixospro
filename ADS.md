@@ -128,7 +128,7 @@ La page répète ces trois promesses, avec une seule action : **commander la cl�
 - CTA « Commander » toujours visible dans le header mobile.
 - Formulaire réduit à **5 champs** : nom, téléphone, wilaya, commune, adresse.
 - Suppression du compte à rebours et du poste supplémentaire ; migration proposée séparément sur devis. **Total du logiciel : 9 900 DA.**
-- Ancien prix 35 000 DA expliqué honnêtement : version agence avec technicien vs version clé USB auto-installation. Pas de « offre à durée limitée ».
+- Un seul prix d'ancrage : **19 900 DA barré → 9 900 DA** pendant le Black Friday. L'installation sur site est proposée **sur devis** (aucun prix affiché).
 - Section témoignages prête : ajoutez uniquement de **vrais** avis dans `window.CX_TESTIMONIALS` (dans `index.html`). La section s'affiche automatiquement dès qu'il y a au moins un avis.
 - Pages légales : `legal.html` (mentions, confidentialité, CGV, remboursement).
 - Cache HTML corrigé : `Cache-Control: no-store` pour que les mobiles ne gardent pas l'ancienne version 4 heures.
@@ -175,13 +175,20 @@ En attendant, la page s'appuie sur des preuves vérifiables : captures réelles,
 ---
 
 
-## Campagne Novembre 2026 (prix 19 900 → 9 900)
+## Black Friday 2026 (prix 19 900 → 9 900)
 
 - Tarif officiel public : **19 900 DA** · Tarif promo : **9 900 DA** · Économie : **10 000 DA (-50 %)**.
 - Employez la même offre dans les créatifs : prix barré `19 900 DA` + `9 900 DA` + pill `Économisez 10 000 DA`. La page et le créatif doivent raconter la même chose (message-match).
 - Références homogènes : `priceValidUntil 2026-11-30` (schéma), FAQ n°10, récapitulatif, page légale 3.2.
 - Le prix envoyé au Pixel (`Purchase` / `InitiateCheckout`) reste **9900 DZD** = ce que le client paie.
 - Ne changez pas le lot (50 clés, 78 %) ou la date sans mettre à jour toutes les mentions en même temps.
+- **Preuve sociale disponible** : « Déjà près de 70 médecins libéraux équipés en Algérie ». À reprendre dans les créatifs et à garder visible sur la page.
+- **Pas encore de témoignages** : ne pas en inventer. La section reste masquée tant qu'il n'y a pas de vrais avis.
+- Date de fin : **30 novembre 2026**. Le 1er décembre, retirer le badge Black Friday ou basculer sur un nouveau motif (sans laisser une offre « novembre » active en décembre).
+
+### Hook Black Friday
+
+> **Black Friday 2026 : ClinixOS Pro à 9 900 DA au lieu de 19 900 DA (-50 %).** Lot de 50 clés USB, paiement à la livraison, garantie 7 jours. Déjà près de 70 médecins équipés en Algérie.
 
 ## Contact policy for ads
 
