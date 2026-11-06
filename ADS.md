@@ -174,6 +174,15 @@ En attendant, la page s'appuie sur des preuves vérifiables : captures réelles,
 
 ---
 
+
+## Campagne Novembre 2026 (prix 19 900 → 9 900)
+
+- Tarif officiel public : **19 900 DA** · Tarif promo : **9 900 DA** · Économie : **10 000 DA (-50 %)**.
+- Employez la même offre dans les créatifs : prix barré `19 900 DA` + `9 900 DA` + pill `Économisez 10 000 DA`. La page et le créatif doivent raconter la même chose (message-match).
+- Références homogènes : `priceValidUntil 2026-11-30` (schéma), FAQ n°10, récapitulatif, page légale 3.2.
+- Le prix envoyé au Pixel (`Purchase` / `InitiateCheckout`) reste **9900 DZD** = ce que le client paie.
+- Ne changez pas le lot (50 clés, 78 %) ou la date sans mettre à jour toutes les mentions en même temps.
+
 ## Contact policy for ads
 
 - Landing page and footer show **WhatsApp only**: +213 558 495 780.
