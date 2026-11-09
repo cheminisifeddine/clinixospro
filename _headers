@@ -21,6 +21,11 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
 
+/dental/*
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  CDN-Cache-Control: no-store
+  Surrogate-Control: no-store
+
 /blog/*
   Cache-Control: no-store, no-cache, must-revalidate, max-age=0
 

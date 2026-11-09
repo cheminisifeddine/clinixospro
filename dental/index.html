@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Logiciel dentaire Algérie | ClinixOS Dental — Gestion du cabinet dentaire</title>
-<meta name="description" content="Logiciel de gestion pour cabinet dentaire en Algérie : odontogramme, prothèses, stérilisation traçée, registres DSP, feuille CNAS AS-02, caisse. 100% hors-ligne, licence à vie 9 900 DA au lieu de 45 000 DA, livraison 58 wilayas."/>
+<title>ClinixOS Dental — Logiciel dentaire Algérie</title>
+<meta name="description" content="Logiciel dentaire 100% hors-ligne : odontogramme, prothèses, stérilisation, DSP, CNAS. 9 900 DA au lieu de 45 000 DA, paiement à la livraison."/>
 <meta name="author" content="ClinixOS Dental"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
 <meta name="theme-color" content="#1D4ED8"/>
+<meta http-equiv="Cache-Control" content="no-store"/>
 <meta property="og:site_name" content="ClinixOS Dental"/>
-<meta property="og:title" content="Logiciel dentaire Algérie | ClinixOS Dental"/>
-<meta property="og:description" content="Odontogramme, laboratoire, stérilisation, registres DSP, feuille CNAS AS-02 et caisse — 100% hors-ligne. Licence à vie 9 900 DA au lieu de 45 000 DA, paiement à la livraison dans les 58 wilayas."/>
+<meta property="og:title" content="ClinixOS Dental — Logiciel dentaire Algérie"/>
+<meta property="og:description" content="Odontogramme, prothèses, stérilisation, DSP, CNAS : logiciel dentaire 100% hors-ligne. 9 900 DA au lieu de 45 000 DA, paiement à la livraison."/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="fr_DZ"/>
 <meta property="og:url" content="https://clinixospro.com/dental/"/>
@@ -20,7 +21,7 @@
 <meta property="og:image:type" content="image/jpeg"/>
 <meta property="og:image:alt" content="ClinixOS Dental — logiciel de gestion pour cabinet dentaire en Algérie"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Logiciel dentaire Algérie | ClinixOS Dental"/>
+<meta name="twitter:title" content="ClinixOS Dental — Logiciel dentaire Algérie"/>
 <meta name="twitter:description" content="Odontogramme, laboratoire, stérilisation, registres DSP, feuille CNAS AS-02 et caisse — 100% hors-ligne. Licence à vie 9 900 DA au lieu de 45 000 DA, paiement à la livraison dans les 58 wilayas."/>
 <meta name="twitter:image" content="https://clinixospro.com/dental/img/og-1200x630.jpg"/>
 <meta name="twitter:image:alt" content="ClinixOS Dental — logiciel de gestion pour cabinet dentaire en Algérie"/>
@@ -108,6 +109,13 @@ fbq('init','1676469174046374');fbq('track','PageView');
      the card with no white gaps — aspect-ratio holds the box even before the
      lazy image bytes arrive, object-fit:cover keeps every shot edge-to-edge. */
   .gal-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f1f5f9}
+  .cta-short{display:inline}
+  .cta-long{display:none}
+  @media(min-width:640px){.cta-long{display:inline}.cta-short{display:none}}
+  @media(max-width:360px){#burger{display:none}}
+  #checkout{scroll-margin-top:88px}
+  .win11-count{color:#475569}
+  @media(max-width:640px){#wa-float{display:none}}
 </style>
 <!-- /seo:jsonld -->
 <script type="application/ld+json">{
@@ -135,7 +143,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
   "name": "ClinixOS Dental",
   "url": "https://clinixospro.com/dental/",
   "image": "https://clinixospro.com/dental/img/dental/dashboard-1600.jpg",
-  "description": "Logiciel de gestion pour cabinet dentaire 100% hors-ligne en Algérie : odontogramme FDI, prothèses et laboratoire, stérilisation traçée, registres DSP, feuille de soins CNAS AS-02, devis, rétrocessions collaborateurs et caisse.",
+  "description": "Logiciel de gestion pour cabinet dentaire 100% hors-ligne en Algérie : odontogramme FDI, prothèses et laboratoire, stérilisation tracée, registres DSP, feuille de soins CNAS AS-02, devis, rétrocessions collaborateurs et caisse.",
   "inLanguage": "fr-DZ",
   "applicationCategory": "MedicalApplication",
   "operatingSystem": "Windows 10, Windows 11",
@@ -211,13 +219,6 @@ fbq('init','1676469174046374');fbq('track','PageView');
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
-<!-- Announcement -->
-<div class="bg-white border-b border-slate-200">
-  <div class="max-w-6xl mx-auto px-4 py-2.5 flex justify-center">
-    <span class="inline-flex items-center border border-slate-200 bg-white text-slate-700 text-xs font-medium px-3 py-1 rounded-full">ClinixOS Dental — le logiciel pensé pour les chirurgiens-dentistes</span>
-  </div>
-</div>
-
 <!-- Navigation -->
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 h-[72px] flex items-center justify-between gap-4">
@@ -225,14 +226,15 @@ fbq('init','1676469174046374');fbq('track','PageView');
       <img src="/img/logo-v2.png" alt="ClinixOS" width="400" height="100" fetchpriority="high" decoding="async" class="h-9 md:h-10 w-auto object-contain" onerror="if(!this.dataset.fbk){this.dataset.fbk=1;this.src='https://pub-3495f018eae749eaac503d3cf444cda2.r2.dev/finalversion.png'}else{this.style.display='none';document.getElementById('brand-fb').style.display='block'}"/>
       <span id="brand-fb" style="display:none" class="text-lg font-bold tracking-tight">ClinixOS</span>
     </a>
-    <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
-      <a class="text-blue-700 font-semibold" aria-current="page" href="/dental/">Accueil</a>
+    <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600">
+      <a class="hover:text-blue-700 transition-colors" href="/dental/#solution">Comment ça marche</a>
+      <a class="hover:text-blue-700 transition-colors" href="/dental/#tarifs">Tarifs</a>
       <a class="hover:text-blue-700 transition-colors" href="/dental/#faq">FAQ</a>
     </nav>
     <div class="flex items-center gap-3">
-      <a href="/dental/#checkout" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-semibold text-sm transition-colors">
+      <a href="#checkout" class="inline-flex items-center gap-1.5 px-3 sm:px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-semibold text-xs sm:text-sm transition-colors">
         <svg class="lucide" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
-        <span>Commander — 9&nbsp;900&nbsp;DA</span>
+        <span><span class="cta-short">Commander</span><span class="cta-long">Commander — 9&nbsp;900&nbsp;DA</span></span>
       </a>
       <button id="burger" type="button" aria-label="Menu" aria-expanded="false" class="lg:hidden w-11 h-11 rounded-lg border border-slate-200 bg-white inline-flex items-center justify-center text-slate-700">
         <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -240,9 +242,11 @@ fbq('init','1676469174046374');fbq('track','PageView');
     </div>
   </div>
   <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-2">
-    <a href="/dental/" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Accueil</a>
+    <a href="/dental/#solution" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Comment ça marche</a>
+    <a href="/dental/#tarifs" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">Tarifs — 9&nbsp;900&nbsp;DA</a>
     <a href="/dental/#faq" class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100">FAQ</a>
-    <a href="/dental/#checkout" class="block py-3 text-sm font-semibold text-blue-700">Commander — 9&nbsp;900&nbsp;DA</a>
+    <a href="https://wa.me/213558495780?text=Bonjour%2C%20je%20veux%20des%20infos%20sur%20ClinixOS%20Dental" target="_blank" rel="noopener" class="block py-3 text-sm font-medium text-emerald-700 border-b border-slate-100">WhatsApp : 0558 495 780</a>
+    <a href="#checkout" class="block py-3 text-sm font-semibold text-blue-700">Commander — 9&nbsp;900&nbsp;DA</a>
   </div>
 </header>
 
@@ -254,57 +258,51 @@ fbq('init','1676469174046374');fbq('track','PageView');
       <span class="inline-flex items-center gap-2 border border-slate-200 bg-white text-slate-700 text-xs font-medium px-3 py-1 rounded-full">
         <span class="w-1.5 h-1.5 rounded-full bg-blue-700"></span>
         Conçu pour les chirurgiens-dentistes en Algérie
-        <span class="text-slate-400">·</span>
-        <span class="text-slate-500">Édition 2026</span>
       </span>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-7">
-        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-[1.12] mb-5">
-          <span class="text-blue-700">Logiciel de gestion pour cabinet dentaire</span> — 9&nbsp;900&nbsp;DA <span class="line-through text-slate-400 text-2xl sm:text-3xl">45&nbsp;000&nbsp;DA</span>, à vie.
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-[1.12] mb-4">
+          Votre cabinet dentaire, <span class="text-blue-700">en ordre en 10 minutes.</span>
         </h1>
-        <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 max-w-xl">
-          Chirurgien-dentiste : votre assistante dentaire perd des heures sur le papier — devis égarés, prothèses oubliées chez le prothésiste, caisse jamais rapprochée, stérilisation non tracée. <strong class="text-slate-900 font-semibold">ClinixOS Dental</strong> remplace tout ça : odontogramme, laboratoire, stérilisation traçée, registres DSP, feuilles CNAS — 100% hors-ligne, sans abonnement, sans technicien.
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-5 max-w-xl">
+          Odontogramme, prothèses, stérilisation, registres DSP, CNAS : tout dans un logiciel <strong class="text-slate-900 font-semibold">100% hors-ligne</strong>. <strong class="text-slate-900 font-semibold">9&nbsp;900 DA au lieu de 45&nbsp;000 DA</strong>, payez à la livraison.
         </p>
-        <div class="w-full max-w-xl p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200 mb-7">
-          <div class="flex items-start gap-3">
-            <svg class="lucide text-slate-500 mt-0.5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            <p class="text-sm leading-relaxed text-slate-700">
-              <strong class="font-semibold text-slate-900 block mb-0.5">La réalité du cabinet :</strong>
-              1 prothèse oubliée chez le prothésiste = 1 patient furieux au fauteuil. 1 registre DSP incomplet = 1 problème au contrôle. <strong class="font-semibold text-slate-900">Le papier ne pardonne pas.</strong>
-            </p>
+
+        <div class="w-full max-w-xl p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200 mb-5">
+          <div class="mb-3">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-700 text-white text-[11px] font-semibold uppercase tracking-wider">Offre de lancement 2026 · Licence à vie</span>
           </div>
-        </div>
-        <div class="w-full max-w-xl flex flex-col gap-3">
-          <a href="#commander" class="flex items-center justify-between px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white transition-colors">
-            <span class="flex items-center gap-3">
-              <svg class="lucide" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="2"/><circle cx="4" cy="20" r="2"/><path d="M4.6 18.4 10 8M10 8V4.5M10 8h5.5"/></svg>
-              <span class="text-left">
-                <span class="block text-base sm:text-lg font-bold tracking-tight">Commander — 9&nbsp;900&nbsp;DA à vie</span>
-                <span class="block text-xs font-normal text-blue-100">Paiement à la livraison après inspection du colis</span>
-              </span>
-            </span>
-            <svg class="lucide" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <div class="flex items-end justify-between gap-4">
+            <div>
+              <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 mb-1">Le pack complet</div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-sm sm:text-base font-semibold text-slate-500 line-through whitespace-nowrap">45&nbsp;000&nbsp;DA</span>
+                <span class="text-3xl sm:text-4xl font-bold text-slate-900 leading-none whitespace-nowrap">9&nbsp;900 <span class="text-lg font-semibold text-slate-500">DA</span></span>
+              </div>
+              <div class="text-xs text-slate-600 mt-1">Une seule fois · Livraison incluse</div>
+            </div>
+            <div class="text-right text-[11px] leading-relaxed text-slate-600">
+              <div class="font-semibold text-emerald-700">Paiement à la livraison</div>
+              <div>Garantie 7 jours</div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <span class="block px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-[11px] font-semibold text-emerald-700 leading-tight">Économisez 35&nbsp;100&nbsp;DA (-78%) · Tarif normal : 45&nbsp;000&nbsp;DA</span>
+          </div>
+          <a href="#checkout" class="mt-4 flex items-center justify-center gap-2 w-full px-5 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm sm:text-base transition-colors">
+            <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+            <span>Commander ma licence — 9&nbsp;900&nbsp;DA</span>
           </a>
-          <p class="text-xs text-slate-500 leading-relaxed px-1">Paiement en espèces à la réception — inspectez le colis avant de payer. Garantie 7 jours satisfait ou remboursé.</p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 text-xs font-medium text-slate-600">
-            <div class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white border border-slate-200">
-              <svg class="lucide text-blue-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10z"/><path d="M9 11.5l2 2 4-4"/></svg>
-              <span>Paiement à la livraison</span>
-            </div>
-            <div class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white border border-slate-200">
-              <svg class="lucide text-blue-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
-              <span>58 wilayas (Yalidine)</span>
-            </div>
-            <div class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white border border-slate-200">
-              <svg class="lucide text-blue-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="M2 2l20 20"/></svg>
-              <span>100% hors-ligne</span>
-            </div>
-            <div class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white border border-slate-200">
-              <svg class="lucide text-blue-700" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
-              <span>Licence à vie (0 DA/mois)</span>
-            </div>
-          </div>
+          <p class="mt-2 text-center text-[11px] text-slate-500">Vous ne payez qu'à la réception. Ouvrez le colis, vérifiez, puis payez.</p>
+          <p class="mt-1 text-center text-[11px] font-semibold text-emerald-700">Déjà près de 70 praticiens équipés en Algérie</p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-600">
+          <span class="px-2.5 py-2 rounded-lg bg-white border border-slate-200">Paiement à la livraison</span>
+          <span class="px-2.5 py-2 rounded-lg bg-white border border-slate-200">58 wilayas (Yalidine)</span>
+          <span class="px-2.5 py-2 rounded-lg bg-white border border-slate-200">100% hors-ligne</span>
+          <span class="px-2.5 py-2 rounded-lg bg-white border border-slate-200">Licence à vie · 0 DA/mois</span>
         </div>
       </div>
       <!-- Enterprise application frame · Windows 11 style window -->
@@ -446,7 +444,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       <div class="bg-white p-6 md:p-7 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
         <div class="flex items-center justify-between mb-5">
-          <span class="text-4xl font-bold text-slate-200">01</span>
+          <span class="text-4xl font-bold text-slate-500">01</span>
           <div class="w-11 h-11 rounded-lg bg-blue-700 flex items-center justify-center text-white">
             <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7" r="2"/><circle cx="4" cy="20" r="2"/><path d="M4.6 18.4 10 8M10 8V4.5M10 8h5.5"/></svg>
           </div>
@@ -457,7 +455,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
       </div>
       <div class="bg-white p-6 md:p-7 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
         <div class="flex items-center justify-between mb-5">
-          <span class="text-4xl font-bold text-slate-200">02</span>
+          <span class="text-4xl font-bold text-slate-500">02</span>
           <div class="w-11 h-11 rounded-lg bg-blue-700 flex items-center justify-center text-white">
             <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
           </div>
@@ -468,7 +466,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
       </div>
       <div class="bg-white p-6 md:p-7 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)] flex flex-col">
         <div class="flex items-center justify-between mb-5">
-          <span class="text-4xl font-bold text-slate-200">03</span>
+          <span class="text-4xl font-bold text-slate-500">03</span>
           <div class="w-11 h-11 rounded-lg bg-blue-700 flex items-center justify-center text-white">
             <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg>
           </div>
@@ -581,7 +579,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
         <div class="w-11 h-11 rounded-lg bg-slate-100 flex items-center justify-center text-blue-700 mb-4">
           <svg class="lucide" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg>
         </div>
-        <h3 class="text-base font-semibold text-slate-900 mb-2">Stérilisation traçée</h3>
+        <h3 class="text-base font-semibold text-slate-900 mb-2">Stérilisation tracée</h3>
         <p class="text-sm text-slate-600 leading-relaxed mb-4">Cycles d'autoclave classe B conformes / non conformes, sachets numérotés avec QR. Une traçabilité prête à présenter lors d'un contrôle.</p>
         <span class="mt-auto w-fit text-[11px] font-semibold text-slate-700 uppercase tracking-wide bg-slate-100 px-2.5 py-1 rounded-md">Prêt pour le contrôle</span>
       </div>
@@ -711,7 +709,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
         <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-blue-700 text-white text-xs font-semibold uppercase tracking-wider whitespace-nowrap">Licence à vie</span>
         <h3 class="text-lg font-bold text-slate-900 mb-1">ClinixOS Dental</h3>
         <p class="text-sm text-slate-500 mb-5">Chirurgien-dentiste + secrétaire, 2 postes en réseau local</p>
-        <div class="text-sm text-slate-400 mb-1"><span class="line-through">45&nbsp;000&nbsp;DA</span> <span class="ml-1.5 px-2 py-0.5 rounded-full bg-red-100 text-red-700 text-xs font-bold align-middle">−78&nbsp;%</span></div>
+        <div class="text-sm text-slate-500 mb-1"><span class="line-through">45&nbsp;000&nbsp;DA</span> <span class="ml-1.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold align-middle">−78&nbsp;%</span></div>
         <div class="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-1"><span class="whitespace-nowrap">9&nbsp;900</span> <span class="text-lg font-semibold text-slate-500">DA</span></div>
         <p class="text-xs font-semibold text-emerald-700 mb-6">Licence complète définitive à vie — 0 DA d'abonnement</p>
         <ul class="space-y-3 mb-8 text-sm text-slate-700">
@@ -719,7 +717,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
           <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">2 postes</strong> : fauteuil + secrétariat, en réseau local</span></li>
           <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span>Devis, plans de traitement, caisse, ordonnances, rétrocessions</span></li>
         </ul>
-        <a href="#commander" data-tier="solo" class="tier-cta mt-auto w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-base transition-colors">
+        <a href="#checkout" data-tier="solo" class="tier-cta mt-auto w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-base transition-colors">
           <span>Commander — 9&nbsp;900&nbsp;DA</span>
           <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -729,7 +727,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
       <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-sm text-slate-700">
         <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Clé USB + installation en 10 minutes</strong>, guide inclus</span></li>
         <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Livraison 58 wilayas</strong> (Yalidine / Maystro), paiement en espèces à la réception</span></li>
-        <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Assistance 7j/7</strong> téléphone &amp; WhatsApp</span></li>
+        <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Assistance WhatsApp 7j/7</strong></span></li>
         <li class="flex items-start gap-2.5"><svg class="lucide text-emerald-700 mt-0.5 shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 5-5"/></svg><span><strong class="font-semibold text-slate-900">Sauvegarde / restauration en 1 clic</strong> incluse</span></li>
       </ul>
       <div class="p-5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start gap-4">
@@ -747,34 +745,37 @@ fbq('init','1676469174046374');fbq('track','PageView');
 <section id="commander" class="bg-slate-50 border-y border-slate-200">
   <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24">
     <div class="text-center max-w-2xl mx-auto mb-12">
-      <span class="inline-block px-3.5 py-1 rounded-full bg-blue-700 text-white text-xs font-semibold uppercase tracking-wider mb-3">Commande en 60 secondes</span>
+      <span class="inline-block px-3.5 py-1 rounded-full bg-blue-700 text-white text-xs font-semibold uppercase tracking-wider mb-3">Commande en 2 minutes</span>
       <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-3">Recevez votre licence <span class="text-blue-700">sans payer en ligne</span></h2>
-      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Choisissez votre formule, remplissez ce formulaire. Notre équipe vous appelle pour confirmer, puis la clé part par Yalidine / Maystro. Vous payez en espèces, à la réception.</p>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">Remplissez ce formulaire. Notre équipe vous appelle pour confirmer, puis la clé part par Yalidine / Maystro. Vous payez en espèces, à la réception.</p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-      <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+      <div id="checkout" class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
         <form id="order-form" action="https://script.google.com/macros/s/AKfycbwJ-9_rTfl8i7iP6SbdApUYyHLMMbSqB_-kjZ1j6G33_iWRfy4cG19c33y0c-ujo-Kd8w/exec" method="POST" novalidate class="space-y-4">
           <input type="hidden" name="product" id="f-product" value="ClinixOS Dental - Licence à vie"/>
           <input type="hidden" name="price" id="f-price" value="9900"/>
           <input type="hidden" name="payment" value="COD"/>
           <input type="hidden" name="carrier" value="Yalidine / Maystro Delivery"/>
+          <input type="hidden" name="original_price" value="45000"/>
+          <input type="hidden" name="tier" value="solo"/>
+          <input type="hidden" id="specialty" name="specialty" value="Chirurgien-dentiste (solo)"/>
+          <input type="hidden" id="phone2" name="phone2" value=""/>
+          <input type="hidden" name="utm_source" id="utm_source" value=""/>
+          <input type="hidden" name="utm_medium" id="utm_medium" value=""/>
+          <input type="hidden" name="utm_campaign" id="utm_campaign" value=""/>
+          <input type="hidden" name="utm_content" id="utm_content" value=""/>
+          <input type="hidden" name="utm_term" id="utm_term" value=""/>
+          <input type="hidden" name="fbclid" id="fbclid" value=""/>
+          <input type="hidden" name="landing_url" id="landing_url" value=""/>
+          <input type="hidden" name="referrer" id="referrer" value=""/>
+          <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+            <label for="company_website">Ne pas remplir</label>
+            <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off"/>
+          </div>
           <div id="form-error" role="alert" class="hidden p-3 rounded-lg bg-red-50 border border-red-200 text-red-800 text-sm font-medium"></div>
           <div class="pb-2 border-b border-slate-200 flex items-center justify-between">
             <span class="text-xs font-semibold text-slate-900 flex items-center gap-2 uppercase">
               <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">1</span>
-              Votre formule
-            </span>
-          </div>
-          <div class="p-4 rounded-lg border-2 border-blue-700 bg-blue-50/50">
-            <input type="hidden" name="tier" value="solo"/>
-            <span class="block text-sm font-bold text-slate-900">ClinixOS Dental — Licence à vie</span>
-            <span class="block text-xs text-slate-500 mb-1">Tous les modules · 2 postes · 0 DA d'abonnement</span>
-            <span class="block text-xs text-slate-400 line-through">45&nbsp;000 DA</span>
-            <span class="block text-lg font-bold text-slate-900">9&nbsp;900 DA <span class="text-xs font-semibold text-red-600">−78&nbsp;%</span></span>
-          </div>
-          <div class="pb-2 border-b border-slate-200 flex items-center justify-between">
-            <span class="text-xs font-semibold text-slate-900 flex items-center gap-2 uppercase">
-              <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">2</span>
               Coordonnées du praticien &amp; cabinet
             </span>
             <span class="text-[11px] text-slate-500">* Champs obligatoires</span>
@@ -785,30 +786,14 @@ fbq('init','1676469174046374');fbq('track','PageView');
               <input id="name" name="name" autocomplete="name" type="text" required="" placeholder="Ex : Dr. Benali Mohamed" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
             </div>
             <div>
-              <label for="specialty" class="block text-xs font-semibold text-slate-900 mb-1.5">Profil du cabinet *</label>
-              <select id="specialty" name="specialty" required="" class="fld-select w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition cursor-pointer">
-                <option disabled="" selected="" value="">Choisir le profil…</option>
-                <option value="Chirurgien-dentiste (solo)">Chirurgien-dentiste (solo)</option>
-                <option value="Clinique dentaire (multi-praticiens)">Clinique dentaire (multi-praticiens)</option>
-                <option value="Stomatologue / Maxillo-facial">Stomatologue / Maxillo-facial</option>
-                <option value="Autre">Autre</option>
-              </select>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
               <label for="phone" class="block text-xs font-semibold text-slate-900 mb-1.5">Numéro de téléphone mobile *</label>
               <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required="" placeholder="05 / 06 / 07 XX XX XX XX" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
               <span class="text-[11px] text-slate-500 block mt-1">Nous vous appelons sur ce numéro pour valider l'envoi.</span>
             </div>
-            <div>
-              <label for="phone2" class="block text-xs font-semibold text-slate-900 mb-1.5">2ème Téléphone (Optionnel)</label>
-              <input id="phone2" name="phone2" type="tel" inputmode="tel" placeholder="Fixe cabinet ou mobile secrétaire" class="w-full h-12 px-3.5 rounded-lg bg-white border-slate-300 text-slate-900 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 focus:outline-none transition"/>
-            </div>
           </div>
           <div class="pt-1 pb-2 border-b border-slate-200">
             <span class="text-xs font-semibold text-slate-900 flex items-center gap-2 uppercase">
-              <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">3</span>
+              <span class="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px]">2</span>
               Adresse de livraison (Cabinet ou Domicile)
             </span>
           </div>
@@ -842,9 +827,11 @@ fbq('init','1676469174046374');fbq('track','PageView');
             </div>
             <p class="text-xs">Notre service praticiens vous contacte dans les plus brefs délais au numéro indiqué pour confirmer l'expédition par Yalidine Express.</p>
           </div>
-          <div class="flex items-center justify-center gap-1.5 text-xs text-slate-500 pt-1">
-            <svg class="lucide text-slate-500" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-            <span>Vos informations restent strictement confidentielles. Zéro démarchage intempestif.</span>
+          <div class="text-center text-[11px] text-slate-500 pt-1 leading-relaxed">
+            <span class="inline-flex items-center gap-1.5"><svg class="lucide text-slate-500" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Vos informations restent strictement confidentielles.</span>
+            <a class="underline hover:underline text-slate-700" href="/dental/legal.html#confidentialite">Politique de confidentialité</a>
+            <span class="mx-1">·</span>
+            <a class="inline-flex items-center gap-1 text-emerald-700 font-semibold" href="https://wa.me/213558495780?text=Bonjour%2C%20j%27ai%20une%20question%20avant%20de%20commander%20ClinixOS%20Dental" target="_blank" rel="noopener">WhatsApp : 0558 495 780</a>
           </div>
         </form>
       </div>
@@ -854,7 +841,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
         <div class="border-y border-slate-200 py-4 text-sm mb-4">
           <div class="flex items-center justify-between py-1.5 text-slate-600">
             <span>Licence à vie (tous modules dentaires)</span>
-            <span class="font-semibold text-slate-900" id="recap-price"><span class="line-through text-slate-400 font-normal">45&nbsp;000 DA</span> 9&nbsp;900 DA</span>
+            <span class="font-semibold text-slate-900" id="recap-price"><span class="line-through text-slate-500 font-normal">45&nbsp;000 DA</span> 9&nbsp;900 DA</span>
           </div>
           <div class="flex items-center justify-between py-1.5 text-slate-600">
             <span>Livraison 58 wilayas (Yalidine)</span>
@@ -909,7 +896,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
     window.DENTAL_PRICE = d.price;
     document.getElementById('f-price').value = d.price;
     document.getElementById('f-product').value = d.product;
-    document.getElementById('recap-price').innerHTML = '<span class="line-through text-slate-400 font-normal">' + d.oldLabel + ' DA</span> ' + d.label + " DA";
+    document.getElementById('recap-price').innerHTML = '<span class="line-through text-slate-500 font-normal">' + d.oldLabel + ' DA</span> ' + d.label + " DA";
     document.getElementById('recap-total').innerHTML = d.label;
     document.getElementById('recap-title').textContent = d.title;
     document.getElementById('submit-label').innerHTML = "VALIDER MA COMMANDE \u2014 " + d.label + "\u00a0DA \u00c0 LA LIVRAISON";
@@ -1017,7 +1004,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
   <div class="max-w-4xl mx-auto px-4 md:px-6 py-16 md:py-20 text-center">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-4">Dans 6 mois, votre cabinet sera organisé... <span class="text-blue-300">ou toujours débordé.</span></h2>
     <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">La différence se joue aujourd'hui : <strong class="text-white">9&nbsp;900&nbsp;DA au lieu de 45&nbsp;000&nbsp;DA</strong>, une seule fois — au lieu des prothèses perdues, des registres incomplets et des fins de mois disputées pendant des années.</p>
-    <a href="#commander" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-white text-slate-900 font-bold text-sm sm:text-base transition-colors hover:bg-slate-100">
+    <a href="#checkout" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-lg bg-white text-slate-900 font-bold text-sm sm:text-base transition-colors hover:bg-slate-100">
       <span>COMMANDER • 9&nbsp;900&nbsp;DA À LA LIVRAISON</span>
       <svg class="lucide" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
@@ -1042,26 +1029,35 @@ fbq('init','1676469174046374');fbq('track','PageView');
         </p>
       </div>
       <div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Produit</h4>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Produit</h3>
         <ul class="space-y-2 text-xs text-slate-600">
-          <li><a class="hover:text-blue-700 transition-colors" href="/#solution">Solution</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="/#captures">Captures du logiciel</a></li>
-          <li><a class="hover:text-blue-700 transition-colors" href="/#tarifs">Tarifs — 9&nbsp;900&nbsp;DA</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/dental/#solution">Solution</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/dental/#captures">Captures du logiciel</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/dental/#tarifs">Tarifs — 9&nbsp;900&nbsp;DA</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="/dental/#checkout">Commander (paiement à la livraison)</a></li>
           <li><a class="hover:text-blue-700 transition-colors" href="/dental/#faq">Questions fréquentes</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Support Praticiens Algérie</h4>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Support Praticiens Algérie</h3>
         <ul class="space-y-2 text-xs text-slate-600">
           <li class="flex items-center gap-2">
             <svg class="lucide text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            <span>Dimanche au Jeudi : 08h30 - 18h00</span>
+            <a class="hover:text-emerald-700 transition-colors" href="https://wa.me/213558495780?text=Bonjour%2C%20je%20veux%20des%20infos%20sur%20ClinixOS%20Dental" target="_blank" rel="noopener">WhatsApp 7j/7 : 0558 495 780</a>
           </li>
           <li class="flex items-center gap-2">
             <svg class="lucide text-slate-500" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
             <span>Livraison Yalidine / Maystro — 58 wilayas</span>
           </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-3">Informations</h3>
+        <ul class="space-y-2 text-xs text-slate-600">
+          <li><a class="hover:text-blue-700 transition-colors" href="/dental/legal.html#mentions">Mentions légales</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/dental/legal.html#confidentialite">Politique de confidentialité</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/dental/legal.html#cgv">Conditions générales de vente</a></li>
+          <li><a class="hover:text-blue-700 transition-colors" href="/dental/legal.html#remboursement">Garantie &amp; remboursement</a></li>
         </ul>
       </div>
     </div>
@@ -1106,7 +1102,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
 
 <!-- Sticky order bar -->
 <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 px-4 py-3">
-  <a href="#commander" class="max-w-xl mx-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
+  <a href="#checkout" class="max-w-xl mx-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 border border-blue-800 text-white font-bold text-sm transition-colors">
     <svg class="lucide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1.5 13.5a1 1 0 0 1-1 1.1H5.5a1 1 0 0 1-1-1.1L6 7z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
     <span>COMMANDER — 19 000 DA · PAIEMENT À LA LIVRAISON</span>
   </a>
@@ -1395,6 +1391,7 @@ fbq('init','1676469174046374');fbq('track','PageView');
   }
   function mark(el, bad){
     if (!el) return;
+    el.setAttribute('aria-invalid', bad ? 'true' : 'false');
     // styles.css is a compiled Tailwind bundle: .border-red-500 is emitted BEFORE
     // .border-slate-300, and the form fields already carry border-slate-300. At
     // equal specificity the later rule wins, so toggling those utility classes
@@ -1482,6 +1479,8 @@ fbq('init','1676469174046374');fbq('track','PageView');
 
     form.addEventListener('submit', function(e){
       e.preventDefault();
+      var honeypot = document.getElementById('company_website');
+      if (honeypot && honeypot.value.trim()) return; // bot: silently ignore
       err.classList.add('hidden');
 
       var name = document.getElementById('name');
@@ -1627,5 +1626,20 @@ fbq('init','1676469174046374');fbq('track','PageView');
 <a id="wa-float" href="https://wa.me/213558495780?text=Bonjour%2C%20je%20veux%20des%20infos%20sur%20ClinixOS%20Dental" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp">
   <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
 </a>
+<script>
+(function(){
+  'use strict';
+  try {
+    var q = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+      var el = document.getElementById(k);
+      if (el) el.value = q.get(k) || '';
+    });
+    var fb = document.getElementById('fbclid'); if (fb) fb.value = q.get('fbclid') || '';
+    var lu = document.getElementById('landing_url'); if (lu) lu.value = location.href;
+    var rf = document.getElementById('referrer'); if (rf) rf.value = document.referrer || '';
+  } catch(e) {}
+})();
+</script>
 </body>
 </html>
