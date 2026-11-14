@@ -43,3 +43,30 @@
 
 /locations.js
   Cache-Control: public, max-age=3600, s-maxage=31536000, must-revalidate
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/essai/*
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  CDN-Cache-Control: no-store
+  Surrogate-Control: no-store
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+/admin/*
+  Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+  X-Robots-Tag: noindex, nofollow
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+
+/api/*
+  Cache-Control: no-store
+  X-Content-Type-Options: nosniff
+
+/downloads/*
+  Cache-Control: no-store
+  X-Robots-Tag: noindex

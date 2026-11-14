@@ -9,5 +9,7 @@ Allow: /
 Disallow: /README.md
 Disallow: /ADS.md
 Disallow: /scripts/
+Disallow: /admin/
+Disallow: /api/
 
 Sitemap: https://clinixospro.com/sitemap.xml

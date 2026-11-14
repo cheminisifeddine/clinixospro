@@ -17,3 +17,10 @@
 
 # Alias orthographe : /download/free-trail -> page d'essai (fichier hébergé sur R2)
 /download/free-trail /download/free-trial/ 301
+
+# Essai gratuit — canonical /essai
+/essai-gratuit /essai 301
+/trial /essai 301
+/7jours /essai 301
+/free-trial /essai 301
+/essai/ /essai 301

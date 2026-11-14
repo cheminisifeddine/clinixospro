@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin — Essais ClinixOS</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="icon" type="image/png" href="/img/favicon.png"/>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;line-height:1.5}
+  a{color:#1d4ed8}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 20px 60px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}
+  .brand{font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .brand span{color:#1d4ed8}
+  .sub{font-size:12px;color:#64748b;margin-top:2px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 16px;border-radius:9px;border:1px solid #1e40af;background:#1d4ed8;color:#fff;font:inherit;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none}
+  .btn:hover{background:#1e40af;text-decoration:none}
+  .btn.ghost{background:#fff;border-color:#cbd5e1;color:#0f172a}
+  .btn.ghost:hover{border-color:#1d4ed8;color:#1d4ed8}
+  .btn.danger{background:#fff;border-color:#fecaca;color:#b91c1c;padding:0 11px;min-height:34px;font-size:12px}
+  .login{max-width:420px;margin:8vh auto 0;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:26px;box-shadow:0 14px 40px rgba(15,23,42,.08)}
+  .login h1{font-size:23px;margin:0 0 6px;letter-spacing:-.02em}
+  .login p{font-size:13px;color:#64748b;margin:0 0 18px}
+  label{display:block;font-size:12px;font-weight:700;margin-bottom:6px}
+  input{width:100%;height:46px;border:1px solid #cbd5e1;border-radius:9px;padding:0 12px;font:inherit;font-size:14px;outline:none}
+  input:focus{border-color:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.12)}
+  .error{display:none;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;border-radius:8px;padding:9px 11px;font-size:12px;margin-bottom:12px}
+  .error.show{display:block}
+  .dashboard{display:none}
+  .dashboard.show{display:block}
+  .top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:18px}
+  .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:18px}
+  .card{background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 15px}
+  .card .k{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:#64748b;font-weight:700}
+  .card .v{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-top:3px}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+  .toolbar input{max-width:320px;height:40px}
+  .table-wrap{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:auto}
+  table{width:100%;border-collapse:collapse;font-size:12px;min-width:920px}
+  th,td{padding:10px 11px;text-align:left;border-bottom:1px solid #f1f5f9;vertical-align:top}
+  th{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:#64748b;background:#f8fafc;white-space:nowrap}
+  td .name{font-weight:700;color:#0f172a}
+  td .muted{color:#64748b;font-size:11px}
+  .pill{display:inline-block;border-radius:99px;padding:2px 8px;font-size:10px;font-weight:700}
+  .pill.ok{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}
+  .pill.no{background:#f8fafc;color:#64748b;border:1px solid #e2e8f0}
+  .empty{padding:28px;text-align:center;color:#64748b;font-size:13px}
+  .foot{font-size:11px;color:#64748b;margin-top:14px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  @media(max-width:700px){.cards{grid-template-columns:1fr 1fr}.wrap{padding:16px 12px 40px}.login{padding:20px;margin-top:4vh}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="brand">Clinix<span>OS</span> · Admin</div>
+      <div class="sub">Demandes d'essai gratuit 7 jours</div>
+    </div>
+    <div id="header-actions" style="display:none">
+      <button class="btn ghost" id="logout">Déconnexion</button>
+    </div>
+  </header>
+
+  <div class="login" id="login">
+    <h1>Accès administrateur</h1>
+    <p>Entrez le mot de passe admin pour consulter les demandes d'essai.</p>
+    <div class="error" id="login-error" role="alert"></div>
+    <form id="login-form">
+      <label for="password">Mot de passe</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="Mot de passe admin"/>
+      <button class="btn" type="submit" style="width:100%;margin-top:12px">Se connecter</button>
+    </form>
+  </div>
+
+  <div class="dashboard" id="dashboard">
+    <div class="top">
+      <div>
+        <h1 style="font-size:22px;margin:0;letter-spacing:-.02em">Demandes d'essai</h1>
+        <div class="sub">Données stockées dans D1 — visibles uniquement par l'admin.</div>
+      </div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Rechercher nom, téléphone, cabinet…" aria-label="Rechercher"/>
+        <a class="btn ghost" id="csv" href="/api/admin/essais?format=csv">Exporter CSV</a>
+        <button class="btn ghost" id="refresh">Rafraîchir</button>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="k">Total</div><div class="v" id="stat-total">—</div></div>
+      <div class="card"><div class="k">Aujourd'hui</div><div class="v" id="stat-today">—</div></div>
+      <div class="card"><div class="k">7 derniers jours</div><div class="v" id="stat-week">—</div></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Date</th><th>Nom</th><th>Téléphone</th><th>Cabinet / ville</th><th>Email</th><th>Consent.</th><th>Téléchargé</th><th></th></tr></thead>
+        <tbody id="rows"><tr><td colspan="8" class="empty">Chargement…</td></tr></tbody>
+      </table>
+    </div>
+    <div class="foot"><span id="query-label"></span><span>Les données sont supprimées après 24 mois si inutilisées.</span></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var login = document.getElementById('login');
+  var dashboard = document.getElementById('dashboard');
+  var loginForm = document.getElementById('login-form');
+  var loginError = document.getElementById('login-error');
+  var headerActions = document.getElementById('header-actions');
+  var rows = document.getElementById('rows');
+  var search = document.getElementById('search');
+  var csv = document.getElementById('csv');
+  var timer = null;
+
+  function esc(s){ return String(s == null ? '' : s); }
+  function fmtDate(s){ if(!s) return '—'; try { return new Date(s).toLocaleString('fr-DZ',{dateStyle:'short',timeStyle:'short'}); } catch(e){ return s; } }
+  function wa(phone){ return 'https://wa.me/' + String(phone||'').replace(/\D/g,''); }
+
+  function showLogin(){ login.style.display='block'; dashboard.classList.remove('show'); headerActions.style.display='none'; }
+  function showDashboard(){ login.style.display='none'; dashboard.classList.add('show'); headerActions.style.display='block'; }
+
+  async function load(){
+    var q = search.value.trim();
+    var url = '/api/admin/essais?limit=500' + (q ? '&q=' + encodeURIComponent(q) : '');
+    var r = await fetch(url, {credentials:'same-origin'});
+    if (r.status === 401) { showLogin(); return; }
+    var data = await r.json();
+    if (!r.ok || !data.ok) throw new Error(data.error || 'Erreur de chargement.');
+    showDashboard();
+    document.getElementById('stat-total').textContent = data.total;
+    var today = new Date().toISOString().slice(0,10);
+    var t = (data.stats || []).find(function(x){ return x.day === today; });
+    document.getElementById('stat-today').textContent = t ? t.total : 0;
+    var week = (data.stats || []).slice(0,7).reduce(function(a,x){ return a + Number(x.total||0); },0);
+    document.getElementById('stat-week').textContent = week;
+    csv.href = '/api/admin/essais?format=csv' + (q ? '&q=' + encodeURIComponent(q) : '');
+    document.getElementById('query-label').textContent = q ? 'Recherche : ' + q : '';
+    rows.textContent = '';
+    if (!data.leads || !data.leads.length) {
+      var tr = document.createElement('tr'); var td = document.createElement('td');
+      td.colSpan = 8; td.className = 'empty'; td.textContent = 'Aucune demande pour le moment.';
+      tr.appendChild(td); rows.appendChild(tr); return;
+    }
+    data.leads.forEach(function(l){
+      var tr = document.createElement('tr');
+      function cell(text, cls){ var td=document.createElement('td'); if(cls) td.className=cls; td.textContent=text; tr.appendChild(td); return td; }
+      cell(fmtDate(l.created_at), 'muted');
+      var nameTd = cell(l.full_name, 'name');
+      var phoneTd = document.createElement('td');
+      var a = document.createElement('a'); a.href=wa(l.phone_e164); a.target='_blank'; a.rel='noopener'; a.textContent=l.phone_e164; phoneTd.appendChild(a); tr.appendChild(phoneTd);
+      cell(l.clinic || '—', 'muted');
+      cell(l.email || '—', 'muted');
+      var consentTd=document.createElement('td'); var cp=document.createElement('span'); cp.className='pill '+(l.consent?'ok':'no'); cp.textContent=l.consent?'Oui':'Non'; consentTd.appendChild(cp); tr.appendChild(consentTd);
+      var dlTd=document.createElement('td'); var dp=document.createElement('span'); dp.className='pill '+(l.downloaded_at?'ok':'no'); dp.textContent=l.downloaded_at?'Oui':'Non'; dlTd.appendChild(dp); tr.appendChild(dlTd);
+      var actTd=document.createElement('td'); var del=document.createElement('button'); del.className='btn danger'; del.textContent='Supprimer'; del.dataset.id=l.id; del.addEventListener('click', async function(){ if(!confirm('Supprimer cette demande ?')) return; var rr=await fetch('/api/admin/essais?id='+encodeURIComponent(l.id),{method:'DELETE',credentials:'same-origin'}); if(rr.ok) load(); else alert('Suppression impossible.'); }); actTd.appendChild(del); tr.appendChild(actTd);
+      rows.appendChild(tr);
+    });
+  }
+
+  loginForm.addEventListener('submit', async function(e){
+    e.preventDefault(); loginError.classList.remove('show');
+    var r = await fetch('/api/admin/login',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:document.getElementById('password').value})});
+    var d = await r.json().catch(function(){return {};});
+    if(!r.ok){ loginError.textContent=d.error||'Connexion impossible.'; loginError.classList.add('show'); return; }
+    await load();
+  });
+  search.addEventListener('input', function(){ clearTimeout(timer); timer=setTimeout(load, 300); });
+  document.getElementById('refresh').addEventListener('click', load);
+  document.getElementById('logout').addEventListener('click', async function(){ await fetch('/api/admin/logout',{method:'POST',credentials:'same-origin'}); showLogin(); });
+  load().catch(function(){ showLogin(); });
+})();
+</script>
+</body>
+</html>
