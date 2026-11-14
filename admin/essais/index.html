@@ -81,8 +81,8 @@
         <div class="sub">Données stockées dans D1 — visibles uniquement par l'admin.</div>
       </div>
       <div class="toolbar">
-        <input id="search" type="search" placeholder="Rechercher nom, téléphone, cabinet…" aria-label="Rechercher"/>
-        <a class="btn ghost" id="csv" href="/api/admin/essais?format=csv">Exporter CSV</a>
+        <input id="search" type="search" placeholder="Rechercher un nom ou un téléphone…" aria-label="Rechercher"/>
+        <button class="btn ghost" id="csv" type="button">Exporter CSV</button>
         <button class="btn ghost" id="refresh">Rafraîchir</button>
       </div>
     </div>
@@ -93,8 +93,8 @@
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Date</th><th>Nom</th><th>Téléphone</th><th>Cabinet / ville</th><th>Email</th><th>Téléchargé</th><th></th></tr></thead>
-        <tbody id="rows"><tr><td colspan="8" class="empty">Chargement…</td></tr></tbody>
+        <thead><tr><th>Date</th><th>Nom</th><th>Téléphone</th><th>Téléchargé</th><th></th></tr></thead>
+        <tbody id="rows"><tr><td colspan="5" class="empty">Chargement…</td></tr></tbody>
       </table>
     </div>
     <div class="foot"><span id="query-label"></span><span>Les données sont supprimées après 24 mois si inutilisées.</span></div>
@@ -123,8 +123,12 @@
 
   async function load(){
     var q = search.value.trim();
-    var url = '/api/admin/essais?limit=500' + (q ? '&q=' + encodeURIComponent(q) : '');
-    var r = await fetch(url, {credentials:'same-origin'});
+    var r = await fetch('/api/admin/essais', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({q: q, limit: 500})
+    });
     if (r.status === 401) { showLogin(); return; }
     var data = await r.json();
     if (!r.ok || !data.ok) throw new Error(data.error || 'Erreur de chargement.');
@@ -135,12 +139,11 @@
     document.getElementById('stat-today').textContent = t ? t.total : 0;
     var week = (data.stats || []).slice(0,7).reduce(function(a,x){ return a + Number(x.total||0); },0);
     document.getElementById('stat-week').textContent = week;
-    csv.href = '/api/admin/essais?format=csv' + (q ? '&q=' + encodeURIComponent(q) : '');
     document.getElementById('query-label').textContent = q ? 'Recherche : ' + q : '';
     rows.textContent = '';
     if (!data.leads || !data.leads.length) {
       var tr = document.createElement('tr'); var td = document.createElement('td');
-      td.colSpan = 8; td.className = 'empty'; td.textContent = 'Aucune demande pour le moment.';
+      td.colSpan = 5; td.className = 'empty'; td.textContent = 'Aucune demande pour le moment.';
       tr.appendChild(td); rows.appendChild(tr); return;
     }
     data.leads.forEach(function(l){
@@ -150,8 +153,6 @@
       var nameTd = cell(l.full_name, 'name');
       var phoneTd = document.createElement('td');
       var a = document.createElement('a'); a.href=wa(l.phone_e164); a.target='_blank'; a.rel='noopener'; a.textContent=l.phone_e164; phoneTd.appendChild(a); tr.appendChild(phoneTd);
-      cell(l.clinic || '—', 'muted');
-      cell(l.email || '—', 'muted');
       var dlTd=document.createElement('td'); var dp=document.createElement('span'); dp.className='pill '+(l.downloaded_at?'ok':'no'); dp.textContent=l.downloaded_at?'Oui':'Non'; dlTd.appendChild(dp); tr.appendChild(dlTd);
       var actTd=document.createElement('td'); var del=document.createElement('button'); del.className='btn danger'; del.textContent='Supprimer'; del.dataset.id=l.id; del.addEventListener('click', async function(){ if(!confirm('Supprimer cette demande ?')) return; var rr=await fetch('/api/admin/essais?id='+encodeURIComponent(l.id),{method:'DELETE',credentials:'same-origin'}); if(rr.ok) load(); else alert('Suppression impossible.'); }); actTd.appendChild(del); tr.appendChild(actTd);
       rows.appendChild(tr);
@@ -166,6 +167,24 @@
     await load();
   });
   search.addEventListener('input', function(){ clearTimeout(timer); timer=setTimeout(load, 300); });
+  csv.addEventListener('click', async function(){
+    var q = search.value.trim();
+    var r = await fetch('/api/admin/essais', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({q: q, format: 'csv'})
+    });
+    if (!r.ok) { alert('Export impossible.'); return; }
+    var blob = await r.blob();
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'clinixos-essais-' + new Date().toISOString().slice(0,10) + '.csv';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+  });
   document.getElementById('refresh').addEventListener('click', load);
   document.getElementById('logout').addEventListener('click', async function(){ await fetch('/api/admin/logout',{method:'POST',credentials:'same-origin'}); showLogin(); });
   load().catch(function(){ showLogin(); });

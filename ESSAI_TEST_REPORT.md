@@ -15,12 +15,12 @@ Commit: `b065fdf` (page/API/admin) + `86f2b1a` (headers) + UI contrast/touch fix
 | 5 | Phone required | **PASS** | Client + server |
 | 6 | Invalid phone shows a clear error | **PASS** | `Numéro de téléphone invalide. Exemple : 0770 49 49 50.` |
 | 7 | Consent checkbox | **REMOVED** | Removed at owner request; form now asks only name + phone; server stores consent=0; legal review advised |
-| 8 | Valid form saves a lead (name + phone only) | **PASS (local D1)** | Wrangler Pages dev + local D1 inserted lead; production binding is `AFF_DB`; table is lazy-created/migration included |
+| 8 | Valid form saves a lead (name + phone only) | **PASS (production)** | Live `POST /api/trial-lead` created lead id 4 in D1 `clinixos-v2-db`; test lead deleted after verification |
 | 9 | Valid form starts the installer download | **PASS** | API returns `/downloads/…?lead=ID`; `window.location` starts download; fallback button present |
 | 10 | Download file is the correct 319 MB installer | **PASS** | GitHub release asset: **334,214,279 bytes** (319 MiB) |
 | 11 | SHA-256 matches `d3d7ff…08548` | **PASS** | Local source file hash matches exactly; same file uploaded |
-| 12 | Lead appears in `/admin/essais` | **PASS (local)** | Admin login + list tested with a test token; live requires `TRIAL_ADMIN_TOKEN` |
-| 13 | CSV export works | **PASS (local)** | Downloaded CSV with UTF-8 headers and escaped values |
+| 12 | Lead appears in `/admin/essais` | **PASS (production)** | Live admin login + list; test lead visible before deletion |
+| 13 | CSV export works | **PASS (production)** | Live CSV with UTF-8 headers and escaped values |
 | 14 | Owner receives an email notification | **NOT CONFIGURED** | Code uses Resend when `RESEND_API_KEY` + `TRIAL_OWNER_EMAIL` are set; no key was provided |
 | 15 | WhatsApp link opens `wa.me/213770494950` | **PASS** | Link present in page/legal/success panel |
 | 16 | QR code points to `/essai` | **PASS** | `img/essai-qr.png`, generated for `https://clinixospro.com/essai` |
@@ -31,13 +31,14 @@ Commit: `b065fdf` (page/API/admin) + `86f2b1a` (headers) + UI contrast/touch fix
 | 21 | Page loads under 3 seconds | **PASS** | Local Lighthouse FCP/LCP **0.7 s**, Speed Index **1.2 s**; page assets ~216 KB; 419 KB total with fonts |
 | 22 | No console errors | **PASS** | Desktop/mobile Playwright checks |
 | 23 | No horizontal scrolling on mobile | **PASS** | 360/390/768/1440; `scrollWidth === innerWidth` |
-| 24 | Admin endpoint protected | **PASS** | Unauthenticated `/api/admin/essais` → 401; login requires `TRIAL_ADMIN_TOKEN`; signed HttpOnly cookie |
+| 24 | Admin endpoint protected | **PASS** | `GET /api/admin/essais` → 405 (never cached); unauth `POST` → 401; cross-origin `POST` → 403; signed HttpOnly cookie |
 | 25 | HSTS enabled | **PASS** | Live `strict-transport-security: max-age=31536000; includeSubDomains` |
 | 26 | Legal/privacy pages linked | **PASS** | `/essai/legal` 200; privacy/terms linked in footer |
 | 27 | SEO title/description/canonical/schema/sitemap | **PASS** | Exact title, description, canonical `/essai`, SoftwareApplication + FAQ schema, sitemap entry, robots index |
-| 28 | Download route updates `downloaded_at` | **PASS (local)** | `/downloads/…?lead=1` updated the lead; admin showed `Oui` |
-| 29 | Admin delete on request | **PASS (local)** | DELETE removed lead; list total decreased |
-| 30 | Daily totals | **PASS (local)** | Admin API stats grouped by date |
+| 28 | Download route updates `downloaded_at` | **PASS (production)** | `/downloads/…?lead=4` updated the lead; admin showed `Oui` |
+| 29 | Admin delete on request | **PASS (production)** | DELETE removed the test lead; list total decreased |
+| 30 | Daily totals | **PASS (production)** | Admin API stats grouped by date |
+| 31 | Admin data cannot be cached by Cloudflare | **PASS** | Admin reads use POST; GET returns 405; unauth POST returns 401 |
 
 ## Lighthouse (trial page, local)
 
@@ -83,7 +84,8 @@ Turnstile is not enabled by default (optional). The form has a honeypot, same-or
 
 ## Important notes
 
-- No fake production lead was inserted during testing. Lead DB tests ran against local D1; the production code uses the same D1 binding.
+- Two production test leads (ids 4 and 5) were inserted through the live API to verify the end-to-end flow, then deleted. Leads 1–3 are real/user leads and were left untouched.
+- The zone Page Rules use Cache Everything + 2 h Edge TTL, which overrides `no-store`. Admin reads therefore use POST (never cached), and `/essai` must be purged after each deploy. Recommended permanent fix: set the Page Rules to Cache Level Standard or add bypass rules for `/api/*`, `/admin/*` and `/essai*`.
 - Email was not sent because no Resend credentials were provided. The code path is implemented and non-blocking.
 - Admin live access requires setting `TRIAL_ADMIN_TOKEN`; the static login page is public but no lead data is returned without auth.
 - The page uses the existing Meta Pixel `3184145215124032`; custom events are pushed to `fbq` and `window.dataLayer`.

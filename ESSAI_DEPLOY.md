@@ -27,7 +27,7 @@
 - D1 binding: **`AFF_DB`** (same database as the affiliate portal)
 - Table: `trial_leads` — lazy-created by the API; migration in `schema/trial_leads.sql`
 - `POST /api/trial-lead` — validates name/phone, normalizes phone to `+213…`, rate-limits to 3 submissions/IP/hour, stores UTM/fbclid context, writes the lead, returns download URL.
-- `GET/DELETE /api/admin/essais` — protected list/search/CSV/delete endpoint.
+- `POST/DELETE /api/admin/essais` — protected list/search/CSV/delete endpoint. List and CSV use POST so Cloudflare can never cache lead data.
 - `POST /api/admin/login` / `POST /api/admin/logout` — signed HttpOnly admin cookie.
 
 ## Environment variables / bindings
@@ -62,6 +62,14 @@ Without `TRIAL_ADMIN_TOKEN`, `/admin/essais` stays inaccessible (503). Without R
 Page events pushed to `fbq('trackCustom', …)` and `window.dataLayer`:
 
 `trial_page_view`, `trial_form_start`, `trial_form_submit`, `trial_download_start`, `trial_download_complete` (best-effort after the auto-download), `whatsapp_click`.
+
+## Cloudflare caching caveat
+
+The zone has two Page Rules (`clinixospro.com/*` and `www.clinixospro.com/*`) with **Cache Everything + Edge Cache TTL 7200**. They override the origin `Cache-Control: no-store` headers. Consequences:
+
+- `/essai` and `/admin/essais/` can stay cached for up to 2 h after a deploy. Run **Purge Everything** after each deploy (or purge those URLs).
+- A `GET` to the admin API could be cached with lead data. That is why admin reads use `POST` (Cloudflare never caches POST). `GET /api/admin/essais` now returns `405`.
+- Recommended permanent fix: edit the two Page Rules to **Cache Level: Standard** (keeps static asset caching, stops HTML/API caching), or add bypass rules for `/api/*`, `/admin/*` and `/essai*`. The API token used for this deployment cannot edit Page Rules (`9109 Unauthorized`), so this is an owner action.
 
 ## Notes
 
