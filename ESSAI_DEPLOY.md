@@ -26,7 +26,7 @@
 
 - D1 binding: **`AFF_DB`** (same database as the affiliate portal)
 - Table: `trial_leads` — lazy-created by the API; migration in `schema/trial_leads.sql`
-- `POST /api/trial-lead` — validates name/phone/consent, normalizes phone to `+213…`, rate-limits to 3 submissions/IP/hour, stores UTM/fbclid context, writes the lead, returns download URL.
+- `POST /api/trial-lead` — validates name/phone, normalizes phone to `+213…`, rate-limits to 3 submissions/IP/hour, stores UTM/fbclid context, writes the lead, returns download URL.
 - `GET/DELETE /api/admin/essais` — protected list/search/CSV/delete endpoint.
 - `POST /api/admin/login` / `POST /api/admin/logout` — signed HttpOnly admin cookie.
 
@@ -47,7 +47,7 @@ Without `TRIAL_ADMIN_TOKEN`, `/admin/essais` stays inaccessible (503). Without R
 ## Security / legal
 
 - Server-side validation and parameterized D1 queries.
-- Consent required and timestamped.
+- Consent checkbox removed at the owner's request: the form asks only name + phone; the server stores the phone/name and does not require a consent flag. Legal review is recommended (Algerian Law 18-07).
 - Honeypot + same-origin (`Origin`/`Sec-Fetch-Site`) checks.
 - IP stored as SHA-256 hash only.
 - Rate limit: 3 submissions per IP per hour.

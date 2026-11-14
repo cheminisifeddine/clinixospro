@@ -54,12 +54,12 @@ export async function onRequestGet({ request, env }) {
   const leads = rows.results || [];
 
   if (format === 'csv') {
-    const header = ['id', 'date', 'nom', 'telephone', 'telephone_normalise', 'cabinet', 'email', 'consentement', 'consentement_le', 'source', 'utm_source', 'utm_medium', 'utm_campaign', 'telecharge_le'];
+    const header = ['id', 'date', 'nom', 'telephone', 'telephone_normalise', 'cabinet', 'email', 'source', 'utm_source', 'utm_medium', 'utm_campaign', 'telecharge_le'];
     const lines = [header.map(csvEscape).join(',')];
     for (const l of leads) {
       lines.push([
         l.id, l.created_at, l.full_name, l.phone_raw, l.phone_e164, l.clinic, l.email,
-        l.consent ? 'oui' : 'non', l.consent_at || '', l.source || '',
+        l.source || '',
         l.utm_source || '', l.utm_medium || '', l.utm_campaign || '', l.downloaded_at || '',
       ].map(csvEscape).join(','));
     }

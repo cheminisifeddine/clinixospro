@@ -14,8 +14,8 @@ Commit: `b065fdf` (page/API/admin) + `86f2b1a` (headers) + UI contrast/touch fix
 | 4 | Full name required | **PASS** | Client + server; invalid/empty returns French error; form not cleared |
 | 5 | Phone required | **PASS** | Client + server |
 | 6 | Invalid phone shows a clear error | **PASS** | `Numéro de téléphone invalide. Exemple : 0770 49 49 50.` |
-| 7 | Consent required | **PASS** | Client + server; checkbox required |
-| 8 | Valid form saves a lead | **PASS (local D1)** | Wrangler Pages dev + local D1 inserted lead; production binding is `AFF_DB`; table is lazy-created/migration included |
+| 7 | Consent checkbox | **REMOVED** | Removed at owner request; form now asks only name + phone; server stores consent=0; legal review advised |
+| 8 | Valid form saves a lead (name + phone only) | **PASS (local D1)** | Wrangler Pages dev + local D1 inserted lead; production binding is `AFF_DB`; table is lazy-created/migration included |
 | 9 | Valid form starts the installer download | **PASS** | API returns `/downloads/…?lead=ID`; `window.location` starts download; fallback button present |
 | 10 | Download file is the correct 319 MB installer | **PASS** | GitHub release asset: **334,214,279 bytes** (319 MiB) |
 | 11 | SHA-256 matches `d3d7ff…08548` | **PASS** | Local source file hash matches exactly; same file uploaded |
@@ -33,7 +33,7 @@ Commit: `b065fdf` (page/API/admin) + `86f2b1a` (headers) + UI contrast/touch fix
 | 23 | No horizontal scrolling on mobile | **PASS** | 360/390/768/1440; `scrollWidth === innerWidth` |
 | 24 | Admin endpoint protected | **PASS** | Unauthenticated `/api/admin/essais` → 401; login requires `TRIAL_ADMIN_TOKEN`; signed HttpOnly cookie |
 | 25 | HSTS enabled | **PASS** | Live `strict-transport-security: max-age=31536000; includeSubDomains` |
-| 26 | Legal/privacy pages linked | **PASS** | `/essai/legal` 200; consent links to privacy/terms |
+| 26 | Legal/privacy pages linked | **PASS** | `/essai/legal` 200; privacy/terms linked in footer |
 | 27 | SEO title/description/canonical/schema/sitemap | **PASS** | Exact title, description, canonical `/essai`, SoftwareApplication + FAQ schema, sitemap entry, robots index |
 | 28 | Download route updates `downloaded_at` | **PASS (local)** | `/downloads/…?lead=1` updated the lead; admin showed `Oui` |
 | 29 | Admin delete on request | **PASS (local)** | DELETE removed lead; list total decreased |
@@ -79,7 +79,7 @@ These are environment settings in the Cloudflare Pages project (not frontend sec
 | `TRIAL_DOWNLOAD_URL` | optional | Overrides the GitHub asset URL |
 | `TRIAL_R2` | optional | Streams the installer from R2 instead of redirecting to GitHub |
 
-Turnstile is not enabled by default (optional). The form already has a honeypot, consent enforcement, same-origin checks and a 3/IP/hour limit.
+Turnstile is not enabled by default (optional). The form has a honeypot, same-origin checks and a 3/IP/hour limit. Consent checkbox removed at owner request.
 
 ## Important notes
 

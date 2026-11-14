@@ -98,7 +98,6 @@ async function notifyOwner(env, lead) {
     <p><strong>E-mail :</strong> ${escapeHtml(lead.email || '—')}</p>
     <p><strong>Date :</strong> ${escapeHtml(lead.created_at)}</p>
     <p><strong>Source :</strong> ${escapeHtml(lead.source || '—')}</p>
-    <p><strong>Consentement :</strong> oui (${escapeHtml(lead.consent_at || '—')})</p>
     <p><a href="${wa}">Contacter sur WhatsApp</a></p>
   `;
   await fetch('https://api.resend.com/emails', {
@@ -143,7 +142,6 @@ export async function onRequestPost(context) {
   const phoneE164 = normalizePhone(phoneRaw);
   const clinic = clean(body.clinic, 100);
   const email = clean(body.email, 120).toLowerCase();
-  const consent = body.consent === true || body.consent === 1 || body.consent === 'true';
 
   if (!validName(fullName)) {
     return json({ error: 'Le nom complet est obligatoire (2 à 80 caractères, lettres uniquement).' }, 400);
@@ -154,16 +152,13 @@ export async function onRequestPost(context) {
   if (!validEmail(email)) {
     return json({ error: 'Adresse e-mail invalide.' }, 400);
   }
-  if (!consent) {
-    return json({ error: "Vous devez accepter d'être contacté." }, 400);
-  }
-
   await ensureSchema(db);
 
   const ip = request.headers.get('CF-Connecting-IP') ||
     (request.headers.get('X-Forwarded-For') || '').split(',')[0].trim();
   const ipHash = await hashIp(ip, env.TRIAL_IP_SALT);
   const now = new Date().toISOString();
+  const consentFlag = (body.consent === true || body.consent === 1 || body.consent === 'true') ? 1 : 0;
   const cutoff = new Date(Date.now() - 3600 * 1000).toISOString();
 
   const recent = await db.prepare(
@@ -184,7 +179,7 @@ export async function onRequestPost(context) {
     (full_name, phone_raw, phone_e164, clinic, email, consent, consent_at, source,
      utm_source, utm_medium, utm_campaign, page_url, ip_hash, user_agent, created_at)
     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`).bind(
-    fullName, phoneRaw, phoneE164, clinic, email, 1, now, source,
+    fullName, phoneRaw, phoneE164, clinic, email, consentFlag, consentFlag ? now : null, source,
     utmSource, utmMedium, utmCampaign, pageUrl, ipHash, userAgent, now
   ).run();
 
@@ -193,7 +188,7 @@ export async function onRequestPost(context) {
 
   const lead = {
     full_name: fullName, phone_e164: phoneE164, clinic, email,
-    source, created_at: now, consent_at: now,
+    source, created_at: now, consent_at: consentFlag ? now : null,
   };
   const mail = notifyOwner(env, lead).catch((err) => console.error('trial email failed', err));
   if (typeof waitUntil === 'function') waitUntil(mail);
